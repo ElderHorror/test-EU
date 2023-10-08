@@ -18,12 +18,14 @@ export default function ReviewsComp(props:ReviewsCompProps) {
     const [currentIndex, setCurrentIndex] = useState(0);
 
     const handleNext = () => {
-        setCurrentIndex((prevIndex) => (prevIndex )% props.data.length);
+        setCurrentIndex((prevIndex) => (prevIndex + 1 )% props.data.length);
     };
 
     const handlePrev = () => {
-        setCurrentIndex((prevIndex) => (prevIndex  + props.data.length) % props.data.length)
-    }
+        setCurrentIndex((prevIndex) =>
+            prevIndex === 0 ? props.data.length - 1 : prevIndex - 1
+        );
+    };
   return (
     <Box>
        <Box>
@@ -47,7 +49,16 @@ export default function ReviewsComp(props:ReviewsCompProps) {
          >
             {props.data.map(item => {
                 return(
-                   <Box bgColor={"rgba(248, 249, 255, 1)"} border={"1px solid"} borderColor={"transparent"} borderRadius={"20px"}  mt={"4rem"} key={props.data[currentIndex].id}>
+                   <Box 
+                   bgColor={"rgba(248, 249, 255, 1)"} 
+                   border={"1px solid"} borderColor={"transparent"} 
+                   borderRadius={"20px"}  mt={"4rem"} 
+                   key={props.data[currentIndex].id}
+                //    style={{
+                //     transform: `translateX(${(index - currentIndex) * 100}%)`,
+                //     transition: "transform 0.3s ease-in-out",
+                // }}
+                   >
                      <Box py={"2rem"} px={"1rem"}>
                         <Flex gap={3} >
                             <Box>
@@ -59,10 +70,10 @@ export default function ReviewsComp(props:ReviewsCompProps) {
                             <Box>
                                 <Flex flexDir={"column"}>
                                     <Box>
-                                     <Heading>{item.name}</Heading>
+                                     <Heading fontWeight={500} fontSize={"28px"}>{item.name}</Heading>
                                    </Box>
                                    <Box>
-                                    <Text>{item.role}</Text>
+                                    <Text fontWeight={500} fontSize={"28px"}>{item.role}</Text>
                                    </Box>
                                 </Flex>
                             </Box>

@@ -4,7 +4,7 @@ import HeropageBody from "../../../../Components/Heropage/HeropageBody";
 
 export default function Heropage() {
   return (
-    <Box>
+    <Box py={"4rem"}>
        <HeropageBody />
     </Box>
   )

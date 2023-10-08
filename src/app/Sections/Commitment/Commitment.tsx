@@ -4,7 +4,7 @@ import GridComp from "../../../../Components/Commitment/GridComp";
 
 export default function Commitment() {
   return (
-    <Box mt={"7rem"} mb={'4rem'}>
+    <Box py={"7rem"}>
       <Flex justifyContent={"space-between"}>
         <Box alignSelf={"center"}>
           <GridComp />

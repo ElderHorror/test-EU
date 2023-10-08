@@ -35,7 +35,7 @@ export default function Reviews() {
    ]
 
   return (
-    <Box mt={"7rem"} mb={"3rem"}>
+    <Box mt={"15rem"} mb={"3rem"}>
       <ReviewsComp data={client} />
     </Box>
   )

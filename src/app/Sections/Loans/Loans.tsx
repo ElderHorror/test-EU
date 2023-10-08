@@ -4,7 +4,7 @@ import LoansListCarousel from "../../../../Components/Loans/LoansListCarousel";
 
 export default function Loans() {
   return (
-    <Box mt={"7rem"} mb={"3rem"}>
+    <Box py={"7rem"} >
        <Box>
          <Heading color={"rgba(17, 41, 125, 1)"} fontWeight={700} fontSize={"64px"} lineHeight={"80.64px"}>Our Loan Service</Heading>
        </Box>

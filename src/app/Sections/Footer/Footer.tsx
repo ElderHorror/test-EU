@@ -59,7 +59,7 @@ export default function Footer() {
    ]
 
   return (
-    <Box mt={"10rem"}>
+    <Box mt={"10rem"} pb={"2rem"}>
       <Flex justifyContent={"space-between"}>
          <Box>
             <Flex flexDir={"column"} gap={12}>

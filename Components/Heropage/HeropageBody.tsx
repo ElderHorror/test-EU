@@ -9,7 +9,7 @@ export default function HeropageBody() {
       <Flex justifyContent={"space-between"} >
         <Box alignSelf={"center"}>
           <Flex flexDir={"column"} gap={4}>
-            <Box w={500} >
+            <Box w={600} >
               <Heading  fontSize={"70px"} as={"h1"}>Your Gateway To a Seamless Journey</Heading>
             </Box>
             <Text>Empowering your Educational Journey</Text>

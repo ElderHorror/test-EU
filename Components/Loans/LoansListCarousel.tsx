@@ -55,7 +55,7 @@ export default function LoansListCarousel() {
        }}
     >
      <Flex 
-       w={"200%"}
+       w={"180%"}
        columnGap={4}
      >
         <LoansProp carousel={loansBody} />
