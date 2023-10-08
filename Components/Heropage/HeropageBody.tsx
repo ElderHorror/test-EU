@@ -10,11 +10,11 @@ export default function HeropageBody() {
         <Box alignSelf={"center"}>
           <Flex flexDir={"column"} gap={4}>
             <Box w={500} >
-              <Heading  fontSize={"70px"} as={"h1"}>Your Gateway to a seamless journey</Heading>
+              <Heading  fontSize={"70px"} as={"h1"}>Your Gateway To a Seamless Journey</Heading>
             </Box>
             <Text>Empowering your Educational Journey</Text>
              <Box mt={"2rem"}>
-              <BtnBlue />
+              <BtnBlue  btnType="Apply"/>
             </Box>
           </Flex>
         </Box>

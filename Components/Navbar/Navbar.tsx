@@ -38,7 +38,7 @@ export default function Navbar() {
            </Box>
        
           <Box>
-            <BtnBlue />
+            <BtnBlue btnType="Apply" />
           </Box>
        </Flex>
     </Container>
