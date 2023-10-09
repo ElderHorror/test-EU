@@ -25,7 +25,7 @@ export default function GridComp() {
         }
     ]
   return (
-    <SimpleGrid columns={2} gap={20} spacing={10}>
+    <SimpleGrid columns={2} gap={{base:10, md:15, lg:20}} spacing={10}>
         <GridProp group={gridText}  />
     </SimpleGrid>
   )

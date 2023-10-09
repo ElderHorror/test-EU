@@ -9,7 +9,7 @@ export default function CommitmentText() {
         <Box>
           <HeadingProp textt="Commitment" />
         </Box>
-         <Box>
+         <Box w={{base:350, md:500, lg:600 }}>
           <Text fontSize={"18px"} lineHeight={"32px"}>At EUStudyAssist, our goal is to support you in achieving your financial objectives. We are committed to providing the financial assistance you need to thrive on your educational journey. With EUStudyAssist, you can focus on your education, confident that your financial goals are within reach</Text>
         </Box>
 

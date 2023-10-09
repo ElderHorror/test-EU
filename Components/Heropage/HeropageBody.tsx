@@ -9,8 +9,8 @@ export default function HeropageBody() {
       <Flex justifyContent={"space-between"} >
         <Box alignSelf={"center"}>
           <Flex flexDir={"column"} gap={4}>
-            <Box w={600} >
-              <Heading  fontSize={"70px"} as={"h1"}>Your Gateway To a Seamless Journey</Heading>
+            <Box w={{base:250, md:500, lg:600}} >
+              <Heading  fontSize={{base:"30px", md:"50px", lg:"70px"}} as={"h1"}>Your Gateway To a Seamless Journey</Heading>
             </Box>
             <Text>Empowering your Educational Journey</Text>
              <Box mt={"2rem"}>
@@ -19,7 +19,7 @@ export default function HeropageBody() {
           </Flex>
         </Box>
 
-        <Box>
+        <Box display={{base:"none", md:"none", lg:"block"}}>
             <Image  
              src={"/Image.svg"}
              alt={"#"}

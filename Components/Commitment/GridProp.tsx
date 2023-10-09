@@ -15,7 +15,7 @@ export default function GridProp(props:GridPropProps) {
         return(
             <Flex flexDir={"column"} key={proof.id}>
                 <Box>
-                    <Heading fontSize={"64px"}>{proof.num}</Heading>
+                    <Heading fontSize={{base:"32px", md:"45px", lg:"64px"}}>{proof.num}</Heading>
                 </Box>
                 <Box>
                     <Text>{proof.words}</Text>
