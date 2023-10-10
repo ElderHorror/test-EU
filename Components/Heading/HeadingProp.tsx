@@ -6,8 +6,8 @@ type HeadingProp ={
 
 export default function HeadingProp(props:HeadingProp) {
   return (
-    <Box mt={{base:"2rem", lg:".6rem"}}>
-       <Heading fontSize={{base:"32px", md:"50px", lg:"64px"}} fontWeight={600}>{props.textt}</Heading>
+    <Box mt={{base:"2rem", lg:".6rem"}} display={{base:"grid", md:"grid", lg:"block"}} placeItems={{base:"center"}}>
+       <Heading textAlign={{base:"center", md:"left", lg:"left"}} fontSize={{base:"32px", md:"50px", lg:"64px"}}  fontWeight={600}>{props.textt}</Heading>
     </Box>
   )
 }

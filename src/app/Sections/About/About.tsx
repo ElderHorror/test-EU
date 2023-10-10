@@ -8,12 +8,12 @@ export default function About() {
        <Flex justifyContent={"space-between"}>
          <Box>
             <Flex flexDir={"column"}  gap={10}>
-                <Box w={400}>
+                <Box w={{base:330, md:500, lg:700 }}>
                     <HeadingProp textt="About EU Study Assist" />
                 </Box>
 
-                <Box w={{base:350, md:450, lg: 600}}>
-                   <Text fontSize={"18px"} lineHeight={"36px"}>EUStudyAssist exists to empower scholarship recipients during the pre-study period when stipends have yet to materialize. Our commitment is to eliminate financial barriers that hinder academic progress. We believe in equal educational opportunities for all and provide not just financial support, but also pathways to realizing educational dreams, making the journey to Europe stress-free.</Text>
+                <Box w={{base:330, md:450, lg: 600}}>
+                   <Text textAlign={{base:"center", md:"left", lg:"left"}} fontSize={"18px"} lineHeight={"36px"}>EUStudyAssist exists to empower scholarship recipients during the pre-study period when stipends have yet to materialize. Our commitment is to eliminate financial barriers that hinder academic progress. We believe in equal educational opportunities for all and provide not just financial support, but also pathways to realizing educational dreams, making the journey to Europe stress-free.</Text>
                 </Box>
             </Flex>
          </Box>
