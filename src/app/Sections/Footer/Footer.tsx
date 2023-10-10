@@ -60,7 +60,7 @@ export default function Footer() {
 
   return (
     <Box mt={"10rem"} pb={"2rem"}>
-      <Flex justifyContent={"space-between"}>
+      <Flex flexDir={{base:"column",md:"column", lg:"row"}} justifyContent={"space-between"}>
          <Box>
             <Flex flexDir={"column"} gap={12}>
                <Box>
@@ -72,7 +72,7 @@ export default function Footer() {
                </Box>
 
                <Box>
-                <Flex justifyContent={"space-around"}>
+                <Flex  justifyContent={{base:"none",  md:"space-around", lg:"space-around"}} gap={{base:13, md:0, lg:0}}>
                     <Box>
                         <Image 
                           alt={"Instagram"}
@@ -94,14 +94,14 @@ export default function Footer() {
                 </Flex>
                </Box>
 
-               <Box display={"grid"} placeItems={"center"}>
+               <Box display={{base:"block", md:"grid", lg:"grid"}} mb={{base:"1rem",  md:".3rem", lg:".3rem"}} placeItems={"center"}>
                  <BtnBlue btnType="Contact Us" />
                </Box>
             </Flex>
          </Box>
 
          <Box>
-           <Flex gap={65}>
+           <Flex flexDir={{base:"column",md:"column", lg:"row"}} gap={65}>
              <Box>
                 <Footerpropone propLink={footlinkone} />
              </Box>

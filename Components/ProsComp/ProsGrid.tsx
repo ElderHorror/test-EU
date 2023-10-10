@@ -5,7 +5,7 @@ import { Horse, Ruler,  SunHorizon, Target } from 'phosphor-react'
 
 export default function ProsGrid() {
   return (
-    <SimpleGrid spacing={10} columns={2}>
+    <SimpleGrid spacing={10} columns={{base:1,md:2, lg:2}}>
             <Flex gap={7} >
                 <Box alignSelf={"center"} p={"25px"} bgColor={"rgba(52, 97, 255, 1)"} borderRadius={"24px"}>
                   <SunHorizon size={35} color="#fcfcfc" />
