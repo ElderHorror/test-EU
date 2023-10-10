@@ -14,7 +14,7 @@ export default function ProsGrid() {
                 <Box>
                     <Flex flexDir={"column"} gap={3}>
                        <Box>
-                         <Heading>Expand Scholarship Accessibilty</Heading>
+                         <Heading fontSize={{base:"25px", md:"50px", lg:"37px"}}>Expand Scholarship Accessibilty</Heading>
                        </Box>
                        <Box>
                         <Text fontSize={"16px"}>WE meet with you to learn about your busines, your goals and your target audience</Text>
@@ -31,7 +31,7 @@ export default function ProsGrid() {
                 <Box>
                     <Flex flexDir={"column"} gap={3}>
                        <Box>
-                         <Heading>Personalized Financial Guidance</Heading>
+                         <Heading fontSize={{base:"25px", md:"50px", lg:"37px"}}>Personalized Financial Guidance</Heading>
                        </Box>
                        <Box>
                         <Text fontSize={"16px"}>We develop a customized marketing strategy based on your unique needs and goals</Text>
@@ -48,7 +48,7 @@ export default function ProsGrid() {
                 <Box>
                     <Flex flexDir={"column"} gap={3}>
                        <Box>
-                         <Heading>Empowerment Through Education</Heading>
+                         <Heading fontSize={{base:"25px", md:"50px", lg:"37px"}}>Empowerment Through Education</Heading>
                        </Box>
                        <Box>
                         <Text fontSize={"16px"}>We execute our strategy using the latest client marketing tools and techniques</Text>
@@ -64,7 +64,7 @@ export default function ProsGrid() {
                 <Box>
                     <Flex flexDir={"column"} gap={3}>
                        <Box>
-                         <Heading>Advocate For Equitable Education</Heading>
+                         <Heading fontSize={{base:"25px", md:"50px", lg:"37px"}}>Advocate For Equitable Education</Heading>
                        </Box>
                        <Box>
                         <Text fontSize={"16px"}>We track the results of our compaigns so that we can make adjustments as needed</Text>
