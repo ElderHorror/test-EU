@@ -4,11 +4,11 @@ import HeadingProp from "../../../../Components/Heading/HeadingProp";
 
 export default function About() {
   return (
-    <Box py={"7rem"} >
-       <Flex justifyContent={"space-between"}>
-         <Box>
+    <Box py={"7rem"}  >
+       <Flex justifyContent={{base:"center", md:"center",  lg:"space-between"}}>
+         <Box  >
             <Flex flexDir={"column"}  gap={10}>
-                <Box w={{base:330, md:500, lg:700 }}>
+                <Box w={{base:330, md:500, lg:500 }} >
                     <HeadingProp textt="About EU Study Assist" />
                 </Box>
 

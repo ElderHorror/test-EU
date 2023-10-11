@@ -17,10 +17,10 @@ export default function LoansProp(props:LoansPropProps) {
     <>
      {props.carousel.map(slide => {
         return (
-            <Box key={slide.id} mt={"3rem"} bgColor={" rgba(53, 97, 255, 1)"} bgImage={"/Ellipse 77.svg"} bgRepeat={"no-repeat"} borderRadius={"24px"}>
+            <Box  key={slide.id} mt={"3rem"} bgColor={" rgba(53, 97, 255, 1)"} bgImage={"/Ellipse 77.svg"} bgRepeat={"no-repeat"} borderRadius={"24px"}>
             <Flex flexDir={"column"} gap={8} py={"3rem"} px={"1rem"}>
                <Box>
-                 <Heading fontSize={"48px"} color={"white"} textAlign={"center"}>{slide.headingg}</Heading>
+                 <Heading fontSize={{base:"24px", md:"30px", lg:"48px"}} color={"white"} textAlign={"center"}>{slide.headingg}</Heading>
                </Box>
                 <Box>
                     <Text fontSize={"16px"} lineHeight={"30px"} color={"white"}>{slide.textt}</Text>
