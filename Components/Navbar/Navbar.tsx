@@ -2,6 +2,7 @@ import { Box, Container, Flex } from "@chakra-ui/react";
 import NavbarLogo from "./NavbarLogo";
 import NavbarList from "./NavbarList";
 import BtnBlue from "../Button/BtnBlue";
+import MobileNav from "./MobileNav";
 
 
 export default function Navbar() {
@@ -30,7 +31,10 @@ export default function Navbar() {
   return (
     <Box borderBottom={"1px solid"} borderColor={"gray.200"}>
      <Container maxW={"7xl"}>
-       <Flex justifyContent={"space-between"}  alignItems={"center"} py={"1rem"} as={"nav"}>
+         <Box>
+          <MobileNav />
+         </Box>
+       <Flex justifyContent={"space-between"} display={{base:"none", md:"none", lg:"flex"}} alignItems={"center"} py={"1rem"} as={"nav"}>
          <NavbarLogo />
         
            <Box display={{base:"none", md:"none", lg:"block"}}>
