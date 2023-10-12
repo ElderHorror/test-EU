@@ -29,7 +29,7 @@ export default function Navbar() {
         }
     ]
   return (
-    <Box borderBottom={"1px solid"} borderColor={"gray.200"}>
+    <Box borderBottom={"1px solid"} w={"100vw"} borderColor={"gray.200"}>
      <Container maxW={"7xl"}>
          <Box>
           <MobileNav />

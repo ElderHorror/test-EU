@@ -5,8 +5,8 @@ import { Plus_Jakarta_Sans } from "next/font/google";
 
 export default function HeropageBody() {
   return (
-    <>
-      <Flex justifyContent={"space-between"} >
+    <Box>
+      <Flex justifyContent={"space-between"} mt={".8rem"} >
         <Box alignSelf={"center"}>
           <Flex flexDir={"column"} gap={4}>
             <Box w={{base:250, md:500, lg:600}} >
@@ -28,6 +28,6 @@ export default function HeropageBody() {
             />
         </Box>
       </Flex>
-    </>
+    </Box>
   )
 }

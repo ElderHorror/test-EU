@@ -21,8 +21,8 @@ export default function Home() {
         <Loans />
         <Pros />
         <Reviews />
-        <Footer />
       </Container>
+      <Footer />
       </Box>
   )
 }

@@ -1,4 +1,4 @@
-import { Box, Flex, Image } from "@chakra-ui/react";
+import { Box, Container, Flex, Image } from "@chakra-ui/react";
 import BtnBlue from "../../../../Components/Button/BtnBlue";
 import Footerpropone from "../../../../Components/Footer/Footerpropone";
 import Footerpropthree from "../../../../Components/Footer/Footerpropthree";
@@ -60,6 +60,7 @@ export default function Footer() {
 
   return (
     <Box mt={"10rem"} w={"100vw"}  bgColor={"rgba(250, 250, 250, 1)"}  pt={"1rem"} pb={"2rem"}>
+       <Container maxW={"7xl"}>
       <Flex flexDir={{base:"column",md:"column", lg:"row"}} justifyContent={"space-between"}>
          <Box>
             <Flex flexDir={"column"} gap={12}>
@@ -114,6 +115,7 @@ export default function Footer() {
            </Flex>
          </Box>
       </Flex>
+      </Container>
     </Box>
   )
 }
