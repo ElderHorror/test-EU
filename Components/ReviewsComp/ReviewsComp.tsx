@@ -44,8 +44,12 @@ export default function ReviewsComp(props:ReviewsCompProps) {
        </Box>
        
        <Flex
-         w={"180%"}
-         gap={5}
+        //  w={"180%"}
+        w={"100%"}
+        alignItems="center"
+         gap={5} 
+         transform={`translateX(-${currentIndex * 100}%)`}
+         transition="transform 0.3s ease-in-out"
          >
             {props.data.map(item => {
                 return(

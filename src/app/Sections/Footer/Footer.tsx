@@ -59,7 +59,7 @@ export default function Footer() {
    ]
 
   return (
-    <Box mt={"10rem"} pb={"2rem"}>
+    <Box mt={"10rem"}  bgColor={"rgba(250, 250, 250, 1)"}  pt={"1rem"} pb={"2rem"}>
       <Flex flexDir={{base:"column",md:"column", lg:"row"}} justifyContent={"space-between"}>
          <Box>
             <Flex flexDir={"column"} gap={12}>

@@ -1,4 +1,4 @@
-import { Box, Flex } from "@chakra-ui/react";
+import { Box, Container, Flex } from "@chakra-ui/react";
 import LoansProp from "./LoansProp";
 
 
@@ -47,8 +47,11 @@ export default function LoansListCarousel() {
     ]
   return (
     <Box  
-    overflowX={"scroll"}
-    css={{
+      overflowX={"scroll"}
+      marginLeft="calc(50% - 50vw)"
+      marginRight="calc(50% - 50vw)"
+      width={"100vw"}
+      css={{
         '&::-webkit-scrollbar':{
           display: 'none'
         }
