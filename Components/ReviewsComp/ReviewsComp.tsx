@@ -35,9 +35,9 @@ export default function ReviewsComp(props:ReviewsCompProps) {
             </Box>
 
             <Box>
-                <Flex>
-                    <Button onClick={handlePrev} rightIcon={<ArrowBackIcon />}></Button>
-                    <Button onClick={handleNext} rightIcon={<ArrowForwardIcon />}></Button>
+                <Flex gap={3}>
+                    <Button className={"btn"} height={"70px"} alignItems={"center"} width={"70px"} borderRadius={"50px"} onClick={handlePrev} rightIcon={<ArrowBackIcon />}></Button>
+                    <Button className={"btn"} height={"70px"} width={"70px"} borderRadius={"50px"} onClick={handleNext} rightIcon={<ArrowForwardIcon />}></Button>
                 </Flex>
             </Box>
         </Flex>

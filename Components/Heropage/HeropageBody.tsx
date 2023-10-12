@@ -23,7 +23,7 @@ export default function HeropageBody() {
             <Image  
              src={"/Image.svg"}
              alt={"#"}
-             height={630}
+             height={600}
              objectFit={"contain"}
             />
         </Box>

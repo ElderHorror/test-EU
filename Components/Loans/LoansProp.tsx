@@ -19,10 +19,10 @@ export default function LoansProp(props:LoansPropProps) {
         return (
             <Box   key={slide.id} mt={"3rem"} bgColor={" rgba(53, 97, 255, 1)"} bgImage={"/Ellipse 77.svg"} bgRepeat={"no-repeat"} w={1000} borderRadius={"24px"}>
             <Flex flexDir={"column"} gap={8} py={"3rem"} px={"1rem"}>
-               <Box>
+               <Box h={100}>
                  <Heading fontSize={{base:"24px", md:"30px", lg:"48px"}} color={"white"} textAlign={"center"}>{slide.headingg}</Heading>
                </Box>
-                <Box>
+                <Box alignSelf={"center"}>
                     <Text fontSize={"16px"} lineHeight={"30px"} color={"white"}>{slide.textt}</Text>
                 </Box>
 
