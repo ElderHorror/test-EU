@@ -5,20 +5,25 @@ import HeadingProp from "../../../../Components/Heading/HeadingProp";
 export default function About() {
   return (
     <Box py={"7rem"}  >
-       <Flex justifyContent={{base:"center", md:"center",  lg:"space-between"}}>
-         <Box  >
-            <Flex flexDir={"column"}  gap={10}>
-                <Box w={{base:330, md:500, lg:500 }} >
+                <Box w={{base:330, md:500, lg:500 }} display={{base:"block", lg:"none"}} >
                     <HeadingProp textt="About EU Study Assist" />
                 </Box>
 
-                <Box w={{base:330, md:450, lg: 600}}>
-                   <Text textAlign={{base:"center", md:"left", lg:"left"}} fontSize={"18px"} lineHeight={"36px"}>EUStudyAssist exists to empower scholarship recipients during the pre-study period when stipends have yet to materialize. Our commitment is to eliminate financial barriers that hinder academic progress. We believe in equal educational opportunities for all and provide not just financial support, but also pathways to realizing educational dreams, making the journey to Europe stress-free.</Text>
+       <Flex flexDir={{base:"column-reverse", lg:"row"}} justifyContent={{base:"center", md:"center",  lg:"space-between"}}>
+          
+         <Box mt={{base:"1rem", lg:"none"}} >
+            <Flex flexDir={"column"}  gap={10}>
+                <Box w={{base:330, md:500, lg:500 }} display={{base:"none", lg:"block"}} >
+                    <HeadingProp textt="About EU Study Assist" />
+                </Box>
+
+                <Box margin={{base:"auto", lg:"none"}} w={{base:370, md:450, lg: 600}}>
+                   <Text textAlign={{base:"left", md:"left", lg:"left"}} fontSize={"18px"} lineHeight={"36px"}>EUStudyAssist exists to empower scholarship recipients during the pre-study period when stipends have yet to materialize. Our commitment is to eliminate financial barriers that hinder academic progress. We believe in equal educational opportunities for all and provide not just financial support, but also pathways to realizing educational dreams, making the journey to Europe stress-free.</Text>
                 </Box>
             </Flex>
          </Box>
 
-         <Box borderRadius={"30px"} display={{base:"none", md:"none", lg:"block"}}>
+         <Box mt={{base:"1rem", lg:"none"}} borderRadius={"30px"} >
             <Image 
              alt={"about Image"}
              src={"/AboutImg.svg"}

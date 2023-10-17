@@ -8,6 +8,7 @@ import Loans from './Sections/Loans/Loans'
 import Pros from './Sections/Pros/Pros'
 import Reviews from './Sections/Reviews/Reviews'
 import Footer from './Sections/Footer/Footer'
+import ReviewList from '../../Components/ReviewsComp/ReviewList'
 
 
 export default function Home() {
@@ -21,6 +22,7 @@ export default function Home() {
         <Loans />
         <Pros />
         <Reviews />
+        <ReviewList />
       </Container>
       <Footer />
       </Box>

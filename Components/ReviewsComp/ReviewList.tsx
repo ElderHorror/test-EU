@@ -1,8 +1,9 @@
 import { Box, Flex, Heading } from "@chakra-ui/react";
-import ReviewsComp from "../../../../Components/ReviewsComp/ReviewsComp";
+import ReviewMobile from "./ReviewMobile";
 
 
-export default function Reviews() {
+
+export default function ReviewList() {
    const client = [
     {
       id:'1',
@@ -35,8 +36,27 @@ export default function Reviews() {
    ]
 
   return (
-    <Box mt={"15rem"} mb={"3rem"} display={{base:"none", lg:"block"}}>
-      <ReviewsComp data={client} />
+    <Box mt={"15rem"} mb={"3rem"} display={{base:"block", lg:"none"}}>
+        <Box>
+        <Heading>What Our Client Said About Us</Heading>
+        </Box>
+
+      <Box
+             overflowX={"scroll"}
+             width={"100vw"}
+             css={{
+               '&::-webkit-scrollbar':{
+                 display: 'none'
+               }
+              }}
+      >
+        <Flex
+         w={"200%"}
+         columnGap={4}
+        >
+        <ReviewMobile data={client} />
+        </Flex>
+      </Box>
     </Box>
   )
 }

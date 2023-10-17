@@ -27,14 +27,14 @@ export default function ReviewsComp(props:ReviewsCompProps) {
         );
     };
   return (
-    <Box>
+    <Box display={{base:"none", lg:"block"}}>
        <Box>
         <Flex justifyContent={"space-between"}>
             <Box>
                 <Heading>What Our Client Said About Us</Heading>
             </Box>
 
-            <Box>
+            <Box display={{base:"none", lg:"block"}} >
                 <Flex gap={3}>
                     <Button className={"btn"} height={"70px"} alignItems={"center"} width={"70px"} borderRadius={"50px"} onClick={handlePrev} rightIcon={<ArrowBackIcon />}></Button>
                     <Button className={"btn"} height={"70px"} width={"70px"} borderRadius={"50px"} onClick={handleNext} rightIcon={<ArrowForwardIcon />}></Button>
@@ -43,12 +43,14 @@ export default function ReviewsComp(props:ReviewsCompProps) {
         </Flex>
        </Box>
        
+       <Box
+       display={{base:"none", lg:"block"}}
+       >
        <Flex
-        //  w={"180%"}
         w={"100%"}
         alignItems="center"
          gap={5} 
-         transform={`translateX(-${currentIndex * 100}%)`}
+         transform={ `translateX(-${currentIndex * 100}%)`}
          transition="transform 0.3s ease-in-out"
          >
             {props.data.map(item => {
@@ -58,10 +60,6 @@ export default function ReviewsComp(props:ReviewsCompProps) {
                    border={"1px solid"} borderColor={"transparent"} 
                    borderRadius={"20px"}  mt={"4rem"} 
                    key={props.data[currentIndex].id}
-                //    style={{
-                //     transform: `translateX(${(index - currentIndex) * 100}%)`,
-                //     transition: "transform 0.3s ease-in-out",
-                // }}
                    >
                      <Box py={"2rem"} px={"1rem"}>
                         <Flex gap={3} >
@@ -91,7 +89,9 @@ export default function ReviewsComp(props:ReviewsCompProps) {
                 )
             } )}
        </Flex>
+       </Box>
 
+      
     </Box>
   )
 }

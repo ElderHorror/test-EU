@@ -9,7 +9,7 @@ export default function NavbarLogo() {
        src={"/Logo.svg"}
        alt={"#"}
        objectFit={"contain"}
-       width={"223px"}
+       width={{base:"170px", lg:"223px"}}
        height={"36px"}
       />
     </Box>

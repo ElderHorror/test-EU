@@ -1,25 +1,25 @@
 import { Box, Flex, Heading, Image, Text } from "@chakra-ui/react";
 import BtnBlue from "../Button/BtnBlue";
-import { Plus_Jakarta_Sans } from "next/font/google";
+
 
 
 export default function HeropageBody() {
   return (
     <Box>
-      <Flex justifyContent={"space-between"} mt={".8rem"} >
+      <Flex flexDir={{ base:"column", lg:"row"}} justifyContent={"space-between"} mt={".8rem"} >
         <Box alignSelf={"center"}>
           <Flex flexDir={"column"} gap={4}>
-            <Box w={{base:250, md:500, lg:600}} >
-              <Heading  fontSize={{base:"30px", md:"50px", lg:"70px"}} as={"h1"}>Your Gateway To a Seamless Journey</Heading>
+            <Box w={{base:353, md:500, lg:600}} >
+              <Heading fontWeight={600} fontSize={{base:"54px", md:"64px", lg:"70px"}} as={"h1"}>Your Gateway To a Seamless Journey</Heading>
             </Box>
-            <Text>Empowering your Educational Journey</Text>
-             <Box mt={{base:".4rem", lg:"2rem"}} display={{base:"none", md:"block", lg:"block"}}>
+            <Text fontSize={"20px"} >Empowering your Educational Journey</Text>
+             <Box mt={{base:".4rem", lg:"2rem"}}>
               <BtnBlue  btnType="Apply"/>
             </Box>
           </Flex>
         </Box>
 
-        <Box display={{base:"none", md:"none", lg:"block"}}>
+        <Box margin={{base:"auto", lg:"none"}} >
             <Image  
              src={"/Image.svg"}
              alt={"#"}

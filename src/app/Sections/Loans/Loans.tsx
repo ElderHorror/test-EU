@@ -6,7 +6,7 @@ export default function Loans() {
   return (
     <Box py={"7rem"} >
        <Box>
-         <Heading color={"rgba(17, 41, 125, 1)"} textAlign={{base:"center", md:"left", lg:"left"}} fontWeight={700} fontSize={{base:"32px", md:"50px", lg:"64px"}}  lineHeight={"80.64px"}>Our Loan Service</Heading>
+         <Heading color={"rgba(17, 41, 125, 1)"} textAlign={{base:"left", md:"left", lg:"left"}} fontWeight={700} fontSize={{base:"42px", md:"50px", lg:"64px"}}  lineHeight={"80.64px"}>Our Loan Service</Heading>
        </Box>
 
        <Box>

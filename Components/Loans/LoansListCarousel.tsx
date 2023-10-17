@@ -48,8 +48,8 @@ export default function LoansListCarousel() {
   return (
     <Box  
       overflowX={"scroll"}
-      marginLeft="calc(50% - 50vw)"
-      marginRight="calc(50% - 50vw)"
+      marginLeft={{base:"none",lg:"calc(50% - 50vw)"}}
+      marginRight={{base:"none",lg:"calc(50% - 50vw)"}}
       width={"100vw"}
       css={{
         '&::-webkit-scrollbar':{
