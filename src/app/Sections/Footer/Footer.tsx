@@ -61,7 +61,7 @@ export default function Footer() {
   return (
     <Box mt={"10rem"} w={"100vw"}  bgColor={"rgba(250, 250, 250, 1)"}  pt={"1rem"} pb={"2rem"}>
        <Container maxW={"7xl"}>
-      <Flex flexDir={{base:"column",md:"column", lg:"row"}} justifyContent={"space-between"}>
+      <Flex flexDir={{base:"column",md:"column", lg:"row"}}  gap={{base:6, lg:"none"}} justifyContent={"space-between"}>
          <Box>
             <Flex flexDir={"column"} gap={12}>
                <Box>
@@ -72,7 +72,7 @@ export default function Footer() {
                  />
                </Box>
 
-               <Box>
+            <Box display={{base:"none", lg:"block"}} >
                 <Flex  justifyContent={{base:"none",  md:"space-around", lg:"space-around"}} gap={{base:13, md:0, lg:0}}>
                     <Box>
                         <Image 
@@ -94,15 +94,16 @@ export default function Footer() {
                     </Box>
                 </Flex>
                </Box>
-
+                <Box display={{base:"none", lg:"block"}}>
                <Box display={{base:"block", md:"grid", lg:"grid"}} mb={{base:"1rem",  md:".3rem", lg:".3rem"}} placeItems={"center"}>
                  <BtnBlue btnType="Contact Us" />
+               </Box>
                </Box>
             </Flex>
          </Box>
 
          <Box>
-           <Flex flexDir={{base:"column",md:"column", lg:"row"}} gap={65}>
+           <Flex flexDir={{base:"row",md:"row", lg:"row"}} gap={4}>
              <Box>
                 <Footerpropone propLink={footlinkone} />
              </Box>
@@ -114,6 +115,37 @@ export default function Footer() {
              </Box>
            </Flex>
          </Box>
+         
+         <Box display={{base:"block", lg:"none"}}>
+            <Flex flexDir={"column"} gap={5}>
+            <Box >
+                <Flex  justifyContent={{base:"none",  md:"space-around", lg:"space-around"}} gap={{base:13, md:0, lg:0}}>
+                    <Box>
+                        <Image 
+                          alt={"Instagram"}
+                          src={"/IG.svg"}
+                        />
+                    </Box>
+                    <Box>
+                        <Image 
+                          alt={"Twitter"}
+                          src={"/Twitter.svg"}
+                        />
+                    </Box>
+                    <Box>
+                        <Image 
+                          alt={"facebook"}
+                          src={"/FB.svg"}
+                        />
+                    </Box>
+                </Flex>
+             </Box>
+             <Box display={{base:"block", md:"grid", lg:"grid"}} mb={{base:"1rem",  md:".3rem", lg:".3rem"}} placeItems={"center"}>
+                 <BtnBlue btnType="Contact Us" />
+               </Box>
+            </Flex>
+         </Box>
+
       </Flex>
       </Container>
     </Box>
