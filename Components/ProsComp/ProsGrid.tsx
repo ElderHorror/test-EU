@@ -13,11 +13,11 @@ export default function ProsGrid() {
 
                 <Box>
                     <Flex flexDir={"column"} gap={3}>
-                       <Box>
-                         <Heading fontSize={{base:"25px", md:"50px", lg:"37px"}}>Expand Scholarship Accessibilty</Heading>
+                       <Box w={{base:"286.61px", lg:"445px"}}>
+                         <Heading fontSize={{base:"20px", md:"50px", lg:"37px"}}>Expand Scholarship Accessibilty</Heading>
                        </Box>
-                       <Box>
-                        <Text fontSize={"16px"}>WE meet with you to learn about your busines, your goals and your target audience</Text>
+                       <Box w={{base:"265px", lg:"432px"}}>
+                        <Text fontSize={{base:"10.31px", lg:"16px"}}>WE meet with you to learn about your busines, your goals and your target audience</Text>
                        </Box>
                     </Flex>
                 </Box>
@@ -30,11 +30,11 @@ export default function ProsGrid() {
 
                 <Box>
                     <Flex flexDir={"column"} gap={3}>
-                       <Box>
-                         <Heading fontSize={{base:"25px", md:"50px", lg:"37px"}}>Personalized Financial Guidance</Heading>
+                       <Box w={{base:"286.61px", lg:"445px"}}>
+                         <Heading fontSize={{base:"20px", md:"50px", lg:"37px"}}>Personalized Financial Guidance</Heading>
                        </Box>
-                       <Box>
-                        <Text fontSize={"16px"}>We develop a customized marketing strategy based on your unique needs and goals</Text>
+                       <Box w={{base:"265px", lg:"432px"}}>
+                        <Text fontSize={{base:"10.31px", lg:"16px"}}>We develop a customized marketing strategy based on your unique needs and goals</Text>
                        </Box>
                     </Flex>
                 </Box>
@@ -47,11 +47,11 @@ export default function ProsGrid() {
 
                 <Box>
                     <Flex flexDir={"column"} gap={3}>
-                       <Box>
-                         <Heading fontSize={{base:"25px", md:"50px", lg:"37px"}}>Empowerment Through Education</Heading>
+                       <Box w={{base:"286.61px", lg:"445px"}}>
+                         <Heading fontSize={{base:"20px", md:"50px", lg:"37px"}}>Empowerment Through Education</Heading>
                        </Box>
-                       <Box>
-                        <Text fontSize={"16px"}>We execute our strategy using the latest client marketing tools and techniques</Text>
+                       <Box w={{base:"265px", lg:"432px"}}>
+                        <Text fontSize={{base:"10.31px", lg:"16px"}}>We execute our strategy using the latest client marketing tools and techniques</Text>
                        </Box>
                     </Flex>
                 </Box>
@@ -63,11 +63,11 @@ export default function ProsGrid() {
 
                 <Box>
                     <Flex flexDir={"column"} gap={3}>
-                       <Box>
-                         <Heading fontSize={{base:"25px", md:"50px", lg:"37px"}}>Advocate For Equitable Education</Heading>
+                       <Box w={{base:"286.61px", lg:"445px"}}>
+                         <Heading fontSize={{base:"20px", md:"50px", lg:"37px"}}>Advocate For Equitable Education</Heading>
                        </Box>
-                       <Box>
-                        <Text fontSize={"16px"}>We track the results of our compaigns so that we can make adjustments as needed</Text>
+                       <Box w={{base:"265px", lg:"432px"}}>
+                        <Text fontSize={{base:"10.31px", lg:"16px"}}>We track the results of our compaigns so that we can make adjustments as needed</Text>
                        </Box>
                     </Flex>
                 </Box>

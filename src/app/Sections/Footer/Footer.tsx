@@ -1,4 +1,4 @@
-import { Box, Container, Flex, Image } from "@chakra-ui/react";
+import { Box, Container, Flex, Image, Text } from "@chakra-ui/react";
 import BtnBlue from "../../../../Components/Button/BtnBlue";
 import Footerpropone from "../../../../Components/Footer/Footerpropone";
 import Footerpropthree from "../../../../Components/Footer/Footerpropthree";
@@ -59,9 +59,9 @@ export default function Footer() {
    ]
 
   return (
-    <Box mt={"10rem"} w={"100vw"}  bgColor={"rgba(250, 250, 250, 1)"}  pt={"1rem"} pb={"2rem"}>
+    <Box mt={"10rem"} w={"100vw"}  bgColor={"rgba(250, 250, 250, 1)"}  pt={"1rem"} pb={"5rem"}>
        <Container maxW={"7xl"}>
-      <Flex flexDir={{base:"column",md:"column", lg:"row"}}  gap={{base:6, lg:"none"}} justifyContent={"space-between"}>
+      <Flex flexDir={{base:"column",md:"column", lg:"row"}}  gap={{base:12, lg:"none"}} justifyContent={"space-between"}>
          <Box>
             <Flex flexDir={"column"} gap={12}>
                <Box>
@@ -72,8 +72,8 @@ export default function Footer() {
                  />
                </Box>
 
-            <Box display={{base:"none", lg:"block"}} >
-                <Flex  justifyContent={{base:"none",  md:"space-around", lg:"space-around"}} gap={{base:13, md:0, lg:0}}>
+                <Box display={{base:"none", lg:"block"}} >
+                 <Flex  justifyContent={{base:"none",  md:"space-around", lg:"space-around"}} gap={{base:13, md:0, lg:0}}>
                     <Box>
                         <Image 
                           alt={"Instagram"}
@@ -103,14 +103,14 @@ export default function Footer() {
          </Box>
 
          <Box>
-           <Flex flexDir={{base:"row",md:"row", lg:"row"}} gap={4}>
-             <Box>
+           <Flex flexDir={{base:"row",md:"row", lg:"row"}} gap={{base:12, lg:5}}>
+             <Box w={{base:"84px", lg:"132px"}}>
                 <Footerpropone propLink={footlinkone} />
              </Box>
-             <Box>
+             <Box w={{base:"84px", lg:"132px"}}>
                 <FooterProptwo propLink={footlinktwo} />
              </Box>
-             <Box>
+             <Box w={{base:"84px", lg:"132px"}}>
                 <Footerpropthree propLink={footlinkthree} />
              </Box>
            </Flex>
@@ -148,6 +148,13 @@ export default function Footer() {
 
       </Flex>
       </Container>
+      <Box bgColor={"black"} py={"1.4rem"} mt={"2rem"}>
+        <Container maxW={"7xl"}>
+          <Box w={"213px"} margin={"auto"}>
+             <Text color={"white"} fontSize={"8.58px"}>© 2023 EDUSTUDY ASSIST, Inc. - All Rights Reserved</Text>
+          </Box>
+        </Container>
+      </Box>
     </Box>
   )
 }

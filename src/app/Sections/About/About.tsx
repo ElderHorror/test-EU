@@ -4,7 +4,7 @@ import HeadingProp from "../../../../Components/Heading/HeadingProp";
 
 export default function About() {
   return (
-    <Box py={"7rem"}  >
+    <Box py={{base:"2rem", lg:"7rem"}}  >
                 <Box w={{base:330, md:500, lg:500 }} display={{base:"block", lg:"none"}} >
                     <HeadingProp textt="About EU Study Assist" />
                 </Box>
@@ -17,8 +17,8 @@ export default function About() {
                     <HeadingProp textt="About EU Study Assist" />
                 </Box>
 
-                <Box margin={{base:"auto", lg:"none"}} w={{base:370, md:450, lg: 600}}>
-                   <Text textAlign={{base:"left", md:"left", lg:"left"}} fontSize={"18px"} lineHeight={"36px"}>EUStudyAssist exists to empower scholarship recipients during the pre-study period when stipends have yet to materialize. Our commitment is to eliminate financial barriers that hinder academic progress. We believe in equal educational opportunities for all and provide not just financial support, but also pathways to realizing educational dreams, making the journey to Europe stress-free.</Text>
+                <Box margin={{base:"auto", lg:"none"}} w={{base:363, md:450, lg: 600}}>
+                   <Text textAlign={{base:"left", md:"left", lg:"left"}} fontSize={{base:"16px",lg:"18px"}} lineHeight={{base:"22.34px", lg:"36px"}}>EUStudyAssist exists to empower scholarship recipients during the pre-study period when stipends have yet to materialize. Our commitment is to eliminate financial barriers that hinder academic progress. We believe in equal educational opportunities for all and provide not just financial support, but also pathways to realizing educational dreams, making the journey to Europe stress-free.</Text>
                 </Box>
             </Flex>
          </Box>
