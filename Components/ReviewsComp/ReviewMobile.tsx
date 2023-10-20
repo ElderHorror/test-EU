@@ -33,17 +33,17 @@ export default function ReviewMobile(props:ReviewMobileProps) {
                             <Box>
                                 <Flex flexDir={"column"}>
                                     <Box>
-                                     <Heading  fontWeight={500} fontSize={"28px"}>{item.name}</Heading>
+                                     <Heading  fontWeight={500} fontSize={{base:"18px", lg:"28px"}}>{item.name}</Heading>
                                    </Box>
                                    <Box>
-                                    <Text fontWeight={500} fontSize={"28px"}>{item.role}</Text>
+                                    <Text fontWeight={500} fontSize={{base:"18px", lg:"28px"}}>{item.role}</Text>
                                    </Box>
                                 </Flex>
                             </Box>
 
                         </Flex>
-                        <Box mt={"1rem"} w={400}>
-                            <Text>{item.review}</Text>
+                        <Box mt={"1rem"} w={{base:200,md:300,lg:400}}>
+                            <Text fontSize={{base:"11px", lg:"16px"}}>{item.review}</Text>
                         </Box>
                      </Box>
                 </Box>

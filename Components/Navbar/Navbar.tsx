@@ -37,7 +37,7 @@ export default function Navbar() {
             <NavbarList list={navLink} />
            </Box>
        
-          <Box>
+          <Box display={{base:"none", md:"none", lg:"block"}}>
             <BtnBlue btnType="Apply" />
           </Box>
        </Flex>
