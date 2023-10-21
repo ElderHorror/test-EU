@@ -59,7 +59,9 @@ export default function Footer() {
    ]
 
   return (
-    <Box mt={"10rem"} w={"100vw"}  bgColor={"rgba(250, 250, 250, 1)"}  pt={"1rem"} pb={"5rem"}>
+    <Box mt={"10rem"} w={"100vw"}  bgColor={"rgba(250, 250, 250, 1)"}  pt={"1rem"} 
+      pb={{ base:"5rem", lg:".4rem"}} 
+    >
        <Container maxW={"7xl"}>
       <Flex flexDir={{base:"column",md:"column", lg:"row"}}  gap={{base:12, lg:"none"}} justifyContent={"space-between"}>
          <Box>

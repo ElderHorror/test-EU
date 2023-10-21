@@ -29,7 +29,7 @@ export default function Navbar() {
         }
     ]
   return (
-    <Box borderBottom={"1px solid"} w={"100vw"} borderColor={"gray.200"}>
+    <Box borderBottom={"1px solid"} bgColor={"white"} zIndex={999} w={"100vw"} borderColor={"gray.200"} position={"fixed"}>
      <Container maxW={"7xl"}>
        <Flex justifyContent={"space-between"}  alignItems={"center"} py={"1rem"} as={"nav"}>
          <NavbarLogo />

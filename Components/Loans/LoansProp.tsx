@@ -17,12 +17,12 @@ export default function LoansProp(props:LoansPropProps) {
     <>
      {props.carousel.map(slide => {
         return (
-            <Box   key={slide.id} mt={"3rem"} bgColor={" rgba(53, 97, 255, 1)"} bgImage={"/Ellipse 77.svg"} bgRepeat={"no-repeat"} w={1000} borderRadius={"24px"}>
-            <Flex flexDir={"column"} gap={{base:1, lg:8}} py={{base:"1.5rem",lg:"3rem"}} px={"1rem"}>
+            <Box   key={slide.id} mt={"3rem"} bgColor={" rgba(53, 97, 255, 1)"} bgImage={"/Ellipse 77.svg"} bgRepeat={"no-repeat"} w={460} borderRadius={"24px"}>
+            <Flex flexDir={"column"} gap={{base:4, lg:8}} py={{base:"1.5rem",lg:"3rem"}} px={"1rem"}>
                <Box margin={{base:"auto", lg:"none"}} w={{base:200, lg:400}} h={100}>
                  <Heading fontSize={{base:"24px", md:"30px", lg:"48px"}} color={"white"} textAlign={"center"}>{slide.headingg}</Heading>
                </Box>
-                <Box alignSelf={"center"}>
+                <Box alignSelf={"center"} w={{base:300, md:300, lg:400}}>
                     <Text fontSize={"16px"} lineHeight={"30px"} color={"white"}>{slide.textt}</Text>
                 </Box>
 
