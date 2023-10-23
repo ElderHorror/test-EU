@@ -7,8 +7,13 @@
     box-sizing: border-box;
 }
 
+html{
+    scroll-behavior: smooth !important;
+}
+
 body{
     font-family: 'Plus Jakarta Sans';
+    scroll-behavior: smooth !important;
 }
 
 .btn:hover{

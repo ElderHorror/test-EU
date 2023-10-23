@@ -9,23 +9,28 @@ export default function Navbar() {
     const navLink = [
         {
             id:"1",
-            navLink:"Home"
+            navLink:"Home",
+            href: "#Heropage"
         },
         {
             id:"2",
-            navLink:"About Us"
+            navLink:"About Us",
+            href: "#About"
         },
         {
             id:"3",
-            navLink:"How To Apply"
+            navLink:"How To Apply",
+            href: "#"
         },
         {
             id:"4",
-            navLink:"Testimonial"
+            navLink:"Testimonial",
+            href: "#Reviews"
         },
         {
             id:"5",
-            navLink:"Contact Us"
+            navLink:"Contact Us",
+            href: "#"
         }
     ]
   return (

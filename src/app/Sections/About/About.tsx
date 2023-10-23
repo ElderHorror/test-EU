@@ -4,7 +4,7 @@ import HeadingProp from "../../../../Components/Heading/HeadingProp";
 
 export default function About() {
   return (
-    <Box py={{base:"2rem", lg:"7rem"}}  >
+    <Box py={{base:"2rem", lg:"7rem"}} id='About'  >
                 <Box w={{base:330, md:500, lg:500 }} display={{base:"block", lg:"none"}} >
                     <HeadingProp textt="About EU Study Assist" />
                 </Box>

@@ -35,7 +35,7 @@ export default function Reviews() {
    ]
 
   return (
-    <Box mt={"15rem"} mb={"3rem"} display={{base:"none", lg:"block"}}>
+    <Box mt={"15rem"} id="Reviews" mb={"3rem"} display={{base:"none", lg:"block"}}>
       <ReviewsComp data={client} />
     </Box>
   )
