@@ -59,7 +59,9 @@ export default function Footer() {
    ]
 
   return (
-    <Box mt={"10rem"} w={"100vw"}  bgColor={"rgba(250, 250, 250, 1)"}  pt={"1rem"} 
+    <Box mt={"10rem"} w={"100vw"} 
+     bgColor={"rgba(250, 250, 250, 1)"}  
+     pt={"1rem"} 
     >
        <Container maxW={"7xl"}>
       <Flex flexDir={{base:"column",md:"column", lg:"row"}}  gap={{base:12, lg:"none"}} justifyContent={"space-between"}>
@@ -103,8 +105,8 @@ export default function Footer() {
             </Flex>
          </Box>
 
-         <Box>
-           <Flex flexDir={{base:"row",md:"row", lg:"row"}} gap={{base:12, lg:5}}>
+         <Box >
+           <Flex  flexDir={{base:"row",md:"row", lg:"row"}} justifyContent={"space-between"} gap={{base:12, lg:16}}>
              <Box w={{base:"84px", lg:"132px"}}>
                 <Footerpropone propLink={footlinkone} />
              </Box>

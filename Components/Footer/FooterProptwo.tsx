@@ -11,7 +11,7 @@ export default function FooterProptwo(props:FooterProptwoProps) {
     <>
      {props.propLink.map(linkProp => {
        return (
-         <Box listStyleType={"none"} key={linkProp.id} mb={{base:".9rem", lg:"2rem"}}>
+         <Box listStyleType={"none"}  w={150} key={linkProp.id} mb={{base:".9rem", lg:"2rem"}}>
          <Link as={"li"} textDecor={"none"} fontSize={{base:"10px", lg:"16px"}} lineHeight={"20px"}>{linkProp.links}</Link>
         </Box>
         )
