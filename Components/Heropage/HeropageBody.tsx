@@ -10,7 +10,7 @@ export default function HeropageBody() {
         <Box alignSelf={"center"}>
           <Flex flexDir={"column"} gap={4}>
             <Box w={{base:353, md:500, lg:600}} >
-              <Heading  fontWeight={700} fontSize={{base:"54px", md:"64px", lg:"70px"}} >Your Gateway To A Seamless Journey</Heading>
+              <Heading as={"h1"} fontWeight={700} fontSize={{base:"54px", md:"64px", lg:"70px"}} >Your Gateway To A Seamless Journey</Heading>
             </Box>
             <Text fontSize={"20px"} >Empowering your Educational Journey</Text>
              <Box mt={{base:".4rem", lg:"2rem"}}>
