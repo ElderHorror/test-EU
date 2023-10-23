@@ -17,7 +17,7 @@ export default function ProsGrid() {
                          <Heading fontSize={{base:"20px", md:"50px", lg:"37px"}}>Expand Scholarship Accessibilty</Heading>
                        </Box>
                        <Box w={{base:"234px", lg:"432px"}} display={{base:"none", lg:"block"}}>
-                        <Text fontSize={{base:"10.31px", lg:"16px"}}>WE meet with you to learn about your busines, your goals and your target audience</Text>
+                        <Text fontSize={{base:"10.31px", lg:"16px"}}>WE meet with you to learn about your business, your goals and your target audience</Text>
                        </Box>
                     </Flex>
                 </Box>
