@@ -8,53 +8,64 @@ export default function Footer() {
    const footlinkone =[
     {
         id:"1",
-        links:"Work With Us"
+        links:"Work With Us",
+         href:"#"
     },
     {
         id:"2",
-        links:"Advertise With Us"
+        links:"Advertise With Us",
+        href:"#"
     },
     {
         id:"3",
-        links:"Support Us"
+        links:"Support Us",
+         href:"#"
     },
     {
         id:"4",
-        links:"Business Advices"
+        links:"Business Advices",
+        href:"#"
     }
    ]
 
    const footlinktwo = [
     {
         id:"1",
-        links:"Private Coach"
+        links:"Private Coach",
+         href:"#"
     },
     {
         id:"2",
-        links:"Our Work"
+        links:"Our Work",
+        href:"#"
     },
     {
         id:"3",
-        links:"Our Commitment"
+        links:"Our Commitment",
+        href: "#Commitment"
     },
     {
         id:"4",
-        links:"Our Team"
+        links:"Our Team",
+        href:"#"
     }
    ]
 
    const footlinkthree = [
     {
         id:"1",
-        links:"About"
+        links:"About",
+        href:"#About"
     },
     {
         id:"2",
-        links:"FAQs"
+        links:"FAQs",
+        href:"#"
     },
     {
         id:"3",
-        links:"Report a Bug"
+        links:"Report a Bug",
+         href:"#"
     }
    ]
 

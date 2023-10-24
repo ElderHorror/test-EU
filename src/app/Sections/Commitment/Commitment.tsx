@@ -4,7 +4,7 @@ import GridComp from "../../../../Components/Commitment/GridComp";
 
 export default function Commitment() {
   return (
-    <Box py={{base:"2rem", lg:"7rem"}} >
+    <Box py={{base:"2rem", lg:"7rem"}} id="Commitment">
       <Flex flexDir={{base:"column", md:"column", lg:"row"}} gap={{base:19, md:6, lg:1}} justifyContent={"space-between"}>
         <Box alignSelf={"center"}>
           <GridComp />

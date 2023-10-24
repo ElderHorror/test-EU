@@ -4,6 +4,7 @@ type FooterproponeProps = {
     propLink: {
         id:string
         links:string
+        href: string
     }[]
 }
 export default function Footerpropone(props:FooterproponeProps) {
@@ -12,7 +13,7 @@ export default function Footerpropone(props:FooterproponeProps) {
       {props.propLink.map(linkProp => {
         return (
             <Box listStyleType={"none"} w={150} key={linkProp.id} mb={{base:".9rem", lg:"2rem"}}>
-             <Link as={"li"} textDecor={"none"} fontSize={{base:"10px", lg:"16px"}} lineHeight={"20px"}>{linkProp.links}</Link>
+             <Link as={"li"} textDecor={"none"} fontSize={{base:"10px", lg:"16px"}} lineHeight={"20px"} href={linkProp.href}>{linkProp.links}</Link>
             </Box>
         )
       })}
