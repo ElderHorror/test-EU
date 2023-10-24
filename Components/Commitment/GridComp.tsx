@@ -1,4 +1,4 @@
-import { Box, Flex, SimpleGrid, Text } from "@chakra-ui/react";
+import {  SimpleGrid} from "@chakra-ui/react";
 import GridProp from "./GridProp";
 
 export default function GridComp() {

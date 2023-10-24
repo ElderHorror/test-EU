@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Text } from "@chakra-ui/react";
+import { Box, Flex, Text } from "@chakra-ui/react";
 import HeadingProp from "../Heading/HeadingProp";
 import BtnYellow from "../Button/BtnYellow";
 
