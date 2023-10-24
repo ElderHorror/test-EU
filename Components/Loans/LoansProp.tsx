@@ -23,7 +23,7 @@ export default function LoansProp(props:LoansPropProps) {
                <Box margin={{base:"auto", lg:"none"}} w={{base:200, lg:400}} h={100}>
                  <Heading fontSize={{base:"24px", md:"30px", lg:"48px"}} color={"white"} textAlign={"center"}>{slide.headingg}</Heading>
                </Box>
-                <Box alignSelf={"center"} w={{base:300, md:300, lg:400}} h={200}>
+                <Box alignSelf={"center"} w={{base:300, md:300, lg:400}} h={{base:290, lg:200}}>
                     <Text fontSize={"16px"} lineHeight={"30px"} color={"white"}>{slide.textt}</Text>
                 </Box>
 
