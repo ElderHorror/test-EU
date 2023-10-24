@@ -19,7 +19,7 @@ export default function Footer() {
     {
         id:"3",
         links:"Support Us",
-         href:"#"
+         href:"#Reviews"
     },
     {
         id:"4",
@@ -47,7 +47,7 @@ export default function Footer() {
     {
         id:"4",
         links:"Our Team",
-        href:"#"
+        href:"#Reviews"
     }
    ]
 

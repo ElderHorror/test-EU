@@ -1,4 +1,5 @@
-import { Box, Link } from "@chakra-ui/react"
+import { Box } from "@chakra-ui/react"
+import { Link } from "@chakra-ui/next-js"
 
 type FooterproponeProps = {
     propLink: {
@@ -13,7 +14,7 @@ export default function Footerpropone(props:FooterproponeProps) {
       {props.propLink.map(linkProp => {
         return (
             <Box listStyleType={"none"} w={150} key={linkProp.id} mb={{base:".9rem", lg:"2rem"}}>
-             <Link as={"li"} textDecor={"none"} fontSize={{base:"10px", lg:"16px"}} lineHeight={"20px"} href={linkProp.href}>{linkProp.links}</Link>
+             <Link  textDecor={"none"} fontSize={{base:"10px", lg:"16px"}} lineHeight={"20px"} href={linkProp.href}>{linkProp.links}</Link>
             </Box>
         )
       })}
