@@ -30,7 +30,7 @@ export default function Navbar() {
         {
             id:"5",
             navLink:"Contact Us",
-            href: "Olamideadu@gmail.com"
+            href: "mailto:Olamideadu@gmail.com"
         }
     ]
   return (
