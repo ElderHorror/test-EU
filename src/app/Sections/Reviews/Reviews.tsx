@@ -1,4 +1,4 @@
-import { Box, Flex, Heading } from "@chakra-ui/react";
+import { Box, Container, Flex, Heading } from "@chakra-ui/react";
 import ReviewsComp from "../../../../Components/ReviewsComp/ReviewsComp";
 
 
@@ -35,8 +35,35 @@ export default function Reviews() {
    ]
 
   return (
-    <Box mt={"15rem"} id="Reviews" mb={"3rem"} display={{base:"none", lg:"block"}}>
-      <ReviewsComp data={client} />
+    <Container maxW={'7xl'}>
+    <Box mt={"15rem"}  mb={"3rem"}>
+      
+      <Box>
+        <Heading>What Our Client Said About Us</Heading>
+        </Box>
+
+         
+        <Box  
+      overflowX={"scroll"}
+      marginLeft={{base:"none",lg:"calc(50% - 50vw)"}}
+      marginRight={{base:"none",lg:"calc(50% - 50vw)"}}
+      width={"100vw"}
+      css={{
+        '&::-webkit-scrollbar':{
+          display: 'none'
+        }
+       }}
+    >
+     <Flex 
+       w={{base:"330%", lg:"200%"}}
+       columnGap={4}
+     >
+       <ReviewsComp  data={client}/>
+     </Flex>  
+
     </Box>
+    </Box>
+    </Container>
   )
 }
+

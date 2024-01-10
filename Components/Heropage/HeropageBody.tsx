@@ -6,7 +6,7 @@ import BtnBlue from "../Button/BtnBlue";
 export default function HeropageBody() {
   return (
     <Box>
-      <Flex flexDir={{ base:"column", lg:"row"}} justifyContent={"space-between"} gap={{base:1, lg:"none"}} mt={".8rem"} >
+      <Flex flexDir={{ base:"column", lg:"row"}} justifyContent={"space-between"} gap={{base:1, lg:5}} mt={".8rem"} >
         <Box alignSelf={"center"}>
           <Flex flexDir={"column"} gap={4}>
             <Box w={{base:353, md:500, lg:600}} >

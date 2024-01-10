@@ -5,7 +5,13 @@ import HeropageBody from "../../../../Components/Heropage/HeropageBody";
 
 export default function Heropage() {
   return (
-    <Box pt={"5rem"} id='Heropage' pb={{base:"2rem", lg:"7rem"}} h={"100%"}>
+    <Box
+     pt={"5rem"} 
+     id='Heropage' pb={{base:"2rem", lg:"7rem"}} 
+    //  margin={'auto'} 
+     display={'grid'} placeContent={'center'}
+    //  width={'100%'} 
+     h={"100%"}>
        <HeropageBody />
     </Box>
   )

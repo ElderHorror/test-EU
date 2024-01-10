@@ -13,17 +13,26 @@ import ReviewList from '../../Components/ReviewsComp/ReviewList'
 
 export default function Home() {
   return (
-     <Box bgColor={" rgba(255, 255, 255, 1)"} overflow={"hidden"}>
+     <Box 
+     bgColor={" rgba(255, 255, 255, 1)"}  
+     overflow={"hidden"}>
        <Navbar />
-      <Container scrollBehavior={"smooth"} maxW={"7xl"} mx={{base:".6rem", md:"1rem",lg:"none"}}> 
-        <Heropage />
-        <Commitment />
+       <Heropage />
+       <Commitment />
         <About />
         <Loans />
         <Pros />
         <Reviews />
         <ReviewList />
-      </Container>
+      {/* <Container scrollBehavior={"smooth"} maxW={"7xl"} mx={{base:".6rem", md:"1rem",lg:"none"}}>  */}
+        {/* <Heropage /> */}
+        {/* <Commitment />
+        <About />
+        <Loans />
+        <Pros />
+        <Reviews />
+        <ReviewList /> */}
+      {/* </Container> */}
       <Footer />
       </Box>
   )

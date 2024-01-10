@@ -4,12 +4,12 @@ import HeadingProp from "../../../../Components/Heading/HeadingProp";
 
 export default function About() {
   return (
-    <Box py={{base:"2rem", lg:"7rem"}} id='About'  >
+    <Box py={{base:"2rem", lg:"7rem"}} id='About'  display={'grid'} placeContent={'center'}  >
                 <Box w={{base:330, md:500, lg:500 }} display={{base:"block", lg:"none"}} >
                     <HeadingProp textt="About EU Study Assist" />
                 </Box>
 
-       <Flex flexDir={{base:"column-reverse", lg:"row"}} justifyContent={{base:"center", md:"center",  lg:"space-between"}}>
+       <Flex flexDir={{base:"column-reverse", lg:"row"}} gap={{base:19, md:6, lg:9}} justifyContent={{base:"center", md:"center",  lg:"space-between"}}>
           
          <Box mt={{base:"1rem", lg:"none"}} >
             <Flex flexDir={"column"}  gap={10}>
