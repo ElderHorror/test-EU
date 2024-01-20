@@ -13,7 +13,7 @@ export default function BtnBlue(props:BtnBlueProps) {
       fontSize={"18px"} fontWeight={"normal"} 
       color={"white"} py={"1.7rem"} px={"1.7rem"} 
       bgColor={"rgba(52, 97, 255, 1)"}>
-        <Link href={"https://docs.google.com/forms/d/e/1FAIpQLSeLVRSChFawU5H543BkRzoPgie5vwwqMMUDRAvM6cz5RlRaEQ/viewform"}>
+        <Link href={"#loan_service"}>
         {props.btnType}
         </Link>
         </Button>

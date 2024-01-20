@@ -109,9 +109,9 @@ export default function Footer() {
                 </Flex>
                </Box>
                 <Box display={{base:"none", lg:"block"}}>
-               <Box display={{base:"block", md:"grid", lg:"grid"}} mb={{base:"1rem",  md:".3rem", lg:".3rem"}} placeItems={"center"}>
+               {/* <Box display={{base:"block", md:"grid", lg:"grid"}} mb={{base:"1rem",  md:".3rem", lg:".3rem"}} placeItems={"center"}>
                  <BtnBlue btnType="Contact Us" />
-               </Box>
+               </Box> */}
                </Box>
             </Flex>
          </Box>
@@ -154,9 +154,9 @@ export default function Footer() {
                     </Box>
                 </Flex>
              </Box>
-             <Box display={{base:"block", md:"grid", lg:"grid"}} mb={{base:"1rem",  md:".3rem", lg:".3rem"}} placeItems={"center"}>
+             {/* <Box display={{base:"block", md:"grid", lg:"grid"}} mb={{base:"1rem",  md:".3rem", lg:".3rem"}} placeItems={"center"}>
                  <BtnBlue btnType="Contact Us" />
-               </Box>
+               </Box> */}
             </Flex>
          </Box>
 

@@ -17,12 +17,14 @@
     "@vercel/analytics": "^1.1.1",
     "framer-motion": "^10.16.4",
     "next": "13.5.4",
+    "nodemailer": "^6.9.8",
     "phosphor-react": "^1.4.1",
     "react": "^18",
     "react-dom": "^18"
   },
   "devDependencies": {
     "@types/node": "^20",
+    "@types/nodemailer": "^6.4.14",
     "@types/react": "^18",
     "@types/react-dom": "^18",
     "eslint": "^8",
