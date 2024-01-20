@@ -58,10 +58,6 @@ export default function LoansProp(props:LoansPropProps) {
                      </Box>
                    </Flex>
                 </Box>
-
-                <Box>
-                    <NoarrowBtn />
-                </Box>
             </Flex>
          </Box>
         )
