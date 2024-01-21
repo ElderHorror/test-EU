@@ -53,26 +53,28 @@ export default function LoansListCarousel() {
     }
   ]
   return (
-    <Box
-      overflowX={"scroll"}
-      marginLeft={{ base: "none", lg: "calc(50% - 50vw)" }}
-      marginRight={{ base: "none", lg: "calc(50% - 50vw)" }}
-      width={"100vw"}
-      css={{
-        '&::-webkit-scrollbar': {
-          display: 'none'
-        }
-      }}
-    >
-      <Flex
-        w={{ base: "330%", lg: "200%" }}
-        columnGap={4}
+    <>
+      <Box
+        overflowX={"scroll"}
+        marginLeft={{ base: "none", lg: "calc(50% - 50vw)" }}
+        marginRight={{ base: "none", lg: "calc(50% - 50vw)" }}
+        width={"100vw"}
+        css={{
+          '&::-webkit-scrollbar': {
+            display: 'none'
+          }
+        }}
       >
-        <LoansProp carousel={loansBody} />
-      </Flex>
+        <Flex
+          w={{ base: "330%", lg: "200%" }}
+          columnGap={4}
+        >
+          <LoansProp carousel={loansBody} />
+        </Flex>
+      </Box>
       <Center m="2rem auto">
         <NoarrowBtn />
       </Center>
-    </Box>
+    </>
   )
 }
