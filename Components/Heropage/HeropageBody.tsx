@@ -13,9 +13,9 @@ export default function HeropageBody() {
               <Heading as={"h1"} fontWeight={700} fontSize={{ base: "54px", md: "64px", lg: "70px" }}>Your Gateway to a Seamless Educational Journey</Heading>
             </Box>
             <Text fontSize={"20px"} >Empowering your Educational Journey</Text>
-             <Box mt={{base:".4rem", lg:"2rem"}}>
+             {/* <Box mt={{base:".4rem", lg:"2rem"}}>
               <BtnBlue  btnType="Apply"/>
-            </Box>
+            </Box> */}
           </Flex>
         </Box>
 

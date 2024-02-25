@@ -13,9 +13,9 @@ export default function CommitmentText() {
           <Text as={"h1"} textAlign={{base:"center", md:"left", lg:"left"}} fontSize={{base:"16px", lg:"18px"}} lineHeight={{base:"23.04px", lg:"32px"}}>At EUStudyAssist, our goal is to support you in achieving your financial objectives. We are committed to providing the financial assistance you need to thrive on your educational journey. With EUStudyAssist, you can focus on your education, confident that your financial goals are within reach</Text>
         </Box>
 
-        <Box margin={{base:"auto", lg:"none"}} w={{base:330, md:500, lg:700 }} display={{base:"grid", md:"grid", lg:"block"}} placeItems={"center"}>
+        {/* <Box margin={{base:"auto", lg:"none"}} w={{base:330, md:500, lg:700 }} display={{base:"grid", md:"grid", lg:"block"}} placeItems={"center"}>
            <BtnYellow />
-        </Box>
+        </Box> */}
       </Flex>
     </Box>
   )

@@ -73,7 +73,7 @@ export default function LoansListCarousel() {
         </Flex>
       </Box>
       <Center m="2rem auto">
-        <NoarrowBtn />
+        {/* <NoarrowBtn /> */}
       </Center>
     </>
   )

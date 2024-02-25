@@ -12,7 +12,7 @@ type ReviewMobileProps ={
 
 export default function ReviewMobile(props:ReviewMobileProps) {
   return (
-    <>
+    <Box display={{base:'none', lg:'none'}}>
       {
         props.data.map(item => {
             return(
@@ -50,6 +50,6 @@ export default function ReviewMobile(props:ReviewMobileProps) {
             )
         })
       }
-    </>
+    </Box>
   )
 }

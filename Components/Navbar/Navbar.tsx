@@ -1,4 +1,4 @@
-import { Box, Container, Flex } from "@chakra-ui/react";
+import { Box, Container, Flex, Link } from "@chakra-ui/react";
 import NavbarLogo from "./NavbarLogo";
 import NavbarList from "./NavbarList";
 import BtnBlue from "../Button/BtnBlue";
@@ -42,7 +42,7 @@ export default function Navbar() {
             <NavbarList list={navLink} />
           </Box>
 
-          <Box display={{ base: "none", md: "none", lg: "block" }}>
+          <Box display={{ base: "block", md: "block", lg: "block" }}>
             <BtnBlue btnType="Apply" />
           </Box>
         </Flex>
