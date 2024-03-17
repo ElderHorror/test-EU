@@ -97,12 +97,12 @@ export default function Navbar(props: any) {
                 px={2}
                 key={link.id}
                 py={1}
-                onClick={() => { props.setPageMode(0) }}
+                onClick={() => { props.setPageMode(0); onClose() }}
                 rounded={'md'}
                 _hover={{
                   textDecoration: 'none',
                 }}
-                href={'#'}>
+                href={link.href}>
                 {link.navLink}
               </Text>
             ))}
