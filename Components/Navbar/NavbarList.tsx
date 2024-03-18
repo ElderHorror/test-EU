@@ -12,11 +12,11 @@ type NavbarListProps ={
 
 export default function NavbarList(props:NavbarListProps) {
   return (
-    <Flex flexDir={"row"} justifyContent={"space-between"} gap={8}>
+    <Flex flexDir={"row"} justifyContent={"space-between"} gap="1rem">
       {props.list.map(listLink => {
         return (
             <Box  as={"ul"} key={listLink.id}>
-               <Link href={listLink.href} fontSize={"16px"} as={"li"} textDecoration={"none"}>{listLink.navLink}</Link>
+               <Link href={listLink.href} fontSize={"14px"} as={"li"} textDecoration={"none"}>{listLink.navLink}</Link>
             </Box>
         )
       }) }

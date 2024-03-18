@@ -82,7 +82,7 @@ export default function Navbar(props: any) {
             bg="transparent"
             icon={isOpen ? <CloseIcon bg="transparent" _hover={{ bg: "transparent" }} /> : <HamburgerIcon bg="transparent" _hover={{ bg: "transparent" }} />}
             aria-label={'Open Menu'}
-            display={{ md: 'none' }}
+            display={{ lg: 'none' }}
 
             onClick={isOpen ? onClose : onOpen}
           />
