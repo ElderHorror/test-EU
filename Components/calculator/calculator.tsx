@@ -5,6 +5,7 @@ const initState = {
     amount: 0,
     percent: 0,
     month: 0,
+    mode: 0,
 }
 
 export default function Calculator() {
@@ -30,7 +31,7 @@ export default function Calculator() {
 
     useLayoutEffect(
         () => {
-            if (data.month > 1 && data.percent > 1 && data.amount) {
+            if (data.month > 1 && data.month <= 18 && data.percent > 1 && data.amount) {
                 // Convert percentage to decimal and then to monthly interest rate
                 const monthlyInterestRate: number = (data.percent / 100) / 12;
 
@@ -46,7 +47,7 @@ export default function Calculator() {
             <Text fontSize="1.25rem" fontWeight="700" id="contact_us" textAlign={"center"} my="2rem" >Service Calculator</Text>
             <form onSubmit={onSubmit}>
                 <FormLabel htmlFor="amount">
-                    Amount (max. £2000)
+                    Amount (max. £{`${data.mode == 4 ? 500 : 2000}`})
                 </FormLabel>
                 <Input
                     name="amount"
@@ -54,7 +55,7 @@ export default function Calculator() {
                     placeholder='amount' textColor={'black'}
                     _placeholder={{ fontSize: '10px', mt: '1rem', color: 'black' }}
                     type='number'
-                    max="2000"
+                    max={data.mode == 4 ? 500 : 2000}
                     id='amount'
                     step={1}
                     min={1}
@@ -90,22 +91,22 @@ export default function Calculator() {
                     _placeholder={{ fontSize: '10px', color: 'black' }}
                     type="number"
                     id='month'
-                    max="24"
+                    max={18}
                     min={1}
                     value={data.month}
                     onChange={handleChange}
                 />
                 <RadioGroup defaultValue='1' onChange={(e) => {
                     if (+e == 1) {
-                        setData({ ...data, percent: 5, month: 2 })
+                        setData({ ...data, mode: +e, percent: 5, month: 2 })
                     } else if (+e == 2) {
-                        setData({ ...data, percent: 8, month: 3 })
+                        setData({ ...data, mode: +e, percent: 8, month: 3 })
                     }
                     else if (+e == 3) {
-                        setData({ ...data, percent: 15, month: 2 })
+                        setData({ ...data, mode: +e, percent: 15, month: 2 })
                     }
                     else {
-                        setData({ ...data, percent: 7.5, month: 2 })
+                        setData({ ...data, amount: 500, mode: +e, percent: 7.5, month: 2 })
                     }
                 }}>
                     <Stack>
