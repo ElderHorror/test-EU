@@ -44,11 +44,11 @@ export default function Navbar(props: any) {
       navLink: "How To Apply",
       href: "#"
     },
-    {
-      id: "4",
-      navLink: "Testimonial",
-      href: "#Reviews"
-    },
+    // {
+    //   id: "4",
+    //   navLink: "Testimonial",
+    //   href: "#Reviews"
+    // },
     {
       id: "5",
       navLink: "Contact Us",

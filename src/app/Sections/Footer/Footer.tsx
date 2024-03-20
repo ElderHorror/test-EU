@@ -16,11 +16,11 @@ export default function Footer() {
       links: "Advertise With Us",
       href: "#"
     },
-    {
-      id: "3",
-      links: "Support Us",
-      href: "#Reviews"
-    },
+    // {
+    //   id: "3",
+    //   links: "Support Us",
+    //   href: "#Reviews"
+    // },
     {
       id: "4",
       links: "Business Advices",
@@ -44,11 +44,11 @@ export default function Footer() {
       links: "Our Commitment",
       href: "#Commitment"
     },
-    {
-      id: "4",
-      links: "Our Team",
-      href: "#Reviews"
-    }
+    // {
+    //   id: "4",
+    //   links: "Our Team",
+    //   href: "#Reviews"
+    // }
   ]
 
   const footlinkthree = [
@@ -65,7 +65,7 @@ export default function Footer() {
     {
       id: "3",
       links: "Report a Bug",
-      href: "#"
+      href: "#contact_us"
     }
   ]
 

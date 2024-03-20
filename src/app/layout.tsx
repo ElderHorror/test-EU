@@ -3,6 +3,7 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Providers from '../../Components/Provider/Providers'
 import { Analytics } from '@vercel/analytics/react';
+import { GoogleAnalytics } from '@next/third-parties/google'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -22,6 +23,7 @@ export default function RootLayout({
         <Providers>
           {children}
         </Providers>
+        <GoogleAnalytics gaId="G-SHF7JR3ZV1" />
         <Analytics />
       </body>
     </html>

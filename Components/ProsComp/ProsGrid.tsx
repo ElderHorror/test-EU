@@ -14,7 +14,7 @@ export default function ProsGrid() {
 
         <Flex flexDir={"column"} gap={3} justifyContent={{ sm: "center", md: "center" }}>
           <Box>
-            <Heading fontSize={{ base: "20px", lg: "37px" }}>Expand Scholarship Accessibilty</Heading>
+            <Heading fontSize={{ base: "20px", lg: "37px" }} marginRight={"0.5rem"}>Expand Scholarship Accessibilty</Heading>
           </Box>
           <Box w={{ base: "234px", lg: "432px" }} display={{ base: "none", lg: "block" }}>
             <Text fontSize={{ base: "10.31px", lg: "16px" }}>WE meet with you to learn about your business, your goals and your target audience</Text>
@@ -29,7 +29,7 @@ export default function ProsGrid() {
         </Box>
         <Flex flexDir={"column"} gap={3} justifyContent={{ sm: "center", md: "center" }}>
           <Box>
-            <Heading fontSize={{ base: "20px", lg: "37px" }}>Personalized Financial Guidance</Heading>
+            <Heading fontSize={{ base: "20px", lg: "37px" }} marginRight={"0.5rem"}>Personalized Financial Guidance</Heading>
           </Box>
           <Box w={{ base: "234px", lg: "432px" }} display={{ base: "none", lg: "block" }}>
             <Text fontSize={{ base: "10.31px", lg: "16px" }}>We develop a customized marketing strategy based on your unique needs and goals</Text>
@@ -44,7 +44,7 @@ export default function ProsGrid() {
 
         <Flex flexDir={"column"} gap={3} justifyContent={{ sm: "center", md: "center" }}>
           <Box>
-            <Heading fontSize={{ base: "20px", lg: "37px" }}>Empowerment Through Education</Heading>
+            <Heading fontSize={{ base: "20px", lg: "37px" }} marginRight={"0.5rem"}>Empowerment Through Education</Heading>
           </Box>
           <Box w={{ base: "234px", lg: "432px" }} display={{ base: "none", lg: "block" }}>
             <Text fontSize={{ base: "10.31px", lg: "16px" }}>We execute our strategy using the latest client marketing tools and techniques</Text>
@@ -59,7 +59,7 @@ export default function ProsGrid() {
 
         <Flex flexDir={"column"} gap={3} justifyContent={{ sm: "center", md: "center" }}>
           <Box>
-            <Heading fontSize={{ base: "20px", lg: "37px" }}>Advocate For Equitable Education</Heading>
+            <Heading fontSize={{ base: "20px", lg: "37px" }} marginRight={"0.5rem"}>Advocate For Equitable Education</Heading>
           </Box>
           <Box w={{ base: "234px", lg: "432px" }} display={{ base: "none", lg: "block" }}>
             <Text fontSize={{ base: "10.31px", lg: "16px" }}>We track the results of our compaigns so that we can make adjustments as needed</Text>

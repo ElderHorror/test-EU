@@ -20,7 +20,7 @@ export default function GridComp() {
         },
         {
             id:"4",
-            num:"24+",
+            num:"05+",
             words:"Loan Services"
         }
     ]

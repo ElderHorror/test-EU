@@ -28,7 +28,7 @@ export default function Home() {
         <About />
         <Loans />
         <Pros />
-        <Reviews />
+        {/* <Reviews /> */}
         <ReviewList />
         <GITright />
       </> : <>
@@ -43,7 +43,10 @@ export default function Home() {
         <Reviews />
         <ReviewList /> */}
       {/* </Container> */}
+      <Box onClick={() => setPageMode(0)}>
+
       <Footer />
     </Box>
+    </Box >
   )
 }
