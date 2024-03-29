@@ -44,11 +44,11 @@ export default function Navbar(props: any) {
       navLink: "How To Apply",
       href: "#"
     },
-    // {
-    //   id: "4",
-    //   navLink: "Testimonial",
-    //   href: "#Reviews"
-    // },
+    {
+      id: "4",
+      navLink: "Blog",
+      href: "https://www.honournaija.com.ng"
+    },
     {
       id: "5",
       navLink: "Contact Us",
@@ -89,7 +89,7 @@ export default function Navbar(props: any) {
         </Flex>
       </Container>
       {isOpen ? (
-        <Box pb={4} display={{ md: 'none' }}>
+        <Box pb={4} display={{ lg: 'none' }}>
           <VStack>
             {navLink.map((link, index) => (
               <Text
