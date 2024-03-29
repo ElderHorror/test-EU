@@ -6,44 +6,40 @@ import FooterProptwo from "../../../../Components/Footer/FooterProptwo";
 
 export default function Footer() {
   const footlinkone = [
-    {
-      id: "1",
-      links: "Work With Us",
-      href: "#"
-    },
-    {
-      id: "2",
-      links: "Advertise With Us",
-      href: "#"
-    },
+    // {
+    //   id: "1",
+    //   links: "Work With Us",
+    //   href: "#"
+    // },
+    // {
+    //   id: "2",
+    //   links: "Advertise With Us",
+    //   href: "#"
+    // },
     // {
     //   id: "3",
     //   links: "Support Us",
     //   href: "#Reviews"
     // },
-    {
-      id: "4",
-      links: "Business Advices",
-      href: "#"
-    }
+    // {
+    //   id: "4",
+    //   links: "Business Advices",
+    //   href: "#"
+    // }
   ]
 
-  const footlinktwo = [
-    {
-      id: "1",
-      links: "Private Coach",
-      href: "#"
-    },
-    {
-      id: "2",
-      links: "Our Work",
-      href: "#"
-    },
-    {
-      id: "3",
-      links: "Our Commitment",
-      href: "#Commitment"
-    },
+  const footlinkthree = [
+    // {
+    //   id: "1",
+    //   links: "Private Coach",
+    //   href: "#"
+    // },
+    // {
+    //   id: "2",
+    //   links: "Our Work",
+    //   href: "#"
+    // },
+
     // {
     //   id: "4",
     //   links: "Our Team",
@@ -51,16 +47,21 @@ export default function Footer() {
     // }
   ]
 
-  const footlinkthree = [
+  const footlinktwo = [
     {
       id: "1",
       links: "About",
       href: "#About"
     },
+    // {
+    //   id: "2",
+    //   links: "FAQs",
+    //   href: "#"
+    // },
     {
-      id: "2",
-      links: "FAQs",
-      href: "#"
+      id: "4",
+      links: "Our Commitment",
+      href: "#Commitment"
     },
     {
       id: "3",
@@ -118,15 +119,15 @@ export default function Footer() {
 
           <Box >
             <Flex flexDir={{ base: "row", md: "row", lg: "row" }} justifyContent={"space-between"} gap={{ base: 12, lg: 16 }}>
-              <Box w={{ base: "84px", lg: "132px" }}>
+              {/* <Box w={{ base: "84px", lg: "132px" }}>
                 <Footerpropone propLink={footlinkone} />
-              </Box>
+              </Box> */}
               <Box w={{ base: "84px", lg: "132px" }}>
                 <FooterProptwo propLink={footlinktwo} />
               </Box>
-              <Box w={{ base: "84px", lg: "132px" }}>
+              {/* <Box w={{ base: "84px", lg: "132px" }}>
                 <Footerpropthree propLink={footlinkthree} />
-              </Box>
+              </Box> */}
             </Flex>
           </Box>
 
