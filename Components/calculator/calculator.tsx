@@ -3,9 +3,9 @@ import { ChangeEvent, FormEvent, useLayoutEffect, useState } from "react";
 
 const initState = {
     amount: 0,
-    percent: 0,
-    month: 0,
-    mode: 0,
+    percent: 5,
+    month: 2,
+    mode: 1,
 }
 
 export default function Calculator() {
@@ -120,7 +120,7 @@ export default function Calculator() {
                             Flight Expense Loan
                         </Radio>
                         <Radio size='md' value='4' >
-                            Settler's Safety Net Loan
+                            Settler&apos;s Safety Net Loan
                         </Radio>
                     </Stack>
                 </RadioGroup>
@@ -147,25 +147,26 @@ export default function Calculator() {
                     </Flex>
                 </Button>
             </form>
+            {monthlyPayback > 0 && data.amount <= (data.mode == 4 ? 500 : 2000) ?
+                <Box>
+                    <Flex gap="1rem">
+                        <Text flexBasis={"45%"}>
+                            Service fee:
+                        </Text>
+                        <Text>
+                            £1.0
+                        </Text>
+                    </Flex>
+                    <Flex gap="1rem">
+                        <Text flexBasis={"45%"}>
+                            Monthly payback:
+                        </Text>
+                        <Text>
+                            {`£${monthlyPayback.toFixed(2)}/month`}
+                        </Text>
+                    </Flex>
+                </Box>
+                : null}
         </Box>
-        {monthlyPayback > 0 ?
-            <Box mt={{ base: '2rem ', lg: '0rem' }} margin={'auto'} p="1.5rem 2rem" borderRadius={"0.5rem"} maxW="30rem">
-                <Flex gap="1rem">
-                    <Text flexBasis={"45%"}>
-                        Service fee:
-                    </Text>
-                    <Text>
-                        £1.0
-                    </Text>
-                </Flex>
-                <Flex gap="1rem">
-                    <Text flexBasis={"45%"}>
-                        Monthly payback:
-                    </Text>
-                    <Text>
-                        {`£${monthlyPayback.toFixed(2)}/month`}
-                    </Text>
-                </Flex>
-            </Box> : null}
     </Box>);
 }

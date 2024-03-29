@@ -60,7 +60,7 @@ export default function Navbar(props: any) {
   return (
     <Box borderBottom={"1px solid"} bgColor={"white"} zIndex={999} w={"100vw"} borderColor={"gray.200"} position={"fixed"}>
       <Container maxW={"90rem"}>
-        <Flex justifyContent={"space-between"} alignItems={"center"} py={"1rem"} as={"nav"}>
+        <Flex justifyContent={"space-between"} alignItems={"center"} py={"1rem"} as={"nav"} onClick={() => { props.setPageMode(0) }}>
           <NavbarLogo />
           <Box display={{ base: "none", md: "none", lg: "block" }} onClick={() => { props.setPageMode(0) }}>
             <NavbarList list={navLink} />
@@ -111,7 +111,7 @@ export default function Navbar(props: any) {
               bgColor={"rgba(52, 97, 255, 1)"}
               fontWeight="bold"
               mr="0.5rem"
-              onClick={() => { props.setPageMode(1); onClose(); }}
+              onClick={(e) => { e.stopPropagation(); props.setPageMode(1); onClose(); }}
               background="linear-gradient(to right,#14532d, #eab308)">
               Loan Calculator
             </Button>
