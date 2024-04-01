@@ -16,7 +16,6 @@ import Calculator from '../../Components/calculator/calculator'
 
 export default function Home() {
   const [pageMode, setPageMode] = useState(0)
-  console.log({ pageMode })
   return (
     <Box
       bgColor={" rgba(255, 255, 255, 1)"}

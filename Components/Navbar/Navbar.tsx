@@ -66,7 +66,7 @@ export default function Navbar(props: any) {
             <NavbarList list={navLink} />
           </Box>
 
-          <Box display={{ base: "none", md: "none", lg: "block" }} onClick={() => { props.setPageMode(1) }}>
+          <Box display={{ base: "none", md: "none", lg: "block" }} onClick={(e) => { e.stopPropagation(); props.setPageMode(1) }}>
             <Button borderRadius={"full"} fontSize={"18px"}
               color={"white"} py={"1.7rem"} px={"1.7rem"}
               bgColor={"rgba(52, 97, 255, 1)"}

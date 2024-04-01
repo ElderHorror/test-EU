@@ -154,7 +154,7 @@ export default function Calculator() {
                             Service fee:
                         </Text>
                         <Text>
-                            £1.0
+                            £5.0
                         </Text>
                     </Flex>
                     <Flex gap="1rem">
