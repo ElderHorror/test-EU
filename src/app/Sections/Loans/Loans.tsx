@@ -16,7 +16,7 @@ export default function Loans() {
         </Box>
 
         <Box id="loan_service">
-          <Text fontWeight={500} fontSize={"18px"} lineHeight={"32px"} color={"rgba(0, 0, 0, 0.6)"}>Empowering Your Eductaional Future with Financial Solutions </Text>
+          <Text fontWeight={500} fontSize={"18px"} lineHeight={"32px"} color={"rgba(0, 0, 0, 0.6)"}>Empowering Your Educational Future with Financial Solutions </Text>
         </Box>
         <LoansListCarousel />
       </Box>
