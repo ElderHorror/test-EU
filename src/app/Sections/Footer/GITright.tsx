@@ -21,7 +21,7 @@ export default function GITright() {
             email: "",
             message: "",
           }}
-          onSubmit={async values => {
+          onSubmit={async (values,{ resetForm }) => {
             try {
               const res = await fetch('/api/submit', {
                 method: 'POST',
@@ -39,7 +39,8 @@ export default function GITright() {
                 title: "success",
                 description: "Message sent"
               })
-
+              
+              resetForm()
             } catch (error) {
               console.error('Error submitting the form:', error)
             }
