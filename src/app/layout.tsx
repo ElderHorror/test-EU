@@ -7,9 +7,18 @@ import { GoogleAnalytics } from '@next/third-parties/google'
 
 const inter = Inter({ subsets: ['latin'] })
 
+
 export const metadata: Metadata = {
-  title: 'EU Study Assist',
-  description: 'At EUStudyAssist, our goal is to support you in achieving your financial objectives.',
+  metadataBase: new URL("https://eustudyassist.com/"),
+  title:{
+    default:"EU Study assist",
+    template: '%s | AyobamiOki '
+  },
+  icons: "https://eustudyassist.vercel.app/image.png",
+  description: 'EUStudyAssist exists to empower scholarship recipients during the pre-study period when stipends have yet to materialize. Our commitment is to eliminate financial barriers that hinder academic progress. We believe in equal educational opportunities for all and provide not just financial support, but also pathways to realizing educational dreams, making the journey to Europe stress-free. ',
+  verification:{
+    google: 'google-site-verification=123123123123',
+  },
 }
 
 export default function RootLayout({

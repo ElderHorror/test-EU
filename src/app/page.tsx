@@ -28,7 +28,7 @@ export default function Home() {
         <Loans />
         <Pros />
         {/* <Reviews /> */}
-        <ReviewList />
+        {/* <ReviewList /> */}
         <GITright />
       </> : <>
         <Calculator />

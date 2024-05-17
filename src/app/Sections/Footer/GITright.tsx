@@ -11,7 +11,7 @@ export default function GITright() {
 
 
   return (
-    <Box mt={{ base: '2rem ', lg: '0rem' }} margin={'auto'} width={{ base: 'none', lg: '614px' }} >
+    <Box mt={{ base: '2rem ', lg: '0rem' }} margin={'auto'} width={{ base: 'none', lg: '614px' }}  py={"7rem"} px="1rem">
       <Text fontSize="3.5rem" fontWeight="700" id="contact_us" textAlign={"center"} my="2rem" >Contact US</Text>
       <Center>
 
@@ -53,7 +53,7 @@ export default function GITright() {
         >
           {({ handleSubmit, errors, touched, values, setFieldValue, setFieldTouched }) => (
             <form onSubmit={handleSubmit}>
-              <Center flexDirection={"column"}>
+              <Center flexDirection={"column"} p="0">
                 <FormControl
                   pb="1rem"
                   isInvalid={

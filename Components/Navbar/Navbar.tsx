@@ -73,7 +73,7 @@ export default function Navbar(props: any) {
               bgColor={"rgba(52, 97, 255, 1)"}
               fontWeight="bold"
               mr="0.5rem"
-              onClick={e=>e.stopPropagation()}
+              onClick={(e) => { e.stopPropagation(); props.setPageMode(1); onClose(); }}
               background="linear-gradient(to right,#14532d, #eab308)">
               Loan Calculator
             </Button>
