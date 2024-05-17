@@ -38,4 +38,5 @@ Check out our [Next.js deployment documentation](https://nextjs.org/docs/deploym
 ## FACEBOOK ACCOUNT DETAILS
 
 Email: eustudyassist@gmail.com
+
 password: studyassist@2000
