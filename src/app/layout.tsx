@@ -15,7 +15,7 @@ export const metadata: Metadata = {
     template: '%s | AyobamiOki '
   },
   manifest:"https://eustudyassist.com/site.webmanifest",
-  icons: "https://eustudyassist.vercel.app/image.png",
+  icons: "https://eustudyassist.com/image.png",
   description: 'EUStudyAssist exists to empower scholarship recipients during the pre-study period when stipends have yet to materialize. Our commitment is to eliminate financial barriers that hinder academic progress. We believe in equal educational opportunities for all and provide not just financial support, but also pathways to realizing educational dreams, making the journey to Europe stress-free. ',
   verification:{
     google: 'google-site-verification=123123123123',
