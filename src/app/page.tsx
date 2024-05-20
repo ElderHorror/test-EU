@@ -20,6 +20,9 @@ export default function Home() {
     <Box
       bgColor={" rgba(255, 255, 255, 1)"}
       overflow={"hidden"}>
+              <head>
+      <link rel="icon" href="/favicon2.ico"  />
+      </head>
       <Navbar setPageMode={setPageMode} />
       {pageMode === 0 ? <>
         <Heropage />

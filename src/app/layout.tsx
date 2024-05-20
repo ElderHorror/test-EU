@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://eustudyassist.com/"),
   title:{
     default:"EU Study assist",
-    template: '%s | AyobamiOki '
+    template: '%s | EU Study assist '
   },
   manifest:"https://eustudyassist.com/site.webmanifest",
   icons: "https://eustudyassist.com/image.png",
@@ -29,7 +29,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <link rel="icon" href="/favicon.ico"  />
+      <head>
+      <link rel="icon" href="/favicon2.ico"  />
+      </head>
       <body>
         <Providers>
           {children}
