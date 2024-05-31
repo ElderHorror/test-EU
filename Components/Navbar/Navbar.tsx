@@ -43,22 +43,22 @@ export default function Navbar(props: any) {
     {
       id: "1",
       navLink: "Home",
-      href: "#Heropage",
+      href: "/#Heropage",
     },
     {
       id: "2",
       navLink: "About Us",
-      href: "#About",
+      href: "/#About",
     },
     {
       id: "3",
       navLink: "Contact Us",
-      href: "#contact_us",
+      href: "/#contact_us",
     },
     {
       id: "5",
       navLink: "Resources",
-      href: "/bootcamp",
+      href: "./bootcamp",
     },
   ];
 
@@ -150,7 +150,7 @@ export default function Navbar(props: any) {
                 key={link.id}
                 py={1}
                 onClick={() => {
-                  !link.navLink.startsWith("/") ? props.setPageMode(0) : null;
+                  !link.navLink.startsWith(".") ? props.setPageMode(0) : null;
                   onClose();
                 }}
                 rounded={"md"}

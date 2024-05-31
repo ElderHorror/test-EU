@@ -134,11 +134,11 @@ export default function GITright() {
                 borderRadius={'none'} >
                 <Flex justifyContent={'center'} alignItems={'center'} gap={'12px'}>
                   <Box>
-                    <Image
+                    {/* <Image
                       alt={'#'}
                       src={'/Image/Dash.png'}
                       height={'2px'}
-                    />
+                    /> */}
                   </Box>
                   <Box>
                     <Text color={"white"} fontWeight={500} fontSize={'12px'}>Submit</Text>
