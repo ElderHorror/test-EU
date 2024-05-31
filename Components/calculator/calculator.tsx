@@ -42,7 +42,7 @@ export default function Calculator() {
                 setMonthlyPayback(monthlyPayback)
             }
         }, [data])
-    return (<Box minH="calc(100vh - 40rem)" mt="10rem">
+    return (<Box minH="calc(100vh - 30rem)" mt="10rem">
         <Box mt={{ base: '2rem ', lg: '0rem' }} margin={'auto'} p="1.5rem 2rem" border="1px solid black" borderRadius={"0.5rem"} maxW="30rem">
             <Text fontSize="1.25rem" fontWeight="700" id="contact_us" textAlign={"center"} my="2rem" >Service Calculator</Text>
             <form onSubmit={onSubmit}>

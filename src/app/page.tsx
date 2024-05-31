@@ -1,41 +1,51 @@
-'use client'
-import { Box, Container } from '@chakra-ui/react'
-import Heropage from './Sections/HeroSection/Heropage'
-import Navbar from '../../Components/Navbar/Navbar'
-import Commitment from './Sections/Commitment/Commitment'
-import About from './Sections/About/About'
-import Loans from './Sections/Loans/Loans'
-import Pros from './Sections/Pros/Pros'
-import Reviews from './Sections/Reviews/Reviews'
-import Footer from './Sections/Footer/Footer'
-import ReviewList from '../../Components/ReviewsComp/ReviewList'
-import GITright from './Sections/Footer/GITright'
-import { useState } from 'react'
-import Calculator from '../../Components/calculator/calculator'
-
+"use client";
+import { Box, Container } from "@chakra-ui/react";
+import Heropage from "@/Sections/HeroSection/Heropage";
+import Commitment from "@/Sections/Commitment/Commitment";
+import About from "@/Sections/About/About";
+import Loans from "@/Sections/Loans/Loans";
+import Pros from "@/Sections/Pros/Pros";
+import Reviews from "@/Sections/Reviews/Reviews";
+import Footer from "@/Sections/Footer/Footer";
+import ReviewList from "../../Components/ReviewsComp/ReviewList";
+import { useState } from "react";
+import { useHashFragment } from "../../Components/hooks";
+import GITright from "@/Sections/Footer/GITright";
+import Navbar from "../../Components/Navbar/Navbar";
+import Calculator from "../../Components/calculator/calculator";
 
 export default function Home() {
-  const [pageMode, setPageMode] = useState(0)
+  useHashFragment();
+  const [pageMode, _setPageMode] = useState(
+    typeof window !== "undefined"
+      ? +(localStorage?.getItem("pageMode") ?? "0")
+      : 0
+  );
+  const setPageMode = (mode: number) => {
+    _setPageMode(mode);
+    if (typeof window !== "undefined") {
+      localStorage?.setItem("pageMode", "" + mode);
+    }
+  };
   return (
-    <Box
-      bgColor={" rgba(255, 255, 255, 1)"}
-      overflow={"hidden"}>
-              <head>
-      <link rel="icon" href="/favicon2.ico"  />
-      </head>
+    <Box bgColor={" rgba(255, 255, 255, 1)"} overflow={"hidden"}>
       <Navbar setPageMode={setPageMode} />
-      {pageMode === 0 ? <>
-        <Heropage />
-        <Commitment />
-        <About />
-        <Loans />
-        <Pros />
-        {/* <Reviews /> */}
-        {/* <ReviewList /> */}
-        <GITright />
-      </> : <>
-        <Calculator />
-      </>}
+      {pageMode === 0 ? (
+        <>
+          <Heropage />
+          <Commitment />
+          <About />
+          <Loans />
+          <Pros />
+          {/* <Reviews /> */}
+          {/* <ReviewList /> */}
+          <GITright />
+        </>
+      ) : (
+        <>
+          <Calculator />
+        </>
+      )}
       {/* <Container scrollBehavior={"smooth"} maxW={"90rem"} mx={{base:".6rem", md:"1rem",lg:"none"}}>  */}
       {/* <Heropage /> */}
       {/* <Commitment />
@@ -46,9 +56,8 @@ export default function Home() {
         <ReviewList /> */}
       {/* </Container> */}
       <Box onClick={() => setPageMode(0)}>
-
-      <Footer />
+        <Footer />
+      </Box>
     </Box>
-    </Box >
-  )
+  );
 }

@@ -1,8 +1,9 @@
 import { Box, Container, Flex, Image, Text } from "@chakra-ui/react";
-import BtnBlue from "../../../../Components/Button/BtnBlue";
-import Footerpropone from "../../../../Components/Footer/Footerpropone";
-import Footerpropthree from "../../../../Components/Footer/Footerpropthree";
-import FooterProptwo from "../../../../Components/Footer/FooterProptwo";
+import BtnBlue from "../../../Components/Button/BtnBlue";
+import Footerpropone from "../../../Components/Footer/Footerpropone";
+import Footerpropthree from "../../../Components/Footer/Footerpropthree";
+import FooterProptwo from "../../../Components/Footer/FooterProptwo";
+
 
 export default function Footer() {
   const footlinkone = [
@@ -26,7 +27,7 @@ export default function Footer() {
     //   links: "Business Advices",
     //   href: "#"
     // }
-  ]
+  ];
 
   const footlinkthree = [
     // {
@@ -39,19 +40,18 @@ export default function Footer() {
     //   links: "Our Work",
     //   href: "#"
     // },
-
     // {
     //   id: "4",
     //   links: "Our Team",
     //   href: "#Reviews"
     // }
-  ]
+  ];
 
   const footlinktwo = [
     {
       id: "1",
       links: "About",
-      href: "#About"
+      href: "#About",
     },
     // {
     //   id: "2",
@@ -61,51 +61,51 @@ export default function Footer() {
     {
       id: "4",
       links: "Our Commitment",
-      href: "#Commitment"
+      href: "#Commitment",
     },
     {
       id: "3",
       links: "Report a Bug",
-      href: "#contact_us"
-    }
-  ]
+      href: "#contact_us",
+    },
+  ];
 
   return (
-    <Box mt={"10rem"} w={"100vw"}
+    <Box
+      mt={"10rem"}
+      w={"100vw"}
       bgColor={"rgba(250, 250, 250, 1)"}
       pt={"1rem"}
     >
       <Container maxW={"90rem"}>
-        <Flex flexDir={{ base: "column", md: "column", lg: "row" }} gap={{ base: 12, lg: "none" }} justifyContent={"space-between"}>
+        <Flex
+          flexDir={{ base: "column", md: "column", lg: "row" }}
+          gap={{ base: 12, lg: "none" }}
+          justifyContent={"space-between"}
+        >
           <Box>
             <Flex flexDir={"column"} gap={12}>
               <Box>
-                <Image
-                  alt={"logo"}
-                  src={"/Logo.svg"}
-                  objectFit={"contain"}
-                />
+                <Image alt={"logo"} src={"/Logo.svg"} objectFit={"contain"} />
               </Box>
 
-              <Box display={{ base: "none", lg: "block" }} >
-                <Flex justifyContent={{ base: "none", md: "space-around", lg: "space-around" }} gap={{ base: 13, md: 0, lg: 0 }}>
+              <Box display={{ base: "none", lg: "block" }}>
+                <Flex
+                  justifyContent={{
+                    base: "none",
+                    md: "space-around",
+                    lg: "space-around",
+                  }}
+                  gap={{ base: 13, md: 0, lg: 0 }}
+                >
                   <Box>
-                    <Image
-                      alt={"Instagram"}
-                      src={"/IG.svg"}
-                    />
+                    <Image alt={"Instagram"} src={"/IG.svg"} />
                   </Box>
                   <Box>
-                    <Image
-                      alt={"Twitter"}
-                      src={"/Twitter.svg"}
-                    />
+                    <Image alt={"Twitter"} src={"/Twitter.svg"} />
                   </Box>
                   <Box>
-                    <Image
-                      alt={"facebook"}
-                      src={"/FB.svg"}
-                    />
+                    <Image alt={"facebook"} src={"/FB.svg"} />
                   </Box>
                 </Flex>
               </Box>
@@ -117,8 +117,12 @@ export default function Footer() {
             </Flex>
           </Box>
 
-          <Box >
-            <Flex flexDir={{ base: "row", md: "row", lg: "row" }} justifyContent={"space-between"} gap={{ base: 12, lg: 16 }}>
+          <Box>
+            <Flex
+              flexDir={{ base: "row", md: "row", lg: "row" }}
+              justifyContent={"space-between"}
+              gap={{ base: 12, lg: 16 }}
+            >
               {/* <Box w={{ base: "84px", lg: "132px" }}>
                 <Footerpropone propLink={footlinkone} />
               </Box> */}
@@ -133,25 +137,23 @@ export default function Footer() {
 
           <Box display={{ base: "block", lg: "none" }}>
             <Flex flexDir={"column"} gap={5}>
-              <Box >
-                <Flex justifyContent={{ base: "none", md: "space-around", lg: "space-around" }} gap={{ base: 13, md: 0, lg: 0 }}>
+              <Box>
+                <Flex
+                  justifyContent={{
+                    base: "none",
+                    md: "space-around",
+                    lg: "space-around",
+                  }}
+                  gap={{ base: 13, md: 0, lg: 0 }}
+                >
                   <Box>
-                    <Image
-                      alt={"Instagram"}
-                      src={"/IG.svg"}
-                    />
+                    <Image alt={"Instagram"} src={"/IG.svg"} />
                   </Box>
                   <Box>
-                    <Image
-                      alt={"Twitter"}
-                      src={"/Twitter.svg"}
-                    />
+                    <Image alt={"Twitter"} src={"/Twitter.svg"} />
                   </Box>
                   <Box>
-                    <Image
-                      alt={"facebook"}
-                      src={"/FB.svg"}
-                    />
+                    <Image alt={"facebook"} src={"/FB.svg"} />
                   </Box>
                 </Flex>
               </Box>
@@ -160,16 +162,17 @@ export default function Footer() {
                </Box> */}
             </Flex>
           </Box>
-
         </Flex>
       </Container>
       <Box bgColor={"black"} py={"1.4rem"} mt={"2rem"}>
         <Container maxW={"90rem"}>
           <Box w={"213px"} margin={"auto"}>
-            <Text color={"white"} fontSize={"8.58px"}>© 2023 EDUSTUDY ASSIST, Inc. - All Rights Reserved</Text>
+            <Text color={"white"} fontSize={"8.58px"}>
+              © 2024 EDUSTUDY ASSIST, Inc. - All Rights Reserved
+            </Text>
           </Box>
         </Container>
       </Box>
     </Box>
-  )
+  );
 }
