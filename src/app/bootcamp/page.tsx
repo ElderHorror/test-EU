@@ -1,12 +1,27 @@
 "use client";
-import { Box, Button, Center, Container, Image, Text } from "@chakra-ui/react";
+import {
+  Box,
+  Button,
+  Center,
+  Container,
+  Image,
+  Input,
+  Modal,
+  ModalBody,
+  ModalCloseButton,
+  ModalContent,
+  ModalHeader,
+  ModalOverlay,
+  Text,
+} from "@chakra-ui/react";
 import Navbar from "../../../Components/Navbar/Navbar";
 import Footer from "@/Sections/Footer/Footer";
 import { useRouter } from "next/navigation";
-import Calculator from "../../../Components/calculator/calculator";
 
 export default function Bootcamp() {
   const router = useRouter();
+  const { isOpen, onOpen, onClose } = useDisclosure();
+
   return (
     <Box bgColor={" rgba(255, 255, 255, 1)"} overflow={"hidden"}>
       <Navbar
@@ -49,11 +64,43 @@ export default function Bootcamp() {
             Introduction to R for Research
           </Text>
           <Text fontSize={"1.2rem"}></Text>
-          <Button w="100%" bg={"#0F5EDB"} color={"white"} paddingY={"1.5rem"}>
+          <Button
+            w="100%"
+            bg={"#0F5EDB"}
+            color={"white"}
+            paddingY={"1.5rem"}
+            onClick={onOpen}
+          >
             Register for free
           </Button>
         </Box>
       </Box>
+      <Modal isOpen={isOpen} onClose={onClose}>
+        <ModalOverlay />
+        <ModalContent>
+          <ModalHeader>Book A seat</ModalHeader>
+          <ModalCloseButton />
+          <ModalBody>
+            <Input
+              name="name"
+              width={{ base: "347px", lg: "600px" }}
+              size={"sm"}
+              borderRadius={"none"}
+              placeholder="YOUR NAME"
+              textColor={"black"}
+              _placeholder={{ fontSize: "10px", mt: "1rem", color: "black" }}
+              type="text"
+              id="name"
+              sx={{
+                caretColor: "black",
+              }}
+            />
+          </ModalBody>
+          <Button colorScheme="blue" mr={3} onClick={onClose} w="100">
+            Register
+          </Button>
+        </ModalContent>
+      </Modal>
       <Box
         onClick={() => {
           localStorage.setItem("pageMode", "0");
