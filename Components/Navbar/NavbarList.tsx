@@ -1,6 +1,5 @@
 import { Link } from "@chakra-ui/next-js";
 import { Box, Flex } from "@chakra-ui/react";
-// import Reviews from "@/app/Sections/Reviews/Reviews"
 
 type NavbarListProps = {
   onClick: () => void;
