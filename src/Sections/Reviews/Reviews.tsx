@@ -1,5 +1,5 @@
 import { Box, Container, Flex, Heading } from "@chakra-ui/react";
-import ReviewsComp from "../../Components/ReviewsComp/ReviewsComp";
+import ReviewsComp from "../../../Components/ReviewsComp/ReviewsComp";
 
 export default function Reviews() {
   const client = [

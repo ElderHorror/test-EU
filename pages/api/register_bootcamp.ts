@@ -35,7 +35,7 @@ async function POST(request: Request) {
       from: process.env.FEEDBACK_EMAILL,
       to: email,
       subject:
-        "Invitation to The Introduction to R for Research. Although with that link they'll still need to register on zoom",
+        "Invitation to The Introduction to R for Research.",
       text: `Hi there, 
 
     You are invited to a Zoom meeting. 
