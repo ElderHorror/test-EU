@@ -37,7 +37,7 @@ export default function Bootcamp() {
       />
       <Box minH="calc(100vh - 30rem)" mt="10rem">
         <Text textAlign={"center"} fontSize={"1.25rem"} mb="1.5rem">
-          Tech Courses
+          Your Degree isn’t Enough
         </Text>
         <Text
           fontWeight={600}
@@ -46,10 +46,9 @@ export default function Bootcamp() {
           marginX="auto"
           fontSize={"4xl"}
         >
-          <span>
-            Get In-Demand Tech Skill and Thrive in Europe with EU Study Assist{" "}
-          </span>
-          <span style={{ color: "#0F5EDB" }}>Courses</span>
+          <span>Unlock the Skills for Your Dream</span>
+          <span style={{ color: "#0F5EDB", margin: "0 0.5rem" }}>School</span>
+          <span>worship!</span>
         </Text>
         <Text
           maxWidth={"40rem"}
@@ -58,9 +57,9 @@ export default function Bootcamp() {
           fontSize={"1rem"}
           mt="1rem"
         >
-          With our expert feedback, you can navigate the admissions process with
-          confidence and submit an application that truly reflects your
-          potential.
+          A bachelor’s degree is a great start, but in today’s competitive
+          landscape, it’s not enough to land that coveted scholarship. You need
+          relevant skills that make you stand out from the crowd.
         </Text>
 
         <Box mt="2rem" maxW="40rem" marginX={"auto"}>
