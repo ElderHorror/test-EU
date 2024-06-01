@@ -47,8 +47,7 @@ export default function Bootcamp() {
           fontSize={"4xl"}
         >
           <span>Unlock the Skills for Your Dream</span>
-          <span style={{ color: "#0F5EDB", margin: "0 0.5rem" }}>School</span>
-          <span>worship!</span>
+          <span style={{ color: "#0F5EDB", margin: "0 0.5rem" }}>Scholarship!!</span>
         </Text>
         <Text
           maxWidth={"40rem"}
