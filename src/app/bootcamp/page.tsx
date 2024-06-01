@@ -76,11 +76,11 @@ export default function Bootcamp() {
               <li>Perform basic statistical analysis</li>
               <li>Create stunning data visualizations</li>
             </ul>
-            <Text fontSize={"1.1rem"}>
-              Don’t just have a degree, have the skills to secure your dream
-              scholarship. this is the button below
-            </Text>
           </Box>
+          <Text fontSize={"1.1rem"}>
+            Don’t just have a degree, have the skills to secure your dream
+            scholarship. this is the button below
+          </Text>
           <Button
             w="100%"
             bg={"#0F5EDB"}
