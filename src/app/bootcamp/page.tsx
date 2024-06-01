@@ -35,7 +35,7 @@ export default function Bootcamp() {
           // router.push("/");
         }}
       />
-      <Box minH="calc(100vh - 30rem)" mt="10rem">
+      <Box minH="calc(100vh - 30rem)" mt="10rem" p="1rem">
         <Text textAlign={"center"} fontSize={"1.25rem"} mb="1.5rem">
           Your Degree isn’t Enough
         </Text>
@@ -47,13 +47,15 @@ export default function Bootcamp() {
           fontSize={"4xl"}
         >
           <span>Unlock the Skills for Your Dream</span>
-          <span style={{ color: "#0F5EDB", margin: "0 0.5rem" }}>Scholarship!!</span>
+          <span style={{ color: "#0F5EDB", margin: "0 0.5rem" }}>
+            Scholarship!!
+          </span>
         </Text>
         <Text
-          maxWidth={"40rem"}
+          maxWidth={"47.5rem"}
           marginX="auto"
           textAlign={"center"}
-          fontSize={"1rem"}
+          fontSize={"1.05rem"}
           mt="1rem"
         >
           A bachelor’s degree is a great start, but in today’s competitive
@@ -77,7 +79,7 @@ export default function Bootcamp() {
           </Box>
           <Text fontSize={"1.1rem"}>
             Don’t just have a degree, have the skills to secure your dream
-            scholarship. this is the button below
+            scholarship.
           </Text>
           <Button
             w="100%"

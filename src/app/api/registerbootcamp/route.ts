@@ -68,8 +68,7 @@ export async function POST(request: Request) {
     const mailOptions: SendMailOptions = {
       from: process.env.FEEDBACK_EMAILL,
       to: email,
-      subject:
-        "Invitation to The Introduction to R for Research.",
+      subject: "Invitation to The Introduction to R for Research.",
       text: `Hi there, 
 
     You are invited to a Zoom meeting. 
