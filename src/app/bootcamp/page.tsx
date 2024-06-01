@@ -87,6 +87,7 @@ export default function Bootcamp() {
             color={"white"}
             paddingY={"1.5rem"}
             onClick={onOpen}
+            marginY="0.5rem"
           >
             Register for free today!
           </Button>
