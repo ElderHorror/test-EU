@@ -65,10 +65,22 @@ export default function Bootcamp() {
 
         <Box mt="2rem" maxW="40rem" marginX={"auto"}>
           <Image alt="dd" src={"/" + "r.jpg"} />
-          <Text fontSize={"1.2rem"} my="1rem" fontWeight={600}>
+          <Text fontSize={"1.2rem"} mt="1rem" fontWeight={600}>
             Introduction to R for Research
           </Text>
-          <Text fontSize={"1.2rem"}></Text>
+          <Box padding={"0.5rem 1rem"}>
+            <Text fontSize={"1.2rem"}></Text>
+            <ul style={{ padding: "0rem 2.5rem 1rem" }}>
+              <li>Installing R and R Studio</li>
+              <li>Import and clean data</li>
+              <li>Perform basic statistical analysis</li>
+              <li>Create stunning data visualizations</li>
+            </ul>
+            <Text fontSize={"1.1rem"}>
+              Don’t just have a degree, have the skills to secure your dream
+              scholarship. this is the button below
+            </Text>
+          </Box>
           <Button
             w="100%"
             bg={"#0F5EDB"}
@@ -76,7 +88,7 @@ export default function Bootcamp() {
             paddingY={"1.5rem"}
             onClick={onOpen}
           >
-            Register for free
+            Register for free today!
           </Button>
         </Box>
       </Box>
