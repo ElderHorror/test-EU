@@ -119,9 +119,13 @@ export default function Bootcamp() {
                     const result = await res.json();
                     toast({
                       status: "success",
-                      title: "success",
-                      description: "Invite sent",
+                      title:
+                        "Check your mail or wait to be navigated to the registration Page",
+                      description: "Invite sent to your email",
                     });
+                    router.push(
+                      "https://ucph-ku.zoom.us/meeting/register/u5wodu-urTMvHtJGkqeDMWpBaoxW8gm1v9cT#/registration"
+                    );
                     onClose();
                     resetForm();
                   } catch (error) {
