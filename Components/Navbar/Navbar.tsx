@@ -58,7 +58,7 @@ export default function Navbar(props: any) {
     {
       id: "5",
       navLink: "Bootcamp",
-      href: "./bootcamp",
+      href: "/bootcamp",
     },
   ];
 
@@ -150,7 +150,7 @@ export default function Navbar(props: any) {
                 key={link.id}
                 py={1}
                 onClick={() => {
-                  !link.navLink.startsWith(".") ? props.setPageMode(0) : null;
+                  link.navLink.startsWith("/#") ? props.setPageMode(0) : null;
                   onClose();
                 }}
                 rounded={"md"}

@@ -19,7 +19,7 @@ export default function NavbarList(props: NavbarListProps) {
             as={"ul"}
             key={listLink.id}
             onClick={() =>
-              listLink.href.startsWith(".") ? null : props.onClick()
+              !listLink.href.startsWith("/#") ? null : props.onClick()
             }
           >
             <Link
