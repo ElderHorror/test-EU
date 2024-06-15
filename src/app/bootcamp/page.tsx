@@ -86,10 +86,10 @@ export default function Bootcamp() {
             bg={"#0F5EDB"}
             color={"white"}
             paddingY={"1.5rem"}
-            onClick={onOpen}
+            onClick={() => router.push("/courses/01")}
             marginY="0.5rem"
           >
-            Register for free today!
+            Register
           </Button>
         </Box>
       </Box>
