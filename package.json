@@ -15,7 +15,7 @@
     "@emotion/react": "^11.11.1",
     "@emotion/styled": "^11.11.0",
     "@next/third-parties": "^14.1.4",
-    "@paystack/inline-js": "2.12.6",
+    "@paystack/inline-js": "^2.19.0",
     "@vercel/analytics": "^1.1.1",
     "formik": "^2.4.5",
     "framer-motion": "^10.16.4",
