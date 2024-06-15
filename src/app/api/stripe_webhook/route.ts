@@ -65,6 +65,7 @@ const validateStripPayload = async (req: Request) => {
   let event: any;
 
   const receive = await req.text();
+  console.log({ receive });
   if (webhookSecret) {
     try {
       event = await stripe.webhooks.constructEvent(
