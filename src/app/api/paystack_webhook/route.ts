@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { SendMailOptions } from "nodemailer";
 import { emailTransporter } from "../../../../Components/email";
+import { createHmac } from "crypto";
 
 const buildMail = (firstName: string) =>
   `
@@ -109,15 +110,27 @@ export interface PaystackChargeSuccessEvent {
   data: PaystackData;
 }
 
+export async function GET(req: Request) { 
+  return NextResponse.json({ message: "welcome" });
+}
+
 export async function POST(req: Request) {
   const data: PaystackChargeSuccessEvent = await req.json();
   const signature = req.headers.get("x-paystack-signature") as string;
 
-  // if (!verify(eventData, signature)) {
-  //   return res.sendStatus(400)
-  // }
-
+  function verify(eventData: any, signature: string): boolean {
+    const hmac = createHmac("sha512", process.env.PAYSTACK_SECRET ?? "");
+    const expectedSignature = hmac
+      .update(JSON.stringify(eventData))
+      .digest("hex");
+    return expectedSignature === signature;
+  }
   console.log({ fullData: JSON.stringify(data) });
+
+  if (!verify(data, signature)) {
+    return NextResponse.json({ message: "Email sent successfully" });
+  }
+
   try {
     if (data.event === "charge.success") {
       const reference = data.data.reference;
@@ -135,6 +148,5 @@ export async function POST(req: Request) {
   } catch (e) {
     console.log(e);
   }
-
   return NextResponse.json({ message: "Email sent successfully" });
 }

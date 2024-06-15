@@ -73,7 +73,7 @@ export default function CoursesHero(props: CoursesHeroProps) {
         >
           <Text>Price</Text>
           <Text fontSize="1.3rem">
-            {props.countryCode === "NG" ? "NGN 50,000" : "$ 50"}
+            {props.countryCode === "NG" ? "NGN 30,000" : "$ 50.00 "}
           </Text>
         </Box>
       </Box>

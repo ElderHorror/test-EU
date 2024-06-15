@@ -307,7 +307,7 @@ export default function Bootcamp() {
                 >
                   <Text>Course Fee</Text>
                   <Text>
-                    {data.country_code === "NG" ? "NGN 50,000" : "$ 50"}
+                    {data.country_code === "NG" ? "NGN 30,000" : "$ 50"}
                   </Text>
                 </Flex>
               </Box>
