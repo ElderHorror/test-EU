@@ -14,7 +14,7 @@ const webhookStripe = async (req: Request) => {
   }
 };
 
-export const processStripePayment = async (
+const processStripePayment = async (
   data: any,
   eventType: any,
   helperStripePayment: (email: string, firstName: string) => void
