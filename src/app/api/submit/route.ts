@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import nodemailer, { Transporter, SendMailOptions } from "nodemailer";
+import { emailTransporter } from "../../../../Components/email";
 
 type Feedback = {
   name?: string;
@@ -7,14 +8,6 @@ type Feedback = {
   message?: string;
 };
 
-// Configure Nodemailer with your email service credentials
-export const emailTransporter: Transporter = nodemailer.createTransport({
-  service: "gmail",
-  auth: {
-    user: process.env.FEEDBACK_EMAIL,
-    pass: process.env.FEEDBACK_PASSWORD,
-  },
-});
 export async function POST(request: Request) {
   try {
     const data: Feedback = await request.json();

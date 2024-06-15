@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import { SendMailOptions } from "nodemailer";
+import { emailTransporter } from "../../../../Components/email";
 
 const buildMail = (firstName: string) =>
   `
@@ -128,6 +129,8 @@ export async function POST(req: Request) {
         subject: "Welcome to the “R for Research",
         html: buildMail(data.data.metadata.firstName),
       };
+      // Send the email
+      await emailTransporter.sendMail(mailOptions);
     }
   } catch (e) {
     console.log(e);

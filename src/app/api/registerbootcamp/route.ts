@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import nodemailer, { Transporter, SendMailOptions } from "nodemailer";
-import { emailTransporter } from "../submit/route";
+import { emailTransporter } from "../../../../Components/email";
 type Feedback = {
   email: string;
 };
