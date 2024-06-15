@@ -26,7 +26,7 @@ const processStripePayment = async (
         try {
           const { email, firstName } =
             data.invoice_creation.invoice_data.metadata;
-          console.log(data.invoice_creation.invoice_data.metadata);
+          console.log(data.invoice_creation.invoice_data);
           await helperStripePayment(email, firstName);
         } catch (err: any) {
           console.log(err);
@@ -87,6 +87,8 @@ export async function GET(req: Request) {
 }
 
 const helperStripePayment = async (email: string, firstName: string) => {
+  console.log({ email, firstName });
+
   // Define the email content
   const mailOptions: SendMailOptions = {
     from: process.env.FEEDBACK_EMAILL,

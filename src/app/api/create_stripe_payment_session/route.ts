@@ -1,7 +1,6 @@
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
 
-
 function generateRandomString(length: number = 6, prefix = ""): string {
   const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   let result = prefix;
@@ -47,7 +46,7 @@ const getStripeOrder = async (email: string, metadata: any) => {
     invoice_creation: {
       enabled: true,
       invoice_data: {
-        metadata: {},
+        metadata: metadata,
       },
     },
     line_items: [
@@ -88,6 +87,7 @@ export async function POST(request: Request) {
         { status: 500 }
       );
     }
+    console.log({ email, metadata });
     const { url } = await getStripeOrder(email, metadata);
     return NextResponse.json({ message: "success", url });
   } catch (error) {
