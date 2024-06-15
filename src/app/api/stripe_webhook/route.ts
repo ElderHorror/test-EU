@@ -35,6 +35,30 @@ const processStripePayment = async (
       .catch((err: any) => console.log(err));
   }
 };
+async function readableStreamToString(
+  readableStream: ReadableStream<Uint8Array> | string
+): Promise<string> {
+  if (typeof readableStream === "string") {
+    return readableStream;
+  }
+  const reader = readableStream.getReader();
+  let decoder = new TextDecoder("utf-8");
+  let result = "";
+
+  try {
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) break;
+      result += decoder.decode(value);
+    }
+  } catch (error) {
+    console.error("Error reading stream:", error);
+  } finally {
+    reader.releaseLock();
+  }
+
+  return result;
+}
 
 const validateStripPayload = async (req: Request) => {
   const webhookSecret = process.env.STRIPE_WEBHOOK;
@@ -43,7 +67,7 @@ const validateStripPayload = async (req: Request) => {
   if (webhookSecret) {
     try {
       event = await stripe.webhooks.constructEvent(
-        req.body ?? ("" as any),
+        await readableStreamToString(req.body ?? ""),
         req.headers.get("stripe-signature") as any,
         webhookSecret
       );
