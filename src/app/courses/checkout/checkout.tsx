@@ -74,30 +74,50 @@ export default function Bootcamp() {
                   }}
                   onSubmit={async (values, { resetForm }) => {
                     try {
-                      const _payStack = new PaystackPop();
-                      _payStack.newTransaction({
-                        key: process.env.NEXT_PUBLIC_PAYSTACK_KEY,
-                        amount: "3000000",
-                        currency: "NGN",
-                        email: values.email,
-                        firstname: values?.firstName,
-                        lastname: values?.lastName,
-                        // reference: _request.paystackOrder.reference,
-                        metadata: values,
-                        onLoad() {},
-                        onSuccess(transaction: any) {
-                          resetForm();
+                      if (data.country_code == "NGxxx") {
+                        const _payStack = new PaystackPop();
+                        _payStack.newTransaction({
+                          key: process.env.NEXT_PUBLIC_PAYSTACK_KEY,
+                          amount: "3000000",
+                          currency: "NGN",
+                          email: values.email,
+                          firstname: values?.firstName,
+                          lastname: values?.lastName,
+                          // reference: _request.paystackOrder.reference,
+                          metadata: values,
+                          onLoad() {},
+                          onSuccess(transaction: any) {
+                            resetForm();
 
-                          if (transaction) {
-                            // Add router query
-                            setTimeout(() => {
-                              router.push("/courses/01");
-                            }, 30000);
+                            if (transaction) {
+                              // Add router query
+                              setTimeout(() => {
+                                router.push("/courses/01");
+                              }, 30000);
+                            }
+                          },
+                          onCancel() {},
+                          onerror() {},
+                        });
+                      } else {
+                        const res = await fetch(
+                          "/api/create_stripe_payment_session",
+                          {
+                            method: "POST",
+                            headers: {
+                              "Content-Type": "application/json",
+                            },
+                            body: JSON.stringify({
+                              email: values.email,
+                              metadata: values,
+                            }),
                           }
-                        },
-                        onCancel() {},
-                        onerror() {},
-                      });
+                        );
+
+                        const result = await res.json();
+                        console.log(result);
+                        router.push(result.url);
+                      }
                       resetForm();
                     } catch (error) {
                       console.error("Error submitting the form:", error);
