@@ -64,10 +64,11 @@ const validateStripPayload = async (req: Request) => {
   const webhookSecret = process.env.STRIPE_WEBHOOK;
   let event: any;
 
+  const receive = await req.text();
   if (webhookSecret) {
     try {
       event = await stripe.webhooks.constructEvent(
-        await req.text(),
+        receive,
         req.headers.get("stripe-signature") as any,
         webhookSecret
       );
@@ -102,7 +103,7 @@ export async function POST(request: Request) {
     console.log({ data: stripeData, eventType });
 
     await processStripePayment(stripeData, eventType, helperStripePayment);
-    NextResponse.json({ message: "success" });
+    return NextResponse.json({ message: "success" });
   } catch (error) {
     console.log(error);
     return NextResponse.json({ error: `Failed: ${error}` }, { status: 500 });
