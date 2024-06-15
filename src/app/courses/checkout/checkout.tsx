@@ -74,7 +74,7 @@ export default function Bootcamp() {
                   }}
                   onSubmit={async (values, { resetForm }) => {
                     try {
-                      if (data.country_code == "NGxxx") {
+                      if (data.country_code == "NG") {
                         const _payStack = new PaystackPop();
                         _payStack.newTransaction({
                           key: process.env.NEXT_PUBLIC_PAYSTACK_KEY,
@@ -116,7 +116,7 @@ export default function Bootcamp() {
 
                         const result = await res.json();
                         console.log(result);
-                        router.push(result.url);
+                        await router.push(result.url);
                       }
                       resetForm();
                     } catch (error) {
