@@ -110,6 +110,10 @@ export interface PaystackChargeSuccessEvent {
   data: PaystackData;
 }
 
+export async function GET(req: Request) { 
+  return NextResponse.json({ message: "welcome" });
+}
+
 export async function POST(req: Request) {
   const data: PaystackChargeSuccessEvent = await req.json();
   const signature = req.headers.get("x-paystack-signature") as string;
@@ -121,12 +125,12 @@ export async function POST(req: Request) {
       .digest("hex");
     return expectedSignature === signature;
   }
+  console.log({ fullData: JSON.stringify(data) });
 
   if (!verify(data, signature)) {
     return NextResponse.json({ message: "Email sent successfully" });
   }
 
-  console.log({ fullData: JSON.stringify(data) });
   try {
     if (data.event === "charge.success") {
       const reference = data.data.reference;
