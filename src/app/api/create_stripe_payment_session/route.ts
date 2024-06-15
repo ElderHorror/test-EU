@@ -66,8 +66,8 @@ const getStripeOrder = async (email: string, metadata: any) => {
     ],
     mode: "payment",
     customer: customer.id,
-    success_url: `https://eustudyassit.com/courses/01`,
-    cancel_url: `https://eustudyassit.com/courses/01`,
+    success_url: `https://eustudyassist.com/courses/01`,
+    cancel_url: `https://eustudyassist.com/courses/01`,
   });
   return { url: session.url };
 };
