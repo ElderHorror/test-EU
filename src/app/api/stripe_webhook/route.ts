@@ -99,7 +99,6 @@ const helperStripePayment = async (email: string, firstName: string) => {
 };
 export async function POST(request: Request) {
   try {
-    console.log({ fullData: await request.json() });
     const { data: stripeData, eventType } = await validateStripPayload(request);
     console.log({ data: stripeData, eventType });
 
