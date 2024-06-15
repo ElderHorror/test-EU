@@ -7,6 +7,14 @@ type Feedback = {
   message?: string;
 };
 
+// Configure Nodemailer with your email service credentials
+export const emailTransporter: Transporter = nodemailer.createTransport({
+  service: "gmail",
+  auth: {
+    user: process.env.FEEDBACK_EMAIL,
+    pass: process.env.FEEDBACK_PASSWORD,
+  },
+});
 export async function POST(request: Request) {
   try {
     const data: Feedback = await request.json();
@@ -20,15 +28,6 @@ export async function POST(request: Request) {
       );
     }
 
-    // Configure Nodemailer with your email service credentials
-    const transporter: Transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.FEEDBACK_EMAIL,
-        pass: process.env.FEEDBACK_PASSWORD,
-      },
-    });
-
     // Define the email content
     const mailOptions: SendMailOptions = {
       from: process.env.FEEDBACK_EMAILL,
@@ -38,7 +37,7 @@ export async function POST(request: Request) {
     };
 
     // Send the email
-    await transporter.sendMail(mailOptions);
+    await emailTransporter.sendMail(mailOptions);
     return NextResponse.json({ message: "Email sent successfully" });
   } catch (error) {
     console.error("Error sending email:", error);

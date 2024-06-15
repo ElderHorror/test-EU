@@ -8,6 +8,7 @@ import {
   Image,
   Button,
 } from "@chakra-ui/react";
+import Link from "next/link";
 
 type CoursesHeroProps = {
   imgSrc: string;
@@ -16,7 +17,7 @@ type CoursesHeroProps = {
 
 export default function CoursesHero(props: CoursesHeroProps) {
   return (
-    <SimpleGrid columns={{ base: 1, lg: 2 }} gap="2rem" pl="2rem">
+    <SimpleGrid columns={{ base: 1, lg: 2 }} gap="5rem" pl="2rem">
       <Box bg="white" p="1rem" maxH="100%" my="auto">
         <Box>
           <Text
@@ -40,9 +41,11 @@ export default function CoursesHero(props: CoursesHeroProps) {
             Supercharge your career with our live bootcamp and stand out from
             the crowd!!
           </Text>
-          <Button color={"white"} bg="#0F5EDB" mt="2rem" p="1.5rem 2.5rem">
-            Enroll Now
-          </Button>
+          <Link href={"./checkout"} prefetch>
+            <Button color={"white"} bg="#0F5EDB" mt="2rem" p="1.5rem 2.5rem">
+              Enroll Now
+            </Button>
+          </Link>
         </Box>
       </Box>
       <Box position={"relative"}>

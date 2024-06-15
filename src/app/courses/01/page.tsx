@@ -49,7 +49,7 @@ export default function Bootcamp() {
             <Container maxW={"90rem"} p="1rem">
               <Box>
                 <CoursesHero
-                  imgSrc={"/" + "r.jpg"}
+                  imgSrc={"/" + "01.png"}
                   countryCode={data.country_code}
                 />
               </Box>
@@ -86,7 +86,7 @@ export default function Bootcamp() {
               </Container>
             </Box>
             <Container maxW={"90rem"} p="1rem">
-              <CoursesDetails imgSrc={"/" + "r.jpg"} />
+              <CoursesDetails imgSrc={"/" + "00.png"} />
             </Container>
           </>
         )}

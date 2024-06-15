@@ -7,6 +7,7 @@ import {
   Flex,
   FormControl,
   FormErrorMessage,
+  FormLabel,
   Image,
   Input,
   Modal,
@@ -26,12 +27,15 @@ import { useRouter } from "next/navigation";
 import { Field, Formik } from "formik";
 import * as Yup from "yup";
 import { useLocation } from "../../../../Components/hooks";
-import CoursesHero from "../../../../Components/Courses/Hero";
-import CoursesDetails from "../../../../Components/Courses/Details";
+import dynamic from "next/dynamic";
+const CheckOut = dynamic(() => import("./checkout"), {
+  ssr: false,
+});
 
 export default function Bootcamp() {
   const router = useRouter();
   const { data, isLoading } = useLocation();
+  const toast = useToast();
 
   return (
     <Box bgColor={" rgba(255, 255, 255, 1)"} overflow={"hidden"}>
@@ -41,34 +45,7 @@ export default function Bootcamp() {
           // router.push("/");
         }}
       />
-
-      <Box minH="calc(100vh - 30rem)" mt="10rem">
-        {isLoading ? (
-          <Text>loading...</Text>
-        ) : (
-          <>
-            <Container maxW={"90rem"} p="1rem">
-              <SimpleGrid columns={{ base: 1, lg: 2 }} gap="2rem" pl="2rem">
-                <Box>Register for course</Box>
-                <Box>
-                  <Text> R for Research</Text>
-                  <Text>Fill out these details to build your broadcast</Text>
-                  <AspectRatio ratio={1}>
-                    <Image
-                      borderRadius="8px"
-                      src={"/O0.png"}
-                      width={"100"}
-                      height={"100"}
-                      alt="Event Image"
-                      objectFit="cover"
-                    />
-                  </AspectRatio>
-                </Box>
-              </SimpleGrid>
-            </Container>
-          </>
-        )}
-      </Box>
+      <CheckOut />
       <Box
         onClick={() => {
           localStorage.setItem("pageMode", "0");

@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
 import nodemailer, { Transporter, SendMailOptions } from "nodemailer";
+import { emailTransporter } from "../submit/route";
 type Feedback = {
   email: string;
 };
@@ -55,15 +56,6 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "email is required" }, { status: 400 });
     }
 
-    // Configure Nodemailer with your email service credentials
-    const transporter: Transporter = nodemailer.createTransport({
-      service: "gmail",
-      auth: {
-        user: process.env.FEEDBACK_EMAIL,
-        pass: process.env.FEEDBACK_PASSWORD,
-      },
-    });
-
     // Define the email content
     const mailOptions: SendMailOptions = {
       from: process.env.FEEDBACK_EMAILL,
@@ -88,7 +80,7 @@ export async function POST(request: Request) {
     };
 
     // Send the email
-    await transporter.sendMail(mailOptions);
+    await emailTransporter.sendMail(mailOptions);
     return NextResponse.json({ message: "Email sent successfully" });
   } catch (error) {
     console.error("Error sending email:", error);
