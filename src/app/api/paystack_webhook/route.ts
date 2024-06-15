@@ -148,6 +148,5 @@ export async function POST(req: Request) {
   } catch (e) {
     console.log(e);
   }
-
   return NextResponse.json({ message: "Email sent successfully" });
 }
