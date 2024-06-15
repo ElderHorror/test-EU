@@ -58,7 +58,7 @@ export default function Navbar(props: any) {
     {
       id: "5",
       navLink: "Bootcamp",
-      href: "/bootcamp",
+      href: "/courses/01",
     },
   ];
 
