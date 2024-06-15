@@ -1,7 +1,9 @@
 import { NextResponse } from "next/server";
 import Stripe from "stripe";
-export function generateRandomString(length: number = 32, prefix = ""): string {
-  const characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
+
+
+function generateRandomString(length: number = 6, prefix = ""): string {
+  const characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
   let result = prefix;
   for (let i = 0; i < length - prefix.length; i++) {
     const randomIndex = Math.floor(Math.random() * characters.length);
