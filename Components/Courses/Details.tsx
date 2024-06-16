@@ -86,7 +86,7 @@ export default function CoursesDetails(props: CoursesHeroProps) {
         >
           What you will learn in this R for Research bootcamp
         </Text>
-        <Box mx="auto" mr="0.5rem" maxW={"50rem"}>
+        <Box mx="auto" maxW={"50rem"}>
           <UnorderedList
             mt="2rem"
             styleType={"' '"}
