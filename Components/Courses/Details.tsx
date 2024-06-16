@@ -19,7 +19,7 @@ type CoursesHeroProps = {
 export default function CoursesDetails(props: CoursesHeroProps) {
   return (
     <Box>
-      <SimpleGrid columns={{ base: 1, md: 2 }} gap="2rem" mt="3rem">
+      <SimpleGrid columns={{ base: 1, md: 2 }} gap="2rem" mt="3rem" px={{base: ".5rem"}}>
         <Box position={"relative"}>
           <AspectRatio ratio={1}>
             <Image
@@ -32,7 +32,7 @@ export default function CoursesDetails(props: CoursesHeroProps) {
             />
           </AspectRatio>
         </Box>
-        <Box bg="white" p="1rem" maxH="100%">
+        <Box bg="white" maxH="100%">
           <Box>
             <Text
               color="#11297D"
@@ -42,11 +42,12 @@ export default function CoursesDetails(props: CoursesHeroProps) {
               letterSpacing="-2px"
               textTransform="capitalize"
               pb="1rem"
+              textAlign="center"
             >
               Course Overview
             </Text>
             <Text
-              fontSize="4.0rem"
+              fontSize={{base: "2rem", lg: "4.0rem"}}
               fontWeight="700"
               lineHeight="1"
               letterSpacing="-2px"
@@ -55,7 +56,14 @@ export default function CoursesDetails(props: CoursesHeroProps) {
             >
               Discover how R can elevate your research capabilities
             </Text>
-            <Text w="90%">
+            <Text
+                w={{lg: "90%"}}
+                lineHeight={{base: "1.5"}}
+                fontFamily="sans-seriff"
+                fontSize="1.1rem"
+                fontStyle="normal"
+                fontWeight={400}
+                >
               This course covers essential concepts in data science, focusing on
               R programming, Git version control, and GitHub collaboration.
               Participants will learn data manipulation, statistical analysis,
@@ -69,17 +77,18 @@ export default function CoursesDetails(props: CoursesHeroProps) {
       <Box mt="2.5rem">
         <Text
           mx="auto"
-          fontSize={"3rem"}
+          fontSize={{base: "2rem", lg: "3rem"}}
           fontWeight={700}
+          lineHeight="1"
           maxW="45rem"
           textAlign={"center"}
           letterSpacing={"-1px"}
         >
           What you will learn in this R for Research bootcamp
         </Text>
-        <Box mx="auto" maxW={"50rem"}>
+        <Box mx="auto" mr="0.5rem" maxW={"50rem"}>
           <UnorderedList
-            mt="4rem"
+            mt="2rem"
             styleType={"' '"}
             sx={{
               li: {
@@ -96,7 +105,8 @@ export default function CoursesDetails(props: CoursesHeroProps) {
             <ListItem>Import/Export Data </ListItem>
             <ListItem>Exploratory Data Analysis </ListItem>
             <ListItem>Inferential Statistics with R </ListItem>
-            <ListItem>Git/GitHub </ListItem>
+            <ListItem>Connect Codebase to GitHub </ListItem>
+            <ListItem>Git/GitHub Collaboration </ListItem>
             <ListItem>Reproducible Research With Quarto </ListItem>
             <ListItem>Capstone Project </ListItem>
           </UnorderedList>
