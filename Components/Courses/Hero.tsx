@@ -17,11 +17,11 @@ type CoursesHeroProps = {
 
 export default function CoursesHero(props: CoursesHeroProps) {
   return (
-    <SimpleGrid columns={{ base: 1, lg: 2 }} gap="5rem" pl="2rem">
-      <Box bg="white" p="1rem" maxH="100%" my="auto">
+    <SimpleGrid columns={{ base: 1, lg: 2 }} gap="5rem" px=".5rem">
+      <Box bg="white" maxH="100%" my="auto">
         <Box>
           <Text
-            fontSize="4.0rem"
+            fontSize={{base: "3rem", lg: "4.0rem"}}
             fontWeight="700"
             lineHeight="1"
             letterSpacing="-2px"
@@ -35,6 +35,7 @@ export default function CoursesHero(props: CoursesHeroProps) {
             fontStyle="normal"
             fontWeight={400}
             lineHeight="1.5"
+            fontFamily="sans-seriff"
           >
             A degree alone isn&apos;t enough to secure that fully-funded
             graduate position, scholarship, internship, or dream job.
@@ -72,7 +73,10 @@ export default function CoursesHero(props: CoursesHeroProps) {
           pl="1rem"
         >
           <Text>Price</Text>
-          <Text fontSize="1.3rem">
+          <Text
+            fontSize="1.3rem"
+
+            >
             {props.countryCode === "NG" ? "NGN 30,000" : "$ 50.00 "}
           </Text>
         </Box>
