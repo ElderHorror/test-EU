@@ -46,7 +46,7 @@ export default function CoursesDetails(props: CoursesHeroProps) {
               Course Overview
             </Text>
             <Text
-              fontSize="4.0rem"
+              fontSize={{base: "2.0rem", lg: "4.0rem"}}
               fontWeight="700"
               lineHeight="1"
               letterSpacing="-2px"
