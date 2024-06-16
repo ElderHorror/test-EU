@@ -55,7 +55,12 @@ export default function CoursesDetails(props: CoursesHeroProps) {
             >
               Discover how R can elevate your research capabilities
             </Text>
-            <Text w="90%">
+            <Text
+                w={{lg: "90%"}}
+                lineHeight={{base: "1.5"}}
+                mx={{base: "2px"}}
+                fontFamily="sans-seriff"
+                >
               This course covers essential concepts in data science, focusing on
               R programming, Git version control, and GitHub collaboration.
               Participants will learn data manipulation, statistical analysis,
@@ -69,8 +74,9 @@ export default function CoursesDetails(props: CoursesHeroProps) {
       <Box mt="2.5rem">
         <Text
           mx="auto"
-          fontSize={"3rem"}
+          fontSize={{base: "2rem", lg: "3rem"}}
           fontWeight={700}
+          lineHeight="1"
           maxW="45rem"
           textAlign={"center"}
           letterSpacing={"-1px"}
@@ -79,7 +85,7 @@ export default function CoursesDetails(props: CoursesHeroProps) {
         </Text>
         <Box mx="auto" maxW={"50rem"}>
           <UnorderedList
-            mt="4rem"
+            mt="2rem"
             styleType={"' '"}
             sx={{
               li: {
