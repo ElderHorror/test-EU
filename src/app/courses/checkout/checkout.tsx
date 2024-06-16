@@ -41,7 +41,7 @@ export default function Bootcamp() {
       ) : (
         <>
           <Container maxW={"90rem"} p="1rem">
-            <SimpleGrid columns={{ base: 1, lg: 2 }} gap="2rem" pl="2rem">
+            <SimpleGrid columns={{ base: 1, lg: 2 }} gap="2rem" pl={{lg: "2rem"}}>
               <Box
                 padding={"1rem"}
                 borderRadius={"10px"}
@@ -157,7 +157,7 @@ export default function Bootcamp() {
                           _placeholder={{
                             fontSize: "10px",
                             mt: "1rem",
-                            color: "black",
+                            color: "gray",
                           }}
                           id="name"
                           sx={{
@@ -177,7 +177,7 @@ export default function Bootcamp() {
                           fontSize={"10px"}
                           ml="4px"
                         >
-                          LastName
+                          Last Name
                         </FormLabel>
                         <Field
                           as={Input}
@@ -191,7 +191,7 @@ export default function Bootcamp() {
                           _placeholder={{
                             fontSize: "10px",
                             mt: "1rem",
-                            color: "black",
+                            color: "gray",
                           }}
                           id="name"
                           sx={{
@@ -222,7 +222,7 @@ export default function Bootcamp() {
                           _placeholder={{
                             fontSize: "10px",
                             mt: "1rem",
-                            color: "black",
+                            color: "gray",
                           }}
                           id="name"
                           sx={{
@@ -257,7 +257,7 @@ export default function Bootcamp() {
                           _placeholder={{
                             fontSize: "10px",
                             mt: "1rem",
-                            color: "black",
+                            color: "gray",
                           }}
                           id="name"
                           sx={{
