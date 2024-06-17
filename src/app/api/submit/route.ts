@@ -23,7 +23,7 @@ export async function POST(request: Request) {
 
     // Define the email content
     const mailOptions: SendMailOptions = {
-      from: process.env.FEEDBACK_EMAILL,
+      from: process.env.FEEDBACK_EMAIL,
       to: process.env.T0_EMAIL,
       subject: "New Feedback Received",
       text: `Name: ${name}\nEmail: ${email}\nMessage: ${message}`,

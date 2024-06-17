@@ -58,7 +58,7 @@ export async function POST(req: Request) {
 
       // Define the email content
       const mailOptions: SendMailOptions = {
-        from: process.env.FEEDBACK_EMAILL,
+        from: process.env.FEEDBACK_EMAIL,
         to: data.data.metadata.email,
         subject: "Welcome to the “R for Research",
         html: buildMail(data.data.metadata.firstName),

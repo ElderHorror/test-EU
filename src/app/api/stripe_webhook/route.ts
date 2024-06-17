@@ -28,9 +28,11 @@ const processStripePayment = async (data: any, eventType: any) => {
             from: process.env.FEEDBACK_EMAIL,
             to: email,
             subject: "Welcome to the “R for Research",
+            html: buildMail(firstName),
           });
           // Send the email
-          console.log("execute:", await emailTransporter.sendMail(mailOptions));
+          const email_sent = await emailTransporter.sendMail(mailOptions);
+          console.log("execute:", email_sent);
         } catch (err: any) {
           console.log({ err });
         }

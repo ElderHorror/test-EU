@@ -58,7 +58,7 @@ export async function POST(request: Request) {
 
     // Define the email content
     const mailOptions: SendMailOptions = {
-      from: process.env.FEEDBACK_EMAILL,
+      from: process.env.FEEDBACK_EMAIL,
       to: email,
       subject: "Invitation to The Introduction to R for Research.",
       text: `Hi there, 
