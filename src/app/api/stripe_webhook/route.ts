@@ -26,7 +26,7 @@ const processStripePayment = async (
         try {
           const { email, firstName } =
             data.invoice_creation.invoice_data.metadata;
-          console.log(data.invoice_creation.invoice_data);
+          console.log({ invoice_data: data.invoice_creation.invoice_data });
           await helperStripePayment(email, firstName);
         } catch (err: any) {
           console.log(err);
