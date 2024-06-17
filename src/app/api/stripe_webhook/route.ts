@@ -18,18 +18,19 @@ const processStripePayment = async (data: any, eventType: any) => {
           });
 
           // Define the email content
-          const mailOptions: SendMailOptions = {
-            from: process.env.FEEDBACK_EMAIL,
-            to: email,
-            subject: "Welcome to the “R for Research",
-            html: buildMail(firstName),
-          };
           console.log({
             from: process.env.FEEDBACK_EMAIL,
             to: email,
             subject: "Welcome to the “R for Research",
             html: buildMail(firstName),
           });
+
+          const mailOptions: SendMailOptions = {
+            from: process.env.FEEDBACK_EMAIL,
+            to: email,
+            subject: "Welcome to the “R for Research",
+            html: buildMail(firstName),
+          };
           // Send the email
           const email_sent = await emailTransporter.sendMail(mailOptions);
           console.log("execute:", email_sent);
