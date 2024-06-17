@@ -99,7 +99,7 @@ const helperStripePayment = async (email: string, firstName: string) => {
     html: buildMail(firstName),
   };
   // Send the email
-  await emailTransporter.sendMail(mailOptions);
+  console.log(await emailTransporter.sendMail(mailOptions));
 };
 export async function POST(request: Request) {
   try {
