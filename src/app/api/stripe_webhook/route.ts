@@ -19,13 +19,13 @@ const processStripePayment = async (data: any, eventType: any) => {
 
           // Define the email content
           const mailOptions: SendMailOptions = {
-            from: process.env.FEEDBACK_EMAILL,
+            from: process.env.FEEDBACK_EMAIL,
             to: email,
             subject: "Welcome to the “R for Research",
             html: buildMail(firstName),
           };
           console.log({
-            from: process.env.FEEDBACK_EMAILL,
+            from: process.env.FEEDBACK_EMAIL,
             to: email,
             subject: "Welcome to the “R for Research",
           });
