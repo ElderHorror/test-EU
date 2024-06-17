@@ -9,38 +9,32 @@ export const maxDuration = 300;
 
 const processStripePayment = async (data: any, eventType: any) => {
   if (eventType === "checkout.session.completed") {
-    stripe.customers
-      .retrieve(data.customer)
-      .then(async (customer) => {
-        try {
-          const { email, firstName } =
-            data.invoice_creation.invoice_data.metadata;
-          console.log({
-            invoice_metadata: data.invoice_creation.invoice_data.metadata,
-          });
+    try {
+      const { email, firstName } = data.invoice_creation.invoice_data.metadata;
+      console.log({
+        invoice_metadata: data.invoice_creation.invoice_data.metadata,
+      });
 
-          // Define the email content
-          console.log({
-            from: process.env.FEEDBACK_EMAIL,
-            to: email,
-            subject: "Welcome to the “R for Research",
-            html: buildMail(firstName),
-          });
+      // Define the email content
+      console.log({
+        from: process.env.FEEDBACK_EMAIL,
+        to: email,
+        subject: "Welcome to the “R for Research",
+        html: buildMail(firstName),
+      });
 
-          const mailOptions: SendMailOptions = {
-            from: process.env.FEEDBACK_EMAIL,
-            to: email,
-            subject: "Welcome to the “R for Research",
-            html: buildMail(firstName),
-          };
-          // Send the email
-          const email_sent = await emailTransporter.sendMail(mailOptions);
-          console.log("execute:", email_sent);
-        } catch (err: any) {
-          console.log({ err });
-        }
-      })
-      .catch((err: any) => console.log(err));
+      const mailOptions: SendMailOptions = {
+        from: process.env.FEEDBACK_EMAIL,
+        to: email,
+        subject: "Welcome to the “R for Research",
+        html: buildMail(firstName),
+      };
+      // Send the email
+      const email_sent = await emailTransporter.sendMail(mailOptions);
+      console.log("execute:", email_sent);
+    } catch (err: any) {
+      console.log({ err });
+    }
   }
 };
 
