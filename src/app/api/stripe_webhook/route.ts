@@ -5,6 +5,8 @@ import { buildMail, emailTransporter } from "../../../../Components/email";
 
 const stripe = new Stripe(process.env.STRIPE_KEY ?? "");
 
+export const maxDuration = 300;
+
 const processStripePayment = async (data: any, eventType: any) => {
   if (eventType === "checkout.session.completed") {
     stripe.customers
