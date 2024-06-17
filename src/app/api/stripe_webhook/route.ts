@@ -4,21 +4,8 @@ import Stripe from "stripe";
 import { buildMail, emailTransporter } from "../../../../Components/email";
 
 const stripe = new Stripe(process.env.STRIPE_KEY ?? "");
-const webhookStripe = async (req: Request) => {
-  try {
-    const { data: stripeData, eventType } = await validateStripPayload(req);
-    await processStripePayment(stripeData, eventType, helperStripePayment);
-    return true;
-  } catch (error) {
-    return false;
-  }
-};
 
-const processStripePayment = async (
-  data: any,
-  eventType: any,
-  helperStripePayment: (email: string, firstName: string) => void
-) => {
+const processStripePayment = async (data: any, eventType: any) => {
   if (eventType === "checkout.session.completed") {
     stripe.customers
       .retrieve(data.customer)
@@ -26,39 +13,31 @@ const processStripePayment = async (
         try {
           const { email, firstName } =
             data.invoice_creation.invoice_data.metadata;
-          console.log(data.invoice_creation.invoice_data);
-          await helperStripePayment(email, firstName);
+          console.log({
+            invoice_metadata: data.invoice_creation.invoice_data.metadata,
+          });
+
+          // Define the email content
+          const mailOptions: SendMailOptions = {
+            from: process.env.FEEDBACK_EMAIL,
+            to: email,
+            subject: "Welcome to the “R for Research",
+            html: buildMail(firstName),
+          };
+          console.log({
+            from: process.env.FEEDBACK_EMAIL,
+            to: email,
+            subject: "Welcome to the “R for Research",
+          });
+          // Send the email
+          console.log("execute:", await emailTransporter.sendMail(mailOptions));
         } catch (err: any) {
-          console.log(err);
+          console.log({ err });
         }
       })
       .catch((err: any) => console.log(err));
   }
 };
-async function readableStreamToString(
-  readableStream: ReadableStream<Uint8Array> | string
-): Promise<string> {
-  if (typeof readableStream === "string") {
-    return readableStream;
-  }
-  const reader = readableStream.getReader();
-  let decoder = new TextDecoder("utf-8");
-  let result = "";
-
-  try {
-    while (true) {
-      const { done, value } = await reader.read();
-      if (done) break;
-      result += decoder.decode(value);
-    }
-  } catch (error) {
-    console.error("Error reading stream:", error);
-  } finally {
-    reader.releaseLock();
-  }
-
-  return result;
-}
 
 const validateStripPayload = async (req: Request) => {
   const webhookSecret = process.env.STRIPE_WEBHOOK;
@@ -86,25 +65,13 @@ export async function GET(req: Request) {
   return NextResponse.json({ message: "welcome" });
 }
 
-const helperStripePayment = async (email: string, firstName: string) => {
-  console.log({ email, firstName });
-
-  // Define the email content
-  const mailOptions: SendMailOptions = {
-    from: process.env.FEEDBACK_EMAILL,
-    to: email,
-    subject: "Welcome to the “R for Research",
-    html: buildMail(firstName),
-  };
-  // Send the email
-  await emailTransporter.sendMail(mailOptions);
-};
+const helperStripePayment = async (email: string, firstName: string) => {};
 export async function POST(request: Request) {
   try {
     const { data: stripeData, eventType } = await validateStripPayload(request);
     console.log({ data: stripeData, eventType });
 
-    await processStripePayment(stripeData, eventType, helperStripePayment);
+    await processStripePayment(stripeData, eventType);
     return NextResponse.json({ message: "success" });
   } catch (error) {
     console.log(error);
