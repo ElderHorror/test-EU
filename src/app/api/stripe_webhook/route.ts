@@ -31,7 +31,7 @@ const processStripePayment = async (
           });
           await helperStripePayment(email, firstName);
         } catch (err: any) {
-          console.log(err);
+          console.log({ err });
         }
       })
       .catch((err: any) => console.log(err));
