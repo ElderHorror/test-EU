@@ -25,8 +25,10 @@ const processStripePayment = async (
       .then(async (customer) => {
         try {
           const { email, firstName } =
-            data.invoice_creation.invoice_data;
-          console.log({ invoice_data: data.invoice_creation.invoice_data });
+            data.invoice_creation.invoice_data.metadata;
+          console.log({
+            invoice_metadata: data.invoice_creation.invoice_data.metadata,
+          });
           await helperStripePayment(email, firstName);
         } catch (err: any) {
           console.log(err);
@@ -87,7 +89,7 @@ export async function GET(req: Request) {
 }
 
 const helperStripePayment = async (email: string, firstName: string) => {
-  console.log({ email, firstName });
+  console.log("execute:", { email, firstName });
 
   // Define the email content
   const mailOptions: SendMailOptions = {
