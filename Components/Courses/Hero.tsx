@@ -23,7 +23,7 @@ export default function CoursesHero(props: CoursesHeroProps) {
           <Text
             fontSize={{base: "2rem", lg: "4.0rem"}}
             fontWeight="700"
-            lineHeight="1"
+            lineHeight="1.3"
             letterSpacing="-2px"
             textTransform="capitalize"
             pb="1rem"

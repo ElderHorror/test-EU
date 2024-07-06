@@ -49,7 +49,7 @@ export default function CoursesDetails(props: CoursesHeroProps) {
             <Text
               fontSize={{base: "1.5rem", lg: "4.0rem"}}
               fontWeight="700"
-              lineHeight="1"
+              lineHeight="1.3"
               letterSpacing="-1px"
               textTransform="capitalize"
               pb="1rem"
@@ -82,7 +82,7 @@ export default function CoursesDetails(props: CoursesHeroProps) {
           mx="auto"
           fontSize={{base: "1.5rem", lg: "3rem"}}
           fontWeight={700}
-          lineHeight="1"
+          lineHeight="1.3"
           maxW="45rem"
           textAlign={"center"}
           letterSpacing={"-1px"}
