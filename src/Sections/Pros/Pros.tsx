@@ -5,7 +5,7 @@ import ProsGrid from "../../../Components/ProsComp/ProsGrid";
 export default function Pros() {
   return (
     <Box
-      mt={"7rem"}
+      mt={"1rem"}
       mb={"3rem"}
       display={"grid"}
       placeContent={"center"}

@@ -7,7 +7,7 @@ export default function About() {
       mt={{ base: "2rem ", lg: "0rem" }}
       margin={"auto"}
       width={{ base: "none", lg: "614px" }}
-      py={"7rem"}
+      py={"1rem"}
       px="1rem"
     >
       <Box

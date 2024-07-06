@@ -11,8 +11,22 @@ export default function GITright() {
 
 
   return (
-    <Box mt={{ base: '2rem ', lg: '0rem' }} margin={'auto'} width={{ base: 'none', lg: '614px' }}  py={"7rem"} px="1rem">
-      <Text fontSize="3.5rem" fontWeight="700" id="contact_us" textAlign={"center"} my="2rem" >Contact US</Text>
+    <Box
+      mt={{ base: '2rem ', lg: '0rem' }}
+      margin={'auto'}
+      width={{ base: 'none', lg: '614px' }}
+      py={"1rem"}
+      px="1rem"
+    >
+      <Text
+        fontSize={{base:"2rem", lg:"3.5rem"}}
+        fontWeight="700"
+        id="contact_us"
+        textAlign={"center"}
+        my="2rem"
+      >
+        Contact US
+      </Text>
       <Center>
 
         <Formik
@@ -39,7 +53,7 @@ export default function GITright() {
                 title: "success",
                 description: "Message sent"
               })
-              
+
               resetForm()
             } catch (error) {
               console.error('Error submitting the form:', error)
