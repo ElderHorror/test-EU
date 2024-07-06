@@ -21,12 +21,15 @@ export default function CoursesHero(props: CoursesHeroProps) {
       <Box bg="white" maxH="100%" my="auto">
         <Box>
           <Text
-            fontSize={{base: "3rem", lg: "4.0rem"}}
+            fontSize={{base: "2rem", lg: "4.0rem"}}
             fontWeight="700"
             lineHeight="1"
             letterSpacing="-2px"
             textTransform="capitalize"
             pb="1rem"
+            sx={{
+              wordSpacing: ["6px", "4px" ]
+            }}
           >
             Become Irresistible with EU StudyAssist
           </Text>
