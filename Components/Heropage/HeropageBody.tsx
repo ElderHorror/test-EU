@@ -12,7 +12,7 @@ export default function HeropageBody() {
               <Heading
                 as={"h1"}
                 fontWeight={700}
-                fontSize={{ base: "32px", md: "64px", lg: "70px" }}
+                fontSize={{ base: "32px", md: "60px", lg: "64px" }}
               >
                 Your Gateway to a Seamless Educational Journey
               </Heading>

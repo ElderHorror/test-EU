@@ -7,7 +7,7 @@ export default function Loans() {
       mt={{ base: "2rem ", lg: "0rem" }}
       margin={"auto"}
       width={{ base: "none", lg: "614px" }}
-      py={".5rem"}
+      py={"3rem"}
       px="1rem"
     >
       <Box>
