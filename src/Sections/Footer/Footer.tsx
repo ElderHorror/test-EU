@@ -3,7 +3,7 @@ import BtnBlue from "../../../Components/Button/BtnBlue";
 import Footerpropone from "../../../Components/Footer/Footerpropone";
 import Footerpropthree from "../../../Components/Footer/Footerpropthree";
 import FooterProptwo from "../../../Components/Footer/FooterProptwo";
-
+import Link from "next/link";
 
 export default function Footer() {
   const footlinkone = [
@@ -98,15 +98,21 @@ export default function Footer() {
                   }}
                   gap={{ base: 13, md: 0, lg: 0 }}
                 >
-                  <Box>
+                  <Link
+                    href={"https://www.instagram.com/eu.studyassist?utm_source=qr&igsh=MTJzd3VnaWp4YmVoZw=="}
+                  >
                     <Image alt={"Instagram"} src={"/IG.svg"} />
-                  </Box>
-                  <Box>
-                    <Image alt={"Twitter"} src={"/Twitter.svg"} />
-                  </Box>
-                  <Box>
+                  </Link>
+                  <Link
+                    href={"https://www.linkedin.com/company/eu-studyassist/"}
+                  >
+                    <Image alt={"linkedin"} src={"/Linkedin.svg"} />
+                  </Link>
+                  <Link
+                    href={"https://www.facebook.com/eustudyassist?sfnsn=wa"}
+                  >
                     <Image alt={"facebook"} src={"/FB.svg"} />
-                  </Box>
+                  </Link>
                 </Flex>
               </Box>
               <Box display={{ base: "none", lg: "block" }}>
