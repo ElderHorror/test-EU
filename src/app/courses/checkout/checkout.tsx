@@ -28,11 +28,16 @@ import { Field, Formik } from "formik";
 import * as Yup from "yup";
 import { useLocation } from "../../../../Components/hooks";
 import PaystackPop from "@paystack/inline-js";
+import { useEffect } from "react";
 
 export default function Bootcamp() {
   const router = useRouter();
   const { data, isLoading } = useLocation();
   const toast = useToast();
+  
+  useEffect(() => {
+    router.replace("/");
+  }, []);
 
   return (
     <Box minH="calc(100vh - 30rem)" mt="10rem">
@@ -41,7 +46,11 @@ export default function Bootcamp() {
       ) : (
         <>
           <Container maxW={"90rem"} p="1rem">
-            <SimpleGrid columns={{ base: 1, lg: 2 }} gap="2rem" pl={{lg: "2rem"}}>
+            <SimpleGrid
+              columns={{ base: 1, lg: 2 }}
+              gap="2rem"
+              pl={{ lg: "2rem" }}
+            >
               <Box
                 padding={"1rem"}
                 borderRadius={"10px"}

@@ -45,11 +45,11 @@ export default function CoursesHero(props: CoursesHeroProps) {
             Supercharge your career with our live bootcamp and stand out from
             the crowd!!
           </Text>
-          <Link href={"./checkout"} prefetch>
-            <Button color={"white"} bg="#0F5EDB" mt="2rem" p="1.5rem 2.5rem">
+          {/* <Link href={"./checkout"} prefetch> */}
+            <Button color={"white"} bg="#0F5EDB" mt="2rem" p="1.5rem 2.5rem" isDisabled>
               Enroll Now
             </Button>
-          </Link>
+          {/* </Link> */}
         </Box>
       </Box>
       <Box position={"relative"}>
