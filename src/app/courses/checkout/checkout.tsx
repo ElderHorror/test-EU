@@ -34,7 +34,7 @@ export default function Bootcamp() {
   const router = useRouter();
   const { data, isLoading } = useLocation();
   const toast = useToast();
-  
+
   useEffect(() => {
     router.replace("/");
   }, []);
@@ -50,7 +50,8 @@ export default function Bootcamp() {
               columns={{ base: 1, lg: 2 }}
               gap="2rem"
               pl={{ lg: "2rem" }}
-            >
+              >
+                
               <Box
                 padding={"1rem"}
                 borderRadius={"10px"}
