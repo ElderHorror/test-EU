@@ -9,7 +9,13 @@ export default function HeropageBody() {
         <Box alignSelf={"center"}>
           <Flex flexDir={"column"} gap={4}>
             <Box w={{base:353, md:500, lg:600}} >
-              <Heading as={"h1"} fontWeight={700} fontSize={{ base: "54px", md: "64px", lg: "70px" }}>Your Gateway to a Seamless Educational Journey</Heading>
+              <Heading
+                as={"h1"}
+                fontWeight={700}
+                fontSize={{ base: "32px", md: "60px", lg: "64px" }}
+              >
+                Your Gateway to a Seamless Educational Journey
+              </Heading>
             </Box>
             <Text fontSize={"20px"} >Empowering your Educational Journey</Text>
              {/* <Box mt={{base:".4rem", lg:"2rem"}}>
@@ -19,7 +25,7 @@ export default function HeropageBody() {
         </Box>
 
         <Box margin={{base:"auto", lg:"none"}} >
-            <Image  
+            <Image
              src={"/Image.svg"}
              alt={"#"}
              height={600}

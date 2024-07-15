@@ -5,7 +5,7 @@ import ProsGrid from "../../../Components/ProsComp/ProsGrid";
 export default function Pros() {
   return (
     <Box
-      mt={"7rem"}
+      mt={"1rem"}
       mb={"3rem"}
       display={"grid"}
       placeContent={"center"}
@@ -14,7 +14,7 @@ export default function Pros() {
       <Box
         w={{ base: 350, md: 500, lg: 700 }}
         ml={{ base: "1rem", lg: "0rem" }}
-        mb={"5rem"}
+        mb={{base: "2rem", md: "4rem", lg: "4rem"}}
       >
         <HeadingProp text="Why You should Use EU study assist" />
       </Box>

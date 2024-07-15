@@ -21,12 +21,15 @@ export default function CoursesHero(props: CoursesHeroProps) {
       <Box bg="white" maxH="100%" my="auto">
         <Box>
           <Text
-            fontSize={{base: "3rem", lg: "4.0rem"}}
+            fontSize={{base: "2rem", lg: "4.0rem"}}
             fontWeight="700"
-            lineHeight="1"
+            lineHeight={{base: "1.3", lg: "1.1"}}
             letterSpacing="-2px"
             textTransform="capitalize"
             pb="1rem"
+            sx={{
+              wordSpacing: ["6px", "4px" ]
+            }}
           >
             Become Irresistible with EU StudyAssist
           </Text>
@@ -42,11 +45,11 @@ export default function CoursesHero(props: CoursesHeroProps) {
             Supercharge your career with our live bootcamp and stand out from
             the crowd!!
           </Text>
-          <Link href={"./checkout"} prefetch>
-            <Button color={"white"} bg="#0F5EDB" mt="2rem" p="1.5rem 2.5rem">
+          {/* <Link href={"./checkout"} prefetch> */}
+            <Button color={"white"} bg="#0F5EDB" mt="2rem" p="1.5rem 2.5rem" isDisabled>
               Enroll Now
             </Button>
-          </Link>
+          {/* </Link> */}
         </Box>
       </Box>
       <Box position={"relative"}>

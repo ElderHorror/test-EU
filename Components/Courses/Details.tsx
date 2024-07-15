@@ -47,12 +47,15 @@ export default function CoursesDetails(props: CoursesHeroProps) {
               Course Overview
             </Text>
             <Text
-              fontSize={{base: "2rem", lg: "4.0rem"}}
+              fontSize={{base: "1.5rem", lg: "4.0rem"}}
               fontWeight="700"
-              lineHeight="1"
-              letterSpacing="-2px"
+              lineHeight={{base: "1.3", lg: "1.1"}}
+              letterSpacing="-1px"
               textTransform="capitalize"
               pb="1rem"
+              sx={{
+                wordSpacing: ["6px", "4px" ]
+              }}
             >
               Discover how R can elevate your research capabilities
             </Text>
@@ -77,12 +80,16 @@ export default function CoursesDetails(props: CoursesHeroProps) {
       <Box mt="2.5rem">
         <Text
           mx="auto"
-          fontSize={{base: "2rem", lg: "3rem"}}
+          fontSize={{base: "1.5rem", lg: "3rem"}}
           fontWeight={700}
-          lineHeight="1"
+          lineHeight={{base: "1.3", lg: "1.1"}}
+
           maxW="45rem"
           textAlign={"center"}
           letterSpacing={"-1px"}
+          sx={{
+            wordSpacing: ["6px", "4px" ]
+          }}
         >
           What you will learn in this R for Research bootcamp
         </Text>

@@ -7,15 +7,15 @@ export default function Loans() {
       mt={{ base: "2rem ", lg: "0rem" }}
       margin={"auto"}
       width={{ base: "none", lg: "614px" }}
-      py={"7rem"}
+      py={"3rem"}
       px="1rem"
     >
       <Box>
         <Heading
           color={"rgba(17, 41, 125, 1)"}
-          textAlign={{ base: "left", md: "left", lg: "left" }}
+          textAlign={{ base: "center", md: "left", lg: "left" }}
           fontWeight={700}
-          fontSize={{ base: "42px", md: "50px", lg: "64px" }}
+          fontSize={{ base: "32px", md: "50px", lg: "64px" }}
           lineHeight={{ base: "40px", lg: "80.64px" }}
         >
           Our Loan Service

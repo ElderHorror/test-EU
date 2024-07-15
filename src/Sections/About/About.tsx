@@ -7,7 +7,7 @@ export default function About() {
       mt={{ base: "2rem ", lg: "0rem" }}
       margin={"auto"}
       width={{ base: "none", lg: "614px" }}
-      py={"7rem"}
+      py={"1rem"}
       px="1rem"
     >
       <Box
@@ -38,6 +38,7 @@ export default function About() {
                 textAlign={{ base: "left", md: "left", lg: "left" }}
                 fontSize={{ base: "16px", lg: "18px" }}
                 lineHeight={{ base: "22.34px", lg: "36px" }}
+                fontFamily="Helvetica"
               >
                 EUStudyAssist exists to empower scholarship recipients during
                 the pre-study period when stipends have yet to materialize. Our
