@@ -334,10 +334,10 @@ export default function Bootcamp() {
                   <Text fontSize="1.3rem">
                     {data.country_code === "NG" ? "NGN 120,000" : "$ 74.99 "}
                   </Text>
-                  <Box className="price-container">
+                  {/* <Box className="price-container">
                     {" "}
                     {data.country_code === "NG" ? "NGN 200,000" : "$ 100.00 "}
-                  </Box>
+                  </Box> */}
                 </Flex>
               </Box>
             </SimpleGrid>
