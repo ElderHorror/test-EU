@@ -58,7 +58,7 @@ const getStripeOrder = async (email: string, metadata: any) => {
             description: `A purchase of "R for Research"`,
             metadata: metadata,
           },
-          unit_amount: Math.round(50 * 100),
+          unit_amount: Math.round(74.99 * 100),
         },
         quantity: 1,
       },
