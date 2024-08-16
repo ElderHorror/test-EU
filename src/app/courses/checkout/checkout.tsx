@@ -35,10 +35,6 @@ export default function Bootcamp() {
   const { data, isLoading } = useLocation();
   const toast = useToast();
 
-  useEffect(() => {
-    router.replace("/");
-  }, []);
-
   return (
     <Box minH="calc(100vh - 30rem)" mt="10rem">
       {isLoading ? (
@@ -50,8 +46,7 @@ export default function Bootcamp() {
               columns={{ base: 1, lg: 2 }}
               gap="2rem"
               pl={{ lg: "2rem" }}
-              >
-                
+            >
               <Box
                 padding={"1rem"}
                 borderRadius={"10px"}
@@ -88,7 +83,7 @@ export default function Bootcamp() {
                         const _payStack = new PaystackPop();
                         _payStack.newTransaction({
                           key: process.env.NEXT_PUBLIC_PAYSTACK_KEY,
-                          amount: "3000000",
+                          amount: "12000000",
                           currency: "NGN",
                           email: values.email,
                           firstname: values?.firstName,
@@ -336,9 +331,13 @@ export default function Bootcamp() {
                   fontSize={"1.1rem"}
                 >
                   <Text>Course Fee</Text>
-                  <Text>
-                    {data.country_code === "NG" ? "NGN 30,000" : "$ 50"}
+                  <Text fontSize="1.3rem">
+                    {data.country_code === "NG" ? "NGN 120,000" : "$ 74.99 "}
                   </Text>
+                  {/* <Box className="price-container">
+                    {" "}
+                    {data.country_code === "NG" ? "NGN 200,000" : "$ 100.00 "}
+                  </Box> */}
                 </Flex>
               </Box>
             </SimpleGrid>
