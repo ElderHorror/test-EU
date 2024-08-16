@@ -331,9 +331,13 @@ export default function Bootcamp() {
                   fontSize={"1.1rem"}
                 >
                   <Text>Course Fee</Text>
-                  <Text>
-                    {data.country_code === "NG" ? "NGN 30,000" : "$ 50"}
+                  <Text fontSize="1.3rem">
+                    {data.country_code === "NG" ? "NGN 120,000" : "$ 74.99 "}
                   </Text>
+                  <Box className="price-container">
+                    {" "}
+                    {data.country_code === "NG" ? "NGN 200,000" : "$ 100.00 "}
+                  </Box>
                 </Flex>
               </Box>
             </SimpleGrid>
