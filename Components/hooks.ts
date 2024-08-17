@@ -55,8 +55,14 @@ interface GeoLocationData {
 
 export const useLocation = () => {
   const { data, error } = useSWR(`/location`, async () => {
-    const data = fetch("https://ipapi.co/json/", { method: "GET" });
-    return (await data).json() ?? { country_code: "DN" };
+    try {
+      const data = fetch("https://ipapi.co/json/", { method: "GET" });
+      return (await data).json() ?? { country_code: "DN" };
+    } catch (err: any) {
+      return {
+        country_code: "DN",
+      };
+    }
   });
 
   return {
