@@ -20,7 +20,7 @@ const initState = {
   mode: 1,
 };
 
-export default function Calculator(props) {
+export default function Calculator(props: any) {
   const [data, setData] = useState(initState);
   const [monthlyPayback, setMonthlyPayback] = useState(0);
 
