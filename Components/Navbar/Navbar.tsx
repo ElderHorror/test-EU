@@ -56,19 +56,29 @@ export default function Navbar(props: any) {
       href: "/#contact_us",
     },
     {
-      id: "5",
+      id: "4",
       navLink: "Bootcamp",
       href: "/courses/01",
+    },
+    {
+      id: "5",
+      navLink: "Loan Services",
+      href: "#loan",
+    },
+    {
+      id: "6",
+      navLink: "Consultation",
+      href: "#consultation",
     },
   ];
 
   return (
     <Box
-      borderBottom={"1px solid"}
-      bgColor={"white"}
+      // borderBottom={"1px solid"}
+      bgColor={"#0E5FDC"}
+      color={"white"}
       zIndex={999}
       w={"100vw"}
-      borderColor={"gray.200"}
       position={"fixed"}
     >
       <Container maxW={"90rem"}>
@@ -101,25 +111,7 @@ export default function Navbar(props: any) {
               props.setPageMode(1);
             }}
           >
-            <Button
-              borderRadius={"full"}
-              fontSize={"18px"}
-              color={"white"}
-              py={"1.7rem"}
-              px={"1.7rem"}
-              bgColor={"rgba(52, 97, 255, 1)"}
-              fontWeight="bold"
-              mr="0.5rem"
-              onClick={(e) => {
-                e.stopPropagation();
-                props.setPageMode(1);
-                onClose();
-              }}
-              background="linear-gradient(to right,#14532d, #eab308)"
-            >
-              Loan Calculator
-            </Button>
-            <BtnBlue btnType="Apply" />
+            <Button variant={"fox"}>Join BootCamp</Button>
           </Box>
           <IconButton
             size={"md"}

@@ -2,7 +2,7 @@
 <ellipse cx="313" cy="239.019" rx="315.019" ry="313" transform="rotate(90 313 239.019)" fill="url(#paint0_linear_8_401)"/>
 <defs>
 <linearGradient id="paint0_linear_8_401" x1="315.936" y1="-18.8995" x2="344.925" y2="590.863" gradientUnits="userSpaceOnUse">
-<stop stop-color="#3461FF"/>
+<stop stop-color="white"/>
 <stop offset="1" stop-color="#8399E9"/>
 </linearGradient>
 </defs>

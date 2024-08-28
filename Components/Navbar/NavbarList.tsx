@@ -24,8 +24,9 @@ export default function NavbarList(props: NavbarListProps) {
           >
             <Link
               href={listLink.href}
-              fontSize={"14px"}
+              fontSize={"1rem"}
               as={"li"}
+              fontWeight={500}
               textDecoration={"none"}
             >
               {listLink.navLink}

@@ -74,7 +74,8 @@ export default function Footer() {
     <Box
       mt={"10rem"}
       w={"100vw"}
-      bgColor={"rgba(250, 250, 250, 1)"}
+      bgColor={"#0E5FDC"}
+      color={"white"}
       pt={"1rem"}
     >
       <Container maxW={"90rem"}>
@@ -99,7 +100,9 @@ export default function Footer() {
                   gap={{ base: 13, md: 0, lg: 0 }}
                 >
                   <Link
-                    href={"https://www.instagram.com/eu.studyassist?utm_source=qr&igsh=MTJzd3VnaWp4YmVoZw=="}
+                    href={
+                      "https://www.instagram.com/eu.studyassist?utm_source=qr&igsh=MTJzd3VnaWp4YmVoZw=="
+                    }
                   >
                     <Image alt={"Instagram"} src={"/IG.svg"} />
                   </Link>
