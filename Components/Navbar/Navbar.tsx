@@ -15,7 +15,7 @@ import NavbarLogo from "./NavbarLogo";
 import NavbarList from "./NavbarList";
 import BtnBlue from "../Button/BtnBlue";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
-import { Stack } from "phosphor-react";
+import { useRouter } from "next/router";
 
 const NavLink = (props: any) => {
   const { children } = props;
@@ -63,12 +63,12 @@ export default function Navbar(props: any) {
     {
       id: "5",
       navLink: "Loan Services",
-      href: "#loan",
+      href: "#Loans",
     },
     {
       id: "6",
       navLink: "Consultation",
-      href: "#consultation",
+      href: "#Consulting",
     },
   ];
 
@@ -111,7 +111,11 @@ export default function Navbar(props: any) {
               props.setPageMode(1);
             }}
           >
-            <Button variant={"fox"}>Join BootCamp</Button>
+            <Link href={"/courses/01"}>
+              <Button variant={"fox"} textDecoration={"none"}>
+                Join BootCamp
+              </Button>
+            </Link>
           </Box>
           <IconButton
             size={"md"}

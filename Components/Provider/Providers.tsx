@@ -51,8 +51,8 @@ const theme = extendTheme({
           fontWeight: "600",
           rounded: "8px",
           ":hover": {
-            bg: "gray.200",
-            color: "gray.400",
+            bg: "secondary.600",
+            color: "secondary.200",
           },
           ":focus": {
             outline: "none",

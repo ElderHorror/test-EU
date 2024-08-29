@@ -35,7 +35,7 @@ const data = [
     subTitle:
       "This course covers essential concepts in data science, focusing on R programming, Git version control, and GitHub collaboration. Participants will learn data manipulation, statistical analysis, and data visualization in R, alongside mastering Git for version control. ",
     isDisabled: false,
-    link: "",
+    link: "/courses/01",
   },
   {
     image: "00.png",
@@ -67,38 +67,43 @@ interface IProp {
 
 export function Card(prop: IProp) {
   return (
-    <Flex
-      borderRadius={"8px"}
-      p="1.5rem"
-      bg={"white"}
-      flexDirection={"column"}
-      flexBasis="32.5%"
-      maxW="30rem"
-      minW={"22.5rem"}
-      cursor={prop.data.isDisabled ? "not-allowed" : "pointer"}
-      _hover={{ background: prop.data.isDisabled ? "#FeFeFe" : "white" }}
+    <Link
+      href={prop.data.link}
+      style={{
+        flexBasis: "32.5%",
+      }}
     >
-      <AspectRatio ratio={1.6296} maxW={"28rem"}>
-        <Image
-          borderRadius="8px"
-          alt="#"
-          src={prop.data.image}
-          objectPosition={"0px 0px"}
-          objectFit="cover"
-        />
-      </AspectRatio>
-      <Text
-        fontWeight={600}
-        my="0.5rem"
-        fontSize={"1.6rem"}
-        letterSpacing={"-1px"}
+      <Flex
+        borderRadius={"8px"}
+        p="1.5rem"
+        bg={"white"}
+        flexDirection={"column"}
+        flexBasis="32.5%"
+        maxW={{ base: "35rem", lg: "30rem" }}
+        minW={"22.5rem"}
+        cursor={prop.data.isDisabled ? "not-allowed" : "pointer"}
+        _hover={{ background: prop.data.isDisabled ? "#FeFeFe" : "white" }}
       >
-        {prop.data.title}
-      </Text>
-      <Text fontSize={"1.15rem"} lineHeight={"1.4rem"}>
-        {prop.data.subTitle}
-      </Text>
-      <Link href={prop.data.link}>
+        <AspectRatio ratio={1.6296} maxW={"35rem"}>
+          <Image
+            borderRadius="8px"
+            alt="#"
+            src={prop.data.image}
+            objectPosition={"0px 0px"}
+            objectFit="cover"
+          />
+        </AspectRatio>
+        <Text
+          fontWeight={600}
+          my="0.5rem"
+          fontSize={"1.6rem"}
+          letterSpacing={"-1px"}
+        >
+          {prop.data.title}
+        </Text>
+        <Text fontSize={"1.15rem"} lineHeight={"1.4rem"}>
+          {prop.data.subTitle}
+        </Text>
         <Flex
           cursor={prop.data.isDisabled ? "not-allowed" : "pointer"}
           alignItems={"center"}
@@ -128,8 +133,8 @@ export function Card(prop: IProp) {
             />
           </svg>
         </Flex>
-      </Link>
-    </Flex>
+      </Flex>
+    </Link>
   );
 }
 
