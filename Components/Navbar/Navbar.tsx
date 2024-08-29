@@ -158,24 +158,6 @@ export default function Navbar(props: any) {
                 {link.navLink}
               </Text>
             ))}
-            <Button
-              borderRadius={"full"}
-              fontSize={"18px"}
-              color={"white"}
-              py={"1.7rem"}
-              px={"1.7rem"}
-              bgColor={"rgba(52, 97, 255, 1)"}
-              fontWeight="bold"
-              mr="0.5rem"
-              onClick={(e) => {
-                e.stopPropagation();
-                props.setPageMode(1);
-                onClose();
-              }}
-              background="linear-gradient(to right,#14532d, #eab308)"
-            >
-              Loan Calculator
-            </Button>
             <BtnBlue btnType="Apply" />
           </VStack>
         </Box>
