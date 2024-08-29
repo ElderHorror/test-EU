@@ -122,9 +122,16 @@ export default function Navbar(props: any) {
             bg="transparent"
             icon={
               isOpen ? (
-                <CloseIcon bg="transparent" _hover={{ bg: "transparent" }} />
+                <CloseIcon
+                  bg="transparent"
+                  _hover={{ bg: "transparent" }}
+                  color={"white"}
+                  fill={"white"}
+                />
               ) : (
                 <HamburgerIcon
+                  color={"white"}
+                  fill={"white"}
                   bg="transparent"
                   _hover={{ bg: "transparent" }}
                 />

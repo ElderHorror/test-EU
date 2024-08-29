@@ -67,23 +67,18 @@ interface IProp {
 
 export function Card(prop: IProp) {
   return (
-    <Link
-      href={prop.data.link}
-      style={{
-        flexBasis: "32.5%",
-      }}
+    <Box
+      borderRadius={"8px"}
+      p="1.5rem"
+      bg={"white"}
+      flexDirection={"column"}
+      flexBasis={{ base: "100%", lg: "32.5%" }}
+      maxW={{ base: "35rem", lg: "30rem" }}
+      minW={"22.5rem"}
+      cursor={prop.data.isDisabled ? "not-allowed" : "pointer"}
+      _hover={{ background: prop.data.isDisabled ? "#FeFeFe" : "white" }}
     >
-      <Flex
-        borderRadius={"8px"}
-        p="1.5rem"
-        bg={"white"}
-        flexDirection={"column"}
-        flexBasis="32.5%"
-        maxW={{ base: "35rem", lg: "30rem" }}
-        minW={"22.5rem"}
-        cursor={prop.data.isDisabled ? "not-allowed" : "pointer"}
-        _hover={{ background: prop.data.isDisabled ? "#FeFeFe" : "white" }}
-      >
+      <Link href={prop.data.link}>
         <AspectRatio ratio={1.6296} maxW={"35rem"}>
           <Image
             borderRadius="8px"
@@ -133,8 +128,8 @@ export function Card(prop: IProp) {
             />
           </svg>
         </Flex>
-      </Flex>
-    </Link>
+      </Link>
+    </Box>
   );
 }
 
