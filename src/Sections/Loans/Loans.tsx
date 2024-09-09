@@ -40,11 +40,11 @@ export function LoansOld() {
 }
 
 const data = [
-  {
-    title: "Visa Processing Fee Loan",
-    subtitle:
-      "This product is designed to help students cover the expenses related to visa processing, making it hassle-free and worry-free.",
-  },
+  // {
+  //   title: "Visa Processing Fee Loan",
+  //   subtitle:
+  //     "This product is designed to help students cover the expenses related to visa processing, making it hassle-free and worry-free.",
+  // },
   {
     title: "Accommodation Payment Loan",
     subtitle:

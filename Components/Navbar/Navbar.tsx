@@ -43,17 +43,17 @@ export default function Navbar(props: any) {
     {
       id: "1",
       navLink: "Home",
-      href: "/#Heropage",
+      href: "../#Heropage",
     },
-    {
-      id: "2",
-      navLink: "About Us",
-      href: "/#About",
-    },
+    // {
+    //   id: "2",
+    //   navLink: "About Us",
+    //   href: "/#About",
+    // },
     {
       id: "3",
       navLink: "Contact Us",
-      href: "/#contact_us",
+      href: "../#contact_us",
     },
     {
       id: "4",
@@ -63,12 +63,12 @@ export default function Navbar(props: any) {
     {
       id: "5",
       navLink: "Loan Services",
-      href: "#Loans",
+      href: "../#Loans",
     },
     {
       id: "6",
       navLink: "Consultation",
-      href: "#Consulting",
+      href: "./#Consulting",
     },
   ];
 
@@ -88,13 +88,9 @@ export default function Navbar(props: any) {
           py={"1rem"}
           as={"nav"}
         >
-          <Box
-            onClick={() => {
-              props.setPageMode(0);
-            }}
-          >
+          <Link href="../#Heropage">
             <NavbarLogo />
-          </Box>
+          </Link>
           <Box display={{ base: "none", md: "none", lg: "block" }}>
             <NavbarList
               list={navLink}

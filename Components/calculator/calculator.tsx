@@ -18,6 +18,13 @@ const initState = {
   percent: 5,
   month: 2,
   mode: 1,
+  firstRepaymentPercent: 10,
+};
+
+const MODE = {
+  ACCOMMODATION: 2,
+  FLIGHT: 3,
+  SAFETY_LOAN: 4,
 };
 
 export default function Calculator(props: any) {
@@ -42,7 +49,7 @@ export default function Calculator(props: any) {
   console.log(data, monthlyPayback);
 
   useLayoutEffect(() => {
-    if (data.month > 1 && data.month <= 18 && data.percent > 1 && data.amount) {
+    if (data.month > 1 && data.month <= 3 && data.percent > 1 && data.amount) {
       // Convert percentage to decimal and then to monthly interest rate
       const monthlyInterestRate: number = data.percent / 100 / 12;
 
@@ -69,7 +76,6 @@ export default function Calculator(props: any) {
         <Text
           fontSize="1.25rem"
           fontWeight="700"
-          id="contact_us"
           textAlign={"center"}
           my="2rem"
         >
@@ -77,7 +83,7 @@ export default function Calculator(props: any) {
         </Text>
         <form onSubmit={onSubmit}>
           <FormLabel htmlFor="amount">
-            Amount (max. £{`${data.mode == 4 ? 500 : 2000}`})
+            Amount (max. £{`${data.mode == 4 ? 500 : 1500}`})
           </FormLabel>
           <Input
             name="amount"
@@ -88,26 +94,11 @@ export default function Calculator(props: any) {
             textColor={"black"}
             _placeholder={{ fontSize: "10px", mt: "1rem", color: "black" }}
             type="number"
-            max={data.mode == 4 ? 500 : 2000}
+            max={data.mode == 4 ? 500 : 1500}
             id="amount"
             step={1}
             min={1}
             value={data.amount}
-            onChange={handleChange}
-          />
-          <FormLabel htmlFor="percent">Percentage (%)</FormLabel>
-          <Input
-            name="percent"
-            size={"sm"}
-            mb={"2rem"}
-            borderRadius={"none"}
-            placeholder="percent"
-            textColor={"black"}
-            _placeholder={{ fontSize: "10px", color: "black" }}
-            type="percent"
-            id="percent"
-            isDisabled
-            value={data.percent}
             onChange={handleChange}
           />
 
@@ -122,7 +113,7 @@ export default function Calculator(props: any) {
             _placeholder={{ fontSize: "10px", color: "black" }}
             type="number"
             id="month"
-            max={18}
+            max={3}
             min={1}
             value={data.month}
             onChange={handleChange}
@@ -131,26 +122,45 @@ export default function Calculator(props: any) {
             defaultValue="1"
             onChange={(e) => {
               if (+e == 1) {
-                setData({ ...data, mode: +e, percent: 5, month: 2 });
-              } else if (+e == 2) {
-                setData({ ...data, mode: +e, percent: 8, month: 3 });
-              } else if (+e == 3) {
-                setData({ ...data, mode: +e, percent: 15, month: 2 });
+                setData({
+                  ...data,
+                  mode: +e,
+                  percent: 5,
+                  month: 2,
+                  firstRepaymentPercent: 10,
+                });
+              } else if (+e == MODE.ACCOMMODATION) {
+                setData({
+                  ...data,
+                  mode: +e,
+                  percent: 4,
+                  month: 3,
+                  firstRepaymentPercent: 10,
+                });
+              } else if (+e == MODE.FLIGHT) {
+                setData({
+                  ...data,
+                  mode: +e,
+                  percent: 5,
+                  month: 2,
+                  firstRepaymentPercent: 10,
+                });
               } else {
                 setData({
                   ...data,
                   amount: 500,
                   mode: +e,
-                  percent: 7.5,
-                  month: 2,
+                  percent: 5,
+                  month: 3,
+                  firstRepaymentPercent: 15,
                 });
               }
             }}
           >
             <Stack>
-              <Radio size="md" value="1">
+              {/* <Radio size="md" value="1">
                 Visa Processing Fee Loan
-              </Radio>
+              </Radio> */}
               <Radio size="md" value="2">
                 Accommodation Payment Visa
               </Radio>
@@ -185,16 +195,72 @@ export default function Calculator(props: any) {
             </Flex>
           </Button>
         </form>
-        {monthlyPayback > 0 && data.amount <= (data.mode == 4 ? 500 : 2000) ? (
+        {monthlyPayback > 0 &&
+        data.amount <= (data.mode == 4 ? 500 : 1500) &&
+        data.month < 4 ? (
           <Box>
             <Flex gap="1rem">
               <Text flexBasis={"45%"}>Service fee:</Text>
-              <Text>£5.0</Text>
+              <Text>
+                {data.mode == MODE.ACCOMMODATION
+                  ? "£10.0"
+                  : data.mode == MODE.FLIGHT
+                  ? "£15.0"
+                  : "£10.0"}
+              </Text>
             </Flex>
             <Flex gap="1rem">
-              <Text flexBasis={"45%"}>Monthly payback:</Text>
-              <Text>{`£${monthlyPayback.toFixed(2)}/month`}</Text>
+              <Text flexBasis={"45%"}>First Month Minimum Repayment:</Text>
+              <Text>{`£${(
+                data.amount *
+                (1 + data.firstRepaymentPercent / 100) *
+                (data.month == 1
+                  ? 1
+                  : data.month == 2
+                  ? 0.6
+                  : data.month == 3
+                  ? 0.4
+                  : 0.1)
+              ).toFixed(2)}/month`}</Text>
             </Flex>
+            {/* {data.month > 4 && (
+              <Flex gap="1rem">
+                <Text flexBasis={"45%"}>Monthly payback:</Text>
+                <Text>{`£${(
+                  data.amount *
+                  (1 + data.firstRepaymentPercent / 100) *
+                  0.44
+                ).toFixed(2)}/month`}</Text>
+              </Flex>
+            )} */}
+            {(data.month == 2 || data.month == 3) && (
+              <>
+                <Flex gap="1rem">
+                  <Text flexBasis={"45%"}>Second Month payback:</Text>
+                  <Text>{`£${(
+                    (data.amount *
+                      (1 + data.firstRepaymentPercent / 100) *
+                      0.4 *
+                      (100 + data.percent)) /
+                    100
+                  ).toFixed(2)}/month`}</Text>
+                </Flex>
+              </>
+            )}
+            {data.month == 3 && (
+              <>
+                <Flex gap="1rem">
+                  <Text flexBasis={"45%"}>Third Month payback:</Text>
+                  <Text>{`£${(
+                    (data.amount *
+                      (1 + data.firstRepaymentPercent / 100) *
+                      0.2 *
+                      (100 + data.percent)) /
+                    100
+                  ).toFixed(2)}/month`}</Text>
+                </Flex>
+              </>
+            )}
           </Box>
         ) : null}
       </Box>
