@@ -48,7 +48,7 @@ export function HeroPageBody2() {
       alignItems={"center"}
       scale={0.8}
     >
-      <Box flexBasis={"50%"}>
+      <Box flexBasis={"45%"}>
         <Flex>
           <Flex
             mb="1.5rem"
@@ -80,7 +80,7 @@ export function HeroPageBody2() {
                 clip-rule="evenodd"
               />
             </svg>
-            <Text mx="0.25rem" fontWeight={"500"}>
+            <Text mx="0.25rem" fontWeight={"500"} fontSize={"12px"}>
               Grow Your Career, Stress-Free
             </Text>
             <Box margin={"auto 0.5rem"}>
@@ -92,9 +92,9 @@ export function HeroPageBody2() {
               >
                 <path
                   stroke="#1B2124"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
                   d="M4 9h10m0 0-5 5m5-5L9 4"
                 />
               </svg>
@@ -104,7 +104,7 @@ export function HeroPageBody2() {
         </Flex>
         <Text
           color={"white"}
-          fontSize={"72px"}
+          fontSize={{ lg: "72px", base: "36px", md: "48px" }}
           fontWeight={600}
           letterSpacing={"-2px"}
           lineHeight={"1.05"}
@@ -118,10 +118,10 @@ export function HeroPageBody2() {
         <Text
           color={"#E4E4E4"}
           lineHeight={"1.5"}
-          fontSize={"1.25rem"}
+          fontSize={{ lg: "20px", base: "16px", md: "18px" }}
           textShadow={"0px 4px 4px #00000040"}
         >
-          EU StudyAssist will support your educational success <br></br> through
+          EU StudyAssist will support your educational success through
           trainings, educational loans and consulting services.
         </Text>
         <Button
@@ -140,7 +140,7 @@ export function HeroPageBody2() {
       </Box>
 
       <Box
-        flexBasis={"42%"}
+        flexBasis={"50%"}
         fontSize={"1rem"}
         borderRadius={"8px"}
         overflow={"hidden"}
@@ -148,12 +148,12 @@ export function HeroPageBody2() {
         justifySelf={"center"}
       >
         <Image
+          marginLeft={"auto"}
           borderRadius={"8px"}
           border={"none"}
           src={"/Image.jpg"}
           alt={"#"}
           objectFit={"contain"}
-          maxH={612}
         />
       </Box>
     </Flex>

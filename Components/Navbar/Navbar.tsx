@@ -86,6 +86,7 @@ export default function Navbar(props: any) {
           justifyContent={"space-between"}
           alignItems={"center"}
           py={"1rem"}
+          pl={{ lg: "unset", base: "1.5rem" }}
           as={"nav"}
         >
           <Link href="../#Heropage">
@@ -116,6 +117,8 @@ export default function Navbar(props: any) {
           <IconButton
             size={"md"}
             bg="transparent"
+            p="0"
+            m="0"
             icon={
               isOpen ? (
                 <CloseIcon

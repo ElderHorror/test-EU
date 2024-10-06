@@ -81,21 +81,35 @@ export default function Loans() {
         flexBasis={{ sm: "100%", lg: "50%" }}
         py={{ base: "2rem", lg: "7rem" }}
       >
-        <Box marginLeft="auto" maxW={"45rem"} pl="2rem">
-          <Text fontSize={"2.5rem"} fontWeight={600}>
+        <Box
+          marginLeft="auto"
+          maxW={{ lg: "45rem", md: "unset" }}
+          pl={{ lg: "2rem", md: "0" }}
+        >
+          <Text
+            fontSize={{ lg: "2.5rem", base: "32px" }}
+            fontWeight={600}
+            textAlign={"center"}
+          >
             Our Loan Service
           </Text>
-          <Text
-            maxW="40rem"
-            color="#2F3540"
-            fontSize={"1.25rem"}
-            lineHeight={1.5}
-          >
-            We have provided a financial solution to empower your educational
-            future. You can use our loan service to meet various educational
-            needs so you can focus on studying happily
-          </Text>
-          <Calculator minH={"unset"} mt="2rem" pr={{ base: "2rem" }} />
+          <Box px={{ base: "1.5rem", lg: "0" }}>
+            <Text
+              maxW="40rem"
+              color="#2F3540"
+              fontSize={{ lg: "20px", base: "16px", md: "18px" }}
+              lineHeight={{ lg: 1.5, base: 1.4 }}
+            >
+              We have provided a financial solution to empower your educational
+              future. You can use our loan service to meet various educational
+              needs so you can focus on studying happily
+            </Text>
+            <Calculator
+              minH={"unset"}
+              mt="2rem"
+              pr={{ base: "0rem", md: "2rem" }}
+            />
+          </Box>
         </Box>
       </Box>
       <Box
@@ -124,7 +138,7 @@ export default function Loans() {
                       ml="1.5rem"
                       mb="0.75rem"
                       fontWeight={600}
-                      fontSize={"1.5rem"}
+                      fontSize={{ base: "20px", lg: "1.5rem" }}
                       textShadow={"0px 4px 4px #00000040"}
                     >
                       {elem.title}
@@ -134,7 +148,7 @@ export default function Loans() {
                     ml="2.65rem"
                     mb="1.5rem"
                     color={"#E4E4E4"}
-                    fontSize={"1.1rem"}
+                    fontSize={{ base: "16px", lg: "1.1rem" }}
                     textShadow={"0px 4px 4px #00000040"}
                   >
                     {elem.subtitle}
@@ -142,41 +156,43 @@ export default function Loans() {
                 </Box>
               );
             })}
-            <Link href={"#"}>
-              <Flex
-                bg="white"
-                cursor={"not-allowed"}
-                alignItems={"center"}
-                width={"11rem"}
-                my="1.5rem"
-                borderRadius={"8px"}
-                padding={"0.5rem 1.5rem"}
-                alignSelf={"flex-start"}
-                justifySelf={"flex-start"}
+
+            <Flex
+              bg="white"
+              cursor={"not-allowed"}
+              alignItems={"center"}
+              width={"10.75rem"}
+              my="1.5rem"
+              borderRadius={"8px"}
+              padding={"0.5rem 1.5rem"}
+              alignSelf={"flex-start"}
+              justifySelf={"flex-start"}
+              // mx="auto"
+            >
+              <Text
+                color={"#0E5FDC"}
+                marginRight={"0.75rem"}
+                fontWeight={600}
+                my="0.75rem"
+                mx="0"
+                mr="0.2rem"
               >
-                <Text
-                  color={"#0E5FDC"}
-                  marginRight={"0.75rem"}
-                  fontWeight={600}
-                  my="0.75rem"
-                >
-                  Learn More
-                </Text>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  width={"24px"}
-                >
-                  <path
-                    fill="#0E5FDC"
-                    fill-rule="evenodd"
-                    d="M11 12a22 22 0 0 0 0 5l1 1h2l6-4 1-1a2 2 0 0 0 0-2h-1v-1l-6-4h-1l-2 1v5Zm-6-2-2 2 2 2 3-1 1-1-1-1-3-1Z"
-                    clip-rule="evenodd"
-                  />
-                </svg>
-              </Flex>
-            </Link>
+                Learn More
+              </Text>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                width={"24px"}
+              >
+                <path
+                  fill="#0E5FDC"
+                  fill-rule="evenodd"
+                  d="M11 12a22 22 0 0 0 0 5l1 1h2l6-4 1-1a2 2 0 0 0 0-2h-1v-1l-6-4h-1l-2 1v5Zm-6-2-2 2 2 2 3-1 1-1-1-1-3-1Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </Flex>
           </Box>
         </Box>
       </Box>

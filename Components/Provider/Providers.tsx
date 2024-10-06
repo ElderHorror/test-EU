@@ -1,16 +1,25 @@
 "use client";
 import { CacheProvider } from "@chakra-ui/next-js";
 import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import Fonts from "./Fonts";
 
 // Extended Theme
 
 const fonts = {
-  body: "Plus Jakarta Sans",
-  heading: "Plus Jakarta Sans",
+  heading: `'ClashDisplay', sans-serif`,
+  body: `'ClashDisplay', sans-serif`,
 };
 
 const theme = extendTheme({
   fonts,
+  sizes: {
+    base: "16px",
+    sm: "20px",
+    md: "24px",
+    lg: "32px",
+    xl: "40px",
+    "2xl": "48px",
+  },
   colors: {
     secondary: {
       25: "#F2F2F4",
@@ -71,6 +80,7 @@ const theme = extendTheme({
 export default function Providers({ children }: { children: React.ReactNode }) {
   return (
     <CacheProvider>
+      <Fonts />
       <ChakraProvider theme={theme}>{children}</ChakraProvider>
     </CacheProvider>
   );

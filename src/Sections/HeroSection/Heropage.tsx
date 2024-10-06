@@ -7,7 +7,7 @@ export default function Heropage() {
   return (
     <Box
       bgColor={"#0E5FDC"}
-      pt={"9rem"}
+      pt={{ lg: "9rem", md: "7.5rem", base: "6rem" }}
       px="1rem"
       id="Heropage"
       pb={{ base: "2rem", lg: "7rem" }}

@@ -102,7 +102,7 @@ export function Card(prop: IProp) {
         <Flex
           cursor={prop.data.isDisabled ? "not-allowed" : "pointer"}
           alignItems={"center"}
-          width={"10rem"}
+          width={"15rem"}
           alignSelf={"flex-start"}
           justifySelf={"flex-start"}
         >
@@ -150,7 +150,7 @@ export default function Commitment() {
         <Text
           color={"black"}
           fontWeight={600}
-          fontSize={"2.5rem"}
+          fontSize={{ lg: "2.5rem", base: "32px" }}
           textAlign={"center"}
           marginY={"0.5rem"}
         >
@@ -159,8 +159,8 @@ export default function Commitment() {
         <Text
           color={"#2F3540"}
           textAlign={"center"}
-          fontSize={"18px"}
-          lineHeight={1.75}
+          fontSize={{ lg: "18px", base: "16px" }}
+          lineHeight={{ lg: 1.75, base: 1.4 }}
           maxW="45rem"
           margin={"auto"}
           mb="2.5rem"
@@ -229,7 +229,7 @@ export function Consulting() {
         <Text
           color={"black"}
           fontWeight={600}
-          fontSize={"2.5rem"}
+          fontSize={{ lg: "2.5rem", base: "30px" }}
           textAlign={"center"}
           marginY={"0.5rem"}
         >
@@ -238,8 +238,8 @@ export function Consulting() {
         <Text
           color={"#2F3540"}
           textAlign={"center"}
-          fontSize={"18px"}
-          lineHeight={1.75}
+          fontSize={{ lg: "18px", base: "16px" }}
+          lineHeight={{ lg: 1.75, base: 1.4 }}
           maxW="45rem"
           margin={"auto"}
           mb="2.5rem"
