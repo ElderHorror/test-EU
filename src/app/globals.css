@@ -9,11 +9,14 @@
 
 html{
     scroll-behavior: smooth !important;
+    box-sizing: border-box;
+
 }
 
 body{
     /* font-family: 'Plus Jakarta Sans'; */
     scroll-behavior: smooth !important;
+    box-sizing: border-box;
 }
 
 .btn:hover{

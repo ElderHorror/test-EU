@@ -5,7 +5,7 @@ import Footerpropthree from "../../../Components/Footer/Footerpropthree";
 import FooterProptwo from "../../../Components/Footer/FooterProptwo";
 import Link from "next/link";
 
-export default function Footer() {
+export default function Footer(props:any) {
   const footlinkone = [
     // {
     //   id: "1",
@@ -77,6 +77,7 @@ export default function Footer() {
       bgColor={"#0E5FDC"}
       color={"white"}
       pt={"1rem"}
+      {...props}
     >
       <Container maxW={"90rem"}>
         <Flex
