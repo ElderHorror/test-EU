@@ -3,10 +3,14 @@
 import {
   Box,
   Flex,
+  Grid,
+  GridItem,
   Image,
   ListItem,
+  SimpleGrid,
   Text,
   UnorderedList,
+  Link,
 } from "@chakra-ui/react";
 import Navbar from "../../../Components/Navbar/Navbar";
 import Footer from "@/Sections/Footer/Footer";
@@ -303,6 +307,61 @@ export default function About() {
           <Text fontWeight={"600"} fontSize={{ lg: "52px", base: "32px" }}>
             Meet Our Beautiful Team
           </Text>
+          <SimpleGrid columns={{ sm: 2, lg: 4 }} gap={4}>
+            {[
+              {
+                image: "./adu.jpeg",
+                title: "CEO & Founder",
+                name: "Olamide Adu",
+              },
+              {
+                image: "./fis.jpeg",
+                title: "CTO & Founder",
+                name: "Adesuyi Fisola",
+              },
+              {
+                image: "./oki.jpeg",
+                title: "Developer",
+                name: "Oki Ayobami",
+              },
+              {
+                image: "./mes.jpeg",
+                title: "Lead Designer",
+                name: "Meshach Aderele",
+              },
+            ].map((elem, index) => (
+              <Box minWidth={"10rem"} key={`about-index-${index}`}>
+                <Grid templateRows="repeat(4, 1fr)" templateColumns="1fr">
+                  <GridItem
+                    rowStart={1}
+                    rowSpan={4}
+                    bg="papayawhip"
+                    zIndex={1}
+                    colStart={1}
+                  >
+                    <Image src={elem.image} alt="" />
+                  </GridItem>
+                  <GridItem
+                    rowStart={4}
+                    rowSpan={1}
+                    h="50px"
+                    zIndex={3}
+                    colStart={1}
+                  >
+                    <Box
+                      margin={"0.5rem 1.5rem"}
+                      padding="0.5rem"
+                      bg="white"
+                      textAlign={"center"}
+                    >
+                      <Text fontWeight={600}>{elem.name}</Text>
+                      <Text>{elem.title}</Text>
+                    </Box>
+                  </GridItem>
+                </Grid>
+              </Box>
+            ))}
+          </SimpleGrid>
           <Box maxW="614px" mx="auto" mt="2rem">
             <Text mt="1rem" lineHeight={{ lg: 1.6, base: 1.4 }}>
               <span style={{ fontWeight: 700 }}>Olamide Adu</span> is a
@@ -312,7 +371,47 @@ export default function About() {
               analysis and sustainability consulting, he helps small and
               medium-sized businesses implement data-driven strategies to
               minimize environmental impact and optimize resource efficiency.
+              <br />
+              <span style={{ fontWeight: 600 }}>
+                <Link href="https://www.linkedin.com/in/olamide-adu">
+                  contact: olamideadu@gmail.com
+                </Link>
+              </span>
             </Text>
+            <Text mt="1rem" lineHeight={{ lg: 1.6, base: 1.4 }}>
+              <span style={{ fontWeight: 700 }}>Adesuyi Fisola</span> is a
+              software engineer with a unique blend of academic background and
+              hands-on experience. My journey through the tech landscape has
+              been driven by an unwavering passion for building scalable
+              software and bringing products to life for people to use.
+              Transitioning into software engineering was a natural step for me,
+              fuelled by my love for developing innovative solutions and
+              continuously learning new technologies. My academic pursuits in
+              nature management and forest ecosystems have instilled a keen
+              analytical mindset, which I apply to my software development role.
+              This unique educational background, paired with hands-on Ruby on
+              Rails expertise, enables me to contribute meaningfully to our
+              projects.
+              <br />
+              <span style={{ fontWeight: 600 }}>
+                <Link href="https://www.linkedin.com/in/fisolaadesuyi/">
+                  contact: adesuyifisola@gmail.com
+                </Link>
+              </span>
+            </Text>
+            <Text mt="1rem" lineHeight={{ lg: 1.6, base: 1.4 }}>
+              <span style={{ fontWeight: 700 }}> Oki Ayobami</span> is a
+              proficient software engineer, with over 8 years of experience
+              crafting innovative solutions and demystifying complex problems in
+              the world of blockchain.
+              <br />
+              <span style={{ fontWeight: 600 }}>
+                <Link href="https://www.linkedin.com/in/xlassix/">
+                  contact: awhy14539@gmail.com{" "}
+                </Link>
+              </span>
+            </Text>
+
             <Text mt="1rem" lineHeight={{ lg: 1.6, base: 1.4 }}>
               <span style={{ fontWeight: 700 }}>Meshach Aderele</span> is a PhD
               Fellow at Aarhus University, where he focuses on applying modern
@@ -321,26 +420,12 @@ export default function About() {
               American University of Beirut. With extensive experience in
               digital product design and strategy, he combines technology and
               sustainability to drive impactful solutions.
-            </Text>
-
-            <Text mt="1rem" lineHeight={{ lg: 1.6, base: 1.4 }}>
-              <span style={{ fontWeight: 700 }}> Meshach Aderele</span> is a PhD
-              Fellow at Aarhus University, where he focuses on applying modern
-              technologies to promote environmental sustainability. He was
-              awarded the prestigious Mastercard Foundation Scholarship at the
-              American University of Beirut. With extensive experience in
-              digital product design and strategy, he combines technology and
-              sustainability to drive impactful solutions.
-            </Text>
-
-            <Text mt="1rem" lineHeight={{ lg: 1.6, base: 1.4 }}>
-              <span style={{ fontWeight: 700 }}>Meshach Aderele</span> is a PhD
-              Fellow at Aarhus University, where he focuses on applying modern
-              technologies to promote environmental sustainability. He was
-              awarded the prestigious Mastercard Foundation Scholarship at the
-              American University of Beirut. With extensive experience in
-              digital product design and strategy, he combines technology and
-              sustainability to drive impactful solutions.
+              <br />
+              <span style={{ fontWeight: 600 }}>
+                <Link href="https://www.linkedin.com/in/aderelemeshach/">
+                  contact: meshach.aderele@agro.au.dk{" "}
+                </Link>
+              </span>
             </Text>
           </Box>
         </Flex>
