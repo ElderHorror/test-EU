@@ -381,17 +381,12 @@ export default function About() {
             <Text mt="1rem" lineHeight={{ lg: 1.6, base: 1.4 }}>
               <span style={{ fontWeight: 700 }}>Adesuyi Fisola</span> is a
               software engineer with a unique blend of academic background and
-              hands-on experience. My journey through the tech landscape has
+              hands-on experience. His journey through the tech landscape has
               been driven by an unwavering passion for building scalable
               software and bringing products to life for people to use.
               Transitioning into software engineering was a natural step for me,
               fuelled by my love for developing innovative solutions and
-              continuously learning new technologies. My academic pursuits in
-              nature management and forest ecosystems have instilled a keen
-              analytical mindset, which I apply to my software development role.
-              This unique educational background, paired with hands-on Ruby on
-              Rails expertise, enables me to contribute meaningfully to our
-              projects.
+              continuously learning new technologies.
               <br />
               <span style={{ fontWeight: 600 }}>
                 <Link href="https://www.linkedin.com/in/fisolaadesuyi/">
