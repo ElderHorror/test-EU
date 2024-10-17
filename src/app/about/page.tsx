@@ -303,6 +303,7 @@ export default function About() {
           alignItems={"center"}
           scale={0.8}
           mb="4rem"
+          id="About"
         >
           <Text fontWeight={"600"} fontSize={{ lg: "52px", base: "32px" }}>
             Meet Our Beautiful Team
