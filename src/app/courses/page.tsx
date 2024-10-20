@@ -72,7 +72,7 @@ export default function Courses() {
               >
                 Our training and bootcamp programs are designed to equip
                 students, researchers, and professionals with critical technical
-                skills to excel in the global landscape. Whether you&aposre
+                skills to excel in the global landscape. Whether you&apos;re
                 seeking to enhance your data science expertise or acquire new
                 skills for research, our programs offer personalized, hands-on
                 learning experiences. With expert-led sessions, one-on-one
@@ -118,7 +118,7 @@ export default function Courses() {
           you with the technical skills and knowledge needed to excel in
           research and professional settings. Each course offers hands-on
           learning, real-world projects, and mentorship from industry experts to
-          ensure you&aposre ready for global opportunities.
+          ensure you&apos;re ready for global opportunities.
         </Text>
       </Box>
 
@@ -224,7 +224,7 @@ export default function Courses() {
                     Tailored Learning:
                   </span>{" "}
                   Our programs are customized to meet individual needs, whether
-                  you&aposre a student, researcher, or professional.
+                  you&apos;re a student, researcher, or professional.
                 </ListItem>
                 <ListItem my="0.75rem">
                   <span style={{ fontWeight: 700, lineHeight: 1.5 }}>
@@ -265,7 +265,7 @@ export default function Courses() {
           textAlign={"center"}
           marginY={"0.5rem"}
         >
-          With EU StudyAssist, you&aposre not just learning; you&aposre
+          With EU StudyAssist, you&apos;re not just learning; you&apos;re
           preparing for global success.
         </Text>
         <Text
