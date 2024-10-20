@@ -5,7 +5,7 @@ import Footerpropthree from "../../../Components/Footer/Footerpropthree";
 import FooterProptwo from "../../../Components/Footer/FooterProptwo";
 import Link from "next/link";
 
-export default function Footer(props:any) {
+export default function Footer(props: any) {
   const footlinkone = [
     // {
     //   id: "1",
@@ -51,7 +51,7 @@ export default function Footer(props:any) {
     {
       id: "1",
       links: "About",
-      href: "#About",
+      href: "./about",
     },
     // {
     //   id: "2",

@@ -31,7 +31,7 @@ export default function About() {
       >
         <Flex
           maxW={"90rem"}
-          px="1.5rem"
+          px={{ lg: "1.5rem", base: 0 }}
           flexDir={{ base: "column", lg: "row" }}
           justifyContent={"space-between"}
           alignItems={"center"}
@@ -39,7 +39,7 @@ export default function About() {
         >
           <Flex
             maxW={"90rem"}
-            px="1.5rem"
+            px={{ lg: "1.5rem", base: 0 }}
             flexDir={{ base: "column", lg: "row" }}
             justifyContent={"space-between"}
             alignItems={"center"}
@@ -89,7 +89,9 @@ export default function About() {
           border={"none"}
           src={"/about.jpg"}
           alt={"#"}
-          objectFit={"contain"}
+          minH={{ base: "calc(120vw)", md: "unset" }}
+          maxH={"60vh"}
+          objectFit={{ md: "contain", base: "cover", lg: "cover" }}
         />
       </Box>
       <Box
@@ -100,7 +102,6 @@ export default function About() {
       >
         <Flex
           maxW={"90rem"}
-          px="1.5rem"
           flexDir={{ base: "column", lg: "row" }}
           justifyContent={"space-between"}
           alignItems={"center"}
@@ -180,7 +181,7 @@ export default function About() {
       >
         <Flex
           maxW={"90rem"}
-          px="1.5rem"
+          // px="1.5rem"
           flexDir={{ base: "column", lg: "row" }}
           justifyContent={"space-between"}
           alignItems={"center"}
@@ -297,7 +298,7 @@ export default function About() {
       >
         <Flex
           maxW={"90rem"}
-          px="1.5rem"
+          // px="1.5rem"
           flexDir={{ base: "column" }}
           justifyContent={"space-between"}
           alignItems={"center"}
@@ -331,12 +332,12 @@ export default function About() {
                 name: "Meshach Aderele",
               },
             ].map((elem, index) => (
-              <Box minWidth={"10rem"} key={`about-index-${index}`}>
+              <Box minWidth={"10rem"} key={`about-index-${index + 4}`}>
                 <Grid templateRows="repeat(4, 1fr)" templateColumns="1fr">
                   <GridItem
                     rowStart={1}
                     rowSpan={4}
-                    bg="papayawhip"
+                    bg="transparent"
                     zIndex={1}
                     colStart={1}
                   >

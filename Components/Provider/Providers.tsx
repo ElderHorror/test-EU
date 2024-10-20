@@ -72,6 +72,28 @@ const theme = extendTheme({
             boxShadow: "none",
           },
         },
+        primary: {
+          bg: "#0E5FDC",
+          border: "1px",
+          borderColor: "#0E5FDC",
+          padding: "1.35rem 2.5rem 1.35rem 2.5rem",
+          color: "#FFFFFF",
+          fontWeight: "400",
+          fontSize: "16px",
+          rounded: "8px",
+          ":hover": {
+            bg: "secondary.600",
+            color: "secondary.200",
+          },
+          ":focus": {
+            outline: "none",
+            boxShadow: "none",
+          },
+          ":focus-visible": {
+            outline: "none",
+            boxShadow: "none",
+          },
+        },
       },
     },
   },
