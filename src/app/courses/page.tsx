@@ -12,9 +12,13 @@ import {
 import Navbar from "../../../Components/Navbar/Navbar";
 import { useRouter } from "next/navigation";
 import Footer from "@/Sections/Footer/Footer";
+import { useState } from "react";
+import { useLocation } from "../../../Components/hooks";
 
 export default function Courses() {
   const router = useRouter();
+  const [selected, setSelected] = useState("");
+  const { data, isLoading } = useLocation();
 
   return (
     <>
@@ -139,6 +143,22 @@ export default function Courses() {
                   "This course covers essential concepts in data science, focusing on R programming, Git version control, and GitHub collaboration. Participants will learn data manipulation, statistical analysis, and data visualization in R, alongside mastering Git for version control. By the end, they'll efficiently track changes, collaborate, and manage projects on GitHub.",
                 image: "./R.jpg",
                 isDisabled: false,
+                onclick: async () => {
+                  const res = await fetch(
+                    "/api/create_stripe_payment_session",
+                    {
+                      method: "POST",
+                      headers: {
+                        "Content-Type": "application/json",
+                      },
+                      body: JSON.stringify({}),
+                    }
+                  );
+
+                  const result = await res.json();
+                  console.log(result);
+                  await router.push(result.url);
+                },
               },
               {
                 name: "Data Visualization",
@@ -162,34 +182,185 @@ export default function Courses() {
                 isDisabled: true,
               },
             ].map((elem) => (
-              <Flex
-                px={{ lg: "1.5rem", base: 0 }}
-                key={elem.name}
-                alignItems={"center"}
-                flexDirection={{ lg: "row", base: "column" }}
-                py="2.25rem"
-              >
-                <Box
-                  flexBasis={{ lg: "67%", base: "100%" }}
+              <>
+                <Flex
                   px={{ lg: "1.5rem", base: 0 }}
+                  key={elem.name}
+                  alignItems={"center"}
+                  flexDirection={{ lg: "row", base: "column" }}
+                  py="2.25rem"
                 >
-                  <Text fontWeight={"500"} fontSize="24px" my="1rem">
-                    {elem.name}
-                  </Text>
-                  <Text my="1rem">{elem.description}</Text>
-                  <Button
-                    variant={"primary"}
-                    px="1.5rem"
-                    my="1rem"
-                    isDisabled={elem.isDisabled}
+                  <Box
+                    flexBasis={{ lg: "67%", base: "100%" }}
+                    px={{ lg: "1.5rem", base: 0 }}
                   >
-                    {elem.isDisabled ? "Coming soon" : "Learn More"}
-                  </Button>
-                </Box>
-                <Box ml={{ lg: "2rem", base: "unset" }}>
-                  <Image src={elem.image} alt={elem.name} />
-                </Box>
-              </Flex>
+                    <Text fontWeight={"500"} fontSize="24px" my="1rem">
+                      {elem.name}
+                    </Text>
+                    <Text my="1rem">{elem.description}</Text>
+                    <Button
+                      variant={"primary"}
+                      px="1.5rem"
+                      my="1rem"
+                      isDisabled={elem.isDisabled}
+                      onClick={() => {
+                        if (selected === elem.name) {
+                          setSelected("");
+                        } else setSelected(elem.name);
+                      }}
+                    >
+                      {elem.isDisabled ? "Coming soon" : "Learn More"}
+                    </Button>
+                  </Box>
+                  <Box ml={{ lg: "2rem", base: "unset" }}>
+                    <Image src={elem.image} alt={elem.name} />
+                  </Box>
+                </Flex>
+                {selected === elem.name ? (
+                  <Flex
+                    key={`card-${elem.name}`}
+                    alignItems={"center"}
+                    flexDirection={{ lg: "row", base: "column" }}
+                    maxW="80rem"
+                    bg="white"
+                    margin={"auto"}
+                  >
+                    <Box
+                      flexBasis={{ lg: "67%", base: "100%" }}
+                      px={{ lg: "1.5rem", base: 0 }}
+                    >
+                      <Text
+                        fontWeight={"600"}
+                        fontSize="32px"
+                        mx="1rem"
+                        mt="1.5rem"
+                      >
+                        What You Will Learn
+                      </Text>
+                      <UnorderedList
+                        mb="1.5rem"
+                        mt="2rem"
+                        styleType={"' '"}
+                        sx={{
+                          li: {
+                            fontWeight: "500",
+                            padding: "1rem",
+                            bg: "rgba(147, 151, 169, 0.06)",
+                            border: "1px solid #FFF",
+                            mb: "0.25rem",
+                          },
+                        }}
+                      >
+                        <ListItem>Foundations</ListItem>
+                        <ListItem>Functions </ListItem>
+                        <ListItem>Import/Export Data </ListItem>
+                        <ListItem>Exploratory Data Analysis </ListItem>
+                        <ListItem>Inferential Statistics with R </ListItem>
+                        <ListItem>Connect Codebase to GitHub </ListItem>
+                        <ListItem>Git/GitHub Collaboration </ListItem>
+                        <ListItem>Reproducible Research With Quarto </ListItem>
+                        <ListItem>Capstone Project </ListItem>
+                      </UnorderedList>
+                    </Box>
+                    <Box
+                      flexBasis={{ lg: "67%", base: "100%" }}
+                      px={{ lg: "1.5rem", base: 0 }}
+                    >
+                      <Flex
+                        flexDirection={"column"}
+                        alignContent={"space-between"}
+                      >
+                        <Box>
+                          <Box mb="1rem">
+                            <Text
+                              fontSize={{ lg: "18px", base: "16px" }}
+                              fontWeight={"500"}
+                            >
+                              Duration:
+                            </Text>
+                            <Text
+                              fontSize={{ lg: "24px", base: "18px" }}
+                              fontWeight={"800"}
+                            >
+                              6 weekends
+                            </Text>
+                          </Box>
+                          <Box mb="1rem">
+                            <Text
+                              fontSize={{ lg: "18px", base: "16px" }}
+                              fontWeight={"500"}
+                            >
+                              {" "}
+                              Class Type:
+                            </Text>
+                            <Text
+                              fontSize={{ lg: "24px", base: "18px" }}
+                              fontWeight={"800"}
+                            >
+                              {" "}
+                              Virtual Live Classes
+                            </Text>
+                          </Box>
+                          <Box mb="1rem">
+                            <Text
+                              fontSize={{ lg: "18px", base: "16px" }}
+                              fontWeight={"500"}
+                            >
+                              Next Cohort:
+                            </Text>
+                            <Text
+                              fontSize={{ lg: "24px", base: "18px" }}
+                              fontWeight={"800"}
+                            >
+                              27th of September 2024
+                            </Text>
+                          </Box>
+                        </Box>
+                        <Box mt="3rem">
+                          <Text
+                            my="1rem"
+                            fontWeight={"600"}
+                            fontSize={{ lg: "42px", base: "32px" }}
+                            mt="auto"
+                          >
+                            {data.country_code === "NG"
+                              ? "NGN 120,000"
+                              : "$ 74.99 "}
+                          </Text>
+                          <Button
+                            variant={"primary"}
+                            px="1.5rem"
+                            my="1rem"
+                            isDisabled={elem.isDisabled}
+                            onClick={async () => {
+                              if (data.country_code === "NG") {
+                                await router.push("/courses/checkout");
+                              } else {
+                                const res = await fetch(
+                                  "/api/create_stripe_payment_session",
+                                  {
+                                    method: "POST",
+                                    headers: {
+                                      "Content-Type": "application/json",
+                                    },
+                                    body: JSON.stringify({}),
+                                  }
+                                );
+
+                                const result = await res.json();
+                                console.log(result);
+                                await router.push(result.url);
+                              }
+                            }}
+                          >
+                            Enroll Now
+                          </Button>
+                        </Box>
+                      </Flex>
+                    </Box>
+                  </Flex>
+                ) : null}
+              </>
             ))}
           </Box>
         </Flex>

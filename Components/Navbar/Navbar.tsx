@@ -45,11 +45,11 @@ export default function Navbar(props: any) {
       navLink: "Home",
       href: "../#Heropage",
     },
-    // {
-    //   id: "2",
-    //   navLink: "About Us",
-    //   href: "/#About",
-    // },
+    {
+      id: "2",
+      navLink: "About Us",
+      href: "/about",
+    },
     {
       id: "3",
       navLink: "Contact Us",
