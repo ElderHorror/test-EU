@@ -297,7 +297,7 @@ export default function About() {
         placeContent={"center"}
       >
         <Flex
-          maxW={"90rem"}
+          maxW={"60rem"}
           // px="1.5rem"
           flexDir={{ base: "column" }}
           justifyContent={"space-between"}
@@ -309,7 +309,7 @@ export default function About() {
           <Text fontWeight={"600"} fontSize={{ lg: "52px", base: "32px" }}>
             Meet Our Beautiful Team
           </Text>
-          <SimpleGrid columns={{ sm: 2, lg: 4 }} gap={4}>
+          <SimpleGrid columns={{ sm: 2, lg: 3 }} gap={4}>
             {[
               {
                 image: "./adu.jpeg",
