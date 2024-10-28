@@ -94,8 +94,8 @@ const getStripeOrder = async (email: string, metadata: any) => {
       },
     ],
     customer: customer.id,
-    success_url: `https://eustudyassist.com/courses`,
-    cancel_url: `https://eustudyassist.com/courses`,
+    success_url: `https://eustudyassist.com/courses/`,
+    cancel_url: `https://eustudyassist.com/courses/`,
   });
   return { url: session.url };
 };
@@ -106,6 +106,9 @@ export async function GET(req: Request) {
 
 export async function POST(request: Request) {
   try {
+    const data: { email: string; metadata: any } = await request.json();
+
+    const { email, metadata } = data;
 
     console.log({ email, metadata });
     const { url } = await getStripeOrder(email, metadata);
