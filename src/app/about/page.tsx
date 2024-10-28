@@ -316,11 +316,11 @@ export default function About() {
                 title: "CEO & Founder",
                 name: "Olamide Adu",
               },
-              {
-                image: "./fis.jpeg",
-                title: "CTO & Founder",
-                name: "Adesuyi Fisola",
-              },
+              // {
+              //   image: "./fis.jpeg",
+              //   title: "CTO & Founder",
+              //   name: "Adesuyi Fisola",
+              // },
               {
                 image: "./oki.jpeg",
                 title: "Developer",
@@ -380,7 +380,7 @@ export default function About() {
                 </Link>
               </span>
             </Text>
-            <Text mt="1rem" lineHeight={{ lg: 1.6, base: 1.4 }}>
+            {/* <Text mt="1rem" lineHeight={{ lg: 1.6, base: 1.4 }}>
               <span style={{ fontWeight: 700 }}>Adesuyi Fisola</span> is a
               software engineer with a unique blend of academic background and
               hands-on experience. His journey through the tech landscape has
@@ -395,7 +395,7 @@ export default function About() {
                   contact: adesuyifisola@gmail.com
                 </Link>
               </span>
-            </Text>
+            </Text> */}
             <Text mt="1rem" lineHeight={{ lg: 1.6, base: 1.4 }}>
               <span style={{ fontWeight: 700 }}> Oki Ayobami</span> is a
               proficient software engineer, with over 8 years of experience
