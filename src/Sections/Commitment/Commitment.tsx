@@ -104,7 +104,7 @@ export function Card(prop: IProp) {
           fontSize={"1.15rem"}
           lineHeight={"1.4rem"}
           mb="1rem"
-          minH="10rem"s
+          minH="10rem"
         >
           {prop.data.subTitle}
         </Text>

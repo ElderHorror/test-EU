@@ -146,7 +146,7 @@ export default function Loans() {
                   </Flex>
                   <Text
                     ml="2.65rem"
-                    mb="1.5rem"jk
+                    mb="1.5rem"
                     color={"#E4E4E4"}
                     fontSize={{ base: "16px", lg: "1.1rem" }}
                     textShadow={"0px 4px 4px #00000040"}
