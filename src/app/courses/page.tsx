@@ -14,6 +14,7 @@ import { useRouter } from "next/navigation";
 import Footer from "@/Sections/Footer/Footer";
 import { useState } from "react";
 import { useLocation } from "../../../Components/hooks";
+import { Testimonial } from "@/Sections/Loans/Testimonial";
 
 export default function Courses() {
   const router = useRouter();
@@ -133,7 +134,7 @@ export default function Courses() {
               {
                 name: "Python for Research",
                 description:
-                  "This course covers essential concepts in data science, focusing on R programming, Git version control, and GitHub collaboration. Participants will learn data manipulation, statistical analysis, and data visualization in R, alongside mastering Git for version control. By the end, they'll efficiently track changes, collaborate, and manage projects on GitHub.",
+                  "This course introduces core data science concepts using Python. Participants will learn data manipulation, statistical analysis, and visualization in Python, as well as project management essentials. By the end, they’ll be equipped to efficiently analyze and interpret data for research applications.",
                 image: "./pythonR.jpg",
                 isDisabled: true,
               },
@@ -163,22 +164,22 @@ export default function Courses() {
               {
                 name: "Data Visualization",
                 description:
-                  "This course covers essential concepts in data science, focusing on R programming, Git version control, and GitHub collaboration. Participants will learn data manipulation, statistical analysis, and data visualization in R, alongside mastering Git for version control. By the end, they'll efficiently track changes, collaborate, and manage projects on GitHub.",
+                  "Focused on principles of visual storytelling, this course covers the tools and techniques for creating impactful data visualizations. Participants will learn to design clear, effective visuals using R, enhancing their ability to communicate complex data insights effectively.",
                 image: "./data_vs.jpg",
                 isDisabled: true,
               },
               {
                 name: "GIS Visualization",
                 description:
-                  "This course covers essential concepts in data science, focusing on R programming, Git version control, and GitHub collaboration. Participants will learn data manipulation, statistical analysis, and data visualization in R, alongside mastering Git for version control. By the end, they'll efficiently track changes, collaborate, and manage projects on GitHub.",
+                  "In this course, participants gain skills in geographic information systems (GIS) for spatial data analysis. Using R, they’ll learn to manage, analyze, and visualize geospatial data, making it ideal for those interested in environmental and spatial research.",
                 image: "./GIS.jpg",
                 isDisabled: true,
               },
               {
                 name: "Experimental Design",
                 description:
-                  "This course covers essential concepts in data science, focusing on R programming, Git version control, and GitHub collaboration. Participants will learn data manipulation, statistical analysis, and data visualization in R, alongside mastering Git for version control. By the end, they'll efficiently track changes, collaborate, and manage projects on GitHub.",
-                image: "./GIS.jpg",
+                  "Designed for researchers, this course covers key principles of experimental design, including hypothesis testing, randomization, and replication. Participants will learn to structure experiments rigorously, analyze results, and draw valid conclusions to support evidence-based research.",
+                image: "./experimental.jpg",
                 isDisabled: true,
               },
             ].map((elem) => (
@@ -424,34 +425,7 @@ export default function Courses() {
           </Box>
         </Flex>
       </Box>
-
-      <Box py="8rem" bg="#F4F4F4" px="1.5rem">
-        <Text
-          color={"#2F3540"}
-          fontWeight={400}
-          fontSize={{ lg: "32px", base: "18px" }}
-          lineHeight={{ lg: 1.5, base: 1.2 }}
-          maxW="51rem"
-          margin={"auto"}
-          textAlign={"center"}
-          marginY={"0.5rem"}
-        >
-          With EU StudyAssist, you&apos;re not just learning; you&apos;re
-          preparing for global success.
-        </Text>
-        <Text
-          color={"#2F3540"}
-          textAlign={"center"}
-          fontSize={{ lg: "16px", base: "16px" }}
-          lineHeight={{ lg: 1.5, base: 1.2 }}
-          maxW="51rem"
-          margin={"auto"}
-          mb="2.5rem"
-          my="1rem"
-        >
-          <Button variant={"primary"}>Apply Now</Button>
-        </Text>
-      </Box>
+      <Testimonial />
       <Box onClick={() => {}}>
         <Footer mt="0rem" />
       </Box>

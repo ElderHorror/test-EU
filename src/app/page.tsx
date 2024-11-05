@@ -13,6 +13,7 @@ import { useHashFragment } from "../../Components/hooks";
 import GITright from "@/Sections/Footer/GITright";
 import Navbar from "../../Components/Navbar/Navbar";
 import Calculator from "../../Components/calculator/calculator";
+import { Testimonial } from "@/Sections/Loans/Testimonial";
 
 export default function Home() {
   useHashFragment();
@@ -59,6 +60,7 @@ export default function Home() {
         <Reviews />
         <ReviewList /> */}
         {/* </Container> */}
+        <Testimonial />
         <Box onClick={() => setPageMode(0)}>
           <Footer />
         </Box>

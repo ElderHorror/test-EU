@@ -146,7 +146,7 @@ export default function Loans() {
                   </Flex>
                   <Text
                     ml="2.65rem"
-                    mb="1.5rem"
+                    mb="1.5rem"jk
                     color={"#E4E4E4"}
                     fontSize={{ base: "16px", lg: "1.1rem" }}
                     textShadow={"0px 4px 4px #00000040"}
@@ -187,9 +187,9 @@ export default function Loans() {
               >
                 <path
                   fill="#0E5FDC"
-                  fill-rule="evenodd"
+                  fillRule="evenodd"
                   d="M11 12a22 22 0 0 0 0 5l1 1h2l6-4 1-1a2 2 0 0 0 0-2h-1v-1l-6-4h-1l-2 1v5Zm-6-2-2 2 2 2 3-1 1-1-1-1-3-1Z"
-                  clip-rule="evenodd"
+                  clipRule="evenodd"
                 />
               </svg>
             </Flex>

@@ -38,24 +38,26 @@ const data = [
     link: "/courses/01",
   },
   {
-    image: "00.png",
+    image: "python.jpg",
     title: "Python For Research",
     subTitle:
-      "This course covers essential concepts in data science, focusing on R programming, Git version control, and GitHub collaboration. Participants will learn data manipulation, statistical analysis, and data visualization in R, alongside mastering Git for version control. ",
+      "This course introduces core data science concepts using Python. Participants will learn data manipulation, statistical analysis, and visualization in Python, as well as project management essentials.",
     isDisabled: true,
     link: "",
   },
   {
-    image: "00.png",
+    image: "gis.jpg",
     title: "GIS For Research",
     subTitle:
-      "This course covers essential concepts in data science, focusing on R programming, Git version control, and GitHub collaboration. Participants will learn data manipulation, statistical analysis, and data visualization in R, alongside mastering Git for version control. ",
+      "In this course, participants gain skills in geographic information systems (GIS) for spatial data analysis. Using R, they’ll learn to manage, analyze, and visualize geospatial data. ",
     isDisabled: true,
     link: "",
   },
 ];
 
 interface IProp {
+  key: string;
+  isTraining?: boolean;
   data: {
     image: string;
     title: string;
@@ -70,6 +72,7 @@ export function Card(prop: IProp) {
     <Box
       borderRadius={"8px"}
       p="1.5rem"
+      key={prop.key}
       bg={"white"}
       flexDirection={"column"}
       flexBasis={{ base: "100%", lg: "32.5%" }}
@@ -93,10 +96,16 @@ export function Card(prop: IProp) {
           my="0.5rem"
           fontSize={"1.6rem"}
           letterSpacing={"-1px"}
+          minH={prop.isTraining ? "unset" : "5rem"}
         >
           {prop.data.title}
         </Text>
-        <Text fontSize={"1.15rem"} lineHeight={"1.4rem"}>
+        <Text
+          fontSize={"1.15rem"}
+          lineHeight={"1.4rem"}
+          mb="1rem"
+          minH="10rem"s
+        >
           {prop.data.subTitle}
         </Text>
         <Flex
@@ -123,9 +132,9 @@ export function Card(prop: IProp) {
           >
             <path
               fill="#0E5FDC"
-              fill-rule="evenodd"
+              fillRule="evenodd"
               d="M11 12a22 22 0 0 0 0 5l1 1h2l6-4 1-1a2 2 0 0 0 0-2h-1v-1l-6-4h-1l-2 1v5Zm-6-2-2 2 2 2 3-1 1-1-1-1-3-1Z"
-              clip-rule="evenodd"
+              clipRule="evenodd"
             />
           </svg>
         </Flex>
@@ -179,7 +188,7 @@ export default function Commitment() {
         justifyItems={"center"}
       >
         {data.map((elem) => {
-          return <Card data={elem} key={elem.title} />;
+          return <Card data={elem} key={elem.title} isTraining={true} />;
         })}
       </Flex>
     </Box>
@@ -258,7 +267,7 @@ export function Consulting() {
         justifyItems={"center"}
       >
         {datax.map((elem) => {
-          return <Card data={elem} key={elem.title} />;
+          return <Card data={elem} key={elem.title} isTraining={false} />;
         })}
       </Flex>
     </Box>

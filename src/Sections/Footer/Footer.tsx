@@ -72,11 +72,12 @@ export default function Footer(props: any) {
 
   return (
     <Box
-      mt={"20rem"}
+      // mt={"20rem"}
+      pt="4rem"
       w={"100vw"}
       bgColor={"#0E5FDC"}
       color={"white"}
-      pt={"1rem"}
+      // pt={"1rem"}
       {...props}
     >
       <Container maxW={"90rem"}>

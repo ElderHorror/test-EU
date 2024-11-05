@@ -69,15 +69,15 @@ export function HeroPageBody2() {
               <rect width="40" height="22" fill="#0E5FDC" rx="11" />
               <path
                 fill="#fff"
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="m17 15-1-1v-4a1 1 0 0 1 1 0v5Zm3 0-1-1V7a1 1 0 0 1 1 0v8Zm3 0-1-1v-2a1 1 0 0 1 1 0v3Z"
-                clip-rule="evenodd"
+                clipRule="evenodd"
               />
               <path
                 fill="#fff"
-                fill-rule="evenodd"
+                fillRule="evenodd"
                 d="M17 5c-2 0-3 1-3 3v6c0 2 1 3 3 3h6c2 0 3-1 3-3V8c0-2-1-3-3-3h-6Zm6 13h-6c-3 0-4-2-4-4V8c0-3 1-4 4-4h6c2 0 4 1 4 4v6c0 2-2 4-4 4Z"
-                clip-rule="evenodd"
+                clipRule="evenodd"
               />
             </svg>
             <Text mx="0.25rem" fontWeight={"500"} fontSize={"12px"}>
