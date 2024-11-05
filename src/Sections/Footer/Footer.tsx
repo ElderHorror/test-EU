@@ -5,7 +5,7 @@ import Footerpropthree from "../../../Components/Footer/Footerpropthree";
 import FooterProptwo from "../../../Components/Footer/FooterProptwo";
 import Link from "next/link";
 
-export default function Footer() {
+export default function Footer(props: any) {
   const footlinkone = [
     // {
     //   id: "1",
@@ -51,7 +51,7 @@ export default function Footer() {
     {
       id: "1",
       links: "About",
-      href: "#About",
+      href: "./about",
     },
     // {
     //   id: "2",
@@ -72,10 +72,13 @@ export default function Footer() {
 
   return (
     <Box
-      mt={"10rem"}
+      // mt={"20rem"}
+      pt="4rem"
       w={"100vw"}
-      bgColor={"rgba(250, 250, 250, 1)"}
-      pt={"1rem"}
+      bgColor={"#0E5FDC"}
+      color={"white"}
+      // pt={"1rem"}
+      {...props}
     >
       <Container maxW={"90rem"}>
         <Flex
@@ -99,7 +102,9 @@ export default function Footer() {
                   gap={{ base: 13, md: 0, lg: 0 }}
                 >
                   <Link
-                    href={"https://www.instagram.com/eu.studyassist?utm_source=qr&igsh=MTJzd3VnaWp4YmVoZw=="}
+                    href={
+                      "https://www.instagram.com/eu.studyassist?utm_source=qr&igsh=MTJzd3VnaWp4YmVoZw=="
+                    }
                   >
                     <Image alt={"Instagram"} src={"/IG.svg"} />
                   </Link>

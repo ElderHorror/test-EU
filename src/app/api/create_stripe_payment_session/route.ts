@@ -64,9 +64,38 @@ const getStripeOrder = async (email: string, metadata: any) => {
       },
     ],
     mode: "payment",
+    custom_fields: [
+      {
+        key: "occupation",
+        type: "text",
+        label: {
+          type: "custom",
+          custom: "Occupation",
+        },
+        optional: false,
+      },
+      {
+        key: "first-name",
+        type: "text",
+        label: {
+          type: "custom",
+          custom: "First Name",
+        },
+        optional: false,
+      },
+      {
+        key: "last-name",
+        type: "text",
+        label: {
+          type: "custom",
+          custom: "Last Name",
+        },
+        optional: false,
+      },
+    ],
     customer: customer.id,
-    success_url: `https://eustudyassist.com/courses/01`,
-    cancel_url: `https://eustudyassist.com/courses/01`,
+    success_url: `https://eustudyassist.com/courses/`,
+    cancel_url: `https://eustudyassist.com/courses/`,
   });
   return { url: session.url };
 };
@@ -81,12 +110,6 @@ export async function POST(request: Request) {
 
     const { email, metadata } = data;
 
-    if (!email || !metadata) {
-      return NextResponse.json(
-        { error: "Failed to send email" },
-        { status: 500 }
-      );
-    }
     console.log({ email, metadata });
     const { url } = await getStripeOrder(email, metadata);
     return NextResponse.json({ message: "success", url });

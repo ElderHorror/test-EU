@@ -15,7 +15,7 @@ import NavbarLogo from "./NavbarLogo";
 import NavbarList from "./NavbarList";
 import BtnBlue from "../Button/BtnBlue";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
-import { Stack } from "phosphor-react";
+import { useRouter } from "next/router";
 
 const NavLink = (props: any) => {
   const { children } = props;
@@ -43,32 +43,42 @@ export default function Navbar(props: any) {
     {
       id: "1",
       navLink: "Home",
-      href: "/#Heropage",
+      href: "../#Heropage",
     },
     {
       id: "2",
       navLink: "About Us",
-      href: "/#About",
+      href: "/about",
     },
     {
       id: "3",
       navLink: "Contact Us",
-      href: "/#contact_us",
+      href: "../#contact_us",
+    },
+    {
+      id: "4",
+      navLink: "Bootcamp",
+      href: "/courses/",
     },
     {
       id: "5",
-      navLink: "Bootcamp",
-      href: "/courses/01",
+      navLink: "Loan Services",
+      href: "../#Loans",
+    },
+    {
+      id: "6",
+      navLink: "Consultation",
+      href: "./#Consulting",
     },
   ];
 
   return (
     <Box
-      borderBottom={"1px solid"}
-      bgColor={"white"}
+      // borderBottom={"1px solid"}
+      bgColor={"#0E5FDC"}
+      color={"white"}
       zIndex={999}
       w={"100vw"}
-      borderColor={"gray.200"}
       position={"fixed"}
     >
       <Container maxW={"90rem"}>
@@ -76,15 +86,12 @@ export default function Navbar(props: any) {
           justifyContent={"space-between"}
           alignItems={"center"}
           py={"1rem"}
+          pl={{ lg: "unset", base: "1.5rem" }}
           as={"nav"}
         >
-          <Box
-            onClick={() => {
-              props.setPageMode(0);
-            }}
-          >
+          <Link href="../#Heropage">
             <NavbarLogo />
-          </Box>
+          </Link>
           <Box display={{ base: "none", md: "none", lg: "block" }}>
             <NavbarList
               list={navLink}
@@ -101,34 +108,29 @@ export default function Navbar(props: any) {
               props.setPageMode(1);
             }}
           >
-            <Button
-              borderRadius={"full"}
-              fontSize={"18px"}
-              color={"white"}
-              py={"1.7rem"}
-              px={"1.7rem"}
-              bgColor={"rgba(52, 97, 255, 1)"}
-              fontWeight="bold"
-              mr="0.5rem"
-              onClick={(e) => {
-                e.stopPropagation();
-                props.setPageMode(1);
-                onClose();
-              }}
-              background="linear-gradient(to right,#14532d, #eab308)"
-            >
-              Loan Calculator
-            </Button>
-            <BtnBlue btnType="Apply" />
+            <Link href={"/courses/01"}>
+              <Button variant={"fox"} textDecoration={"none"}>
+                Join BootCamp
+              </Button>
+            </Link>
           </Box>
           <IconButton
             size={"md"}
             bg="transparent"
+            p="0"
+            m="0"
             icon={
               isOpen ? (
-                <CloseIcon bg="transparent" _hover={{ bg: "transparent" }} />
+                <CloseIcon
+                  bg="transparent"
+                  _hover={{ bg: "transparent" }}
+                  color={"white"}
+                  fill={"white"}
+                />
               ) : (
                 <HamburgerIcon
+                  color={"white"}
+                  fill={"white"}
                   bg="transparent"
                   _hover={{ bg: "transparent" }}
                 />
@@ -162,24 +164,6 @@ export default function Navbar(props: any) {
                 {link.navLink}
               </Text>
             ))}
-            <Button
-              borderRadius={"full"}
-              fontSize={"18px"}
-              color={"white"}
-              py={"1.7rem"}
-              px={"1.7rem"}
-              bgColor={"rgba(52, 97, 255, 1)"}
-              fontWeight="bold"
-              mr="0.5rem"
-              onClick={(e) => {
-                e.stopPropagation();
-                props.setPageMode(1);
-                onClose();
-              }}
-              background="linear-gradient(to right,#14532d, #eab308)"
-            >
-              Loan Calculator
-            </Button>
             <BtnBlue btnType="Apply" />
           </VStack>
         </Box>

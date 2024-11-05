@@ -1,7 +1,7 @@
 "use client";
 import { Box, Container } from "@chakra-ui/react";
 import Heropage from "@/Sections/HeroSection/Heropage";
-import Commitment from "@/Sections/Commitment/Commitment";
+import Commitment, { Consulting } from "@/Sections/Commitment/Commitment";
 import About from "@/Sections/About/About";
 import Loans from "@/Sections/Loans/Loans";
 import Pros from "@/Sections/Pros/Pros";
@@ -13,6 +13,7 @@ import { useHashFragment } from "../../Components/hooks";
 import GITright from "@/Sections/Footer/GITright";
 import Navbar from "../../Components/Navbar/Navbar";
 import Calculator from "../../Components/calculator/calculator";
+import { Testimonial } from "@/Sections/Loans/Testimonial";
 
 export default function Home() {
   useHashFragment();
@@ -28,36 +29,42 @@ export default function Home() {
     }
   };
   return (
-    <Box bgColor={" rgba(255, 255, 255, 1)"} overflow={"hidden"}>
-      <Navbar setPageMode={setPageMode} />
-      {pageMode === 0 ? (
-        <>
-          <Heropage />
-          <Commitment />
-          <About />
-          <Loans />
-          <Pros />
-          {/* <Reviews /> */}
-          {/* <ReviewList /> */}
-          <GITright />
-        </>
-      ) : (
-        <>
-          <Calculator />
-        </>
-      )}
-      {/* <Container scrollBehavior={"smooth"} maxW={"90rem"} mx={{base:".6rem", md:"1rem",lg:"none"}}>  */}
-      {/* <Heropage /> */}
-      {/* <Commitment />
+    <>
+      <Box>
+        <Navbar setPageMode={setPageMode} />
+      </Box>
+      <Box overflow={"hidden"}>
+        {pageMode === 0 ? (
+          <>
+            <Heropage />
+            <Commitment />
+            <Loans />
+            <Consulting />
+            {/* <Loans />
+            <Pros /> */}
+            {/* <Reviews /> */}
+            {/* <ReviewList /> */}
+            <GITright />
+          </>
+        ) : (
+          <>
+            <Calculator />
+          </>
+        )}
+        {/* <Container scrollBehavior={"smooth"} maxW={"90rem"} mx={{base:".6rem", md:"1rem",lg:"none"}}>  */}
+        {/* <Heropage /> */}
+        {/* <Commitment />
         <About />
         <Loans />
         <Pros />
         <Reviews />
         <ReviewList /> */}
-      {/* </Container> */}
-      <Box onClick={() => setPageMode(0)}>
-        <Footer />
+        {/* </Container> */}
+        <Testimonial />
+        <Box onClick={() => setPageMode(0)}>
+          <Footer />
+        </Box>
       </Box>
-    </Box>
+    </>
   );
 }
