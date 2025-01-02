@@ -83,7 +83,7 @@ export default function Bootcamp() {
                         const _payStack = new PaystackPop();
                         _payStack.newTransaction({
                           key: process.env.NEXT_PUBLIC_PAYSTACK_KEY,
-                          amount: "12000000",
+                          amount: "7500000",
                           currency: "NGN",
                           email: values.email,
                           firstname: values?.firstName,
@@ -331,13 +331,15 @@ export default function Bootcamp() {
                   fontSize={"1.1rem"}
                 >
                   <Text>Course Fee</Text>
-                  <Text fontSize="1.3rem">
-                    {data.country_code === "NG" ? "NGN 120,000" : "$ 74.99 "}
-                  </Text>
-                  {/* <Box className="price-container">
-                    {" "}
-                    {data.country_code === "NG" ? "NGN 200,000" : "$ 100.00 "}
-                  </Box> */}
+                  <Flex alignItems={"baseline"}>
+                    <Text fontSize="1.3rem">
+                      {data.country_code === "NG" ? "NGN 75,000" : "$ 74.99 "}
+                    </Text>
+                    <Text textDecoration={"line-through"} fontSize="1rem">
+                      {" "}
+                      {data.country_code === "NG" ? "NGN 200,000" : "$ 100.00 "}
+                    </Text>
+                  </Flex>
                 </Flex>
               </Box>
             </SimpleGrid>

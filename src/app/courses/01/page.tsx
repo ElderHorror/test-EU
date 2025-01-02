@@ -68,7 +68,7 @@ export default function Bootcamp() {
                 >
                   <Box borderRight={"1px solid white"} p="1.5rem">
                     <Text>Next Cohort</Text>
-                    <Text>15th of October 2024</Text>
+                    <Text>24th of February 2025</Text>
                   </Box>
                   <Box borderRight={"1px solid white"} p="1.5rem">
                     <Text> Duration</Text>

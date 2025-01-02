@@ -313,21 +313,34 @@ export default function Courses() {
                               fontSize={{ lg: "24px", base: "18px" }}
                               fontWeight={"800"}
                             >
-                              27th of September 2024
+                             24th of February 2025
                             </Text>
                           </Box>
                         </Box>
                         <Box mt="3rem">
-                          <Text
+                          <Flex alignItems={"baseline"}
+                            gap={"0.5rem"}
+                            mt="auto"
                             my="1rem"
+                          >
+                          <Text
                             fontWeight={"600"}
                             fontSize={{ lg: "42px", base: "32px" }}
-                            mt="auto"
-                          >
+                            >
                             {data.country_code === "NG"
-                              ? "NGN 120,000"
-                              : "$ 74.99 "}
-                          </Text>
+                              ? "NGN 75,000"
+                              : "$ 49.99 "}
+                            </Text>
+                            <Text
+                              fontWeight={"600"}
+                              fontSize={{ lg: "21px", base: "16px" }}
+                              textDecoration={"line-through"}
+                              >
+                              {data.country_code === "NG"
+                                ? "NGN 200,000"
+                                : "$ 100 "}
+                            </Text>
+                          </Flex>
                           <Button
                             variant={"primary"}
                             px="1.5rem"
