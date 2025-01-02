@@ -333,7 +333,7 @@ export default function Bootcamp() {
                   <Text>Course Fee</Text>
                   <Flex alignItems={"baseline"}>
                     <Text fontSize="1.3rem">
-                      {data.country_code === "NG" ? "NGN 75,000" : "$ 74.99 "}
+                      {data.country_code === "NG" ? "NGN 75,000" : "$ 49.99 "}
                     </Text>
                     <Text textDecoration={"line-through"} fontSize="1rem">
                       {" "}
