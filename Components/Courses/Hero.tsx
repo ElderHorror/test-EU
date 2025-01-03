@@ -81,7 +81,7 @@ export default function CoursesHero(props: CoursesHeroProps) {
           </Text>
           <Box className="price-container">
             {" "}
-            {props.countryCode === "NG" ? "NGN 100,000" : "$ 100.00 "}
+            {props.countryCode === "NG" ? "NGN 200,000" : "$ 100.00 "}
           </Box>
         </Box>
       </Box>

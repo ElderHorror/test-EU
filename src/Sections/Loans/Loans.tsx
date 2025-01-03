@@ -60,11 +60,6 @@ const data = [
     subtitle:
       "Our Settler's Safety Net Loan offers you a financial cushion to cover essential expenses such as initial groceries, transportation an other immediate needs.",
   },
-  {
-    title: "Self Payment",
-    subtitle:
-      "We can confidently process all your academic fees with minimal charges, even in the face of banking limitations.",
-  },
 ];
 
 export default function Loans() {
@@ -72,10 +67,10 @@ export default function Loans() {
     <Flex
       id="Loans"
       flexFlow={"row wrap"}
-      // placeContent={"center"}
-      // px="1.5rem"
-      // bg="white"
-      // maxW={"90rem"}
+    // placeContent={"center"}
+    // px="1.5rem"
+    // bg="white"
+    // maxW={"90rem"}
     >
       <Box
         flexBasis={{ sm: "100%", lg: "50%" }}
@@ -118,7 +113,7 @@ export default function Loans() {
         py={{ base: "2rem", lg: "7rem" }}
         pr={{ base: "0", lg: "2rem" }}
       >
-        <Box marginRight="auto" maxW={"45rem"}>
+        <Box marginRight="auto"  marginY="auto"  maxW={"45rem"}>
           <Box px="2rem">
             {data.map((elem) => {
               return (
@@ -156,43 +151,48 @@ export default function Loans() {
                 </Box>
               );
             })}
-
-            <Flex
-              bg="white"
-              cursor={"not-allowed"}
-              alignItems={"center"}
-              width={"10.75rem"}
-              my="1.5rem"
-              borderRadius={"8px"}
-              padding={"0.5rem 1.5rem"}
-              alignSelf={"flex-start"}
-              justifySelf={"flex-start"}
+            {/* <Box pt="6rem">
+              {""}
+            </Box> */}
+            <Link href={"https://forms.gle/d2T6Fh2rrFJK1JVZA"}>
+              <Flex
+                bg="white"
+                // cursor={"not-allowed"}
+                alignItems={"center"}
+                width={"7.75rem"}
+                my="1.5rem"
+                borderRadius={"8px"}
+                padding={"0.5rem 1.5rem"}
+                alignSelf={"flex-start"}
+                justifySelf={"flex-start"}
               // mx="auto"
-            >
-              <Text
-                color={"#0E5FDC"}
-                marginRight={"0.75rem"}
-                fontWeight={600}
-                my="0.75rem"
-                mx="0"
-                mr="0.2rem"
               >
-                Learn More
-              </Text>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                width={"24px"}
-              >
-                <path
-                  fill="#0E5FDC"
-                  fillRule="evenodd"
-                  d="M11 12a22 22 0 0 0 0 5l1 1h2l6-4 1-1a2 2 0 0 0 0-2h-1v-1l-6-4h-1l-2 1v5Zm-6-2-2 2 2 2 3-1 1-1-1-1-3-1Z"
-                  clipRule="evenodd"
-                />
-              </svg>
-            </Flex>
+                <Text
+                  color={"#0E5FDC"}
+                  marginRight={"0.75rem"}
+                  fontWeight={600}
+                  my="0.75rem"
+                  mx="0"
+                  mr="0.2rem"
+                >
+                  Apply
+                </Text>
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  width={"24px"}
+                >
+                  <path
+                    fill="#0E5FDC"
+                    fillRule="evenodd"
+                    d="M11 12a22 22 0 0 0 0 5l1 1h2l6-4 1-1a2 2 0 0 0 0-2h-1v-1l-6-4h-1l-2 1v5Zm-6-2-2 2 2 2 3-1 1-1-1-1-3-1Z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </Flex>
+            </Link>
+
           </Box>
         </Box>
       </Box>

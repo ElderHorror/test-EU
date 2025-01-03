@@ -81,9 +81,6 @@ export default function Calculator(props: any) {
         >
           Service Calculator
         </Text>
-        // Feb 24
-        // international 50
-        // Nigeria 75
         <form onSubmit={onSubmit}>
           <FormLabel htmlFor="amount">
             Amount (max. £{`${data.mode == 4 ? 500 : 1500}`})

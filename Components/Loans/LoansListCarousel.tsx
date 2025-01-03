@@ -42,15 +42,15 @@ export default function LoansListCarousel() {
       loanAmount: "500 euro"
 
     },
-    {
-      id: "5",
-      headingg: "Self Payment",
-      text: "Do you have the funds to kickstart your academic journey but find yourself grappling with banking restrictins? We can confidently process all your academic fees with minimal charges, even in the face of banking limitations. We will help you handle your financial respnsibilities effortlessly, so you can focus wholeheartedly on other important things ",
-      smHeading: "T&C Apply",
-      tC: "Repayment Term:The processing fee is charged at once ",
-      tCtwo: "Charges: 5 euro per 100 euro ",
-      loanAmount: ""
-    }
+    // {
+    //   id: "5",
+    //   headingg: "Self Payment",
+    //   text: "Do you have the funds to kickstart your academic journey but find yourself grappling with banking restrictions? We can confidently process all your academic fees with minimal charges, even in the face of banking limitations. We will help you handle your financial responsibilities effortlessly, so you can focus wholeheartedly on other important things ",
+    //   smHeading: "T&C Apply",
+    //   tC: "Repayment Term:The processing fee is charged at once ",
+    //   tCtwo: "Charges: 5 euro per 100 euro ",
+    //   loanAmount: ""
+    // }
   ]
   return (
     <>
