@@ -19,8 +19,8 @@ import {
   useDisclosure,
   useToast,
 } from "@chakra-ui/react";
-import Navbar from "../../../../Components/Navbar/Navbar";
-import Footer from "@/Sections/Footer/Footer";
+import PageLayout from "@/components/layout/PageLayout";
+
 import { useRouter } from "next/navigation";
 import { Field, Formik } from "formik";
 import * as Yup from "yup";
@@ -88,7 +88,7 @@ export default function Bootcamp() {
             <Container maxW={"90rem"} p="1rem">
               <CoursesDetails imgSrc={"/" + "00.png"} />
             </Container>
-          </>
+          
         )}
       </Box>
       <Box

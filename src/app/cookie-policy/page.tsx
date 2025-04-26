@@ -10,19 +10,13 @@ import {
   Text,
   Button,
 } from "@chakra-ui/react";
-import Navbar from "../../../Components/Navbar/Navbar";
+import PageLayout from "@/components/layout/PageLayout";
 import CookieHero from "./CookieHero";
 import CookieContent from "./CookieContent";
-import Footer from "../pages/Home/Sections/Footer/Footer";
 
 export default function CookiePolicyPage() {
   return (
-    <>
-      {/* Navigation */}
-      <Box>
-        <Navbar setPageMode={() => {}} />
-      </Box>
-
+    <PageLayout>
       {/* Hero Section */}
       <CookieHero />
 
@@ -168,9 +162,6 @@ export default function CookiePolicyPage() {
           </VStack>
         </Container>
       </Box>
-
-      {/* Footer */}
-      <Footer />
-    </>
+    </PageLayout>
   );
 }

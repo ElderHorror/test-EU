@@ -21,8 +21,8 @@ import {
   useDisclosure,
   useToast,
 } from "@chakra-ui/react";
-import Navbar from "../../../../Components/Navbar/Navbar";
-import Footer from "@/Sections/Footer/Footer";
+import PageLayout from "@/components/layout/PageLayout";
+
 import { useRouter } from "next/navigation";
 import { Field, Formik } from "formik";
 import * as Yup from "yup";

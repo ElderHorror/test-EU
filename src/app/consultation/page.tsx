@@ -10,18 +10,13 @@ import {
   Button,
   VStack,
 } from "@chakra-ui/react";
-import Navbar from "../../../Components/Navbar/Navbar";
-import Footer from "../pages/Home/Sections/Footer/Footer";
-import LoanFeature from "../loans/LoanFeature";
+import PageLayout from "@/components/layout/PageLayout";
+
+import LoanFeature from "@/components/sections/loans/LoanFeature";
 
 const ConsultationPage = () => {
   return (
-    <>
-      {/* Navigation */}
-      <Box>
-        <Navbar setPageMode={() => {}} />
-      </Box>
-
+    <PageLayout>
       {/* Blue Background Section */}
       <Box
         bgColor="#0E5FDC"
@@ -212,10 +207,7 @@ Customized Solutions: We recognize that every client is unique, which is why we 
           </VStack>
         </Container>
       </Box>
-
-      {/* Footer */}
-      <Footer />
-    </>
+    </PageLayout>
   );
 };
 

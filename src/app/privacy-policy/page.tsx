@@ -10,19 +10,13 @@ import {
   Text,
   Button,
 } from "@chakra-ui/react";
-import Navbar from "../../../Components/Navbar/Navbar";
+import PageLayout from "@/components/layout/PageLayout";
 import PrivacyHero from "./PrivacyHero";
 import PrivacyContent from "./PrivacyContent";
-import Footer from "../pages/Home/Sections/Footer/Footer";
 
 export default function PrivacyPolicyPage() {
   return (
-    <>
-      {/* Navigation */}
-      <Box>
-        <Navbar setPageMode={() => {}} />
-      </Box>
-
+    <PageLayout>
       {/* Hero Section */}
       <PrivacyHero />
 
@@ -139,38 +133,35 @@ export default function PrivacyPolicyPage() {
 
       {/* Call to Action Section */}
       <Box bg="#F4F4F4" py="6rem" pb="6rem">
-              <Container maxW="60rem">
-                <VStack spacing="2rem" align="center">
-                  <Text
-                    fontSize={{ base: "1.125rem", md: "1.25rem" }}
-                    color="#2F3540"
-                    textAlign="center"
-                    lineHeight="1.6"
-                    maxW="800px"
-                    whiteSpace="pre-line"
-                  >
-                    Our team ensures personalized, impactful solutions to meet your
-                    unique organizational needs.
-                  </Text>
-      
-                  <Button
-                    bg="#0E5FDC"
-                    color="white"
-                    size="md"
-                    _hover={{ bg: "#0B4DB0" }}
-                    px="1.5rem"
-                    py="1.5rem"
-                    fontSize="1rem"
-                    mt="1rem"
-                  >
-                    Contact Us
-                  </Button>
-                </VStack>
-              </Container>
-            </Box>
+        <Container maxW="60rem">
+          <VStack spacing="2rem" align="center">
+            <Text
+              fontSize={{ base: "1.125rem", md: "1.25rem" }}
+              color="#2F3540"
+              textAlign="center"
+              lineHeight="1.6"
+              maxW="800px"
+              whiteSpace="pre-line"
+            >
+              Our team ensures personalized, impactful solutions to meet your
+              unique organizational needs.
+            </Text>
 
-      {/* Footer */}
-      <Footer />
-    </>
+            <Button
+              bg="#0E5FDC"
+              color="white"
+              size="md"
+              _hover={{ bg: "#0B4DB0" }}
+              px="1.5rem"
+              py="1.5rem"
+              fontSize="1rem"
+              mt="1rem"
+            >
+              Contact Us
+            </Button>
+          </VStack>
+        </Container>
+      </Box>
+    </PageLayout>
   );
 }

@@ -1,18 +1,14 @@
 "use client";
 
 import { Box, Container, Flex, Heading, Text, VStack } from "@chakra-ui/react";
-import Navbar from "../../../Components/Navbar/Navbar";
-import LoanFeature from "./LoanFeature";
+import PageLayout from "@/components/layout/PageLayout";
+import LoanFeature from "@/components/sections/loans/LoanFeature";
 import LoanApplication from "./LoanApplication";
 import CallToAction from "./CallToAction";
-import Footer from "../pages/Home/Sections/Footer/Footer";
 
 export default function Loans() {
   return (
-    <>
-      {/* Navigation Bar */}
-      <Navbar setPageMode={() => {}} />
-
+    <PageLayout>
       {/* Main Content Section with Gradient Background */}
       <Box
         bgGradient="linear(to-b, #0E5FDC 70%, white 30%)"
@@ -150,9 +146,6 @@ Competitive Interest Rates: Our loan options come with highly competitive rates,
 
       {/* Call to Action Section */}
       <CallToAction />
-
-      {/* Footer */}
-      <Footer />
-    </>
+    </PageLayout>
   );
 }

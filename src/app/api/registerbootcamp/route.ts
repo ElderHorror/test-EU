@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import nodemailer, { Transporter, SendMailOptions } from "nodemailer";
-import { emailTransporter } from "../../../../Components/email";
+import { emailTransporter } from "@/lib/email";
 type Feedback = {
   email: string;
 };
@@ -61,13 +61,13 @@ export async function POST(request: Request) {
       from: process.env.FEEDBACK_EMAIL,
       to: email,
       subject: "Invitation to The Introduction to R for Research.",
-      text: `Hi there, 
+      text: `Hi there,
 
-    You are invited to a Zoom meeting. 
-    When: Jun 15, 2024 02:00 PM Copenhagen 
-    
-    Register in advance for this meeting:https://ucph-ku.zoom.us/meeting/register/u5wodu-urTMvHtJGkqeDMWpBaoxW8gm1v9cT 
-    
+    You are invited to a Zoom meeting.
+    When: Jun 15, 2024 02:00 PM Copenhagen
+
+    Register in advance for this meeting:https://ucph-ku.zoom.us/meeting/register/u5wodu-urTMvHtJGkqeDMWpBaoxW8gm1v9cT
+
     After registering, you will receive a confirmation email containing information about joining the meeting.`,
       attachments: [
         {

@@ -10,19 +10,13 @@ import {
   Text,
   Button,
 } from "@chakra-ui/react";
-import Navbar from "../../../Components/Navbar/Navbar";
+import PageLayout from "@/components/layout/PageLayout";
 import TermsHero from "./TermsHero";
 import TermsContent from "./TermsContent";
-import Footer from "../pages/Home/Sections/Footer/Footer";
 
 export default function TermsOfServicePage() {
   return (
-    <>
-      {/* Navigation */}
-      <Box>
-        <Navbar setPageMode={() => {}} />
-      </Box>
-
+    <PageLayout>
       {/* Hero Section */}
       <TermsHero />
 
@@ -168,9 +162,6 @@ export default function TermsOfServicePage() {
           </VStack>
         </Container>
       </Box>
-
-      {/* Footer */}
-      <Footer />
-    </>
+    </PageLayout>
   );
 }

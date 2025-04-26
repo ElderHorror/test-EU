@@ -12,17 +12,11 @@ import {
   UnorderedList,
   Link,
 } from "@chakra-ui/react";
-import Navbar from "../../../Components/Navbar/Navbar";
-import Footer from "../pages/Home/Sections/Footer/Footer";
+import PageLayout from "@/components/layout/PageLayout";
 
 export default function About() {
   return (
-    <>
-      {/* Navigation Bar */}
-      <Box>
-        <Navbar setPageMode={() => {}} />
-      </Box>
-
+    <PageLayout>
       {/* Hero Section */}
       <Box
         bgColor="#0E5FDC"
@@ -81,7 +75,7 @@ export default function About() {
           border="none"
           src="/about.jpg"
           alt="About Us"
-          minH={{ base: "120vw", md: "auto" }}
+          minH={{ base: "120vw", md: "auto", lg:"100vh" }}
           maxH="60vh"
           objectFit={{ base: "cover", md: "contain", lg: "cover" }}
         />
@@ -417,11 +411,6 @@ export default function About() {
           </Box>
         </Flex>
       </Box>
-
-      {/* Footer */}
-      <Box>
-        <Footer />
-      </Box>
-    </>
+    </PageLayout>
   );
 }

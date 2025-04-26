@@ -10,20 +10,14 @@ import {
   Text,
   Button,
 } from "@chakra-ui/react";
-import Navbar from "../../../Components/Navbar/Navbar";
+import PageLayout from "@/components/layout/PageLayout";
 import CoursesHero from "./CoursesHero";
 import CoursesContent from "./CoursesContent";
 import CoursesGrid from "./CoursesGrid";
-import Footer from "../pages/Home/Sections/Footer/Footer";
 
 export default function OnlineCoursesPage() {
   return (
-    <>
-      {/* Navigation */}
-      <Box>
-        <Navbar setPageMode={() => {}} />
-      </Box>
-
+    <PageLayout>
       {/* Hero Section */}
       <CoursesHero />
 
@@ -172,9 +166,6 @@ export default function OnlineCoursesPage() {
           </VStack>
         </Container>
       </Box>
-
-      {/* Footer */}
-      <Footer />
-    </>
+    </PageLayout>
   );
 }

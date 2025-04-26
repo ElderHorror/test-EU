@@ -1,40 +1,92 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# EU Study Assist Website
 
+This is the codebase for the EU Study Assist website, built with Next.js and Chakra UI.
+
+## Project Structure
+
+```
+src/
+├── app/                    # Next.js app router pages
+│   ├── api/                # API routes
+│   ├── (routes)/           # All page routes
+│   └── layout.tsx          # Root layout
+├── components/             # All components
+│   ├── common/             # Reusable UI components (buttons, inputs, etc.)
+│   ├── layout/             # Layout components (navbar, footer, etc.)
+│   └── sections/           # Page sections organized by feature
+├── hooks/                  # Custom React hooks
+├── lib/                    # Utility functions and libraries
+├── styles/                 # Global styles and theme
+└── types/                  # TypeScript type definitions
+```
 
 ## Getting Started
 
-First, run the development server:
+First, install the dependencies:
+
+```bash
+npm install
+# or
+yarn install
+```
+
+Then, run the development server:
 
 ```bash
 npm run dev
 # or
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Key Features
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+- **Modern React with Next.js**: Built with the latest Next.js features
+- **TypeScript**: Type-safe code for better developer experience
+- **Chakra UI**: Accessible and customizable component library
+- **Responsive Design**: Mobile-first approach for all screen sizes
+- **Performance Optimized**: Fast loading times and optimized assets
 
-## Learn More
+## Component System
 
-To learn more about Next.js, take a look at the following resources:
+The project uses a component-based architecture with reusable components:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- **Layout Components**: Navbar, Footer, Section
+- **Common Components**: Button, Card, OptimizedImage
+- **Section Components**: Hero, Testimonials, FAQ, Contact
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+## Styling
 
-## Deploy on Vercel
+The project uses Chakra UI for styling with a custom theme defined in `src/styles/theme.ts`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Development Guidelines
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+1. **Component Organization**:
+
+   - Place reusable UI components in `src/components/common/`
+   - Place layout components in `src/components/layout/`
+   - Place page sections in `src/components/sections/`
+
+2. **Naming Conventions**:
+
+   - Use PascalCase for component files and folders
+   - Use camelCase for utility functions and variables
+
+3. **Code Style**:
+
+   - Add JSDoc comments to components and functions
+   - Use TypeScript interfaces for props
+   - Follow the established folder structure
+
+4. **Performance**:
+   - Use Next.js Image component for images
+   - Implement code splitting where appropriate
+   - Optimize font loading
+
+## Deployment
+
+The site is deployed on Vercel. Changes to the main branch are automatically deployed.
 
 ## FACEBOOK ACCOUNT DETAILS
 
