@@ -2,7 +2,7 @@
 import { Box, Container } from "@chakra-ui/react";
 import Heropage from "@/Sections/HeroSection/Heropage";
 import Commitment from "@/Sections/Commitment/Commitment";
-import About from "@/Sections/About/About";
+// import About from "@/Sections/About/About";
 import Loans from "@/Sections/Loans/Loans";
 import Pros from "@/Sections/Pros/Pros";
 import Reviews from "@/Sections/Reviews/Reviews";
@@ -39,7 +39,7 @@ export default function Home() {
           <Pros />
           {/* <Reviews /> */}
           {/* <ReviewList /> */}
-          <GITright />
+          {/* <GITright /> */}
         </>
       ) : (
         <>

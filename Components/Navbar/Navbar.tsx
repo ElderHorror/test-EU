@@ -63,12 +63,17 @@ export default function Navbar(props: any) {
     {
       id: "5",
       navLink: "Loan Services",
-      href: "../#Loans",
+      href: "../loans",
     },
     {
       id: "6",
       navLink: "Consultation",
-      href: "./#Consulting",
+      href: "/consultation",
+    },
+    {
+      id: 7,
+      navLink: "Blog",
+      href: "/blog",
     },
   ];
 
@@ -85,35 +90,49 @@ export default function Navbar(props: any) {
         <Flex
           justifyContent={"space-between"}
           alignItems={"center"}
-          py={"1rem"}
-          pl={{ lg: "unset", base: "1.5rem" }}
+          py={"0.6rem"}
+          pl={{ lg: "2rem", base: "1.5rem" }}
+          pr={{ lg: "2rem", base: "1.5rem" }}
           as={"nav"}
         >
           <Link href="../#Heropage">
             <NavbarLogo />
           </Link>
-          <Box display={{ base: "none", md: "none", lg: "block" }}>
-            <NavbarList
-              list={navLink}
-              onClick={() => {
-                props.setPageMode(0);
-              }}
-            />
-          </Box>
-
-          <Box
-            display={{ base: "none", md: "none", lg: "block" }}
-            onClick={(e) => {
-              e.stopPropagation();
-              props.setPageMode(1);
-            }}
+          <Flex
+            display={{ base: "none", md: "none", lg: "flex" }}
+            alignItems="center"
+            gap="2rem"
           >
-            <Link href={"/courses/01"}>
-              <Button variant={"fox"} textDecoration={"none"}>
-                Join BootCamp
-              </Button>
-            </Link>
-          </Box>
+            <Box>
+              <NavbarList
+                list={navLink}
+                onClick={() => {
+                  props.setPageMode(0);
+                }}
+              />
+            </Box>
+
+            <Box
+              onClick={(e) => {
+                e.stopPropagation();
+                props.setPageMode(1);
+              }}
+            >
+              <Link href={"/courses/01"}>
+                <Button
+                  variant={"fox"}
+                  textDecoration={"none"}
+                  bg="white"
+                  color="#0E5FDC"
+                  fontWeight="600"
+                  px="1.5rem"
+                  _hover={{ bg: "gray.100" }}
+                >
+                  Join BootCamp
+                </Button>
+              </Link>
+            </Box>
+          </Flex>
           <IconButton
             size={"md"}
             bg="transparent"
@@ -145,7 +164,7 @@ export default function Navbar(props: any) {
       {isOpen ? (
         <Box pb={4} display={{ lg: "none" }}>
           <VStack>
-            {navLink.map((link, index) => (
+            {navLink.map((link) => (
               <Text
                 as="a"
                 px={2}
