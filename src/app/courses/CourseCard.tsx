@@ -1,13 +1,7 @@
 "use client";
 
-import {
-  Box,
-  Flex,
-  Text,
-  Image,
-  Button,
-  useDisclosure,
-} from "@chakra-ui/react";
+import { Box, Flex, Text, Button, useDisclosure } from "@chakra-ui/react";
+import Image from "next/image";
 
 interface CourseCardProps {
   title: string;
@@ -66,14 +60,24 @@ const CourseCard = ({
           </Box>
 
           {/* Right Column - Image */}
-          <Box flex="1" pl={{ lg: "2rem", base: 0 }}>
+          <Box
+            flex="1"
+            pl={{ lg: "2rem", base: 0 }}
+            position="relative"
+            height="300px"
+            borderRadius="8px"
+            
+          >
             <Image
               src={imageSrc}
               alt={title}
-              borderRadius="8px"
-              w="100%"
-              h="auto"
-              objectFit="cover"
+              fill={true}
+              style={{
+                objectFit: "cover",
+                borderRadius: "8px",
+              }}
+              sizes="(max-width: 768px) 100vw, 800px"
+              priority
             />
           </Box>
         </Flex>
@@ -153,9 +157,8 @@ const CourseCard = ({
                   fontSize="28px"
                   fontWeight={600}
                   mb="1.5rem"
-                >
-                  {cost}
-                </Text>
+                  dangerouslySetInnerHTML={{ __html: cost }}
+                />
 
                 <Button
                   bg="#0E5FDC"

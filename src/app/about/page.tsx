@@ -54,6 +54,8 @@ export default function About() {
               lineHeight="1.5"
               fontSize={{ base: "1rem", md: "1.125rem", lg: "1.25rem" }}
               textShadow="0 0.25rem 0.25rem rgba(0,0,0,0.25)"
+              textAlign={{ base: "justify" }}
+              mb={{ base: "2rem" }}
             >
               Our mission is to bridge the financial and skill gaps for
               international students, particularly ERASMUS recipients and
@@ -75,9 +77,10 @@ export default function About() {
           border="none"
           src="/about.jpg"
           alt="About Us"
-          minH={{ base: "120vw", md: "auto", lg:"100vh" }}
-          maxH="60vh"
+          minH={{ base: "150vw", md: "auto", lg: "100vh" }}
+          maxH={{ lg: "60vh", base: "150vh" }}
           objectFit={{ base: "cover", md: "contain", lg: "cover" }}
+          objectPosition={{ base: "center top", md: "center", lg: "center" }}
         />
       </Box>
 
@@ -104,6 +107,7 @@ export default function About() {
               lineHeight={{ base: 1.1, lg: 1.2 }}
               color="rgba(0,0,0,0.5)"
               mb={{ base: "2rem", lg: "0" }}
+              mt={{ base: "1rem" }}
             >
               What we strive to achieve together
             </Text>
@@ -118,7 +122,12 @@ export default function About() {
             >
               Mission
             </Text>
-            <Text color="#2F3540" lineHeight={{ base: 1.4, lg: 1.6 }} mb="2rem">
+            <Text
+              color="#2F3540"
+              textAlign={{ base: "justify" }}
+              lineHeight={{ base: 1.4, lg: 1.6 }}
+              mb="2rem"
+            >
               EU StudyAssist empowers students, researchers, and organizations
               worldwide to achieve their full potential. By providing financial
               support, specialized programs, data solutions, and practical skill
@@ -138,7 +147,12 @@ export default function About() {
             >
               Vision
             </Text>
-            <Text color="#2F3540" lineHeight={{ base: 1.4, lg: 1.6 }} mb="2rem">
+            <Text
+              color="#2F3540"
+              textAlign={{ base: "justify" }}
+              lineHeight={{ base: 1.4, lg: 1.6 }}
+              mb="2rem"
+            >
               To be the number one organization offering loans to new
               scholarship students while reducing the skill-gap in Africa and
               making Africa a competitive continent in the world.
@@ -153,7 +167,12 @@ export default function About() {
             >
               Commitment
             </Text>
-            <Text color="#2F3540" lineHeight={{ base: 1.4, lg: 1.6 }} mb="3rem">
+            <Text
+              color="#2F3540"
+              textAlign={{ base: "justify" }}
+              lineHeight={{ base: 1.4, lg: 1.6 }}
+              mb={{lg:"3rem", base:"1.5rem"}}
+            >
               At EU StudyAssist, we are dedicated to providing a holistic
               support system for students, researchers, and professionals. Our
               commitment is rooted in bridging the gap between aspiration and
@@ -190,7 +209,7 @@ export default function About() {
               fontSize={{ base: "2rem", lg: "3.25rem" }}
               lineHeight={{ base: 1.1, lg: 1.2 }}
               color="rgba(0,0,0,0.5)"
-              mb={{ base: "1rem", lg: "0" }}
+              mb={{ base: "1.5rem", lg: "0" }}
             >
               What we stand for as we work daily
             </Text>
@@ -210,6 +229,9 @@ export default function About() {
               fontSize={{ base: "1rem", lg: "1rem" }}
               lineHeight={{ base: 1.4, lg: 1.6 }}
               mb="2rem"
+              textAlign={{ base: "justify" }}
+              spacing={{ base: "1rem" }}
+              color="#2F3540"
             >
               <ListItem>
                 Empowerment: EU StudyAssist is committed to providing tools and
@@ -257,6 +279,9 @@ export default function About() {
               fontSize={{ base: "1rem", lg: "1rem" }}
               lineHeight={{ base: 1.4, lg: 1.6 }}
               mb="3rem"
+              textAlign={{ base: "justify" }}
+              color="#2F3540"
+              spacing={{ base: "1rem" }}
             >
               <ListItem>
                 Growth oriented: We are committed to personal growth and
@@ -288,26 +313,34 @@ export default function About() {
       <Box
         bgColor="#F4F4F4"
         pt={{ base: "3.75rem", md: "4.6875rem", lg: "5.625rem" }}
-        px="1.5rem"
+        px={{ base: "1rem", sm: "1.5rem", md: "2rem", lg: "3rem" }}
         display="grid"
         placeContent="center"
       >
         <Flex
-          maxW="60rem"
+          maxW={{ base: "100%", md: "90%", lg: "70rem" }}
           flexDir="column"
           justifyContent="space-between"
           alignItems="center"
           mb="2.5rem"
           id="About"
+          mx="auto"
         >
           <Text
-            fontWeight={600}
-            fontSize={{ base: "2rem", lg: "3.25rem" }}
-            mb="2.5rem"
+            fontWeight={{lg: 600, base: 700}}
+            lineHeight={{ base: 1.1}}
+            fontSize={{ base: "2.5rem", md: "2.25rem", lg: "3.25rem" }}
+            mb={{ base: "1.5rem", md: "2rem", lg: "2.5rem" }}
+            textAlign="center"
+            px={{ base: "0.5rem", md: "0" }}
           >
             Meet Our Beautiful Team
           </Text>
-          <SimpleGrid columns={{ base: 2, sm: 2, lg: 4 }} gap="2rem">
+          <SimpleGrid
+            columns={{ base: 2, sm: 2, lg: 3 }}
+            gap={{ base: "1.5rem", md: "2rem", lg: "2rem" }}
+            width={{ base: "100%", md: "90%", lg: "100%" }}
+          >
             {[
               {
                 image: "./adu.jpeg",
@@ -315,26 +348,24 @@ export default function About() {
                 name: "Olamide Adu",
               },
               {
-                image: "./fis.jpeg",
-                title: "CTO & Founder",
-                name: "Fisola Adesuyi",
-              },
-              {
                 image: "./oki.jpeg",
-                title: "Developer",
+                title: "CEO & Founder",
                 name: "Oki Ayobami",
               },
               {
                 image: "./mes.jpeg",
-                title: "Lead Designer",
+                title: "Design Lead",
                 name: "Meshach Aderele",
               },
             ].map((elem, index) => (
-              <Box minWidth="8rem" key={`about-index-${index + 4}`}>
+              <Box
+                minWidth={{ base: "8rem", md: "10rem", lg: "12rem" }}
+                key={`about-index-${index + 4}`}
+              >
                 <Grid templateRows="repeat(4, 1fr)" templateColumns="1fr">
                   <GridItem
                     rowStart={1}
-                    rowSpan={4}
+                    rowSpan={3}
                     bg="transparent"
                     zIndex={1}
                     colStart={1}
@@ -343,68 +374,91 @@ export default function About() {
                       src={elem.image}
                       alt={elem.name}
                       w="100%"
-                      h="auto"
+                      h={{ base: "auto", md: "auto" }}
                       objectFit="cover"
+                      borderRadius="4px"
                     />
                   </GridItem>
                   <GridItem
-                    rowStart={4}
+                    rowStart={3}
                     rowSpan={1}
-                    h="2.5rem"
+                    h={{ base: "3rem", md: "3.5rem" }}
                     zIndex={3}
                     colStart={1}
                   >
                     <Box
-                      margin="0.5rem 1rem"
-                      padding="0.5rem"
+                      margin={{ base: "0.5rem 0.5rem", md: "0.5rem 1rem" }}
+                      padding={{ base: "0.5rem", md: "0.75rem" }}
                       bg="white"
                       textAlign="center"
+                      boxShadow="0px 2px 4px rgba(0, 0, 0, 0.1)"
+                      borderRadius="4px"
                     >
-                      <Text fontWeight={600} fontSize="0.875rem">
+                      <Text
+                        fontWeight={600}
+                        fontSize={{ base: "0.875rem", md: "1rem" }}
+                      >
                         {elem.name}
                       </Text>
-                      <Text fontSize="0.75rem">{elem.title}</Text>
+                      <Text fontSize={{ base: "0.75rem", md: "0.875rem" }}>
+                        {elem.title}
+                      </Text>
                     </Box>
                   </GridItem>
                 </Grid>
               </Box>
             ))}
           </SimpleGrid>
-          <Box maxW="38.375rem" mx="auto" mt="1.25rem">
-            <Text mt="1rem" lineHeight={{ base: 1.4, lg: 1.6 }}>
-              <span style={{ fontWeight: 700 }}>Olamide Adu</span> is a
-              Consulting Data Scientist with a background in forest and nature
-              management. He holds an Erasmus Mundus Joint Master's in
+          <Box
+            maxW={{ base: "100%", md: "42rem", lg: "48rem" }}
+            textAlign={{ base: "justify" }}
+            mx="auto"
+            mb={{ base: "3rem", md: "4rem", lg: "5rem" }}
+            color="#2F3540"
+            px={{ base: "0.5rem", md: "1.5rem" }}
+          >
+            <Text
+              mt="0.5rem"
+              lineHeight={{ base: 1.5, lg: 1.8 }}
+              fontSize={{ base: "0.95rem", md: "1rem", lg: "1rem" }}
+            >
+              <span style={{ fontWeight: 700, color: "#2F3540" }}>
+                Olamide Adu
+              </span>{" "}
+              is a Consulting Data Scientist with a background in forest and
+              nature management. He holds an Erasmus Mundus Joint Master's in
               Sustainable Forest and Nature Management. With expertise in data
               analysis and sustainability consulting, he helps small and
               medium-sized businesses implement data-driven strategies to
               minimize environmental impact and optimize resource efficiency.
             </Text>
-            <Text mt="1rem" lineHeight={{ base: 1.4, lg: 1.6 }}>
-              <span style={{ fontWeight: 700 }}>Fisola Adesuyi</span> is a PhD
-              Fellow at Aarhus University, where he focuses on applying modern
-              technologies to promote environmental sustainability. He was
-              awarded the prestigious Mastercard Foundation Scholarship at the
-              American University of Beirut. With extensive experience in
-              digital product design and strategy, he combines technology and
-              sustainability to drive impactful solutions.
+            <Text
+              mt={{ base: "1.25rem", md: "1.5rem" }}
+              lineHeight={{ base: 1.5, lg: 1.8 }}
+              fontSize={{ base: "0.95rem", md: "1rem", lg: "1rem" }}
+            >
+              <span style={{ fontWeight: 700, color: "#2F3540" }}>
+                Oki Ayobami
+              </span>{" "}
+              is a Software Engineer with a passion for building innovative
+              solutions that drive social impact. He holds a Master's in
+              Computer Science from the University of Teeside, United Kingdom
+              and has experience working with startups. He specializes in
+              developing web and mobile applications, and blockchain
+              technologies that promote sustainability and social good.
             </Text>
-            <Text mt="1rem" lineHeight={{ base: 1.4, lg: 1.6 }}>
-              <span style={{ fontWeight: 700 }}>Ayobami Oki</span> is a PhD
-              Fellow at Aarhus University, where he focuses on applying modern
-              technologies to promote environmental sustainability. He was
-              awarded the prestigious Mastercard Foundation Scholarship at the
-              American University of Beirut. With extensive experience in
-              digital product design and strategy, he combines technology and
-              sustainability to drive impactful solutions.
-              <br />
-            </Text>
-            <Text mt="1rem" lineHeight={{ base: 1.4, lg: 1.6 }}>
-              <span style={{ fontWeight: 700 }}>Meshach Aderele</span> is a PhD
-              Fellow at Aarhus University, where he focuses on applying modern
-              technologies to promote environmental sustainability. He was
-              awarded the prestigious Mastercard Foundation Scholarship at the
-              American University of Beirut. With extensive experience in
+            <Text
+              mt={{ base: "1.25rem", md: "1.5rem" }}
+              lineHeight={{ base: 1.5, lg: 1.8 }}
+              fontSize={{ base: "0.95rem", md: "1rem", lg: "1rem" }}
+            >
+              <span style={{ fontWeight: 700, color: "#2F3540" }}>
+                Meshach Aderele
+              </span>{" "}
+              is a PhD Fellow at Aarhus University, where he focuses on applying
+              modern technologies to promote environmental sustainability. He
+              was awarded the prestigious Mastercard Foundation Scholarship at
+              the American University of Beirut. With extensive experience in
               digital product design and strategy, he combines technology and
               sustainability to drive impactful solutions.
             </Text>

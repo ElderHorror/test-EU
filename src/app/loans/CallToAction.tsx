@@ -11,7 +11,7 @@ import {
 
 export default function CallToAction() {
   const textContent = useBreakpointValue({
-    base: `At EU StudyAssist, our mission is to provide${"\n"}peace of mind, helping you focus on your${"\n"}academic goals while we take care of the${"\n"}financial logistics. Apply today to make your${"\n"}study abroad dreams a reality!`,
+    base: `At EU StudyAssist, our mission is to provide peace of mind, helping you focus on your academic goals while we take care of the financial logistics. Apply today to make your study abroad dreams a reality!`,
     md: `At EU StudyAssist, our mission is to provide peace of${"\n"}mind, helping you focus on your academic goals${"\n"}while we take care of the financial logistics. Apply${"\n"}today to make your study abroad dreams a reality!`,
   });
 
@@ -20,7 +20,7 @@ export default function CallToAction() {
       <Container maxW="60rem">
         <VStack spacing="2rem" align="center">
           <Text
-            fontSize={{ base: "1.125rem", md: "1.25rem" }}
+            fontSize={{ base: "1rem", md: "1.25rem" }}
             color="#2F3540"
             textAlign="center"
             lineHeight="1.6"
@@ -38,7 +38,7 @@ export default function CallToAction() {
             px="1.5rem"
             py="1.5rem"
             fontSize="1rem"
-            mt="1rem"
+            mt={{lg: "1rem", base:"0"}}
           >
             Apply Now
           </Button>

@@ -1,12 +1,12 @@
 "use client";
 import { Box, Flex, Text } from "@chakra-ui/react";
-import TrainingCard, { TrainingCardProps } from "../training/TrainingCard";
+import ConsultingCard, { ConsultingCardProps } from "./ConsultingCard";
 import Section from "@/components/layout/Section";
 
 /**
  * Consulting services data
  */
-const consultingData: TrainingCardProps[] = [
+const consultingData: ConsultingCardProps[] = [
   {
     image: "/01.jpg",
     title: "Climate change modeling: Impact assessment on forest ecosystems",
@@ -43,16 +43,17 @@ export default function ConsultingSection() {
       id="Consulting"
       bg="#F4F4F4"
       py={{ base: "2rem", lg: "7rem" }}
-      px="1.5rem"
+      px={{ base: "0.3rem", sm: "0.5rem", md: "1rem", lg: "1.5rem" }}
       spacing={8}
     >
       <Box>
         <Text
           color="black"
-          fontWeight={600}
+          fontWeight={700}
           fontSize={{ lg: "2.5rem", base: "30px" }}
           textAlign="center"
           marginY="0.5rem"
+          whiteSpace="nowrap"
         >
           Our Consulting Services
         </Text>
@@ -71,9 +72,16 @@ export default function ConsultingSection() {
         </Text>
       </Box>
 
-      <Flex gap="1rem" justifyContent="center" justifyItems="center">
+      <Flex
+        gap={{ base: "2rem", md: "1rem" }}
+        flexDirection={{ base: "column", md: "row" }}
+        flexWrap={{ base: "wrap", md: "nowrap", lg:"nowrap" }}
+        // justifyContent="center"
+        // alignItems="center"
+        width="100%"
+      >
         {consultingData.map((item) => (
-          <TrainingCard key={item.title} data={item} isTraining={false} />
+          <ConsultingCard key={item.title} data={item} isTraining={false} />
         ))}
       </Flex>
     </Section>

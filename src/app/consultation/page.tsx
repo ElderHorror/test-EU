@@ -157,6 +157,15 @@ const ConsultationPage = () => {
           imagePosition="left"
           buttonText="Apply Now"
         />
+
+        {/* Training & Workshops */}
+        <LoanFeature
+          imageSrc="/consultation01.jpg"
+          heading="Training & Workshops"
+          description="We specialize in building modern, responsive websites and interactive dashboards tailored to research and academic needs. Whether you need a professional web presence or a data-driven dashboard for real-time insights, we design solutions that enhance accessibility, visualization, and user experience. Our services integrate the latest web technologies to ensure efficiency, security, and scalability."
+          imagePosition="right"
+          buttonText="Apply Now"
+        />
       </Box>
 
       {/* Why Choose EU StudyAssist Section */}

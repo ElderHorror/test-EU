@@ -54,8 +54,8 @@ export default function PerformanceProvider({
           const fontPreloadLink = document.createElement("link");
           fontPreloadLink.rel = "preload";
           fontPreloadLink.as = "font";
-          fontPreloadLink.href = "/fonts/ClashDisplay-Variable.woff2";
-          fontPreloadLink.type = "font/woff2";
+          fontPreloadLink.href = "/fonts/Inter_24pt-Regular.ttf";
+          fontPreloadLink.type = "font/truetype";
           fontPreloadLink.crossOrigin = "anonymous";
           document.head.appendChild(fontPreloadLink);
         }

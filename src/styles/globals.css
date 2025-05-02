@@ -12,6 +12,7 @@ html {
 body {
   scroll-behavior: smooth !important;
   box-sizing: border-box;
+  font-family: "Inter", sans-serif;
 }
 
 .btn:hover {
@@ -26,7 +27,7 @@ body {
 }
 
 .price-container::after {
-  content: '';
+  content: "";
   position: absolute;
   top: 50%;
   left: 0;

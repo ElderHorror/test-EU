@@ -15,11 +15,11 @@ import {
 export default function CookieContent() {
   return (
     <Box bg="white" py={{ base: "3rem", md: "5rem" }}>
-      <Container maxW="60rem">
+      <Container maxW="60rem" px="5rem" py="1rem"  borderTop={"1px solid #ACACAC"}>
         <VStack spacing="2rem" align="start">
           <Box w="100%">
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="1rem"
             >
@@ -30,7 +30,7 @@ export default function CookieContent() {
               on a User&apos;s device as they interact with this Website.
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="1rem"
             >
@@ -44,7 +44,7 @@ export default function CookieContent() {
               particular type of Tracker.
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="1rem"
             >
@@ -54,7 +54,7 @@ export default function CookieContent() {
               in this document.
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="1rem"
             >
@@ -89,7 +89,7 @@ export default function CookieContent() {
 
             <Heading
               as="h3"
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               fontWeight={600}
               mb="1rem"
               mt="1.5rem"
@@ -98,7 +98,7 @@ export default function CookieContent() {
               Necessary
             </Heading>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="1rem"
             >
@@ -109,7 +109,7 @@ export default function CookieContent() {
 
             <Heading
               as="h3"
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               fontWeight={600}
               mb="1rem"
               mt="1.5rem"
@@ -118,7 +118,7 @@ export default function CookieContent() {
               Experience
             </Heading>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="1rem"
             >
@@ -129,7 +129,7 @@ export default function CookieContent() {
 
             <Heading
               as="h4"
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               fontWeight={600}
               mb="0.5rem"
               mt="1rem"
@@ -139,12 +139,12 @@ export default function CookieContent() {
             </Heading>
 
             <UnorderedList pl="1rem" mb="0.5rem">
-              <ListItem fontWeight={600}>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} fontWeight={600}>
                 YouTube video widget (Google Ireland Limited)
               </ListItem>
             </UnorderedList>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               pl="2rem"
@@ -154,14 +154,14 @@ export default function CookieContent() {
               this kind on its pages.
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
             >
               Personal Data processed: Cookies and Usage Data.
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
             >
@@ -176,25 +176,25 @@ export default function CookieContent() {
               .
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
             >
               Storage duration:
             </Text>
             <UnorderedList pl="2rem" mb="1rem">
-              <ListItem pb="1rem">PREF: 8 months</ListItem>
-              <ListItem pb="1rem">VISITOR_INFO1_LIVE: 8 months</ListItem>
-              <ListItem pb="1rem">YSC: duration of the session</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">PREF: 8 months</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">VISITOR_INFO1_LIVE: 8 months</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">YSC: duration of the session</ListItem>
             </UnorderedList>
 
             <UnorderedList pl="1rem" mb="0.5rem">
-              <ListItem fontWeight={600}>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} fontWeight={600}>
                 Instagram widget (Instagram, Inc.)
               </ListItem>
             </UnorderedList>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               pl="2rem"
@@ -204,14 +204,14 @@ export default function CookieContent() {
               on its pages.
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
             >
               Personal Data processed: Cookies and Usage Data.
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="1rem"
             >
@@ -228,7 +228,7 @@ export default function CookieContent() {
 
             <Heading
               as="h3"
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               fontWeight={600}
               mb="1rem"
               mt="1.5rem"
@@ -237,7 +237,7 @@ export default function CookieContent() {
               Measurement
             </Heading>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="1rem"
             >
@@ -247,7 +247,7 @@ export default function CookieContent() {
 
             <Heading
               as="h4"
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               fontWeight={600}
               mb="0.5rem"
               mt="1rem"
@@ -257,12 +257,12 @@ export default function CookieContent() {
             </Heading>
 
             <UnorderedList pl="1rem" mb="0.5rem">
-              <ListItem fontWeight={600}>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} fontWeight={600}>
                 Analytics collected directly (this Website)
               </ListItem>
             </UnorderedList>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               pl="2rem"
@@ -271,7 +271,7 @@ export default function CookieContent() {
               involve third parties.
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               pl="2rem"
@@ -279,7 +279,7 @@ export default function CookieContent() {
               Personal Data processed: Cookies and Usage Data.
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               pl="1rem"
@@ -287,12 +287,12 @@ export default function CookieContent() {
               Storage duration:
             </Text>
             <UnorderedList pl="2rem" mb="1rem">
-              <ListItem pb="1rem">modernizr: indefinite</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">modernizr: indefinite</ListItem>
             </UnorderedList>
 
             <Heading
               as="h4"
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               fontWeight={600}
               mb="0.5rem"
               mt="1rem"
@@ -302,12 +302,12 @@ export default function CookieContent() {
             </Heading>
 
             <UnorderedList pl="1rem" mb="0.5rem">
-              <ListItem fontWeight={600}>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} fontWeight={600}>
                 Google Analytics (Universal Analytics) (Google Ireland Limited)
               </ListItem>
             </UnorderedList>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               pl="2rem"
@@ -319,7 +319,7 @@ export default function CookieContent() {
               other Google services.
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               pl="1rem"
@@ -328,7 +328,7 @@ export default function CookieContent() {
               the ads of its own advertising network.
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               pl="1rem"
@@ -337,7 +337,7 @@ export default function CookieContent() {
               Google&apos;s partner policy.
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               pl="1rem"
@@ -345,7 +345,7 @@ export default function CookieContent() {
               Personal Data processed: Cookies and Usage Data.
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               pl="1rem"
@@ -361,7 +361,7 @@ export default function CookieContent() {
               .
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               pl="1rem"
@@ -369,21 +369,21 @@ export default function CookieContent() {
               Storage duration:
             </Text>
             <UnorderedList pl="2rem" mb="1rem">
-              <ListItem pb="1rem">AMP_TOKEN: 1 hour</ListItem>
-              <ListItem pb="1rem">_ga: 2 years</ListItem>
-              <ListItem pb="1rem">_gac*: 3 months</ListItem>
-              <ListItem pb="1rem">_gat: 1 minute</ListItem>
-              <ListItem pb="1rem">_gid: 1 day</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">AMP_TOKEN: 1 hour</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">_ga: 2 years</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">_gac*: 3 months</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">_gat: 1 minute</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">_gid: 1 day</ListItem>
             </UnorderedList>
 
             <UnorderedList pl="1rem" mb="0.5rem">
-              <ListItem fontWeight={600}>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} fontWeight={600}>
                 Google Analytics Advertising Reporting Features (Google Ireland
                 Limited)
               </ListItem>
             </UnorderedList>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               pl="2rem"
@@ -397,7 +397,7 @@ export default function CookieContent() {
               and gender).
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               pl="1rem"
@@ -406,7 +406,7 @@ export default function CookieContent() {
               Google&apos;s Ads Settings.
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               pl="1rem"
@@ -417,7 +417,7 @@ export default function CookieContent() {
               service.
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               pl="1rem"
@@ -441,7 +441,7 @@ export default function CookieContent() {
               .
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               pl="1rem"
@@ -449,18 +449,18 @@ export default function CookieContent() {
               Storage duration:
             </Text>
             <UnorderedList pl="2rem" mb="1rem">
-              <ListItem pb="1rem">IDE: 2 years</ListItem>
-              <ListItem pb="1rem">_gcl_*: 3 months</ListItem>
-              <ListItem pb="1rem">test_cookie: 15 minutes</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">IDE: 2 years</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">_gcl_*: 3 months</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">test_cookie: 15 minutes</ListItem>
             </UnorderedList>
 
             <UnorderedList pl="1rem" mb="0.5rem">
-              <ListItem fontWeight={600}>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} fontWeight={600}>
                 User ID extension for Google Analytics (Google LLC)
               </ListItem>
             </UnorderedList>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               pl="2rem"
@@ -479,7 +479,7 @@ export default function CookieContent() {
               aforementioned tracking as well.
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               pl="1rem"
@@ -487,7 +487,7 @@ export default function CookieContent() {
               Personal Data processed: Cookies.
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="1rem"
               pl="1rem"
@@ -503,13 +503,13 @@ export default function CookieContent() {
             </Text>
 
             <UnorderedList pl="1rem" mb="0.5rem">
-              <ListItem fontWeight={600}>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} fontWeight={600}>
                 Google Analytics Demographics and Interests reports (Google
                 Ireland Limited)
               </ListItem>
             </UnorderedList>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               pl="2rem"
@@ -520,7 +520,7 @@ export default function CookieContent() {
               (demographics means age and gender Data).
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               pl="1rem"
@@ -529,7 +529,7 @@ export default function CookieContent() {
               Google&apos;s Ads Settings.
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               pl="1rem"
@@ -538,7 +538,7 @@ export default function CookieContent() {
               advertising (Google Advertiser ID or IDFA, for example).
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               pl="1rem"
@@ -562,7 +562,7 @@ export default function CookieContent() {
               .
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               pl="1rem"
@@ -570,18 +570,18 @@ export default function CookieContent() {
               Storage duration:
             </Text>
             <UnorderedList pl="2rem" mb="1rem">
-              <ListItem pb="1rem">IDE: 2 years</ListItem>
-              <ListItem pb="1rem">_gcl_*: 3 months</ListItem>
-              <ListItem pb="1rem">test_cookie: 15 minutes</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">IDE: 2 years</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">_gcl_*: 3 months</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">test_cookie: 15 minutes</ListItem>
             </UnorderedList>
 
             <UnorderedList pl="1rem" mb="0.5rem">
-              <ListItem fontWeight={600}>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} fontWeight={600}>
                 Google Analytics 4 (Google Ireland Limited)
               </ListItem>
             </UnorderedList>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               pl="2rem"
@@ -598,7 +598,7 @@ export default function CookieContent() {
               Google&apos;s official documentation.
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               pl="1rem"
@@ -607,7 +607,7 @@ export default function CookieContent() {
               Google&apos;s partner policy.
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               pl="1rem"
@@ -617,7 +617,7 @@ export default function CookieContent() {
               Users, session statistics, Trackers and Usage Data.
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               pl="1rem"
@@ -632,7 +632,7 @@ export default function CookieContent() {
               </Link>
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               pl="1rem"
@@ -640,17 +640,17 @@ export default function CookieContent() {
               Storage duration:
             </Text>
             <UnorderedList pl="2rem" mb="1rem">
-              <ListItem pb="1rem">_ga: 2 years</ListItem>
-              <ListItem pb="1rem">_ga_*: 2 years</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">_ga: 2 years</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">_ga_*: 2 years</ListItem>
             </UnorderedList>
 
             <UnorderedList pl="1rem" mb="0.5rem">
-              <ListItem fontWeight={600}>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} fontWeight={600}>
                 Meta Events Manager (Meta Platforms Ireland Limited)
               </ListItem>
             </UnorderedList>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               pl="2rem"
@@ -661,7 +661,7 @@ export default function CookieContent() {
               interactions on this Website.
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               pl="1rem"
@@ -669,7 +669,7 @@ export default function CookieContent() {
               Personal Data processed: Trackers and Usage Data.
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               pl="1rem"
@@ -685,7 +685,7 @@ export default function CookieContent() {
               .
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               pl="1rem"
@@ -693,17 +693,17 @@ export default function CookieContent() {
               Storage duration:
             </Text>
             <UnorderedList pl="2rem" mb="1rem">
-              <ListItem pb="1rem">_fbp: 3 months</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">_fbp: 3 months</ListItem>
             </UnorderedList>
 
             <UnorderedList pl="1rem" mb="0.5rem">
-              <ListItem fontWeight={600}>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} fontWeight={600}>
                 Google Analytics (Universal Analytics) with anonymized IP
                 (Google Ireland Limited)
               </ListItem>
             </UnorderedList>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               pl="2rem"
@@ -722,7 +722,7 @@ export default function CookieContent() {
               server and shortened within the US.
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               pl="1rem"
@@ -731,7 +731,7 @@ export default function CookieContent() {
               Google&apos;s partner policy.
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               pl="1rem"
@@ -739,7 +739,7 @@ export default function CookieContent() {
               Personal Data processed: Cookies and Usage Data.
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               pl="1rem"
@@ -754,7 +754,7 @@ export default function CookieContent() {
               </Link>
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               pl="1rem"
@@ -762,11 +762,11 @@ export default function CookieContent() {
               Storage duration:
             </Text>
             <UnorderedList pl="2rem" mb="1rem">
-              <ListItem pb="1rem">AMP_TOKEN: 1 hour</ListItem>
-              <ListItem pb="1rem">_ga: 2 years</ListItem>
-              <ListItem pb="1rem">_gac*: 3 months</ListItem>
-              <ListItem pb="1rem">_gat: 1 minute</ListItem>
-              <ListItem pb="1rem">_gid: 1 day</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">AMP_TOKEN: 1 hour</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">_ga: 2 years</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">_gac*: 3 months</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">_gat: 1 minute</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">_gid: 1 day</ListItem>
             </UnorderedList>
 
             <Heading
@@ -780,7 +780,7 @@ export default function CookieContent() {
               Marketing
             </Heading>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="1rem"
             >
@@ -790,7 +790,7 @@ export default function CookieContent() {
 
             <Heading
               as="h4"
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               fontWeight={600}
               mb="0.5rem"
               mt="1rem"
@@ -800,12 +800,12 @@ export default function CookieContent() {
             </Heading>
 
             <UnorderedList pl="1rem" mb="0.5rem">
-              <ListItem fontWeight={600}>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} fontWeight={600}>
                 Facebook Custom Audience (Facebook, Inc.)
               </ListItem>
             </UnorderedList>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               pl="2rem"
@@ -815,7 +815,7 @@ export default function CookieContent() {
               this Website with the Facebook advertising network.
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               
@@ -823,7 +823,7 @@ export default function CookieContent() {
               Personal Data processed: Cookies and email address.
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               
@@ -847,7 +847,7 @@ export default function CookieContent() {
               .
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               
@@ -855,16 +855,16 @@ export default function CookieContent() {
               Storage duration:
             </Text>
             <UnorderedList pl="2rem" mb="1rem">
-              <ListItem pb="1rem">_fbp: 3 months</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">_fbp: 3 months</ListItem>
             </UnorderedList>
 
             <UnorderedList pl="1rem" mb="0.5rem">
-              <ListItem fontWeight={600}>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} fontWeight={600}>
                 Remarketing with Google Analytics (Google Ireland Limited)
               </ListItem>
             </UnorderedList>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               pl="2rem"
@@ -876,7 +876,7 @@ export default function CookieContent() {
               Doubleclick Cookie.
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               
@@ -884,7 +884,7 @@ export default function CookieContent() {
               Personal Data processed: Cookies and Usage Data.
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               
@@ -908,7 +908,7 @@ export default function CookieContent() {
               .
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               
@@ -916,18 +916,18 @@ export default function CookieContent() {
               Storage duration:
             </Text>
             <UnorderedList pl="2rem" mb="1rem">
-              <ListItem pb="1rem">test_cookie: 15 minutes</ListItem>
-              <ListItem pb="1rem">IDE: 2 years</ListItem>
-              <ListItem pb="1rem">_gcl_*: 3 months</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">test_cookie: 15 minutes</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">IDE: 2 years</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">_gcl_*: 3 months</ListItem>
             </UnorderedList>
 
             <UnorderedList pl="1rem" mb="0.5rem">
-              <ListItem fontWeight={600}>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} fontWeight={600}>
                 LinkedIn Website Retargeting (LinkedIn Corporation)
               </ListItem>
             </UnorderedList>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               pl="2rem"
@@ -938,7 +938,7 @@ export default function CookieContent() {
               network.
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               
@@ -946,7 +946,7 @@ export default function CookieContent() {
               Personal Data processed: Trackers and Usage Data.
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               
@@ -970,7 +970,7 @@ export default function CookieContent() {
               .
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               
@@ -978,25 +978,25 @@ export default function CookieContent() {
               Storage duration:
             </Text>
             <UnorderedList pl="2rem" mb="1rem">
-              <ListItem pb="1rem">AnalyticsSyncHistory: 1 month</ListItem>
-              <ListItem pb="1rem">JSESSIONID: duration of the session</ListItem>
-              <ListItem pb="1rem">UserMatchHistory: 1 month</ListItem>
-              <ListItem pb="1rem">bcookie: 1 year</ListItem>
-              <ListItem pb="1rem">bscookie: 1 year</ListItem>
-              <ListItem pb="1rem">lang: duration of the session</ListItem>
-              <ListItem pb="1rem">lidc: 1 day</ListItem>
-              <ListItem pb="1rem">lissc: 1 year</ListItem>
-              <ListItem pb="1rem">lms_ads: 1 month</ListItem>
-              <ListItem pb="1rem">lms_analytics: 1 month</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">AnalyticsSyncHistory: 1 month</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">JSESSIONID: duration of the session</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">UserMatchHistory: 1 month</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">bcookie: 1 year</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">bscookie: 1 year</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">lang: duration of the session</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">lidc: 1 day</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">lissc: 1 year</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">lms_ads: 1 month</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">lms_analytics: 1 month</ListItem>
             </UnorderedList>
 
             <UnorderedList pl="1rem" mb="0.5rem">
-              <ListItem fontWeight={600}>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} fontWeight={600}>
                 Meta ads conversion tracking (Meta pixel) (Facebook, Inc.)
               </ListItem>
             </UnorderedList>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               pl="2rem"
@@ -1010,7 +1010,7 @@ export default function CookieContent() {
               Network.
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               
@@ -1018,7 +1018,7 @@ export default function CookieContent() {
               Personal Data processed: Trackers and Usage Data.
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               
@@ -1034,7 +1034,7 @@ export default function CookieContent() {
               .
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               
@@ -1042,18 +1042,18 @@ export default function CookieContent() {
               Storage duration:
             </Text>
             <UnorderedList pl="2rem" mb="1rem">
-              <ListItem pb="1rem">_fbp: 3 months</ListItem>
-              <ListItem pb="1rem">fr: 3 months</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">_fbp: 3 months</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">fr: 3 months</ListItem>
             </UnorderedList>
 
             <UnorderedList pl="1rem" mb="0.5rem">
-              <ListItem fontWeight={600}>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} fontWeight={600}>
                 LinkedIn conversion tracking (LinkedIn Insight Tag) (LinkedIn
                 Corporation)
               </ListItem>
             </UnorderedList>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               pl="2rem"
@@ -1067,7 +1067,7 @@ export default function CookieContent() {
               past use of this Website.
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               
@@ -1077,7 +1077,7 @@ export default function CookieContent() {
               the AdChoices opt-out page.
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               
@@ -1086,7 +1086,7 @@ export default function CookieContent() {
               Data.
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               
@@ -1102,7 +1102,7 @@ export default function CookieContent() {
               .
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               
@@ -1110,24 +1110,24 @@ export default function CookieContent() {
               Storage duration:
             </Text>
             <UnorderedList pl="2rem" mb="1rem">
-              <ListItem pb="1rem">AnalyticsSyncHistory: 1 month</ListItem>
-              <ListItem pb="1rem">JSESSIONID: duration of the session</ListItem>
-              <ListItem pb="1rem">UserMatchHistory: 1 month</ListItem>
-              <ListItem pb="1rem">bcookie: 1 year</ListItem>
-              <ListItem pb="1rem">bscookie: 1 year</ListItem>
-              <ListItem pb="1rem">lang: duration of the session</ListItem>
-              <ListItem pb="1rem">lidc: 1 day</ListItem>
-              <ListItem pb="1rem">lms_ads: 1 month</ListItem>
-              <ListItem pb="1rem">lms_analytics: 1 month</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">AnalyticsSyncHistory: 1 month</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">JSESSIONID: duration of the session</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">UserMatchHistory: 1 month</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">bcookie: 1 year</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">bscookie: 1 year</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">lang: duration of the session</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">lidc: 1 day</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">lms_ads: 1 month</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">lms_analytics: 1 month</ListItem>
             </UnorderedList>
 
             <UnorderedList pl="1rem" mb="0.5rem">
-              <ListItem fontWeight={600}>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} fontWeight={600}>
                 Facebook Lookalike Audience (Facebook, Inc.)
               </ListItem>
             </UnorderedList>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               pl="2rem"
@@ -1142,7 +1142,7 @@ export default function CookieContent() {
               shown to Users suggested by Facebook Lookalike Audience.
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               
@@ -1151,7 +1151,7 @@ export default function CookieContent() {
               personalization by visiting this opt-out page.
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               
@@ -1159,7 +1159,7 @@ export default function CookieContent() {
               Personal Data processed: Cookies and Usage Data.
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               
@@ -1174,7 +1174,7 @@ export default function CookieContent() {
               </Link>
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
               
@@ -1182,7 +1182,7 @@ export default function CookieContent() {
               Storage duration:
             </Text>
             <UnorderedList pl="2rem" mb="1rem">
-              <ListItem pb="1rem">_fbp: 3 months</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">_fbp: 3 months</ListItem>
             </UnorderedList>
           </Box>
 
@@ -1197,7 +1197,7 @@ export default function CookieContent() {
               How to Manage Preferences on this Website
             </Heading>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="1rem"
             >
@@ -1205,7 +1205,7 @@ export default function CookieContent() {
               choices panel available on this Website.
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="1rem"
             >
@@ -1217,7 +1217,7 @@ export default function CookieContent() {
 
             <Heading
               as="h3"
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               fontWeight={600}
               mb="1rem"
               mt="1.5rem"
@@ -1227,24 +1227,24 @@ export default function CookieContent() {
               device settings
             </Heading>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
             >
               Users may use their own browser settings to:
             </Text>
             <UnorderedList pl="1rem">
-              <ListItem pb="1rem">
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">
                 See what Cookies or other similar technologies have been set on
                 the device;
               </ListItem>
-              <ListItem pb="1rem">Block Cookies or similar technologies;</ListItem>
-              <ListItem pb="1rem">
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">Block Cookies or similar technologies;</ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }} pb="1rem">
                 Clear Cookies or similar technologies from the browser.
               </ListItem>
             </UnorderedList>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
             >
@@ -1252,7 +1252,7 @@ export default function CookieContent() {
               consent by category.
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="0.5rem"
             >
@@ -1261,7 +1261,7 @@ export default function CookieContent() {
               addresses:
             </Text>
             <UnorderedList pl="2rem" mb="1rem">
-              <ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }}>
                 <Link
                   href="https://support.google.com/chrome/answer/95647"
                   color="#0E5FDC"
@@ -1270,7 +1270,7 @@ export default function CookieContent() {
                   Google Chrome
                 </Link>
               </ListItem>
-              <ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }}>
                 <Link
                   href="https://support.mozilla.org/en-US/kb/enable-and-disable-cookies-website-preferences"
                   color="#0E5FDC"
@@ -1279,7 +1279,7 @@ export default function CookieContent() {
                   Mozilla Firefox
                 </Link>
               </ListItem>
-              <ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }}>
                 <Link
                   href="https://support.apple.com/guide/safari/manage-cookies-and-website-data-sfri11471"
                   color="#0E5FDC"
@@ -1288,7 +1288,7 @@ export default function CookieContent() {
                   Apple Safari
                 </Link>
               </ListItem>
-              <ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }}>
                 <Link
                   href="http://windows.microsoft.com/en-us/internet-explorer/delete-manage-cookies"
                   color="#0E5FDC"
@@ -1297,7 +1297,7 @@ export default function CookieContent() {
                   Microsoft Internet Explorer
                 </Link>
               </ListItem>
-              <ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }}>
                 <Link
                   href="https://support.microsoft.com/en-us/microsoft-edge/delete-cookies-in-microsoft-edge-63947406-40ac-c3b8-57b9-2a946a29ae09"
                   color="#0E5FDC"
@@ -1306,7 +1306,7 @@ export default function CookieContent() {
                   Microsoft Edge
                 </Link>
               </ListItem>
-              <ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }}>
                 <Link
                   href="https://support.brave.com/hc/en-us/articles/360022806212-How-do-I-use-Shields-while-browsing"
                   color="#0E5FDC"
@@ -1315,7 +1315,7 @@ export default function CookieContent() {
                   Brave
                 </Link>
               </ListItem>
-              <ListItem>
+              <ListItem fontSize={{ base: "0.9rem", md: "0.9rem" }}>
                 <Link
                   href="https://help.opera.com/en/latest/web-preferences/"
                   color="#0E5FDC"
@@ -1326,7 +1326,7 @@ export default function CookieContent() {
               </ListItem>
             </UnorderedList>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="1rem"
             >
@@ -1339,7 +1339,7 @@ export default function CookieContent() {
 
             <Heading
               as="h3"
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               fontWeight={600}
               mb="1rem"
               mt="1.5rem"
@@ -1348,7 +1348,7 @@ export default function CookieContent() {
               How to opt out of interest-based advertising
             </Heading>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="1rem"
             >
@@ -1384,7 +1384,7 @@ export default function CookieContent() {
               provided in this document.
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="1rem"
             >
@@ -1395,7 +1395,7 @@ export default function CookieContent() {
 
             <Heading
               as="h3"
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               fontWeight={600}
               mb="1rem"
               mt="1.5rem"
@@ -1404,7 +1404,7 @@ export default function CookieContent() {
               Consequences of denying the use of Trackers
             </Heading>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="1rem"
             >
@@ -1418,7 +1418,7 @@ export default function CookieContent() {
 
             <Heading
               as="h3"
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               fontWeight={600}
               mb="1rem"
               mt="1.5rem"
@@ -1427,14 +1427,14 @@ export default function CookieContent() {
               Owner and Data Controller
             </Heading>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="1rem"
             >
               Olof Palmes Alle 31B, 3.1, 820, Aarhus N (Denmark)
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               fontWeight={600}
               lineHeight="2"
               mb="1rem"
@@ -1445,7 +1445,7 @@ export default function CookieContent() {
               </Link>
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="1rem"
             >
@@ -1457,7 +1457,7 @@ export default function CookieContent() {
               in this document.
             </Text>
             <Text
-              fontSize={{ base: "1rem", md: "1rem" }}
+              fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="1rem"
             >
@@ -1468,25 +1468,7 @@ export default function CookieContent() {
             </Text>
           </Box>
 
-          <Box w="100%">
-            <Text
-              fontSize={{ base: "0.875rem", md: "0.875rem" }}
-              color="gray.600"
-              textAlign="center"
-              mt="4rem"
-              mb="1rem"
-            >
-              If you have any questions about our Cookie Policy, please contact
-              us at{" "}
-              <Link
-                href="mailto:contact@eustudyassist.com"
-                color="#0E5FDC"
-                fontWeight={500}
-              >
-                contact@eustudyassist.com
-              </Link>
-            </Text>
-          </Box>
+          
         </VStack>
       </Container>
     </Box>

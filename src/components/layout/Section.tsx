@@ -20,6 +20,7 @@ interface SectionProps extends BoxProps {
   id?: string;
   title?: string;
   subtitle?: string;
+  subtitleMaxWidth?: string | object;
   containerProps?: ContainerProps;
   children: ReactNode;
   maxWidth?: string | object;
@@ -33,6 +34,7 @@ interface SectionProps extends BoxProps {
  * @param id - Optional ID for the section (for anchor links)
  * @param title - Optional section title
  * @param subtitle - Optional section subtitle
+ * @param subtitleMaxWidth - Maximum width for the subtitle
  * @param containerProps - Props to pass to the inner Container
  * @param children - Section content
  * @param maxWidth - Maximum width of the container
@@ -44,6 +46,7 @@ export default function Section({
   id,
   title,
   subtitle,
+  subtitleMaxWidth = "container.md",
   containerProps,
   children,
   maxWidth = "container.xl",
@@ -123,7 +126,7 @@ export default function Section({
                 color="gray.600"
                 textAlign={textAlign}
                 mb={6}
-                maxW="container.md"
+                maxW={subtitleMaxWidth}
                 mx="auto"
               >
                 {subtitle}

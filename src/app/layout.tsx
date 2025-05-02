@@ -5,6 +5,8 @@ import Providers from "@/components/layout/Providers";
 import { Analytics } from "@vercel/analytics/react";
 import { GoogleAnalytics } from "@next/third-parties/google";
 
+// We're using local Inter font files instead of Google Fonts
+// This import is kept for compatibility with existing code
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
@@ -28,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className={inter.className}>
       <head>
         <link rel="icon" href="/favicon2.ico" />
       </head>

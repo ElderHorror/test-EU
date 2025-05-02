@@ -49,26 +49,41 @@ const Fonts = () => {
       styles={`
         /* Critical fonts loaded immediately */
         @font-face {
-          font-family: 'ClashDisplay';
-          src: url('/fonts/ClashDisplay-Regular.woff2') format('woff2');
+          font-family: 'Inter';
+          src: url('/fonts/Inter_24pt-Regular.ttf') format('truetype');
           font-weight: 400;
           font-display: swap;
           font-style: normal;
         }
 
         @font-face {
-          font-family: 'ClashDisplay';
-          src: url('/fonts/ClashDisplay-Bold.woff2') format('woff2');
+          font-family: 'Inter';
+          src: url('/fonts/Inter_24pt-Bold.ttf') format('truetype');
           font-weight: 700;
           font-display: swap;
           font-style: normal;
         }
 
-        /* Variable font for better performance */
         @font-face {
-          font-family: 'ClashDisplay';
-          src: url('/fonts/ClashDisplay-Variable.woff2') format('woff2');
-          font-weight: 200 700;
+          font-family: 'Inter';
+          src: url('/fonts/Inter_24pt-Medium.ttf') format('truetype');
+          font-weight: 500;
+          font-display: swap;
+          font-style: normal;
+        }
+
+        @font-face {
+          font-family: 'Inter';
+          src: url('/fonts/Inter_24pt-Light.ttf') format('truetype');
+          font-weight: 300;
+          font-display: swap;
+          font-style: normal;
+        }
+
+        @font-face {
+          font-family: 'Inter';
+          src: url('/fonts/Inter_24pt-SemiBold.ttf') format('truetype');
+          font-weight: 600;
           font-display: swap;
           font-style: normal;
         }
@@ -82,7 +97,7 @@ const Fonts = () => {
 
         /* Prevent layout shifts */
         body {
-          font-family: 'ClashDisplay', sans-serif;
+          font-family: 'Inter', sans-serif;
         }
       `}
     />

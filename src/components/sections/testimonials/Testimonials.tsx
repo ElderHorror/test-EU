@@ -1,12 +1,5 @@
 "use client";
-import {
-  Box,
-  Container,
-  Heading,
-  Text,
-  Flex,
-  VStack,
-} from "@chakra-ui/react";
+import { Box, Container, Heading, Text, Flex, VStack } from "@chakra-ui/react";
 import TestimonialCard, { TestimonialCardProps } from "./TestimonialCard";
 import Section from "@/components/layout/Section";
 
@@ -41,43 +34,38 @@ export default function Testimonials() {
       id="testimonials"
       title="Testimonials"
       subtitle="The students we have supported have said a lot of good things about us. Some of them are shown below."
+      subtitleMaxWidth={{ base: "75%", sm: "75%", md: "75%", lg: "75%" }}
       bg="white"
       py={16}
     >
       {/* Testimonials Layout */}
-      <Flex 
-        direction={{ base: "column", md: "row" }} 
-        justify="space-between" 
-        maxW="1000px" 
-        mx="auto" 
+      <Flex
+        direction={{ base: "column", md: "row" }}
+        justify="space-between"
+        maxW="1000px"
+        mx="auto"
         px={2}
         gap={{ base: 20, md: 20 }}
       >
         {/* Left Column - Faith and Cohort */}
-        <Flex 
-          direction="column" 
-          gap={{base: 8, md: 14}}
+        <Flex
+          direction="column"
+          gap={{ base: 8, md: 14 }}
           width={{ base: "100%", md: "auto" }}
         >
           {/* First testimonial */}
           <Box maxW={{ base: "100%", md: "450px" }}>
             <TestimonialCard {...testimonials[0]} />
           </Box>
-          
+
           {/* Third testimonial - slightly pushed right */}
-          <Box 
-            ml={{ base: 0, md: 24 }} 
-            maxW={{ base: "100%", md: "420px" }}
-          >
+          <Box ml={{ base: 0, md: 24 }} maxW={{ base: "100%", md: "420px" }}>
             <TestimonialCard {...testimonials[2]} />
           </Box>
         </Flex>
 
         {/* Right Column - Second testimonial */}
-        <Box
-          mt={{base: 0, md: 10}} 
-          maxW={{ base: "100%", md: "386px" }}
-        >
+        <Box mt={{ base: 0, md: 10 }} maxW={{ base: "100%", md: "386px" }}>
           <TestimonialCard {...testimonials[1]} />
         </Box>
       </Flex>

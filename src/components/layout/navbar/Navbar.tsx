@@ -41,26 +41,21 @@ export default function Navbar({ setPageMode }: NavbarProps) {
     },
     {
       id: "3",
-      navLink: "Contact Us",
-      href: "../#contact_us",
+      navLink: "Training",
+      href: "/online-courses",
     },
     {
       id: "4",
-      navLink: "Bootcamp",
-      href: "/courses",
-    },
-    {
-      id: "5",
       navLink: "Loan Services",
       href: "/loans",
     },
     {
-      id: "6",
+      id: "5",
       navLink: "Consultation",
       href: "/consultation",
     },
     {
-      id: 7,
+      id: "6",
       navLink: "Blog",
       href: "/blog",
     },
@@ -106,7 +101,7 @@ export default function Navbar({ setPageMode }: NavbarProps) {
                 setPageMode(1);
               }}
             >
-              <Link href={"/courses/01"}>
+              <Link href={"/courses"}>
                 <SecondaryButton>
                   Join BootCamp
                 </SecondaryButton>
@@ -163,7 +158,7 @@ export default function Navbar({ setPageMode }: NavbarProps) {
                 {link.navLink}
               </Text>
             ))}
-            <Link href={"/courses/01"}>
+            <Link href={"/courses"}>
               <SecondaryButton>
                 Join BootCamp
               </SecondaryButton>

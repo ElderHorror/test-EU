@@ -7,8 +7,9 @@ import {
   AccordionButton,
   AccordionPanel,
   AccordionIcon,
+  Heading,
+  Text,
 } from "@chakra-ui/react";
-import Section from "@/components/layout/Section";
 import { FaqItem } from "@/types";
 
 /**
@@ -25,7 +26,7 @@ interface FaqProps {
 /**
  * FAQ section component
  * Displays a list of frequently asked questions in an accordion
- * 
+ *
  * @param title - Section title
  * @param subtitle - Section subtitle
  * @param faqItems - Array of FAQ items (question/answer pairs)
@@ -37,7 +38,7 @@ export default function Faq({
   subtitle = "We have provided answers to common questions we frequently get from visitors",
   faqItems,
   bgColor = "#0E5FDC",
-  textColor = "white"
+  textColor = "white",
 }: FaqProps) {
   return (
     <Section
@@ -96,21 +97,25 @@ export const defaultFaqItems: FaqItem[] = [
   {
     id: "1",
     question: "How do I apply for a loan?",
-    answer: "You can apply for a loan by visiting our website and filling out the application form. Our team will review your application and get back to you within 2-3 business days.",
+    answer:
+      "You can apply for a loan by visiting our website and filling out the application form. Our team will review your application and get back to you within 2-3 business days.",
   },
   {
     id: "2",
     question: "What documents do I need to apply?",
-    answer: "You'll need a valid ID, proof of income (like pay stubs or tax returns), and proof of address (utility bill or lease agreement).",
+    answer:
+      "You'll need a valid ID, proof of income (like pay stubs or tax returns), and proof of address (utility bill or lease agreement).",
   },
   {
     id: "3",
     question: "How long does the approval process take?",
-    answer: "The typical approval process takes 2-3 business days once all required documents are submitted.",
+    answer:
+      "The typical approval process takes 2-3 business days once all required documents are submitted.",
   },
   {
     id: "4",
     question: "What are the interest rates?",
-    answer: "Interest rates vary based on your credit score, loan amount, and term length. Contact our team for a personalized quote.",
+    answer:
+      "Interest rates vary based on your credit score, loan amount, and term length. Contact our team for a personalized quote.",
   },
 ];

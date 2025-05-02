@@ -14,7 +14,7 @@ import {
 export default function PrivacyContent() {
   return (
     <Box bg="white" py={{ base: "3rem", md: "5rem" }}>
-      <Container maxW="60rem">
+      <Container maxW="60rem" px="5rem" py="1rem"  borderTop={"1px solid #ACACAC"}>
         <VStack spacing="2rem" align="start">
           <Box w="100%">
             <Heading
@@ -112,14 +112,14 @@ export default function PrivacyContent() {
               third-party technical service providers, mail carriers, hosting
               providers, IT companies, communications agencies) appointed, if
               necessary, as Data Processors by the Owner. The updated list of
-              these parties may be requested from the Owner at any time. <br /> 
+              these parties may be requested from the Owner at any time. <br />
             </Text>
             <Text
               fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
               mb="1rem"
             >
-              
+
               <span style={{ fontWeight: 600, paddingBottom: "1rem" }}>
                 Place
               </span>
@@ -209,7 +209,7 @@ export default function PrivacyContent() {
                 <a
                   href="/cookie-policy"
                   style={{
-                    color: "#0E5FDC",
+                    color: "#130F26",
                     textDecoration: "underline",
                     fontWeight: 500,
                   }}

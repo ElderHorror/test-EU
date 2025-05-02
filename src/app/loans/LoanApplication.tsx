@@ -53,8 +53,12 @@ export default function LoanApplication() {
               >
                 Our loan service is available to:
               </Text>
-              Students enrolled in an international academic program, especially
-              recipients of the ERASMUS MUNDUS scholarships.
+              Students enrolled in international academic programs, particularly
+              scholarship recipients from notable organizations such as ERASMUS,
+              NAWA, DAAD, Danish Government Scholarships, and Italian Government
+              Scholarships, among others. In addition, we offer our loan service
+              to recipients of graduate and teaching assistantship positions in
+              the United States or Canada.
             </Text>
           </VStack>
 
@@ -72,23 +76,24 @@ export default function LoanApplication() {
               color="#2F3540"
               fontSize={{ base: "1rem", md: "1rem" }}
               lineHeight="1.8"
-              mb="1rem"
+              mb={{lg: "1rem"}}
             >
               Applying for our loan service is simple and quick:
             </Text>
 
             {/* Numbered List */}
-            <List spacing="1.5rem" styleType="decimal" pl="1rem">
+            <List spacing={{lg: "1.5rem", base:"1rem"}} styleType="decimal" pl="1rem">
               {/* Step 1 */}
               <ListItem>
                 <Text
                   color="#2F3540"
                   fontSize={{ base: "1rem", md: "1rem" }}
                   lineHeight="1.8"
+                  textAlign="justify"
                 >
                   <Text
                     as="span"
-                    color="black"
+                    color="#2F3540"
                     fontWeight={600}
                     display="inline"
                   >
@@ -97,7 +102,7 @@ export default function LoanApplication() {
                   Provide basic details about your study program and financial
                   needs.{" "}
                   <Link color="#0E5FDC" href="#">
-                    Click here
+                    Click here to fill to get started with filling the form
                   </Link>
                 </Text>
               </ListItem>
@@ -108,10 +113,11 @@ export default function LoanApplication() {
                   color="#2F3540"
                   fontSize={{ base: "1rem", md: "1rem" }}
                   lineHeight="1.8"
+                  textAlign="justify"
                 >
                   <Text
                     as="span"
-                    color="black"
+                    color="#2F3540"
                     fontWeight={600}
                     display="inline"
                   >
@@ -119,7 +125,7 @@ export default function LoanApplication() {
                   </Text>{" "}
                   You will be asked to upload the following document:
                 </Text>
-                <UnorderedList pl="2rem" mt="0.5rem" spacing="2rem">
+                <UnorderedList color="#2F3540" pl="2rem" mt="0.5rem" spacing="0.5rem">
                   <ListItem>A PDF of your passport data page</ListItem>
                   <ListItem>A PDF of the visa page of your passport</ListItem>
                   <ListItem>Your admission letter</ListItem>
@@ -137,19 +143,22 @@ export default function LoanApplication() {
                   color="#2F3540"
                   fontSize={{ base: "1rem", md: "1rem" }}
                   lineHeight="1.8"
+                  textAlign="justify"
                 >
                   <Text
                     as="span"
-                    color="black"
+                    color="#2F3540"
                     fontWeight={600}
                     display="inline"
+
                   >
-                    Guarantor:
+                    Provide Guarantor Details:
                   </Text>{" "}
-                  Provide the contact details, and LinkedIn profile of a
-                  guarantor. Your guarantor has to be an ex-ERASMUS recipient or
-                  current recipient in their first or second year. Your
-                  guarantor must be available for a meeting.
+                  You will need to provide the contact details and LinkedIn
+                  profile of a guarantor. Your guarantor must be a recipient of
+                  an international scholarship or an assistantship position.
+                  Your guarantor must be willing to attend a meeting for the
+                  loan.
                 </Text>
               </ListItem>
 
@@ -162,24 +171,22 @@ export default function LoanApplication() {
                 >
                   <Text
                     as="span"
-                    color="black"
+                    color="#2F3540"
                     fontWeight={600}
                     display="inline"
                   >
                     Get Approved:
                   </Text>{" "}
-                  Once approved, funds will be paid directly to the vendor,
-                  i.e., the landlord, or airline. We advise that accommodation
-                  should be managed by organizations or associations rather than
-                  private individuals. Dealing with private individuals takes
-                  longer time before the payment is processed, as due diligence
-                  must be taken. For settlement allowance, once you have a bank
-                  account operated by Fintechs' the settlement allowance would
-                  be sent to it. If you prefer a proxy, they must be available
-                  for a meeting before fund are discharged. Fintech
-                  organizations such as Revolut, N26, Zen, and Wise (Formerly
-                  TransferWise) are easier to open compared to traditional banks
-                  that takes long processing time.
+                  Once your application is approved, the funds will be disbursed
+                  directly to the vendor, such as your landlord or airline. We
+                  recommend that you secure accommodation through organizations
+                  or associations rather than private individuals, as private
+                  individuals may require additional processing time for
+                  payment. For settlement allowances, the funds will be sent to
+                  your bank account, which can be operated by Fintech
+                  organizations such as Revolut, N26, Zen, and Wise (formerly
+                  TransferWise). If you prefer a proxy, they must be available
+                  for a meeting before the funds are disbursed.
                 </Text>
               </ListItem>
             </List>
@@ -194,7 +201,7 @@ export default function LoanApplication() {
             px="1.1rem"
             py="1.5rem"
             fontSize="1rem"
-            w="20%"
+            w={{lg:"20%", base:"50%"}}
           >
             Apply Now
           </Button>

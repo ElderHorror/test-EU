@@ -9,7 +9,7 @@ import HomeHero from "@/components/sections/hero/HomeHero";
 import TrainingSection from "@/components/sections/training/TrainingSection";
 import ConsultingSection from "@/components/sections/consulting/ConsultingSection";
 import LoansSection from "@/components/sections/loans/LoansSection";
-import Faq, { defaultFaqItems } from "@/components/sections/faq/Faq";
+import Faq, { defaultFaqItems } from "@/components/sections/faq/FAQNew";
 import Testimonials from "@/components/sections/testimonials/Testimonials";
 import Calculator from "@/components/sections/calculator/Calculator";
 
