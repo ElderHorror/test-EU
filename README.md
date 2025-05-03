@@ -88,8 +88,3 @@ The project uses Chakra UI for styling with a custom theme defined in `src/style
 
 The site is deployed on Vercel. Changes to the main branch are automatically deployed.
 
-## FACEBOOK ACCOUNT DETAILS
-
-Email: eustudyassist@gmail.com
-
-password: studyassist@2000
