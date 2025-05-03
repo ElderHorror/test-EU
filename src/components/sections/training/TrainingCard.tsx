@@ -101,7 +101,7 @@ export default function TrainingCard({
             letterSpacing="-0.5px"
             lineHeight="1.2"
             minH={isTraining ? "unset" : "2rem"}
-            textAlign={{ base: "center", md: "center", lg:"left" }}
+            textAlign={{ base: "left", md: "center", lg:"left" }}
             width="100%"
             id={`title-${uniqueId}`}
           >
@@ -123,8 +123,8 @@ export default function TrainingCard({
           cursor={data.isDisabled ? "not-allowed" : "pointer"}
           alignItems="center"
           width={{ base: "100%", md: "15rem" }}
-          alignSelf={{ base: "center", md: "flex-start" }}
-          justifyContent={{ base: "center", md: "flex-start" }}
+          alignSelf={{ base: "left", md: "flex-start" }}
+          justifyContent={{ base: "left", md: "flex-start" }}
         >
           <Text
             color="#0E5FDC"

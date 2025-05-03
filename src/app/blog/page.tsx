@@ -5,6 +5,7 @@ import BlogHero from "./BlogHero";
 import BlogPosts from "./BlogPosts";
 import AnimatedElement from "@/components/common/AnimatedElement";
 import PageTransition from "@/components/common/PageTransition";
+import LoanFeature from "../loans/LoanFeature";
 
 export default function BlogPage() {
   return (

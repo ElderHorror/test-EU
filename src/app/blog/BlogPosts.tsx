@@ -17,6 +17,7 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import { ChevronRightIcon, ChevronLeftIcon } from "@chakra-ui/icons";
+import LoanFeature from "../loans/LoanFeature";
 
 // Blog post data
 const blogData = [
@@ -531,108 +532,20 @@ export default function BlogPosts() {
         {/* Why Study Section */}
         <Box py="6rem" bg="white">
           <Container maxW="60rem">
-            <Flex
-              direction={{
-                base: "column",
-                lg: "row",
-              }}
-              align="center"
-              gap={{ base: "2rem", lg: "8rem" }}
-            >
-              {/* Image Section */}
-              <Box
-                position="relative"
-                w={{ base: "100%", lg: "60%" }}
-                h={{ base: "400px", md: "350px", lg: "600px" }}
-              >
-                <Image
-                  src="/loan-features04.png"
-                  alt="Why Study with EU StudyAssist"
-                  w="100%"
-                  h="100%"
-                  objectFit="cover"
-                  borderRadius="2xl"
-                />
-              </Box>
+            <Box py={{ lg: "10rem", base: "0rem" }}>
+              <LoanFeature
+                imageSrc="/loan-features04.png"
+                heading="Why Choose EU StudyAssist Loans?"
+                description="Tailored for Students: At EU StudyAssist, our loan services are crafted specifically for international students. We offer both fixed and flexible repayment terms, aligned with your academic schedule, so you can concentrate on your studies without financial stress.
 
-              {/* Text Content Section */}
-              <VStack
-                align={{ base: "flex-start", lg: "flex-start" }}
-                spacing="1.5rem"
-                w={{ base: "100%", lg: "80%" }}
-                maxW="600px"
-                mt={{ base: "1rem", lg: "0" }}
-              >
-                <Heading
-                  color="black"
-                  fontSize={{ base: "1.75rem", md: "2rem", lg: "2.5rem" }}
-                  fontWeight={700}
-                  textAlign={{ base: "left", lg: "left" }}
-                  mb="0.5rem"
-                >
-                  Why Study with EU StudyAssist?
-                </Heading>
+No Immediate Repayment: Moving abroad can be overwhelming, which is why we provide a grace period before repayments begin. This allows you to focus on settling in without immediate financial pressure. Additionally, we offer options to stretch repayment, ensuring it stays manageable throughout your studies.
 
-                <Box
-                  color="#2F3540"
-                  textAlign={{ base: "left", lg: "left" }}
-                  w="100%"
-                >
-                  <Text
-                    mb="1rem"
-                    fontSize={{ base: "1rem", md: "1.1rem" }}
-                    lineHeight="1.6"
-                  >
-                    <Text as="span" fontWeight={600} display="inline">
-                      Expert Instructors:
-                    </Text>{" "}
-                    Our courses are led by industry professionals and academic
-                    experts who bring real-world experience and cutting-edge
-                    knowledge to every session.
-                  </Text>
-
-                  <Text
-                    mb="1rem"
-                    fontSize={{ base: "1rem", md: "1.1rem" }}
-                    lineHeight="1.6"
-                  >
-                    <Text as="span" fontWeight={600} display="inline">
-                      Practical Skills Focus:
-                    </Text>{" "}
-                    We emphasize hands-on learning with real-world projects and
-                    applications, ensuring you develop skills that are
-                    immediately applicable in your research or career.
-                  </Text>
-
-                  <Text
-                    fontSize={{ base: "1rem", md: "1.1rem" }}
-                    lineHeight="1.6"
-                  >
-                    <Text as="span" fontWeight={600} display="inline">
-                      Flexible Learning Options:
-                    </Text>{" "}
-                    Our programs are designed to accommodate busy schedules,
-                    with options for intensive training programs, part-time
-                    courses, and customized learning solutions.
-                  </Text>
-                </Box>
-
-                <Button
-                  bg="#0E5FDC"
-                  color="white"
-                  size="lg"
-                  _hover={{ bg: "#0B4DB0" }}
-                  px="2rem"
-                  py="1.8rem"
-                  fontSize="1.1rem"
-                  mt="1rem"
-                  alignSelf={{ base: "flex-start", lg: "flex-start" }}
-                  fontWeight={600}
-                >
-                  Explore Courses
-                </Button>
-              </VStack>
-            </Flex>
+Competitive Interest Rates: Our loan options come with highly competitive rates, designed to make repayment affordable and manageable, even during your studies."
+                imagePosition="left"
+                tallImage={true}
+                smallText={true}
+              />
+            </Box>
           </Container>
         </Box>
 
@@ -648,8 +561,8 @@ export default function BlogPosts() {
                 maxW="800px"
                 fontWeight={400}
               >
-                Our team ensures personalized, impactful solutions to
-                meet your unique organizational needs.
+                Our team ensures personalized, impactful solutions to meet your
+                unique organizational needs.
               </Text>
 
               <Button

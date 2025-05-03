@@ -95,14 +95,14 @@ export default function ConsultingCard({
         <Flex width="100%" justifyContent="center">
           <Text
             ref={titleRef}
-            fontWeight={700}
-            mt="1rem"
-            mb="0.5rem"
+            fontWeight={800}
+            mt="0.5rem"
+            mb="0.2rem"
             fontSize={{ base: "1.2rem", md: "1.4rem" }}
             letterSpacing="-0.5px"
             lineHeight="1.2"
             minH={isTraining ? "unset" : "2rem"}
-            textAlign={{ base: "center", md: "center", lg:"left" }}
+            textAlign={{ base: "left", md: "center", lg:"left" }}
             width="100%"
             id={`title-${uniqueId}`}
           >
@@ -111,7 +111,7 @@ export default function ConsultingCard({
         </Flex>
         <Text
           color="#2F3540"
-          fontSize={{ base: "1rem", md: "1.06rem" }}
+          fontSize={{ base: "1.05rem", md: "1.06rem" }}
           lineHeight={{ lg: "1.6rem" }}
           minH={{ base: "auto", md: "8rem" }}
           mt={spacing}
@@ -125,7 +125,7 @@ export default function ConsultingCard({
           alignItems="center"
           width={{ base: "100%", md: "15rem" }}
           alignSelf={{ base: "center", md: "flex-start" }}
-          justifyContent={{ base: "center", md: "flex-start" }}
+          justifyContent={{ base: "left", md: "flex-start" }}
         >
           <Text
             color="#0E5FDC"

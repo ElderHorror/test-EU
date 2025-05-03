@@ -34,9 +34,12 @@ export default function Testimonials() {
       id="testimonials"
       title="Testimonials"
       subtitle="The students we have supported have said a lot of good things about us. Some of them are shown below."
-      subtitleMaxWidth={{ base: "75%", sm: "75%", md: "75%", lg: "75%" }}
+      subtitleMaxWidth={{ base: "100%", sm: "75%", md: "75%", lg: "75%" }}
       bg="white"
-      py={16}
+      py={{ lg: 16, base: 10 }}
+      titleFontSize={{ base: "3xl", md: "3xl", lg: "4xl" }}
+      subtitleFontSize={{ base: "lg", md: "lg" }}
+      spacing={3}
     >
       {/* Testimonials Layout */}
       <Flex
@@ -45,7 +48,7 @@ export default function Testimonials() {
         maxW="1000px"
         mx="auto"
         px={2}
-        gap={{ base: 20, md: 20 }}
+        gap={{ base: 8, md: 20 }}
       >
         {/* Left Column - Faith and Cohort */}
         <Flex

@@ -16,7 +16,7 @@ export default function CoursesPage() {
       <CoursesSection />
 
       {/* Why Choose EU StudyAssist Loans Section */}
-      <Box py="10rem">
+      <Box py={{lg:"10rem", base: "0rem"}}>
         <LoanFeature
           imageSrc="/loan-features04.png"
           heading="Why Choose EU StudyAssist Loans?"

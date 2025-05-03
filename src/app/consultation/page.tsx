@@ -93,7 +93,7 @@ const ConsultationPage = () => {
         <Container
           maxW="90rem"
           centerContent
-          px="1.5rem"
+          px={{ base: "1rem", md: "1.5rem" }}
           position="relative"
           zIndex="1"
         >
@@ -105,13 +105,26 @@ const ConsultationPage = () => {
             overflow="hidden"
             boxShadow="0 4px 20px rgba(0, 0, 0, 0.15)"
             mb={{ base: "4rem", md: "6rem", lg: "8rem" }}
+            position="relative"
+            height={{ base: "auto", md: "auto" }}
           >
-            <Image
-              w="100%"
-              src="/consultation.png"
-              alt="Consultation Services"
-              objectFit="cover"
-            />
+            <Box
+              position="relative"
+              width="100%"
+              paddingBottom={{ base: "75%", md: "56.25%" }}
+            >
+              <Image
+                position="absolute"
+                top="0"
+                left="0"
+                w="100%"
+                h="100%"
+                src="/consultation.png"
+                alt="Consultation Services"
+                objectFit="cover"
+                objectPosition="center"
+              />
+            </Box>
           </Box>
         </Container>
       </Box>
@@ -138,6 +151,7 @@ const ConsultationPage = () => {
           description="Unlock the power of your data through advanced modeling techniques. We specialize in turning complex datasets into clear, actionable insights that drive decision-making. Whether it's forecasting trends, optimizing operations, or solving complex business problems, our data experts are equipped to deliver precise, impactful solutions tailored to your unique needs."
           imagePosition="left"
           buttonText="Contact Us"
+          useBulletPoints={false}
         />
 
         {/* Environmental & Agricultural Consulting */}
@@ -146,6 +160,7 @@ const ConsultationPage = () => {
           heading="Environmental & Agricultural Consulting"
           description="Our consulting services provide cutting-edge expertise in environmental sustainability and agricultural management. From climate change modeling to forest inventory analysis and precision agriculture, we offer solutions grounded in science and technology. Our goal is to help organizations meet environmental challenges, improve land use efficiency, and promote sustainable development for a resilient future."
           imagePosition="right"
+          useBulletPoints={false}
           buttonText="Apply Now"
         />
 
@@ -156,6 +171,7 @@ const ConsultationPage = () => {
           description="Empower your team with the latest technical skills through our hands-on training programs. We offer expert-led workshops in data visualization, machine learning, GIS, and other critical areas. Our courses are designed to upskill professionals, ensuring they stay ahead in a rapidly evolving digital landscape, with a focus on real-world applications and continuous learning."
           imagePosition="left"
           buttonText="Apply Now"
+          useBulletPoints={false}
         />
 
         {/* Training & Workshops */}
@@ -165,11 +181,12 @@ const ConsultationPage = () => {
           description="We specialize in building modern, responsive websites and interactive dashboards tailored to research and academic needs. Whether you need a professional web presence or a data-driven dashboard for real-time insights, we design solutions that enhance accessibility, visualization, and user experience. Our services integrate the latest web technologies to ensure efficiency, security, and scalability."
           imagePosition="right"
           buttonText="Apply Now"
+          useBulletPoints={false}
         />
       </Box>
 
       {/* Why Choose EU StudyAssist Section */}
-      <Box py="6rem">
+      <Box py={{lg:"6rem", base:0}}>
         <LoanFeature
           imageSrc="/loan-features04.png"
           heading="Why Choose EU StudyAssist Consulting?"
@@ -181,7 +198,8 @@ Customized Solutions: We recognize that every client is unique, which is why we 
           imagePosition="left"
           tallImage={true}
           smallText={true}
-          wideImage={true}
+          useBulletPoints={true}
+          
         />
       </Box>
 

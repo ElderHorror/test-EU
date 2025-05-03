@@ -1,7 +1,7 @@
 "use client";
 
 import { Box, Flex, Text, Button, useDisclosure } from "@chakra-ui/react";
-import Image from "next/image";
+import { useEffect } from "react";
 
 interface CourseCardProps {
   title: string;
@@ -24,19 +24,47 @@ const CourseCard = ({
 }: CourseCardProps) => {
   const { isOpen, onToggle } = useDisclosure();
 
+  // Enhanced debugging for image loading
+  console.log(`Rendering CourseCard for ${title} with image: ${imageSrc}`);
+
+  // Check if the image path starts with a slash
+  if (!imageSrc.startsWith("/")) {
+    console.warn(`Image path does not start with a slash: ${imageSrc}`);
+  }
+
+  // Log device information for debugging
+  useEffect(() => {
+    const isMobile = window.innerWidth < 768;
+    console.log(
+      `Device info - Width: ${window.innerWidth}px, Is Mobile: ${isMobile}`
+    );
+    console.log(`Image path being used: ${imageSrc}`);
+
+    // Check if image exists
+    const img = new window.Image();
+    img.onload = () => console.log(`✅ Image loaded successfully: ${imageSrc}`);
+    img.onerror = () => {
+      console.error(`❌ Image failed to load: ${imageSrc}`);
+      setImageError(true);
+    };
+    img.src = imageSrc;
+  }, [imageSrc]);
+
   return (
-    <Box>
+    <Box width="100%">
       <Box
         bg="white"
         borderRadius="8px"
-        p="2rem"
+        p={{ base: "1.5rem", md: "2rem" }}
         mb="2rem"
         boxShadow="0px 4px 12px rgba(0, 0, 0, 0.1)"
+        width="100%"
       >
         <Flex
           direction={{ base: "column-reverse", lg: "row" }}
-          gap={{ base: "2rem", lg: "4rem" }}
-          alignItems="center"
+          gap={{ base: "1rem", lg: "4rem" }}
+          // alignItems="center"
+          width="100%"
         >
           {/* Left Column - Course Info */}
           <Box flex="1">
@@ -63,21 +91,25 @@ const CourseCard = ({
           <Box
             flex="1"
             pl={{ lg: "2rem", base: 0 }}
-            position="relative"
-            height="300px"
+            mb={{ base: "1.5rem", lg: 0 }}
             borderRadius="8px"
-            
+            // overflow="hidden"
+            width="100%"
+            display="flex"
+            justifyContent="center"
+            alignItems="center"
           >
-            <Image
-              src={imageSrc}
-              alt={title}
-              fill={true}
-              style={{
-                objectFit: "cover",
-                borderRadius: "8px",
-              }}
-              sizes="(max-width: 768px) 100vw, 800px"
-              priority
+            {/* Use CSS background image as the most reliable approach */}
+            <Box
+              width="100%"
+              height={{ base: "200px", md: "300px" }}
+              borderRadius="8px"
+              backgroundImage={`url(${imageSrc})`}
+              backgroundSize="cover"
+              backgroundPosition="center top"
+              backgroundRepeat="no-repeat"
+              border="1px solid"
+              borderColor="gray.100"
             />
           </Box>
         </Flex>

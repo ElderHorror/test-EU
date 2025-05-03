@@ -1,9 +1,11 @@
 "use client";
 
-import { Box, Text, Spinner, Flex } from "@chakra-ui/react";
+import { Box, Text, Spinner, Flex, Button } from "@chakra-ui/react";
 import CourseCard from "./CourseCard";
 import { useDynamicPricing } from "@/hooks/useDynamicPricing";
 import { useEffect, useState } from "react";
+import ImageDebugger from "./ImageDebugger";
+import DirectImageTest from "./DirectImageTest";
 
 // Course data with unique IDs
 const coursesData = [
@@ -90,6 +92,11 @@ const CoursesSection = () => {
       console.log("Currency:", currency);
       console.log("Currency Symbol:", currencySymbol);
       console.log("Localized Prices:", localizedPrices);
+
+      // Log image paths for debugging
+      coursesData.forEach((course) => {
+        console.log(`Course ${course.id} image path: ${course.imageSrc}`);
+      });
     }
   }, [
     isClient,
@@ -100,15 +107,18 @@ const CoursesSection = () => {
     localizedPrices,
   ]);
 
+  // State to control debug mode
+  const [showDebugger, setShowDebugger] = useState(false);
+
   return (
     <Box py="6rem" bg="#F4F4F4">
       {/* Section Heading */}
       <Box textAlign="center" mb="2rem">
         <Text
-          fontSize={{ lg: "2.5rem", base: "32px" }}
+          fontSize={{ base: "36px", md: "42px", lg: "3rem" }}
           fontWeight={600}
           color="black"
-          mb="1rem"
+          mb="0.5rem"
         >
           Courses
         </Text>
@@ -131,6 +141,25 @@ const CoursesSection = () => {
           <Text color="#0E5FDC" fontSize="14px" mt="1rem" fontStyle="italic">
             Prices shown in {currency} ({currencySymbol}) based on your location
           </Text>
+        )}
+      </Box>
+
+      {/* Debug Controls */}
+      <Box textAlign="center" mb="2rem">
+        <Button
+          size="sm"
+          colorScheme="blue"
+          onClick={() => setShowDebugger(!showDebugger)}
+          mb="1rem"
+        >
+          {showDebugger ? "Hide Image Debugger" : "Show Image Debugger"}
+        </Button>
+
+        {showDebugger && (
+          <>
+            <ImageDebugger />
+            <DirectImageTest />
+          </>
         )}
       </Box>
 

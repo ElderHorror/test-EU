@@ -2,6 +2,9 @@
  * Utility functions for geolocation and country detection
  */
 
+// Cache for country information to prevent multiple API calls
+let countryInfoCache: CountryInfo | null = null;
+
 /**
  * Interface for country information
  */
@@ -45,33 +48,34 @@ const countryCurrencyMap: Record<string, { currency: string; symbol: string }> =
  * @returns Promise with country information
  */
 export async function getUserCountry(): Promise<CountryInfo> {
-  try {
-    // For testing purposes - force Nigeria for everyone
-    // This will be removed in production
-    console.log("Using forced Nigeria location for testing");
-    return {
-      country: "Nigeria",
-      countryCode: "NG",
-      currency: "NGN",
-      currencySymbol: "₦",
-    };
+  // Return cached result if available to prevent multiple API calls
+  if (countryInfoCache) {
+    console.log("Using cached country info:", countryInfoCache);
+    return countryInfoCache;
+  }
 
-    /* Original implementation - commented out for testing
-    const response = await fetch('https://ipapi.co/json/');
+  try {
+    console.log("Fetching country info from API...");
+    const response = await fetch("https://ipapi.co/json/");
     const data = await response.json();
-    console.log('Geolocation API response:', data);
+    console.log("Geolocation API response:", data);
 
     if (data.country_code && countryCurrencyMap[data.country_code]) {
       const currencyInfo = countryCurrencyMap[data.country_code];
-      return {
+      const countryInfo = {
         country: data.country_name,
         countryCode: data.country_code,
         currency: currencyInfo.currency,
         currencySymbol: currencyInfo.symbol,
       };
-    }
-    */
 
+      // Cache the result
+      countryInfoCache = countryInfo;
+      return countryInfo;
+    }
+
+    // Cache the default country as well
+    countryInfoCache = defaultCountry;
     return defaultCountry;
   } catch (error) {
     console.error("Error detecting country:", error);

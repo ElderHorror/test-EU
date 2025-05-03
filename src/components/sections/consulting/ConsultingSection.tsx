@@ -50,7 +50,7 @@ export default function ConsultingSection() {
         <Text
           color="black"
           fontWeight={700}
-          fontSize={{ lg: "2.5rem", base: "30px" }}
+          fontSize={{ lg: "2.5rem", base: "28px" }}
           textAlign="center"
           marginY="0.5rem"
           whiteSpace="nowrap"
@@ -60,7 +60,7 @@ export default function ConsultingSection() {
         <Text
           color="#2F3540"
           textAlign="center"
-          fontSize={{ lg: "18px", base: "16px" }}
+          fontSize={{ lg: "18px", base: "15.6px" }}
           lineHeight={{ lg: 1.75, base: 1.4 }}
           maxW="45rem"
           margin="auto"

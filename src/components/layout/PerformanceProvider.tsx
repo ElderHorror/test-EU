@@ -34,52 +34,83 @@ export default function PerformanceProvider({
     // Mark as applied to prevent duplicate execution
     optimizationsApplied.current = true;
 
-    // Use requestIdleCallback for non-critical operations
+    // Use requestIdleCallback for non-critical operations if available
+    // Fallback to setTimeout for browsers that don't support requestIdleCallback
     const idleCallback =
-      window.requestIdleCallback || ((cb) => setTimeout(cb, 1000));
+      typeof window !== "undefined" && window.requestIdleCallback
+        ? window.requestIdleCallback
+        : (cb) => setTimeout(cb, 1000);
 
     // Use a cleanup flag to prevent memory leaks
     let isMounted = true;
 
     const applyOptimizations = () => {
-      if (!isMounted) return;
+      // Don't proceed if component is unmounted or document is not available
+      if (!isMounted || typeof document === "undefined") return;
 
       try {
-        // Check if links already exist to prevent duplicates
-        const existingPreloads = document.querySelectorAll(
-          'link[rel="preload"][as="font"]'
-        );
-        if (existingPreloads.length === 0) {
-          // Preload critical fonts
-          const fontPreloadLink = document.createElement("link");
-          fontPreloadLink.rel = "preload";
-          fontPreloadLink.as = "font";
-          fontPreloadLink.href = "/fonts/Inter_24pt-Regular.ttf";
-          fontPreloadLink.type = "font/truetype";
-          fontPreloadLink.crossOrigin = "anonymous";
-          document.head.appendChild(fontPreloadLink);
-        }
-
-        // Add preconnect for external domains
-        const domains = [
-          "https://fonts.googleapis.com",
-          "https://fonts.gstatic.com",
-        ];
-
-        domains.forEach((domain) => {
-          // Check if preconnect already exists
-          const existingPreconnect = document.querySelector(
-            `link[rel="preconnect"][href="${domain}"]`
+        // Safely access document
+        if (document && document.querySelectorAll && document.head) {
+          // Check if links already exist to prevent duplicates
+          const existingPreloads = document.querySelectorAll(
+            'link[rel="preload"][as="font"]'
           );
-          if (!existingPreconnect) {
-            const link = document.createElement("link");
-            link.rel = "preconnect";
-            link.href = domain;
-            link.crossOrigin = "anonymous";
-            document.head.appendChild(link);
+
+          if (existingPreloads.length === 0) {
+            // Preload critical fonts
+            const criticalFonts = [
+              "/fonts/Inter_24pt-Regular.ttf",
+              "/fonts/ClashDisplay-Regular.ttf",
+              "/fonts/ClashDisplay-Medium.ttf",
+            ];
+
+            criticalFonts.forEach((fontPath) => {
+              try {
+                const fontPreloadLink = document.createElement("link");
+                fontPreloadLink.rel = "preload";
+                fontPreloadLink.as = "font";
+                fontPreloadLink.href = fontPath;
+                fontPreloadLink.type = "font/truetype";
+                fontPreloadLink.crossOrigin = "anonymous";
+                document.head.appendChild(fontPreloadLink);
+              } catch (fontError) {
+                // Log but continue with other fonts
+                console.error(`Error preloading font ${fontPath}:`, fontError);
+              }
+            });
           }
-        });
+
+          // Add preconnect for external domains
+          const domains = [
+            "https://fonts.googleapis.com",
+            "https://fonts.gstatic.com",
+          ];
+
+          domains.forEach((domain) => {
+            try {
+              // Check if preconnect already exists
+              const existingPreconnect = document.querySelector(
+                `link[rel="preconnect"][href="${domain}"]`
+              );
+
+              if (!existingPreconnect) {
+                const link = document.createElement("link");
+                link.rel = "preconnect";
+                link.href = domain;
+                link.crossOrigin = "anonymous";
+                document.head.appendChild(link);
+              }
+            } catch (domainError) {
+              // Log but continue with other domains
+              console.error(
+                `Error adding preconnect for ${domain}:`,
+                domainError
+              );
+            }
+          });
+        }
       } catch (error) {
+        // Log the error but don't crash the application
         console.error("Error applying performance optimizations:", error);
       }
     };
@@ -90,8 +121,20 @@ export default function PerformanceProvider({
     // Clean up
     return () => {
       isMounted = false;
-      if (typeof window !== "undefined" && window.cancelIdleCallback) {
-        window.cancelIdleCallback(id as any);
+
+      // Clean up the idle callback if possible
+      if (typeof window !== "undefined") {
+        if (window.cancelIdleCallback) {
+          try {
+            window.cancelIdleCallback(id as any);
+          } catch (error) {
+            console.error("Error canceling idle callback:", error);
+          }
+        } else {
+          // If requestIdleCallback wasn't available, we used setTimeout
+          // so we should clear that timeout
+          clearTimeout(id as any);
+        }
       }
     };
   }, []); // Remove pathname dependency to prevent re-running on route changes

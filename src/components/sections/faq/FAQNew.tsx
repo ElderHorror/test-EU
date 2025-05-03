@@ -83,7 +83,7 @@ export default function Faq({
                     flex="1"
                     textAlign="left"
                     fontWeight="medium"
-                    fontSize="lg"
+                    fontSize={{lg:"lg", md:"md"}}
                     pl={{ base: 0, md: 4 }}
                   >
                     {faq.question}
@@ -125,8 +125,8 @@ export default function Faq({
                           as="span"
                           fontSize="4xl"
                           lineHeight="0.5"
-                          mt={{ base: "-4px", md: "-4px" }}
-                          ml={{ base: "-2px", md: "0" }}
+                          mt={{ base: "-6px", md: "-4px" }}
+                          ml={{ base: "0px", md: "0" }}
                         >
                           +
                         </Box>

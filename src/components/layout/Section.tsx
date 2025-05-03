@@ -26,6 +26,8 @@ interface SectionProps extends BoxProps {
   maxWidth?: string | object;
   textAlign?: "left" | "center" | "right";
   spacing?: number;
+  titleFontSize?: object;
+  subtitleFontSize?: object;
 }
 
 /**
@@ -40,6 +42,8 @@ interface SectionProps extends BoxProps {
  * @param maxWidth - Maximum width of the container
  * @param textAlign - Text alignment for the title and subtitle
  * @param spacing - Spacing between elements
+ * @param titleFontSize - Custom font sizes for the title at different breakpoints
+ * @param subtitleFontSize - Custom font sizes for the subtitle at different breakpoints
  * @param props - Additional Box props
  */
 export default function Section({
@@ -52,6 +56,8 @@ export default function Section({
   maxWidth = "container.xl",
   textAlign = "center",
   spacing = 6,
+  titleFontSize,
+  subtitleFontSize,
   ...props
 }: SectionProps) {
   // Use a ref to prevent re-renders
@@ -106,9 +112,11 @@ export default function Section({
             >
               <Heading
                 as="h2"
-                fontSize={{ base: "2xl", md: "3xl", lg: "4xl" }}
+                fontSize={
+                  titleFontSize || { base: "2xl", md: "3xl", lg: "4xl" }
+                }
                 textAlign={textAlign}
-                mb={subtitle ? 2 : 6}
+                mb={subtitle ? 1 : 6}
               >
                 {title}
               </Heading>
@@ -122,7 +130,7 @@ export default function Section({
               transition={{ duration: 0.5, delay: 0.2 }}
             >
               <Text
-                fontSize={{ base: "md", md: "lg" }}
+                fontSize={subtitleFontSize || { base: "md", md: "lg" }}
                 color="gray.600"
                 textAlign={textAlign}
                 mb={6}

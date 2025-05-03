@@ -81,8 +81,27 @@ export default function Calculator(props: any) {
     }
   }, [data]);
 
+  // Function to reset pageMode and reload page
+  const handleResetPageMode = () => {
+    try {
+      localStorage.setItem("pageMode", "0");
+      console.log("PageMode reset to 0");
+      // Reload the page to apply changes
+      window.location.reload();
+    } catch (error) {
+      console.error("Error resetting pageMode:", error);
+    }
+  };
+
   return (
     <Box minH="calc(100vh - 30rem)" mt="10rem" {...props}>
+      {/* Reset button for users stuck in calculator mode */}
+      <Box textAlign="center" mb="2rem">
+        <Button onClick={handleResetPageMode} colorScheme="blue" size="sm">
+          Show Full Website
+        </Button>
+      </Box>
+
       <Box
         mt={{ base: "2rem ", lg: "0rem" }}
         margin={!props ? "auto" : "unset"}
@@ -198,11 +217,7 @@ export default function Calculator(props: any) {
           >
             <Flex justifyContent={"center"} alignItems={"center"} gap={"12px"}>
               <Box position="relative" width="16px" height="2px">
-                <Image 
-                  src="/Image/Dash.png" 
-                  alt="Dash" 
-                  fill={true}
-                />
+                <Image src="/Image/Dash.png" alt="Dash" fill={true} />
               </Box>
               <Box>
                 <Text color={"white"} fontWeight={500} fontSize={"12px"}>

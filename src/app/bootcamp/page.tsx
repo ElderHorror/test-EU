@@ -31,8 +31,12 @@ export default function Bootcamp() {
     <Box bgColor={" rgba(255, 255, 255, 1)"} overflow={"hidden"}>
       <Navbar
         setPageMode={(mode: string) => {
-          localStorage.setItem("pageMode", mode);
-          // router.push("/");
+          try {
+            localStorage.setItem("pageMode", mode);
+            // router.push("/");
+          } catch (error) {
+            console.error("Error saving to localStorage:", error);
+          }
         }}
       />
       <Box minH="calc(100vh - 30rem)" mt="10rem" p="1rem">
@@ -187,7 +191,11 @@ export default function Bootcamp() {
       </Modal>
       <Box
         onClick={() => {
-          localStorage.setItem("pageMode", "0");
+          try {
+            localStorage.setItem("pageMode", "0");
+          } catch (error) {
+            console.error("Error saving to localStorage:", error);
+          }
           router.push("/");
         }}
       >

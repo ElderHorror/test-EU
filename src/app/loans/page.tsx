@@ -120,6 +120,7 @@ export default function Loans() {
               heading="Flight Costs"
               description="We understand that travel expenses can be a significant hurdle when moving abroad to study. Our loan covers the cost of flights to your study destination, so you can focus on your education instead of worrying about financing your trip."
               imagePosition="left"
+              useBulletPoints={false}
             />
           </AnimatedElement>
 
@@ -130,6 +131,7 @@ export default function Loans() {
               heading="Accommodation"
               description="Finding suitable accommodation in a new country can be challenging. Our loan helps you secure comfortable and safe housing near your educational institution, ensuring you have a stable living environment throughout your studies."
               imagePosition="right"
+              useBulletPoints={false}
             />
           </AnimatedElement>
 
@@ -140,6 +142,7 @@ export default function Loans() {
               heading="Living Expenses"
               description="Daily living expenses can add up quickly in a new country. Our loan provides financial support for your day-to-day needs, including food, transportation, and other essential costs, allowing you to focus on your academic success."
               imagePosition="left"
+              useBulletPoints={false}
             />
           </AnimatedElement>
         </StaggeredContainer>

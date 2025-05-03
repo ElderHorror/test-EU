@@ -199,7 +199,7 @@ export default function LoanApplication() {
             size="md"
             _hover={{ bg: "#0B4DB0" }}
             px="1.1rem"
-            py="1.5rem"
+            py="1.8rem"
             fontSize="1rem"
             w={{lg:"20%", base:"50%"}}
           >

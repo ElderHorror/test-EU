@@ -12,6 +12,20 @@ export default function Document() {
           type="font/truetype"
           crossOrigin="anonymous"
         />
+        <link
+          rel="preload"
+          href="/fonts/ClashDisplay-Regular.ttf"
+          as="font"
+          type="font/truetype"
+          crossOrigin="anonymous"
+        />
+        <link
+          rel="preload"
+          href="/fonts/ClashDisplay-Medium.ttf"
+          as="font"
+          type="font/truetype"
+          crossOrigin="anonymous"
+        />
 
         {/* Preconnect to external domains */}
         <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -31,6 +45,20 @@ export default function Document() {
               font-weight: 400;
               font-display: swap;
               src: url('/fonts/Inter_24pt-Regular.ttf') format('truetype');
+            }
+            @font-face {
+              font-family: 'ClashDisplay';
+              font-style: normal;
+              font-weight: 400;
+              font-display: swap;
+              src: url('/fonts/ClashDisplay-Regular.ttf') format('truetype');
+            }
+            @font-face {
+              font-family: 'ClashDisplay';
+              font-style: normal;
+              font-weight: 500;
+              font-display: swap;
+              src: url('/fonts/ClashDisplay-Medium.ttf') format('truetype');
             }
           `,
           }}

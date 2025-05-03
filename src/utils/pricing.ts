@@ -5,18 +5,19 @@
 /**
  * Exchange rates for different currencies relative to USD
  * These are approximate and should be updated regularly with real exchange rates
+ * Last updated: May 2024
  */
 const exchangeRates: Record<string, number> = {
   USD: 1.0,
-  GBP: 0.78,
-  EUR: 0.92,
-  NGN: 1550.0,
-  KES: 130.0,
-  ZAR: 18.5,
-  GHS: 15.0,
-  INR: 83.5,
-  CAD: 1.36,
-  AUD: 1.52,
+  GBP: 0.79,
+  EUR: 0.93,
+  NGN: 1500.0,
+  KES: 132.0,
+  ZAR: 18.7,
+  GHS: 15.5,
+  INR: 83.3,
+  CAD: 1.37,
+  AUD: 1.51,
   // Add more currencies as needed
 };
 

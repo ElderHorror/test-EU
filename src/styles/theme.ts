@@ -1,7 +1,7 @@
 import { extendTheme, theme as baseTheme } from "@chakra-ui/react";
 
 const fonts = {
-  heading: `'Inter', sans-serif`,
+  heading: `'ClashDisplay', sans-serif`,
   body: `'Inter', sans-serif`,
 };
 

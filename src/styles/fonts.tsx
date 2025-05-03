@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 import { Global } from "@emotion/react";
 
 /**
@@ -84,6 +84,39 @@ const Fonts = () => {
           font-family: 'Inter';
           src: url('/fonts/Inter_24pt-SemiBold.ttf') format('truetype');
           font-weight: 600;
+          font-display: swap;
+          font-style: normal;
+        }
+
+        /* ClashDisplay font for headings */
+        @font-face {
+          font-family: 'ClashDisplay';
+          src: url('/fonts/ClashDisplay-Regular.ttf') format('truetype');
+          font-weight: 400;
+          font-display: swap;
+          font-style: normal;
+        }
+
+        @font-face {
+          font-family: 'ClashDisplay';
+          src: url('/fonts/ClashDisplay-Medium.ttf') format('truetype');
+          font-weight: 500;
+          font-display: swap;
+          font-style: normal;
+        }
+
+        @font-face {
+          font-family: 'ClashDisplay';
+          src: url('/fonts/ClashDisplay-SemiBold.ttf') format('truetype');
+          font-weight: 600;
+          font-display: swap;
+          font-style: normal;
+        }
+
+        @font-face {
+          font-family: 'ClashDisplay';
+          src: url('/fonts/ClashDisplay-Bold.ttf') format('truetype');
+          font-weight: 700;
           font-display: swap;
           font-style: normal;
         }

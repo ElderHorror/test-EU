@@ -16,8 +16,8 @@ export default function TermsContent() {
   return (
     <Box bg="white" py={{ base: "3rem", md: "5rem" }}>
       <Container
-        maxW="60rem"
-        px="5rem"
+        maxW={{lg:"60rem", base:"23rem"}}
+        px={{lg:"5rem"}}
         py="1rem"
         borderTop={"1px solid #ACACAC"}
       >
@@ -26,7 +26,7 @@ export default function TermsContent() {
             <Text
               fontSize={{ base: "0.9rem", md: "0.9rem" }}
               lineHeight="2"
-              mb="1.5rem"
+              mb={{lg:"1.5rem", base:"1rem"}}
             >
               Welcome to EU StudyAssist, these terms of use govern your use of
               the https://www.eustudyassist.com website and related EU

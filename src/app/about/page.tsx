@@ -38,7 +38,7 @@ export default function About() {
               color="white"
               fontSize={{ base: "2.25rem", md: "3rem", lg: "4.5rem" }}
               fontWeight={600}
-              letterSpacing="-0.125rem"
+              letterSpacing="0.08rem"
               lineHeight="1.05"
               textShadow="0 0.25rem 0.25rem rgba(0,0,0,0.25)"
               mb="1.2rem"
@@ -52,7 +52,7 @@ export default function About() {
             <Text
               color="#E4E4E4"
               lineHeight="1.5"
-              fontSize={{ base: "1rem", md: "1.125rem", lg: "1.25rem" }}
+              fontSize={{ base: "1.05rem", md: "1.125rem", lg: "1.25rem" }}
               textShadow="0 0.25rem 0.25rem rgba(0,0,0,0.25)"
               textAlign={{ base: "justify" }}
               mb={{ base: "2rem" }}
@@ -103,7 +103,7 @@ export default function About() {
           <Box flexBasis="40%" marginBottom="auto">
             <Text
               fontWeight={600}
-              fontSize={{ base: "2rem", lg: "3.25rem" }}
+              fontSize={{ base: "2.5rem", lg: "3.25rem" }}
               lineHeight={{ base: 1.1, lg: 1.2 }}
               color="rgba(0,0,0,0.5)"
               mb={{ base: "2rem", lg: "0" }}
@@ -124,6 +124,7 @@ export default function About() {
             </Text>
             <Text
               color="#2F3540"
+              fontSize={{ base: "1rem"}}
               textAlign={{ base: "justify" }}
               lineHeight={{ base: 1.4, lg: 1.6 }}
               mb="2rem"
@@ -149,6 +150,7 @@ export default function About() {
             </Text>
             <Text
               color="#2F3540"
+              fontSize={{ base: "1rem"}}
               textAlign={{ base: "justify" }}
               lineHeight={{ base: 1.4, lg: 1.6 }}
               mb="2rem"
@@ -169,9 +171,10 @@ export default function About() {
             </Text>
             <Text
               color="#2F3540"
+              fontSize={{ base: "1rem"}}
               textAlign={{ base: "justify" }}
               lineHeight={{ base: 1.4, lg: 1.6 }}
-              mb={{lg:"3rem", base:"1.5rem"}}
+              mb={{ lg: "3rem", base: "1.5rem" }}
             >
               At EU StudyAssist, we are dedicated to providing a holistic
               support system for students, researchers, and professionals. Our
@@ -327,8 +330,8 @@ export default function About() {
           mx="auto"
         >
           <Text
-            fontWeight={{lg: 600, base: 700}}
-            lineHeight={{ base: 1.1}}
+            fontWeight={{ lg: 600, base: 700 }}
+            lineHeight={{ base: 1.1 }}
             fontSize={{ base: "2.5rem", md: "2.25rem", lg: "3.25rem" }}
             mb={{ base: "1.5rem", md: "2rem", lg: "2.5rem" }}
             textAlign="center"

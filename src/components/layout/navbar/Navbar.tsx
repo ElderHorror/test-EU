@@ -26,7 +26,7 @@ interface NavbarProps {
  */
 export default function Navbar({ setPageMode }: NavbarProps) {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  
+
   // Navigation links configuration
   const navLinks = [
     {
@@ -90,7 +90,13 @@ export default function Navbar({ setPageMode }: NavbarProps) {
               <NavbarList
                 list={navLinks}
                 onClick={() => {
+                  // Set pageMode to 0 and ensure localStorage is updated
                   setPageMode(0);
+                  try {
+                    localStorage?.setItem("pageMode", "0");
+                  } catch (error) {
+                    console.error("Error saving to localStorage:", error);
+                  }
                 }}
               />
             </Box>
@@ -98,13 +104,17 @@ export default function Navbar({ setPageMode }: NavbarProps) {
             <Box
               onClick={(e) => {
                 e.stopPropagation();
+                // Set pageMode to 1 (calculator mode)
                 setPageMode(1);
+                try {
+                  localStorage?.setItem("pageMode", "1");
+                } catch (error) {
+                  console.error("Error saving to localStorage:", error);
+                }
               }}
             >
               <Link href={"/courses"}>
-                <SecondaryButton>
-                  Join BootCamp
-                </SecondaryButton>
+                <SecondaryButton>Join BootCamp</SecondaryButton>
               </Link>
             </Box>
           </Flex>
@@ -146,7 +156,18 @@ export default function Navbar({ setPageMode }: NavbarProps) {
                 key={link.id}
                 py={1}
                 onClick={() => {
-                  link.navLink.startsWith("/#") ? setPageMode(0) : null;
+                  if (
+                    link.navLink.startsWith("/#") ||
+                    link.href.includes("#")
+                  ) {
+                    // Set pageMode to 0 for navigation to home sections
+                    setPageMode(0);
+                    try {
+                      localStorage?.setItem("pageMode", "0");
+                    } catch (error) {
+                      console.error("Error saving to localStorage:", error);
+                    }
+                  }
                   onClose();
                 }}
                 rounded={"md"}
@@ -159,9 +180,7 @@ export default function Navbar({ setPageMode }: NavbarProps) {
               </Text>
             ))}
             <Link href={"/courses"}>
-              <SecondaryButton>
-                Join BootCamp
-              </SecondaryButton>
+              <SecondaryButton>Join BootCamp</SecondaryButton>
             </Link>
           </VStack>
         </Box>

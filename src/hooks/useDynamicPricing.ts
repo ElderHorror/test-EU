@@ -32,6 +32,14 @@ export function useDynamicPricing(
   const [currencySymbol, setCurrencySymbol] = useState("$");
 
   useEffect(() => {
+    // Skip if prices object is empty
+    if (Object.keys(prices).length === 0) {
+      return;
+    }
+
+    // Flag to track if the component is still mounted
+    let isMounted = true;
+
     async function detectLocationAndConvertPrices() {
       try {
         setIsLoading(true);
@@ -39,6 +47,9 @@ export function useDynamicPricing(
         // Get user's country information
         const countryInfo = await getUserCountry();
         console.log("Country info detected:", countryInfo);
+
+        // Only update state if component is still mounted
+        if (!isMounted) return;
 
         setCountryCode(countryInfo.countryCode);
         setCurrency(countryInfo.currency);
@@ -69,9 +80,15 @@ export function useDynamicPricing(
         }
 
         console.log("All converted prices:", convertedPrices);
+
+        // Only update state if component is still mounted
+        if (!isMounted) return;
         setLocalizedPrices(convertedPrices);
       } catch (error) {
         console.error("Error in dynamic pricing:", error);
+
+        // Only update state if component is still mounted
+        if (!isMounted) return;
 
         // Fallback to USD prices
         const fallbackPrices: Record<string, PriceInfo> = {};
@@ -87,11 +104,19 @@ export function useDynamicPricing(
         console.log("Using fallback USD prices:", fallbackPrices);
         setLocalizedPrices(fallbackPrices);
       } finally {
-        setIsLoading(false);
+        // Only update state if component is still mounted
+        if (isMounted) {
+          setIsLoading(false);
+        }
       }
     }
 
     detectLocationAndConvertPrices();
+
+    // Cleanup function to prevent state updates after unmount
+    return () => {
+      isMounted = false;
+    };
   }, [prices]);
 
   return {

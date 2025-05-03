@@ -19,6 +19,7 @@ interface LoanFeatureProps {
   tallImage?: boolean;
   smallText?: boolean;
   buttonText?: string;
+  useBulletPoints?: boolean;
 }
 
 export default function LoanFeature({
@@ -29,6 +30,7 @@ export default function LoanFeature({
   tallImage = false,
   smallText = false,
   buttonText = "Apply Now",
+  useBulletPoints = true,
 }: LoanFeatureProps) {
   // Function to render text with proper formatting
   const renderDescription = (text: string) => {
@@ -57,38 +59,96 @@ export default function LoanFeature({
           .trim();
 
         return (
-          <Text
-            key={index}
-            mb={index < sections.length - 1 ? "1rem" : "0"}
-            fontSize={
-              smallText
-                ? { base: "0.875rem", md: "1rem", lg: "1rem" }
-                : { base: "0.875rem", md: "1rem" }
-            }
-            lineHeight="1.6"
-          >
-            <Text as="span" fontWeight={600} display="inline">
-              {section}
-            </Text>{" "}
-            {content}
-          </Text>
+          <Box key={index} mb={index < sections.length - 1 ? "1rem" : "0"}>
+            <Flex alignItems="flex-start">
+              <Box
+                as="span"
+                display="inline-block"
+                borderRadius="50%"
+                bg="#2F3540"
+                w="6px"
+                h="6px"
+                mr="8px"
+                mt="9px"
+                flexShrink={0}
+              />
+              <Text
+                fontSize={
+                  smallText
+                    ? { base: "0.875rem", md: "1rem", lg: "1rem" }
+                    : { base: "0.875rem", md: "1rem" }
+                }
+                lineHeight="1.6"
+              >
+                <Text as="span" fontWeight={700} display="inline">
+                  {section}
+                </Text>{" "}
+                {content}
+              </Text>
+            </Flex>
+          </Box>
         );
       });
     }
 
-    // For regular sections, just render the text as is
-    return (
-      <Text
-        fontSize={
-          smallText
-            ? { base: "0.875rem", md: "1rem", lg: "1rem" }
-            : { base: "0.875rem", md: "1rem" }
-        }
-        lineHeight="1.6"
-      >
-        {text}
-      </Text>
-    );
+    // For regular sections, check if we should use bullet points
+    if (useBulletPoints) {
+      // Clean up the text by ensuring proper spacing after periods
+      const cleanedText = text.replace(/\.(?=[A-Z])/g, ". ").trim();
+
+      // Split by periods, but keep the periods in the sentences
+      const sentences = cleanedText
+        .split(/(?<=\.)\s+/)
+        .filter((sentence) => sentence.trim().length > 0);
+
+      return (
+        <Box>
+          {sentences.map((sentence, index) => (
+            <Flex
+              key={index}
+              alignItems="flex-start"
+              mb={index < sentences.length - 1 ? "0.75rem" : "0"}
+            >
+              <Box
+                as="span"
+                display="inline-block"
+                borderRadius="50%"
+                bg="#2F3540"
+                w="6px"
+                h="6px"
+                mr="8px"
+                mt="9px"
+                flexShrink={0}
+              />
+              <Text
+                fontSize={
+                  smallText
+                    ? { base: "0.875rem", md: "1rem", lg: "1rem" }
+                    : { base: "0.875rem", md: "1rem" }
+                }
+                lineHeight="1.6"
+              >
+                {sentence}
+              </Text>
+            </Flex>
+          ))}
+        </Box>
+      );
+    } else {
+      // If not using bullet points, just render the text as a single paragraph
+      return (
+        <Text
+          fontSize={
+            smallText
+              ? { base: "0.875rem", md: "1rem", lg: "1rem" }
+              : { base: "0.875rem", md: "1rem" }
+          }
+          lineHeight="1.6"
+        >
+          {text}
+        </Text>
+      );
+    }
   };
 
   return (
@@ -132,7 +192,7 @@ export default function LoanFeature({
                 ? { base: "1.5rem", md: "1.75rem", lg: "2rem" }
                 : { base: "1.5rem", md: "1.75rem", lg: "2rem" }
             }
-            fontWeight={600}
+            fontWeight={700}
             textAlign={{ base: "left", lg: "left" }}
             mb="0.25rem"
           >
