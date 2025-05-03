@@ -134,7 +134,7 @@ const CoursesSection = () => {
           you with the technical skills and knowledge needed to excel in
           research and professional settings. Each course offers hands-on
           learning, real-world projects, and mentorship from industry experts to
-          ensure you're ready for global opportunities.
+          ensure you&apos;re ready for global opportunities.
         </Text>
 
         {isClient && !isLoading && countryCode !== "US" && (

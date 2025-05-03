@@ -30,7 +30,7 @@ export default function TermsContent() {
             >
               Welcome to EU StudyAssist, these terms of use govern your use of
               the https://www.eustudyassist.com website and related EU
-              StudyAssist Financing services (collectively the "Services").
+              StudyAssist Financing services (collectively the &quot;Services&quot;).
             </Text>
             <Text fontSize={{ base: "0.9rem", md: "0.9rem" }} lineHeight="2">
               These terms are a legally binding agreement between you and EU
@@ -38,7 +38,7 @@ export default function TermsContent() {
               https://www.eustudyassist.com website or registering with the
               Services as defined below you acknowledge and agree that you have
               read, understand and accept the terms and conditions described
-              below (the "Terms of Use") and you agree to be bound by the Terms
+              below (the &quot;Terms of Use&quot;) and you agree to be bound by the Terms
               of Use and all terms, policies and guidelines incorporated in the
               Terms of Use by reference.
             </Text>
@@ -265,7 +265,7 @@ export default function TermsContent() {
               mb="1rem"
             >
               Other than as specifically set forth herein, the Services is
-              provided "AS IS" and "WITH ALL FAULTS" and without warranty of any
+              provided &quot;AS IS&quot; and &quot;WITH ALL FAULTS&quot; and without warranty of any
               kind. You agree that the use of the Services is at your risk.
             </Text>
             <Text

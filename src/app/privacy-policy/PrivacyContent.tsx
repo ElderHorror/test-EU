@@ -131,10 +131,10 @@ export default function PrivacyContent() {
                 Place
               </span>
               <br />
-              The Data is processed at the Owner's operating offices and in any
+              The Data is processed at the Owner&apos;s operating offices and in any
               other places where the parties involved in the processing are
-              located. <br /> Depending on the User's location, data transfers
-              may involve transferring the User's Data to a country other than
+              located. <br /> Depending on the User&apos;s location, data transfers
+              may involve transferring the User&apos;s Data to a country other than
               their own. To find out more about the place of processing of such
               transferred Data, Users can check the section containing details
               about the processing of Personal Data. <br />
@@ -319,7 +319,7 @@ export default function PrivacyContent() {
               Unless specified otherwise in this document, Personal Data shall
               be processed and stored for as long as required by the purpose
               they have been collected for and may be retained for longer due to
-              applicable legal obligation or based on the Users' consent.
+              applicable legal obligation or based on the Users&apos; consent.
             </Text>
             <Text
               fontSize={{ base: "1.05rem", md: "1.05rem" }}
@@ -341,7 +341,7 @@ export default function PrivacyContent() {
                 fontSize={{ base: "1.05rem", md: "1.05rem" }}
                 lineHeight="1.7"
               >
-                Personal Data collected for the purposes of the Owner's
+                Personal Data collected for the purposes of the Owner&apos;s
                 legitimate interests shall be retained as long as needed to
                 fulfill such purposes. Users may find specific information
                 regarding the legitimate interests pursued by the Owner within
@@ -560,7 +560,7 @@ export default function PrivacyContent() {
               of Personal Data or restriction of processing will be communicated
               by the Owner to each recipient, if any, to whom the Personal Data
               has been disclosed unless this proves impossible or involves
-              disproportionate effort. At the Users' request, the Owner will
+              disproportionate effort. At the Users&apos; request, the Owner will
               inform them about those recipients.
             </Text>
           </Box>

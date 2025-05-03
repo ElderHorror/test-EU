@@ -67,7 +67,7 @@ export default function CoursesHero() {
             >
               Our training and bootcamp programs are designed to equip students,
               researchers, and professionals with critical technical skills to
-              excel in the global landscape. Whether you're seeking to enhance
+              excel in the global landscape. Whether you&apos;re seeking to enhance
               your data science expertise or acquire new skills for research,
               our programs offer personalized, hands-on learning experiences.
               With expert-led sessions, one-on-one mentorship, and real-world

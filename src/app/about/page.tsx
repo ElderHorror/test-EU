@@ -429,7 +429,7 @@ export default function About() {
                 Olamide Adu
               </span>{" "}
               is a Consulting Data Scientist with a background in forest and
-              nature management. He holds an Erasmus Mundus Joint Master's in
+              nature management. He holds an Erasmus Mundus Joint Master&apos;s in
               Sustainable Forest and Nature Management. With expertise in data
               analysis and sustainability consulting, he helps small and
               medium-sized businesses implement data-driven strategies to
@@ -444,7 +444,7 @@ export default function About() {
                 Oki Ayobami
               </span>{" "}
               is a Software Engineer with a passion for building innovative
-              solutions that drive social impact. He holds a Master's in
+              solutions that drive social impact. He holds a Master&apos;s in
               Computer Science from the University of Teeside, United Kingdom
               and has experience working with startups. He specializes in
               developing web and mobile applications, and blockchain

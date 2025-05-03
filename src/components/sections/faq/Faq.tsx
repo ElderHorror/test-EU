@@ -11,6 +11,7 @@ import {
   Text,
 } from "@chakra-ui/react";
 import { FaqItem } from "@/types";
+import Section from "@/components/layout/Section";
 
 /**
  * Props for the FAQ component

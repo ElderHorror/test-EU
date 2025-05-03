@@ -21,6 +21,8 @@ import PageLayout from "@/components/layout/PageLayout";
 import { useRouter } from "next/navigation";
 import { Field, Formik } from "formik";
 import * as Yup from "yup";
+import Navbar from "@/components/layout/navbar/Navbar";
+import Footer from "@/components/layout/footer/Footer";
 
 export default function Bootcamp() {
   const router = useRouter();

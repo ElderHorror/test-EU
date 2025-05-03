@@ -53,7 +53,7 @@ export default function TestimonialCard({
         <CardBody>
           <VStack spacing={4} align="flex-start">
             <Text fontSize={{lg: "xl", base:"md"}} color="black" fontWeight="medium">
-              "{text}"
+              {text}
             </Text>
             <Flex align="center" gap={3}>
               <Avatar size="md" name={name} src={image} />
