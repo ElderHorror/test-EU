@@ -69,7 +69,7 @@ export default function BlogHero() {
           </Flex>
 
           {/* Email Subscription Form */}
-          <Box align="flex-start" maxW={{ base: "100%", lg: "60%" }}>
+          <Box alignItems="flex-start" maxW={{ base: "100%", lg: "60%" }}>
             <Flex as="form" w="100%" maxW="500px" gap={2}>
               <Input
                 placeholder="Your email address..."

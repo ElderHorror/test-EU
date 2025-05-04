@@ -1,7 +1,5 @@
 import { Box, Center, Container, Flex } from "@chakra-ui/react";
 import LoansProp from "./LoansProp";
-import NoarrowBtn from "../Button/NoarrowBtn";
-
 
 export default function LoansListCarousel() {
   const loansBody = [
@@ -12,7 +10,7 @@ export default function LoansListCarousel() {
       smHeading: "T&C Apply",
       tC: "Repayment Term: 2 months",
       tCtwo: "Interest rate: 5%",
-      loanAmount: ""
+      loanAmount: "",
     },
     {
       id: "2",
@@ -21,7 +19,7 @@ export default function LoansListCarousel() {
       smHeading: "T&C Apply",
       tC: "Repayment Term: 3 months",
       tCtwo: "Interest rate: 8%",
-      loanAmount: ""
+      loanAmount: "",
     },
     {
       id: "3",
@@ -30,7 +28,7 @@ export default function LoansListCarousel() {
       smHeading: "T&C Apply",
       tC: "Repayment Term: 2 months",
       tCtwo: "Interest rate: 15%",
-      loanAmount: ""
+      loanAmount: "",
     },
     {
       id: "4",
@@ -39,8 +37,7 @@ export default function LoansListCarousel() {
       smHeading: "T&C Apply",
       tC: "Repayment Term: 2 months",
       tCtwo: "Interest rate: 7.5%",
-      loanAmount: "500 euro"
-
+      loanAmount: "500 euro",
     },
     // {
     //   id: "5",
@@ -51,7 +48,7 @@ export default function LoansListCarousel() {
     //   tCtwo: "Charges: 5 euro per 100 euro ",
     //   loanAmount: ""
     // }
-  ]
+  ];
   return (
     <>
       <Box
@@ -60,21 +57,16 @@ export default function LoansListCarousel() {
         marginRight={{ base: "none", lg: "calc(50% - 50vw)" }}
         width={"100vw"}
         css={{
-          '&::-webkit-scrollbar': {
-            display: 'none'
-          }
+          "&::-webkit-scrollbar": {
+            display: "none",
+          },
         }}
       >
-        <Flex
-          w={{ base: "330%", lg: "200%" }}
-          columnGap={4}
-        >
+        <Flex w={{ base: "330%", lg: "200%" }} columnGap={4}>
           <LoansProp carousel={loansBody} />
         </Flex>
       </Box>
-      <Center m="2rem auto">
-        {/* <NoarrowBtn /> */}
-      </Center>
+      <Center m="2rem auto">{/* <NoarrowBtn /> */}</Center>
     </>
-  )
+  );
 }

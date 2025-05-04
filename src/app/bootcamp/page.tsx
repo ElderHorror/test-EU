@@ -32,9 +32,9 @@ export default function Bootcamp() {
   return (
     <Box bgColor={" rgba(255, 255, 255, 1)"} overflow={"hidden"}>
       <Navbar
-        setPageMode={(mode: string) => {
+        setPageMode={(mode: number) => {
           try {
-            localStorage.setItem("pageMode", mode);
+            localStorage.setItem("pageMode", mode.toString());
             // router.push("/");
           } catch (error) {
             console.error("Error saving to localStorage:", error);

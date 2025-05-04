@@ -39,7 +39,7 @@ export default function PerformanceProvider({
     const idleCallback =
       typeof window !== "undefined" && window.requestIdleCallback
         ? window.requestIdleCallback
-        : (cb) => setTimeout(cb, 1000);
+        : (cb: IdleRequestCallback) => setTimeout(cb, 1000);
 
     // Use a cleanup flag to prevent memory leaks
     let isMounted = true;
