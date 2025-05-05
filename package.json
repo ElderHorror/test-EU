@@ -8,7 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "prepare": "husky install",
-    "commit-no-hooks": "git commit --no-verify"
+    "commit-no-hooks": "echo 'DO NOT use this'"
   },
   "husky": {
     "hooks": {
