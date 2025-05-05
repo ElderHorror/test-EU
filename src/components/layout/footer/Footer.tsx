@@ -67,12 +67,10 @@ export default function Footer() {
               </HStack>
             </VStack>
 
-            
-
             {/* Middle and Right Sections - Grouped closer together */}
             <Flex gap={10} ml="38%">
               {/* Middle Section - Company Links */}
-              <VStack align="flex-start" spacing={4} >
+              <VStack align="flex-start" spacing={4}>
                 <Text fontWeight="bold" fontSize="md" mb={2}>
                   Company
                 </Text>
@@ -239,17 +237,47 @@ export default function Footer() {
               <Text fontWeight="bold" fontSize="md">
                 Company
               </Text>
-              <Link href="/about" fontSize="sm">
+              <Link
+                href="/about"
+                fontSize="sm"
+                _hover={{ textDecoration: "underline" }}
+              >
                 About
               </Link>
-              <Link href="/leadership" fontSize="sm">
-                Leadership
+              <Link
+                href="/#"
+                fontSize="sm"
+                _hover={{ textDecoration: "underline" }}
+              >
+                Careers
               </Link>
-              <Link href="/blog" fontSize="sm">
+              <Link
+                href="/#"
+                fontSize="sm"
+                _hover={{ textDecoration: "underline" }}
+              >
+                Contact Us
+              </Link>
+              <Link
+                href="/blog"
+                fontSize="sm"
+                _hover={{ textDecoration: "underline" }}
+              >
                 Blog
               </Link>
-              <Link href="/referral-program" fontSize="sm">
-                Referral Program
+              <Link
+                href="/#"
+                fontSize="sm"
+                _hover={{ textDecoration: "underline" }}
+              >
+                Customer Care
+              </Link>
+              <Link
+                href="/#"
+                fontSize="sm"
+                _hover={{ textDecoration: "underline" }}
+              >
+                Service
               </Link>
             </VStack>
 
@@ -272,7 +300,7 @@ export default function Footer() {
           <Divider borderColor="whiteAlpha.400" my={6} />
 
           {/* Legal Links */}
-          <VStack spacing={3} align="center">
+          <HStack spacing={3} justify="center">
             <Link href="/privacy-policy" fontSize="sm">
               Privacy Policy
             </Link>
@@ -282,7 +310,7 @@ export default function Footer() {
             <Link href="/cookie-policy" fontSize="sm">
               Cookies Settings
             </Link>
-          </VStack>
+          </HStack>
 
           {/* Copyright */}
           <Text fontSize="xs" textAlign="center" mt={2}>

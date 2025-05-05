@@ -60,7 +60,7 @@ export default function LoansSection() {
             fontWeight={700}
             textAlign={{ base: "center", lg: "left" }}
             width="100%"
-            mt = {{lg: "4rem"}}
+            mt = {{lg: "4rem", base:"2rem"}}
             maxW="100%"
             mb={{ base: "1rem", lg: "0.5rem" }}
           >
