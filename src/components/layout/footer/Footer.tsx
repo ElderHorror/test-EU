@@ -84,11 +84,18 @@ export default function Footer() {
                   About
                 </Link>
                 <Link
-                  href="/leadership"
+                  href="/#"
                   fontSize="sm"
                   _hover={{ textDecoration: "underline" }}
                 >
-                  Leadership
+                  Careers
+                </Link>
+                <Link
+                  href="/#"
+                  fontSize="sm"
+                  _hover={{ textDecoration: "underline" }}
+                >
+                  Contact Us
                 </Link>
                 <Link
                   href="/blog"
@@ -98,11 +105,18 @@ export default function Footer() {
                   Blog
                 </Link>
                 <Link
-                  href="/referral-program"
+                  href="/#"
                   fontSize="sm"
                   _hover={{ textDecoration: "underline" }}
                 >
-                  Referral Program
+                  Customer Care
+                </Link>
+                <Link
+                  href="/#"
+                  fontSize="sm"
+                  _hover={{ textDecoration: "underline" }}
+                >
+                  Service
                 </Link>
               </VStack>
 

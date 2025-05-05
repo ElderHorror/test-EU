@@ -380,7 +380,7 @@ export default function BlogPosts() {
         </Grid>
 
         {/* Pagination Controls */}
-        {filteredPosts.length > postsPerPage && (
+        {filteredPosts.length > (postsPerPage || 6) && (
           <Flex
             justify="center"
             mt={14}
@@ -421,7 +421,7 @@ export default function BlogPosts() {
             >
               {(() => {
                 const totalPages = Math.ceil(
-                  filteredPosts.length / postsPerPage
+                  filteredPosts.length / (postsPerPage || 6)
                 );
                 // Logic to show limited page numbers with ellipsis
                 let pagesToShow = [];

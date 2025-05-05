@@ -17,7 +17,7 @@ interface StaggeredContainerProps {
 /**
  * Container component that animates children with a staggered delay
  * Great for lists, grids, and other collections of items
- * 
+ *
  * @param children - Child elements to animate
  * @param delay - Initial delay before starting animations
  * @param staggerDelay - Delay between each child animation
@@ -66,9 +66,12 @@ export default function StaggeredContainer({
 
     observer.observe(containerRef.current);
 
+    // Save a reference to the current element for cleanup
+    const currentElement = containerRef.current;
+
     return () => {
-      if (containerRef.current) {
-        observer.unobserve(containerRef.current);
+      if (currentElement) {
+        observer.unobserve(currentElement);
       }
     };
   }, [rootMargin, threshold]);

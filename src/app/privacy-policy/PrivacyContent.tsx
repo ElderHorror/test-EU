@@ -15,7 +15,7 @@ export default function PrivacyContent() {
   return (
     <Box bg="white" py={{ base: "3rem", md: "5rem" }}>
       <Container
-        maxW={{lg:"60rem", base:"23rem"}}
+        maxW={{lg:"75rem", base:"23rem"}}
         px={{ lg: "5rem" }}
         py="1rem"
         borderTop={"1px solid #ACACAC"}
@@ -32,14 +32,14 @@ export default function PrivacyContent() {
               Owner and Data Controller
             </Heading>
             <Text
-              fontSize={{ base: "1.05rem", md: "1.05rem" }}
+              fontSize={{ base: "1.05rem", md: "0.9rem" }}
               lineHeight="1.7"
               mb="0.5rem"
             >
               Olof Palmes Alle 31B, 3.1, 820, Aarhus N (Denmark)
             </Text>
             <Text
-              fontSize={{ base: "1.05rem", md: "1.05rem" }}
+              fontSize={{ base: "1.05rem", md: "0.9rem" }}
               lineHeight="1.7"
             >
               <span style={{ fontWeight: 600 }}>Owner contact email: </span>
@@ -58,7 +58,7 @@ export default function PrivacyContent() {
               Types of Data collected
             </Heading>
             <Text
-              fontSize={{ base: "1.05rem", md: "1.05rem" }}
+              fontSize={{ base: "1.05rem", md: "1rem" }}
               lineHeight="2"
               mb="1rem"
             >
@@ -101,11 +101,11 @@ export default function PrivacyContent() {
               Mode and Place of Processing the Data
             </Heading>
             <Text
-              fontSize={{ base: "1.05rem", md: "1.05rem" }}
+              fontSize={{ base: "1.05rem", md: "1rem" }}
               lineHeight="2"
               mb="1rem"
             >
-              <span style={{ fontWeight: 600, paddingBottom: "1rem" }}>
+              <span style={{ fontWeight: 600, paddingBottom: "1.05rem" }}>
                 Methods of processing
               </span>
               <br /> The Owner takes appropriate security measures to prevent
@@ -123,7 +123,7 @@ export default function PrivacyContent() {
               these parties may be requested from the Owner at any time. <br />
             </Text>
             <Text
-              fontSize={{ base: "1.05rem", md: "1.05rem" }}
+              fontSize={{ base: "1.05rem", md: "1rem" }}
               lineHeight="2"
               mb="1rem"
             >
@@ -140,7 +140,7 @@ export default function PrivacyContent() {
               about the processing of Personal Data. <br />
             </Text>
             <Text
-              fontSize={{ base: "1.05rem", md: "1.05rem" }}
+              fontSize={{ base: "1.05rem", md: "1rem" }}
               lineHeight="2"
               mb="1rem"
             >
@@ -163,7 +163,7 @@ export default function PrivacyContent() {
               The Purposes of Processing
             </Heading>
             <Text
-              fontSize={{ base: "1.05rem", md: "1.05rem" }}
+              fontSize={{ base: "1.05rem", md: "1rem" }}
               lineHeight="2"
               mb="1rem"
             >
@@ -188,7 +188,7 @@ export default function PrivacyContent() {
               Information on Opting out of Interest-based Advertising
             </Heading>
             <Text
-              fontSize={{ base: "1.05rem", md: "1.05rem" }}
+              fontSize={{ base: "1.05rem", md: "1rem" }}
               lineHeight="2"
               mb="1rem"
             >
@@ -207,7 +207,7 @@ export default function PrivacyContent() {
               Cookie Policy
             </Heading>
             <Text
-              fontSize={{ base: "1.05rem", md: "1.05rem" }}
+              fontSize={{ base: "1.05rem", md: "1rem" }}
               lineHeight="2"
               mb="1rem"
             >
@@ -237,7 +237,7 @@ export default function PrivacyContent() {
               Further Information for Users
             </Heading>
             <Text
-              fontSize={{ base: "1.05rem", md: "1.05rem" }}
+              fontSize={{ base: "1.05rem", md: "1rem" }}
               lineHeight="2"
               mb="1rem"
             >
@@ -251,14 +251,14 @@ export default function PrivacyContent() {
             </Text>
             <UnorderedList spacing={3} pl={5} mb="1rem">
               <ListItem
-                fontSize={{ base: "1.05rem", md: "1.05rem" }}
+                fontSize={{ base: "1.05rem", md: "1rem" }}
                 lineHeight="1.7"
               >
                 Users have given their consent for one or more specific
                 purposes.
               </ListItem>
               <ListItem
-                fontSize={{ base: "1.05rem", md: "1.05rem" }}
+                fontSize={{ base: "1.05rem", md: "1rem" }}
                 lineHeight="1.7"
               >
                 Provision of Data is necessary for the performance of an
@@ -266,14 +266,14 @@ export default function PrivacyContent() {
                 obligations thereof.
               </ListItem>
               <ListItem
-                fontSize={{ base: "1.05rem", md: "1.05rem" }}
+                fontSize={{ base: "1.05rem", md: "1rem" }}
                 lineHeight="1.7"
               >
                 Processing is necessary for compliance with a legal obligation
                 to which the Owner is subject.
               </ListItem>
               <ListItem
-                fontSize={{ base: "1.05rem", md: "1.05rem" }}
+                fontSize={{ base: "1.05rem", md: "1rem" }}
                 lineHeight="1.7"
               >
                 Processing is related to a task that is carried out in the
@@ -281,7 +281,7 @@ export default function PrivacyContent() {
                 in the Owner.
               </ListItem>
               <ListItem
-                fontSize={{ base: "1.05rem", md: "1.05rem" }}
+                fontSize={{ base: "1.05rem", md: "1rem" }}
                 lineHeight="1.7"
               >
                 Processing is necessary for the purposes of the legitimate
@@ -289,7 +289,7 @@ export default function PrivacyContent() {
               </ListItem>
             </UnorderedList>
             <Text
-              fontSize={{ base: "1.05rem", md: "1.05rem" }}
+              fontSize={{ base: "1.05rem", md: "1rem" }}
               lineHeight="2"
               mb="1rem"
             >
@@ -312,7 +312,7 @@ export default function PrivacyContent() {
               Further information about retention time
             </Heading>
             <Text
-              fontSize={{ base: "1.05rem", md: "1.05rem" }}
+              fontSize={{ base: "1.05rem", md: "1rem" }}
               lineHeight="2"
               mb="1rem"
             >
@@ -322,7 +322,7 @@ export default function PrivacyContent() {
               applicable legal obligation or based on the Users&apos; consent.
             </Text>
             <Text
-              fontSize={{ base: "1.05rem", md: "1.05rem" }}
+              fontSize={{ base: "1.05rem", md: "1rem" }}
               lineHeight="2"
               mb="1rem"
             >
@@ -330,7 +330,7 @@ export default function PrivacyContent() {
             </Text>
             <UnorderedList spacing={3} pl={5} mb="1rem">
               <ListItem
-                fontSize={{ base: "1.05rem", md: "1.05rem" }}
+                fontSize={{ base: "1.05rem", md: "1rem" }}
                 lineHeight="1.7"
               >
                 Personal Data collected for purposes related to the performance
@@ -338,7 +338,7 @@ export default function PrivacyContent() {
                 until such contract has been fully performed.
               </ListItem>
               <ListItem
-                fontSize={{ base: "1.05rem", md: "1.05rem" }}
+                fontSize={{ base: "1.05rem", md: "1rem" }}
                 lineHeight="1.7"
               >
                 Personal Data collected for the purposes of the Owner&apos;s
@@ -350,7 +350,7 @@ export default function PrivacyContent() {
               </ListItem>
             </UnorderedList>
             <Text
-              fontSize={{ base: "1.05rem", md: "1.05rem" }}
+              fontSize={{ base: "1.05rem", md: "1rem" }}
               lineHeight="2"
               mb="1rem"
             >
@@ -362,7 +362,7 @@ export default function PrivacyContent() {
               authority.
             </Text>
             <Text
-              fontSize={{ base: "1.05rem", md: "1.05rem" }}
+              fontSize={{ base: "1.05rem", md: "1rem" }}
               lineHeight="2"
               mb="1rem"
             >
@@ -385,7 +385,7 @@ export default function PrivacyContent() {
               Regulation (GDPR)
             </Heading>
             <Text
-              fontSize={{ base: "1.05rem", md: "1.05rem" }}
+              fontSize={{ base: "1.05rem", md: "1rem" }}
               lineHeight="2"
               mb="1rem"
             >
@@ -393,7 +393,7 @@ export default function PrivacyContent() {
               by the Owner.
             </Text>
             <Text
-              fontSize={{ base: "1.05rem", md: "1.05rem" }}
+              fontSize={{ base: "1.05rem", md: "1rem" }}
               lineHeight="2"
               mb="1rem"
             >
@@ -402,7 +402,7 @@ export default function PrivacyContent() {
             </Text>
             <UnorderedList spacing={3} pl={5} mb="1rem">
               <ListItem
-                fontSize={{ base: "1.05rem", md: "1.05rem" }}
+                fontSize={{ base: "1.05rem", md: "1rem" }}
                 lineHeight="1.7"
               >
                 <Text as="span" fontWeight={600}>
@@ -413,7 +413,7 @@ export default function PrivacyContent() {
                 Personal Data.
               </ListItem>
               <ListItem
-                fontSize={{ base: "1.05rem", md: "1.05rem" }}
+                fontSize={{ base: "1.05rem", md: "1rem" }}
                 lineHeight="1.7"
               >
                 <Text as="span" fontWeight={600}>
@@ -424,7 +424,7 @@ export default function PrivacyContent() {
                 consent.
               </ListItem>
               <ListItem
-                fontSize={{ base: "1.05rem", md: "1.05rem" }}
+                fontSize={{ base: "1.05rem", md: "1rem" }}
                 lineHeight="1.7"
               >
                 <Text as="span" fontWeight={600}>
@@ -435,7 +435,7 @@ export default function PrivacyContent() {
                 processing and obtain a copy of the Data undergoing processing.
               </ListItem>
               <ListItem
-                fontSize={{ base: "1.05rem", md: "1.05rem" }}
+                fontSize={{ base: "1.05rem", md: "1rem" }}
                 lineHeight="1.7"
               >
                 <Text as="span" fontWeight={600}>
@@ -445,7 +445,7 @@ export default function PrivacyContent() {
                 ask for it to be updated or corrected.
               </ListItem>
               <ListItem
-                fontSize={{ base: "1.05rem", md: "1.05rem" }}
+                fontSize={{ base: "1.05rem", md: "1rem" }}
                 lineHeight="1.7"
               >
                 <Text as="span" fontWeight={600}>
@@ -456,7 +456,7 @@ export default function PrivacyContent() {
                 purpose other than storing it.
               </ListItem>
               <ListItem
-                fontSize={{ base: "1.05rem", md: "1.05rem" }}
+                fontSize={{ base: "1.05rem", md: "1rem" }}
                 lineHeight="1.7"
               >
                 <Text as="span" fontWeight={600}>
@@ -466,7 +466,7 @@ export default function PrivacyContent() {
                 the Owner.
               </ListItem>
               <ListItem
-                fontSize={{ base: "1.05rem", md: "1.05rem" }}
+                fontSize={{ base: "1.05rem", md: "1rem" }}
                 lineHeight="1.7"
               >
                 <Text as="span" fontWeight={600}>
@@ -479,7 +479,7 @@ export default function PrivacyContent() {
                 any hindrance.
               </ListItem>
               <ListItem
-                fontSize={{ base: "1.05rem", md: "1.05rem" }}
+                fontSize={{ base: "1.05rem", md: "1rem" }}
                 lineHeight="1.7"
               >
                 <Text as="span" fontWeight={600}>
@@ -490,7 +490,7 @@ export default function PrivacyContent() {
               </ListItem>
             </UnorderedList>
             <Text
-              fontSize={{ base: "1.05rem", md: "1.05rem" }}
+              fontSize={{ base: "1.05rem", md: "1rem" }}
               lineHeight="2"
               mb="1rem"
             >
@@ -512,7 +512,7 @@ export default function PrivacyContent() {
               Details about the right to object to processing
             </Heading>
             <Text
-              fontSize={{ base: "1.05rem", md: "1.05rem" }}
+              fontSize={{ base: "1.05rem", md: "1rem" }}
               lineHeight="2"
               mb="1rem"
             >
@@ -523,7 +523,7 @@ export default function PrivacyContent() {
               their particular situation to justify the objection.
             </Text>
             <Text
-              fontSize={{ base: "1.05rem", md: "1.05rem" }}
+              fontSize={{ base: "1.05rem", md: "1rem" }}
               lineHeight="2"
               mb="1rem"
             >
@@ -548,7 +548,7 @@ export default function PrivacyContent() {
               How to exercise these rights
             </Heading>
             <Text
-              fontSize={{ base: "1.05rem", md: "1.05rem" }}
+              fontSize={{ base: "1.05rem", md: "1rem" }}
               lineHeight="2"
               mb="1rem"
             >
@@ -586,7 +586,7 @@ export default function PrivacyContent() {
               Legal action
             </Heading>
             <Text
-              fontSize={{ base: "1.05rem", md: "1.05rem" }}
+              fontSize={{ base: "1.05rem", md: "1rem" }}
               lineHeight="2"
               mb={{lg:"1.5rem", base:"1rem"}}
             >
@@ -608,7 +608,7 @@ export default function PrivacyContent() {
               Additional information about User&apos;s Personal Data
             </Heading>
             <Text
-              fontSize={{ base: "1.05rem", md: "1.05rem" }}
+              fontSize={{ base: "1.05rem", md: "1rem" }}
               lineHeight="2"
               mb={{lg:"1.5rem", base:"1rem"}}
             >
@@ -628,7 +628,7 @@ export default function PrivacyContent() {
               System logs and maintenance
             </Heading>
             <Text
-              fontSize={{ base: "1.05rem", md: "1.05rem" }}
+              fontSize={{ base: "1.05rem", md: "1rem" }}
               lineHeight="2"
               mb={{lg:"1.5rem", base:"1rem"}}
             >
@@ -648,7 +648,7 @@ export default function PrivacyContent() {
               Information not contained in this policy
             </Heading>
             <Text
-              fontSize={{ base: "1.05rem", md: "1.05rem" }}
+              fontSize={{ base: "1.05rem", md: "1rem" }}
               lineHeight="2"
               mb={{lg:"1.5rem", base:"1rem"}}
             >
@@ -667,7 +667,7 @@ export default function PrivacyContent() {
               Changes to this privacy policy
             </Heading>
             <Text
-              fontSize={{ base: "1.05rem", md: "1.05rem" }}
+              fontSize={{ base: "1.05rem", md: "1rem" }}
               lineHeight="2"
               mb="1rem"
             >
@@ -680,7 +680,7 @@ export default function PrivacyContent() {
               modification listed at the bottom.
             </Text>
             <Text
-              fontSize={{ base: "1.05rem", md: "1.05rem" }}
+              fontSize={{ base: "1.05rem", md: "1rem" }}
               lineHeight="2"
               mb="1rem"
             >
@@ -708,7 +708,7 @@ export default function PrivacyContent() {
               Personal Data (or Data) / Personal Information (or Information)
             </Heading>
             <Text
-              fontSize={{ base: "1.05rem", md: "1.05rem" }}
+              fontSize={{ base: "1.05rem", md: "1rem" }}
               lineHeight="2"
               mb={{lg:"1.5rem", base:"1rem"}}
             >
@@ -728,7 +728,7 @@ export default function PrivacyContent() {
               Sensitive Personal Information
             </Heading>
             <Text
-              fontSize={{ base: "1.05rem", md: "1.05rem" }}
+              fontSize={{ base: "1.05rem", md: "1rem" }}
               lineHeight="2"
               mb={{lg:"1.5rem", base:"1rem"}}
             >
@@ -747,7 +747,7 @@ export default function PrivacyContent() {
               Usage Data
             </Heading>
             <Text
-              fontSize={{ base: "1.05rem", md: "1.05rem" }}
+              fontSize={{ base: "1.05rem", md: "1rem" }}
               lineHeight="2"
               mb={{lg:"1.5rem", base:"1rem"}}
             >
@@ -779,7 +779,7 @@ export default function PrivacyContent() {
               User
             </Heading>
             <Text
-              fontSize={{ base: "1.05rem", md: "1.05rem" }}
+              fontSize={{ base: "1.05rem", md: "1rem" }}
               lineHeight="2"
               mb={{lg:"1.5rem", base:"1rem"}}
             >
@@ -797,7 +797,7 @@ export default function PrivacyContent() {
               Data Subject
             </Heading>
             <Text
-              fontSize={{ base: "1.05rem", md: "1.05rem" }}
+              fontSize={{ base: "1.05rem", md: "1rem" }}
               lineHeight="2"
               mb={{lg:"1.5rem", base:"1rem"}}
             >
@@ -814,7 +814,7 @@ export default function PrivacyContent() {
               Data Processor (or Processor)
             </Heading>
             <Text
-              fontSize={{ base: "1.05rem", md: "1.05rem" }}
+              fontSize={{ base: "1.05rem", md: "1rem" }}
               lineHeight="2"
               mb={{lg:"1.5rem", base:"1rem"}}
             >
@@ -833,7 +833,7 @@ export default function PrivacyContent() {
               Data Controller (or Owner)
             </Heading>
             <Text
-              fontSize={{ base: "1.05rem", md: "1.05rem" }}
+              fontSize={{ base: "1.05rem", md: "1rem" }}
               lineHeight="2"
               mb={{lg:"1.5rem", base:"1rem"}}
             >
@@ -855,7 +855,7 @@ export default function PrivacyContent() {
               This Website (or this Application)
             </Heading>
             <Text
-              fontSize={{ base: "1.05rem", md: "1.05rem" }}
+              fontSize={{ base: "1.05rem", md: "1rem" }}
               lineHeight="2"
               mb={{lg:"1.5rem", base:"1rem"}}
             >
@@ -873,7 +873,7 @@ export default function PrivacyContent() {
               Service
             </Heading>
             <Text
-              fontSize={{ base: "1.05rem", md: "1.05rem" }}
+              fontSize={{ base: "1.05rem", md: "1rem" }}
               lineHeight="2"
               mb={{lg:"1.5rem", base:"1rem"}}
             >
@@ -891,7 +891,7 @@ export default function PrivacyContent() {
               Sale
             </Heading>
             <Text
-              fontSize={{ base: "1.05rem", md: "1.05rem" }}
+              fontSize={{ base: "1.05rem", md: "1rem" }}
               lineHeight="2"
               mb={{lg:"1.5rem", base:"1rem"}}
             >
@@ -914,7 +914,7 @@ export default function PrivacyContent() {
               Sharing
             </Heading>
             <Text
-              fontSize={{ base: "1.05rem", md: "1.05rem" }}
+              fontSize={{ base: "1.05rem", md: "1rem" }}
               lineHeight="2"
               mb={{lg:"1.5rem", base:"1rem"}}
             >
@@ -943,7 +943,7 @@ export default function PrivacyContent() {
               Targeted advertising
             </Heading>
             <Text
-              fontSize={{ base: "1.05rem", md: "1.05rem" }}
+              fontSize={{ base: "1.05rem", md: "1rem" }}
               lineHeight="2"
               mb={{lg:"1.5rem", base:"1rem"}}
             >
@@ -965,7 +965,7 @@ export default function PrivacyContent() {
               European Union (or EU)
             </Heading>
             <Text
-              fontSize={{ base: "1.05rem", md: "1.05rem" }}
+              fontSize={{ base: "1.05rem", md: "1rem" }}
               lineHeight="2"
               mb={{lg:"1.5rem", base:"1rem"}}
             >
@@ -984,7 +984,7 @@ export default function PrivacyContent() {
               Cookie
             </Heading>
             <Text
-              fontSize={{ base: "1.05rem", md: "1.05rem" }}
+              fontSize={{ base: "1.05rem", md: "1rem" }}
               lineHeight="2"
               mb={{lg:"1.5rem", base:"1rem"}}
             >
@@ -1002,7 +1002,7 @@ export default function PrivacyContent() {
               Tracker
             </Heading>
             <Text
-              fontSize={{ base: "1.05rem", md: "1.05rem" }}
+              fontSize={{ base: "1.05rem", md: "1rem" }}
               lineHeight="2"
               mb={{lg:"1.5rem", base:"1rem"}}
             >

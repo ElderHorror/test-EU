@@ -19,7 +19,7 @@ interface AnimatedElementProps {
 /**
  * Reusable animated element component that triggers animations when in view
  * Uses IntersectionObserver for better performance
- * 
+ *
  * @param children - Content to animate
  * @param animation - Animation type
  * @param delay - Animation delay in seconds
@@ -46,24 +46,24 @@ export default function AnimatedElement({
   const variants = {
     fadeIn: {
       hidden: { opacity: 0 },
-      visible: { opacity: 1 }
+      visible: { opacity: 1 },
     },
     slideUp: {
       hidden: { opacity: 0, y: 30 },
-      visible: { opacity: 1, y: 0 }
+      visible: { opacity: 1, y: 0 },
     },
     slideLeft: {
       hidden: { opacity: 0, x: -50 },
-      visible: { opacity: 1, x: 0 }
+      visible: { opacity: 1, x: 0 },
     },
     slideRight: {
       hidden: { opacity: 0, x: 50 },
-      visible: { opacity: 1, x: 0 }
+      visible: { opacity: 1, x: 0 },
     },
     scale: {
       hidden: { opacity: 0, scale: 0.8 },
-      visible: { opacity: 1, scale: 1 }
-    }
+      visible: { opacity: 1, scale: 1 },
+    },
   };
 
   useEffect(() => {
@@ -88,9 +88,12 @@ export default function AnimatedElement({
 
     observer.observe(elementRef.current);
 
+    // Save a reference to the current element for cleanup
+    const currentElement = elementRef.current;
+
     return () => {
-      if (elementRef.current) {
-        observer.unobserve(elementRef.current);
+      if (currentElement) {
+        observer.unobserve(currentElement);
       }
     };
   }, [once, rootMargin, threshold]);

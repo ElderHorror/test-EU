@@ -1,14 +1,13 @@
 "use client";
 import { Box, BoxProps, Skeleton } from "@chakra-ui/react";
 import Image from "next/image";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { motion } from "framer-motion";
-import { useLazyLoad } from "@/hooks/useLazyLoad";
 
 /**
  * Props for the OptimizedImage component
  */
-interface OptimizedImageProps extends BoxProps {
+interface OptimizedImageProps extends Omit<BoxProps, "animation"> {
   src: string;
   alt: string;
   width?: number;

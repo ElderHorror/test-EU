@@ -1,7 +1,7 @@
 "use client";
 
 import { Box, Flex, Text, Button, useDisclosure } from "@chakra-ui/react";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 interface CourseCardProps {
   title: string;
@@ -23,6 +23,7 @@ const CourseCard = ({
   cost,
 }: CourseCardProps) => {
   const { isOpen, onToggle } = useDisclosure();
+  const [imageError, setImageError] = useState(false);
 
   // Enhanced debugging for image loading
   console.log(`Rendering CourseCard for ${title} with image: ${imageSrc}`);
@@ -104,7 +105,9 @@ const CourseCard = ({
               width="100%"
               height={{ base: "200px", md: "300px" }}
               borderRadius="8px"
-              backgroundImage={`url(${imageSrc})`}
+              backgroundImage={
+                imageError ? "url(/placeholder-image.jpg)" : `url(${imageSrc})`
+              }
               backgroundSize="cover"
               backgroundPosition="center top"
               backgroundRepeat="no-repeat"

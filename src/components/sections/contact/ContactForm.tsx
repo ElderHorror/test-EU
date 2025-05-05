@@ -27,15 +27,19 @@ interface ContactFormProps {
  */
 const validationSchema = Yup.object({
   name: Yup.string().required("Name is required"),
-  email: Yup.string().email("Invalid email address").required("Email is required"),
+  email: Yup.string()
+    .email("Invalid email address")
+    .required("Email is required"),
   subject: Yup.string().required("Subject is required"),
-  message: Yup.string().required("Message is required").min(10, "Message must be at least 10 characters"),
+  message: Yup.string()
+    .required("Message is required")
+    .min(10, "Message must be at least 10 characters"),
 });
 
 /**
  * Contact form component
  * Handles form validation and submission
- * 
+ *
  * @param onSubmitSuccess - Optional callback function to run after successful submission
  */
 export default function ContactForm({ onSubmitSuccess }: ContactFormProps) {
@@ -48,7 +52,7 @@ export default function ContactForm({ onSubmitSuccess }: ContactFormProps) {
    */
   const handleSubmit = async (values: ContactFormData) => {
     setIsSubmitting(true);
-    
+
     try {
       const response = await fetch("/api/submit", {
         method: "POST",
@@ -57,11 +61,11 @@ export default function ContactForm({ onSubmitSuccess }: ContactFormProps) {
         },
         body: JSON.stringify(values),
       });
-      
+
       if (!response.ok) {
         throw new Error("Failed to submit form");
       }
-      
+
       toast({
         title: "Message sent!",
         description: "We'll get back to you as soon as possible.",
@@ -69,16 +73,17 @@ export default function ContactForm({ onSubmitSuccess }: ContactFormProps) {
         duration: 5000,
         isClosable: true,
       });
-      
+
       formik.resetForm();
-      
+
       if (onSubmitSuccess) {
         onSubmitSuccess();
       }
     } catch (error) {
       toast({
         title: "Error",
-        description: "There was an error sending your message. Please try again.",
+        description:
+          "There was an error sending your message. Please try again.",
         status: "error",
         duration: 5000,
         isClosable: true,
@@ -105,28 +110,26 @@ export default function ContactForm({ onSubmitSuccess }: ContactFormProps) {
   return (
     <Box as="form" onSubmit={formik.handleSubmit} width="100%">
       <VStack spacing={4} align="flex-start">
-        <FormControl 
+        <FormControl
           isInvalid={!!(formik.touched.name && formik.errors.name)}
           isRequired
         >
           <FormLabel htmlFor="name">Name</FormLabel>
           <Input
             id="name"
-            name="name"
             placeholder="Your name"
             {...formik.getFieldProps("name")}
           />
           <FormErrorMessage>{formik.errors.name}</FormErrorMessage>
         </FormControl>
 
-        <FormControl 
+        <FormControl
           isInvalid={!!(formik.touched.email && formik.errors.email)}
           isRequired
         >
           <FormLabel htmlFor="email">Email</FormLabel>
           <Input
             id="email"
-            name="email"
             type="email"
             placeholder="your.email@example.com"
             {...formik.getFieldProps("email")}
@@ -134,28 +137,26 @@ export default function ContactForm({ onSubmitSuccess }: ContactFormProps) {
           <FormErrorMessage>{formik.errors.email}</FormErrorMessage>
         </FormControl>
 
-        <FormControl 
+        <FormControl
           isInvalid={!!(formik.touched.subject && formik.errors.subject)}
           isRequired
         >
           <FormLabel htmlFor="subject">Subject</FormLabel>
           <Input
             id="subject"
-            name="subject"
             placeholder="What is this regarding?"
             {...formik.getFieldProps("subject")}
           />
           <FormErrorMessage>{formik.errors.subject}</FormErrorMessage>
         </FormControl>
 
-        <FormControl 
+        <FormControl
           isInvalid={!!(formik.touched.message && formik.errors.message)}
           isRequired
         >
           <FormLabel htmlFor="message">Message</FormLabel>
           <Textarea
             id="message"
-            name="message"
             placeholder="Your message"
             rows={5}
             resize="vertical"

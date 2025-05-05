@@ -16,7 +16,7 @@ export default function TermsContent() {
   return (
     <Box bg="white" py={{ base: "3rem", md: "5rem" }}>
       <Container
-        maxW={{lg:"60rem", base:"23rem"}}
+        maxW={{lg:"75rem", base:"23rem"}}
         px={{lg:"5rem"}}
         py="1rem"
         borderTop={"1px solid #ACACAC"}
@@ -24,7 +24,7 @@ export default function TermsContent() {
         <VStack spacing="2rem" align="start">
           <Box w="100%">
             <Text
-              fontSize={{ base: "0.9rem", md: "0.9rem" }}
+              fontSize={{ base: "0.9rem", md: "1rem" }}
               lineHeight="2"
               mb={{lg:"1.5rem", base:"1rem"}}
             >
@@ -32,7 +32,7 @@ export default function TermsContent() {
               the https://www.eustudyassist.com website and related EU
               StudyAssist Financing services (collectively the &quot;Services&quot;).
             </Text>
-            <Text fontSize={{ base: "0.9rem", md: "0.9rem" }} lineHeight="2">
+            <Text fontSize={{ base: "0.9rem", md: "1rem" }} lineHeight="2">
               These terms are a legally binding agreement between you and EU
               StudyAssist, is a Danish Organization. By using the
               https://www.eustudyassist.com website or registering with the
@@ -55,7 +55,7 @@ export default function TermsContent() {
               YOUR USE OF EU StudyAssist SOFTWARE AND SERVICES
             </Heading>
             <Text
-              fontSize={{ base: "0.9rem", md: "0.9rem" }}
+              fontSize={{ base: "0.9rem", md: "1rem" }}
               lineHeight="2"
               mb="1rem"
             >
@@ -66,7 +66,7 @@ export default function TermsContent() {
               The Services shall not be used in any other manner or for any
               other purpose.
             </Text>
-            <Text fontSize={{ base: "0.9rem", md: "0.9rem" }} lineHeight="2">
+            <Text fontSize={{ base: "0.9rem", md: "1rem" }} lineHeight="2">
               Use of the Services by children under the age of 13 is prohibited.
               By using the Services, you warrant that you are 13 years of age or
               older.
@@ -84,7 +84,7 @@ export default function TermsContent() {
               REGISTRATION AND ACCOUNTS
             </Heading>
             <Text
-              fontSize={{ base: "0.9rem", md: "0.9rem" }}
+              fontSize={{ base: "0.9rem", md: "1rem" }}
               lineHeight="2"
               mb="1rem"
             >
@@ -94,7 +94,7 @@ export default function TermsContent() {
               address, and update your information should it change in the
               future.
             </Text>
-            <Text fontSize={{ base: "0.9rem", md: "0.9rem" }} lineHeight="2">
+            <Text fontSize={{ base: "0.9rem", md: "1rem" }} lineHeight="2">
               You must maintain the confidentiality of your assigned user IDs
               and passwords. You agree to immediately notify eustudyassist.com
               at{" "}
@@ -123,7 +123,7 @@ export default function TermsContent() {
               USER GENERATED CONTENT
             </Heading>
             <Text
-              fontSize={{ base: "0.9rem", md: "0.9rem" }}
+              fontSize={{ base: "0.9rem", md: "1rem" }}
               lineHeight="2"
               mb="1rem"
             >
@@ -134,7 +134,7 @@ export default function TermsContent() {
               the user who submitted the content.
             </Text>
             <Text
-              fontSize={{ base: "0.9rem", md: "0.9rem" }}
+              fontSize={{ base: "0.9rem", md: "1rem" }}
               lineHeight="2"
               mb="1rem"
             >
@@ -145,7 +145,7 @@ export default function TermsContent() {
               content. This license continues indefinitely beyond any
               termination of the Terms of Use for any reason by any party.
             </Text>
-            <Text fontSize={{ base: "0.9rem", md: "0.9rem" }} lineHeight="2">
+            <Text fontSize={{ base: "0.9rem", md: "1rem" }} lineHeight="2">
               EU StudyAssist does not screen, review or actively monitor any
               content submitted to the Services by users, and is not responsible
               for the accuracy or truthfulness of any user-submitted content.
@@ -162,7 +162,7 @@ export default function TermsContent() {
             >
               PRIVACY AND COLLECTION OF INFORMATION
             </Heading>
-            <Text fontSize={{ base: "0.9rem", md: "0.9rem" }} lineHeight="2">
+            <Text fontSize={{ base: "0.9rem", md: "1rem" }} lineHeight="2">
               EU StudyAssist collects information about you through your use of
               the Services. By using the Services, you agree that EU StudyAssist
               may retain, use, and publish information collected through your
@@ -184,7 +184,7 @@ export default function TermsContent() {
             >
               OUR PROPRIETARY RIGHTS
             </Heading>
-            <Text fontSize={{ base: "0.9rem", md: "0.9rem" }} lineHeight="2">
+            <Text fontSize={{ base: "0.9rem", md: "1rem" }} lineHeight="2">
               EU StudyAssist retains all rights, title, and interest to the
               Services and any updates that may be provided to you under the
               Terms of Use. EU StudyAssist reserves all rights not expressly
@@ -202,7 +202,7 @@ export default function TermsContent() {
             >
               INDEMNITY
             </Heading>
-            <Text fontSize={{ base: "0.9rem", md: "0.9rem" }} lineHeight="2">
+            <Text fontSize={{ base: "0.9rem", md: "1rem" }} lineHeight="2">
               You and any business or third party subject to the Terms of Use
               through your use shall indemnify, defend and hold harmless EU
               StudyAssist and its officers, agents, and employees from and
@@ -228,7 +228,7 @@ export default function TermsContent() {
             >
               PARTICIPATION INFORMATION
             </Heading>
-            <Text fontSize={{ base: "0.9rem", md: "0.9rem" }} lineHeight="2">
+            <Text fontSize={{ base: "0.9rem", md: "1rem" }} lineHeight="2">
               None of the information contained in EU StudyAssist&apos;s website
               constitutes a recommendation, solicitation or offer by EU
               StudyAssist or its affiliates to buy or sell any securities or
@@ -260,7 +260,7 @@ export default function TermsContent() {
               DISCLAIMER OF WARRANTIES AND LIMITATION OF LIABILITY
             </Heading>
             <Text
-              fontSize={{ base: "0.9rem", md: "0.9rem" }}
+              fontSize={{ base: "0.9rem", md: "1rem" }}
               lineHeight="2"
               mb="1rem"
             >
@@ -269,7 +269,7 @@ export default function TermsContent() {
               kind. You agree that the use of the Services is at your risk.
             </Text>
             <Text
-              fontSize={{ base: "0.9rem", md: "0.9rem" }}
+              fontSize={{ base: "0.9rem", md: "1rem" }}
               lineHeight="2"
               mb="1rem"
             >
@@ -282,7 +282,7 @@ export default function TermsContent() {
               non-infringement and all such warranties are hereby excluded by EU
               StudyAssist and waived by you.
             </Text>
-            <Text fontSize={{ base: "0.9rem", md: "0.9rem" }} lineHeight="2">
+            <Text fontSize={{ base: "0.9rem", md: "1rem" }} lineHeight="2">
               <Text as="span" fontWeight={600}>
                 Limitation of liability.
               </Text>{" "}
@@ -316,7 +316,7 @@ export default function TermsContent() {
               MODIFICATION AND TERMINATION OF THE SERVICES
             </Heading>
             <Text
-              fontSize={{ base: "0.9rem", md: "0.9rem" }}
+              fontSize={{ base: "0.9rem", md: "1rem" }}
               lineHeight="2"
               mb="1rem"
             >
@@ -324,7 +324,7 @@ export default function TermsContent() {
               the Services or terminate or suspend your access to the Services
               at any time.
             </Text>
-            <Text fontSize={{ base: "0.9rem", md: "0.9rem" }} lineHeight="2">
+            <Text fontSize={{ base: "0.9rem", md: "1rem" }} lineHeight="2">
               EU StudyAssist reserves the right to change or modify any of the
               terms and conditions contained in the Terms of Use at any time, in
               its sole discretion, by posting changes at{" "}
@@ -349,7 +349,7 @@ export default function TermsContent() {
             >
               NOTICES
             </Heading>
-            <Text fontSize={{ base: "0.9rem", md: "0.9rem" }} lineHeight="2">
+            <Text fontSize={{ base: "0.9rem", md: "1rem" }} lineHeight="2">
               All notices, demands, requests, consents or other communications
               required or permitted by the Terms of Use (&quot;Notices&quot;)
               shall be in writing and sent to the parties at their current known
@@ -375,7 +375,7 @@ export default function TermsContent() {
               DISPUTES
             </Heading>
             <Text
-              fontSize={{ base: "0.9rem", md: "0.9rem" }}
+              fontSize={{ base: "0.9rem", md: "1rem" }}
               lineHeight="2"
               mb="1rem"
             >
@@ -386,7 +386,7 @@ export default function TermsContent() {
               fullest extent permitted by law.
             </Text>
             <Text
-              fontSize={{ base: "0.9rem", md: "0.9rem" }}
+              fontSize={{ base: "0.9rem", md: "1rem" }}
               lineHeight="2"
               mb="1rem"
             >
@@ -396,7 +396,7 @@ export default function TermsContent() {
               that are the subject of the terms of use.
             </Text>
             <Text
-              fontSize={{ base: "0.9rem", md: "0.9rem" }}
+              fontSize={{ base: "0.9rem", md: "1rem" }}
               lineHeight="2"
               mb="1rem"
             >
@@ -407,7 +407,7 @@ export default function TermsContent() {
               by certified or registered mail in connection with any dispute
               arising out of or in connection with the Terms of Use.
             </Text>
-            <Text fontSize={{ base: "0.9rem", md: "0.9rem" }} lineHeight="2">
+            <Text fontSize={{ base: "0.9rem", md: "1rem" }} lineHeight="2">
               In the event of any dispute arising out of or related to the Terms
               of Use, the prevailing party shall be entitled to recover its
               reasonable attorneys&apos; fees and costs.
@@ -425,7 +425,7 @@ export default function TermsContent() {
               CONTACTS
             </Heading>
             <Text
-              fontSize={{ base: "0.9rem", md: "0.9rem" }}
+              fontSize={{ base: "0.9rem", md: "1rem" }}
               lineHeight="2"
               mb="1rem"
             >
