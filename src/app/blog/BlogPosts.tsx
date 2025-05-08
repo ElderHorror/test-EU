@@ -209,7 +209,7 @@ export default function BlogPosts() {
 
   return (
     <Box py={{ base: 10, md: 16 }} bg="white">
-      <Container maxW="container.xl">
+      <Container maxW="100%" px="0">
         {/* Section Heading */}
         <Heading
           as="h2"

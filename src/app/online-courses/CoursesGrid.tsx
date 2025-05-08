@@ -102,7 +102,11 @@ export default function CoursesGrid() {
           </Text>
         </VStack>
 
-        <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing="2rem" spacingY="3rem">
+        <SimpleGrid
+          columns={{ base: 1, md: 2, lg: 3 }}
+          spacing="2rem"
+          spacingY="3rem"
+        >
           {courses.map((course) => (
             <Box
               key={course.id}
@@ -178,7 +182,13 @@ export default function CoursesGrid() {
 
                 {/* Description */}
                 <Box pr="1.5rem">
-                  <Text fontSize="sm" color="gray.600" mb="1.5rem" minH="60px">
+                  <Text
+                    fontSize="sm"
+                    color="gray.600"
+                    mb="1.5rem"
+                    h="6rem"
+                    maxH="8rem"
+                  >
                     {course.description}
                   </Text>
                 </Box>
