@@ -166,7 +166,7 @@ export default function LoansSection() {
                     fontSize={{ base: "0.9rem", md: "1rem" }}
                     whiteSpace="nowrap"
                   >
-                    Learn More
+                    Apply now
                   </Text>
                   <Box
                     as="span"

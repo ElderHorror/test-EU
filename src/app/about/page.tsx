@@ -11,10 +11,17 @@ import {
   Text,
   UnorderedList,
   Link,
+  useBreakpointValue,
 } from "@chakra-ui/react";
 import PageLayout from "@/components/layout/PageLayout";
 
 export default function About() {
+  // Use breakpoint value to determine which image to show
+  const imageSrc = useBreakpointValue({
+    base: "/about-mobile.jpg",
+    md: "/about.jpg",
+  });
+
   return (
     <PageLayout>
       {/* Hero Section */}
@@ -35,10 +42,11 @@ export default function About() {
         >
           <Box flexBasis="50%">
             <Text
+              fontFamily="ClashDisplay"
               color="white"
-              fontSize={{ base: "2.25rem", md: "3rem", lg: "4.5rem" }}
+              fontSize={{ base: "2.25rem", md: "3rem", lg: "4rem" }}
               fontWeight={600}
-              letterSpacing="0.08rem"
+              // letterSpacing="0.08rem"
               lineHeight="1.05"
               textShadow="0 0.25rem 0.25rem rgba(0,0,0,0.25)"
               mb="1.2rem"
@@ -48,7 +56,11 @@ export default function About() {
               <span>.</span>
             </Text>
           </Box>
-          <Box flexBasis="45%" justifySelf="baseline" mt="auto">
+          <Box
+            flexBasis="45%"
+            justifySelf="baseline"
+            mt={{ base: "auto", md: "10rem" }}
+          >
             <Text
               color="#E4E4E4"
               lineHeight="1.5"
@@ -75,7 +87,7 @@ export default function About() {
           w="100%"
           borderRadius="0.5rem"
           border="none"
-          src="/about.jpg"
+          src={imageSrc}
           alt="About Us"
           minH={{ base: "150vw", md: "auto", lg: "100vh" }}
           maxH={{ lg: "60vh", base: "150vh" }}
@@ -102,6 +114,7 @@ export default function About() {
         >
           <Box flexBasis="40%" marginBottom="auto">
             <Text
+              fontFamily="ClashDisplay"
               fontWeight={600}
               fontSize={{ base: "2.5rem", lg: "3.25rem" }}
               lineHeight={{ base: 1.1, lg: 1.2 }}
@@ -115,6 +128,7 @@ export default function About() {
           <Box flexBasis="50%">
             {/* Mission Section */}
             <Text
+              fontFamily="ClashDisplay"
               color="#130F26"
               fontWeight={700}
               fontSize={{ base: "1.25rem", lg: "2rem" }}
@@ -124,7 +138,7 @@ export default function About() {
             </Text>
             <Text
               color="#2F3540"
-              fontSize={{ base: "1rem"}}
+              fontSize={{ base: "1rem" }}
               textAlign={{ base: "justify" }}
               lineHeight={{ base: 1.4, lg: 1.6 }}
               mb="2rem"
@@ -141,6 +155,7 @@ export default function About() {
 
             {/* Vision Section */}
             <Text
+              fontFamily="ClashDisplay"
               color="#130F26"
               fontWeight={700}
               fontSize={{ base: "1.25rem", lg: "2rem" }}
@@ -150,7 +165,7 @@ export default function About() {
             </Text>
             <Text
               color="#2F3540"
-              fontSize={{ base: "1rem"}}
+              fontSize={{ base: "1rem" }}
               textAlign={{ base: "justify" }}
               lineHeight={{ base: 1.4, lg: 1.6 }}
               mb="2rem"
@@ -162,6 +177,7 @@ export default function About() {
 
             {/* Commitment Section */}
             <Text
+              fontFamily="ClashDisplay"
               color="#130F26"
               fontWeight={700}
               fontSize={{ base: "1.25rem", lg: "2rem" }}
@@ -171,7 +187,7 @@ export default function About() {
             </Text>
             <Text
               color="#2F3540"
-              fontSize={{ base: "1rem"}}
+              fontSize={{ base: "1rem" }}
               textAlign={{ base: "justify" }}
               lineHeight={{ base: 1.4, lg: 1.6 }}
               mb={{ lg: "3rem", base: "1.5rem" }}
@@ -208,6 +224,7 @@ export default function About() {
         >
           <Box flexBasis="40%" marginBottom="auto">
             <Text
+              fontFamily="ClashDisplay"
               fontWeight={600}
               fontSize={{ base: "2rem", lg: "3.25rem" }}
               lineHeight={{ base: 1.1, lg: 1.2 }}
@@ -220,6 +237,7 @@ export default function About() {
           <Box flexBasis="50%">
             {/* Values Section */}
             <Text
+              fontFamily="ClashDisplay"
               color="#130F26"
               fontWeight={700}
               fontSize={{ base: "1.25rem", lg: "2rem" }}
@@ -270,6 +288,7 @@ export default function About() {
 
             {/* Culture Section */}
             <Text
+              fontFamily="ClashDisplay"
               color="#130F26"
               fontWeight={700}
               fontSize={{ base: "1.25rem", lg: "2rem" }}
@@ -330,6 +349,7 @@ export default function About() {
           mx="auto"
         >
           <Text
+            fontFamily="ClashDisplay"
             fontWeight={{ lg: 600, base: 700 }}
             lineHeight={{ base: 1.1 }}
             fontSize={{ base: "2.5rem", md: "2.25rem", lg: "3.25rem" }}
@@ -429,9 +449,9 @@ export default function About() {
                 Olamide Adu
               </span>{" "}
               is a Consulting Data Scientist with a background in forest and
-              nature management. He holds an Erasmus Mundus Joint Master&apos;s in
-              Sustainable Forest and Nature Management. With expertise in data
-              analysis and sustainability consulting, he helps small and
+              nature management. He holds an Erasmus Mundus Joint Master&apos;s
+              in Sustainable Forest and Nature Management. With expertise in
+              data analysis and sustainability consulting, he helps small and
               medium-sized businesses implement data-driven strategies to
               minimize environmental impact and optimize resource efficiency.
             </Text>

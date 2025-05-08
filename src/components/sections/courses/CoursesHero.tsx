@@ -103,7 +103,7 @@ export default function CoursesHero() {
         position="relative"
       >
         <Image
-          src="/training.jpg"
+          src="/training.png"
           alt="Training"
           fill={true}
           style={{

@@ -84,7 +84,8 @@ export default function Navbar({ setPageMode }: NavbarProps) {
           <Flex
             display={{ base: "none", md: "none", lg: "flex" }}
             alignItems="center"
-            gap="2rem"
+            gap="8rem"
+            // ml="-6rem"
           >
             <Box>
               <NavbarList

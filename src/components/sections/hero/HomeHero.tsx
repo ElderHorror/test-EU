@@ -1,5 +1,5 @@
 "use client";
-import { Box, Flex, Text, Image } from "@chakra-ui/react";
+import { Box, Flex, Text, Image, Link } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { SecondaryButton } from "@/components/common/buttons/Button";
@@ -76,9 +76,11 @@ export default function HomeHero() {
                   clipRule="evenodd"
                 />
               </svg>
-              <Text mx="0.25rem" fontWeight="500" fontSize="12px">
-                Grow Your Career, Stress-Free
-              </Text>
+              <Link href="/training">
+                <Text mx="0.25rem" fontWeight="500" fontSize="12px">
+                  Grow Your Career, Stress-Free
+                </Text>
+              </Link>
               <Box margin="auto 0.5rem">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -151,6 +153,8 @@ export default function HomeHero() {
           </Text>
 
           {/* CTA Button */}
+          <Link href="/loans">
+          
           <SecondaryButton
             boxShadow="0px 4px 4px #00000040"
             py="1.45rem"
@@ -160,6 +164,7 @@ export default function HomeHero() {
           >
             Learn More
           </SecondaryButton>
+          </Link>
 
           {/* Stats */}
           <Text color="#F69127" fontWeight="700" fontSize="42px">

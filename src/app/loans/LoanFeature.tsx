@@ -9,6 +9,7 @@ import {
   Image,
   Text,
   VStack,
+  Link,
 } from "@chakra-ui/react";
 
 interface LoanFeatureProps {
@@ -20,6 +21,7 @@ interface LoanFeatureProps {
   smallText?: boolean;
   buttonText?: string;
   useBulletPoints?: boolean;
+  showButton?: boolean;
 }
 
 export default function LoanFeature({
@@ -31,6 +33,7 @@ export default function LoanFeature({
   smallText = false,
   buttonText = "Apply Now",
   useBulletPoints = true,
+  showButton = true,
 }: LoanFeatureProps) {
   // Function to render text with proper formatting
   const renderDescription = (text: string) => {
@@ -187,6 +190,7 @@ export default function LoanFeature({
         >
           <Heading
             color="black"
+            fontFamily="ClashDisplay"
             fontSize={
               smallText
                 ? { base: "1.5rem", md: "1.75rem", lg: "2rem" }
@@ -200,6 +204,7 @@ export default function LoanFeature({
           </Heading>
 
           <Box
+            fontFamily="ClashDisplay"
             color="#2F3540"
             textAlign={{ base: "left", lg: "left" }}
             w="100%"
@@ -207,19 +212,27 @@ export default function LoanFeature({
             {renderDescription(description)}
           </Box>
 
-          <Button
-            bg="#0E5FDC"
-            color="white"
-            size="md"
-            _hover={{ bg: "#0B4DB0" }}
-            px="1.1rem"
-            py="1.5rem"
-            fontSize={smallText ? "1rem" : "1rem"}
-            mt="0.25rem"
-            alignSelf={{ base: "flex-start", lg: "flex-start" }}
-          >
-            {buttonText}
-          </Button>
+          {showButton && (
+            <Link
+              href={`mailto:contact@eustudyassist.com?subject=Consultation Service Inquiry for ${heading}`}
+              _hover={{ textDecoration: "none" }}
+              alignSelf={{ base: "flex-start", lg: "flex-start" }}
+            >
+              <Button
+                bg="#0E5FDC"
+                fontFamily="ClashDisplay"
+                color="white"
+                size="md"
+                _hover={{ bg: "#0B4DB0" }}
+                px="1.1rem"
+                py="1.5rem"
+                fontSize={smallText ? "1rem" : "1rem"}
+                mt="0.25rem"
+              >
+                {buttonText}
+              </Button>
+            </Link>
+          )}
         </VStack>
       </Flex>
     </Container>

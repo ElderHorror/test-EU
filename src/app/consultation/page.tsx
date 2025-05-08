@@ -33,6 +33,7 @@ const ConsultationPage = () => {
           >
             <Text
               color="white"
+              fontFamily="ClashDisplay"
               fontSize={{ lg: "50px", base: "32px", md: "48px" }}
               fontWeight={700}
               letterSpacing="-1px"
@@ -43,6 +44,7 @@ const ConsultationPage = () => {
             </Text>
             <Text
               color="#F69127"
+              fontFamily="ClashDisplay"
               fontSize={{ lg: "50px", base: "32px", md: "48px" }}
               fontWeight={700}
               letterSpacing="-1px"
@@ -53,6 +55,7 @@ const ConsultationPage = () => {
             </Text>
             <Text
               color="#E4E4E4"
+              fontFamily="ClashDisplay"
               lineHeight="1.5"
               fontSize={{ lg: "18px", base: "16px", md: "17px" }}
               maxW="600px"
@@ -134,6 +137,7 @@ const ConsultationPage = () => {
         <Container maxW="60rem">
           <Heading
             textAlign="center"
+            fontFamily="ClashDisplay"
             fontSize={{ base: "2rem", md: "2.5rem", lg: "3rem" }}
             fontWeight={600}
             color="#130F26"
@@ -161,7 +165,7 @@ const ConsultationPage = () => {
           description="Our consulting services provide cutting-edge expertise in environmental sustainability and agricultural management. From climate change modeling to forest inventory analysis and precision agriculture, we offer solutions grounded in science and technology. Our goal is to help organizations meet environmental challenges, improve land use efficiency, and promote sustainable development for a resilient future."
           imagePosition="right"
           useBulletPoints={false}
-          buttonText="Apply Now"
+          buttonText="Contact Us"
         />
 
         {/* Training & Workshops */}
@@ -170,7 +174,7 @@ const ConsultationPage = () => {
           heading="Training & Workshops"
           description="Empower your team with the latest technical skills through our hands-on training programs. We offer expert-led workshops in data visualization, machine learning, GIS, and other critical areas. Our courses are designed to upskill professionals, ensuring they stay ahead in a rapidly evolving digital landscape, with a focus on real-world applications and continuous learning."
           imagePosition="left"
-          buttonText="Apply Now"
+          buttonText="Contact Us"
           useBulletPoints={false}
         />
 
@@ -180,13 +184,13 @@ const ConsultationPage = () => {
           heading="Training & Workshops"
           description="We specialize in building modern, responsive websites and interactive dashboards tailored to research and academic needs. Whether you need a professional web presence or a data-driven dashboard for real-time insights, we design solutions that enhance accessibility, visualization, and user experience. Our services integrate the latest web technologies to ensure efficiency, security, and scalability."
           imagePosition="right"
-          buttonText="Apply Now"
+          buttonText="Contact Us"
           useBulletPoints={false}
         />
       </Box>
 
       {/* Why Choose EU StudyAssist Section */}
-      <Box py={{lg:"6rem", base:0}}>
+      <Box bg="#F4F4F4" py={{lg:"6rem", base:0}}>
         <LoanFeature
           imageSrc="/loan-features04.png"
           heading="Why Choose EU StudyAssist Consulting?"
@@ -204,11 +208,11 @@ Customized Solutions: We recognize that every client is unique, which is why we 
       </Box>
 
       {/* Call to Action Section */}
-      <Box bg="#F4F4F4" py="6rem" pb="6rem">
+      <Box py="6rem" pb="6rem">
         <Container maxW="60rem">
           <VStack spacing="2rem" align="center">
             <Text
-              fontSize={{ base: "1.125rem", md: "1.25rem" }}
+              fontSize={{ base: "1.125rem", md: "2rem" }}
               color="#2F3540"
               textAlign="center"
               lineHeight="1.6"

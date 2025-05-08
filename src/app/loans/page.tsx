@@ -8,6 +8,7 @@ import CallToAction from "./CallToAction";
 import AnimatedElement from "@/components/common/AnimatedElement";
 import StaggeredContainer from "@/components/common/StaggeredContainer";
 import PageTransition from "@/components/common/PageTransition";
+import Calculator from "@/components/sections/calculator/Calculator";
 
 export default function Loans() {
   return (
@@ -15,9 +16,14 @@ export default function Loans() {
       <PageTransition>
         {/* Main Content Section with Gradient Background */}
         <Box
-          bgGradient="linear(to-b, #0E5FDC 70%, white 30%)"
-          minH="100vh"
+          bgGradient={{
+            base: "linear(to-b, #0E5FDC 50%, white 50%)",
+            // md: "linear(to-b, #0E5FDC 40%, white 60%)",
+            lg: "linear(to-b, #0E5FDC 80%, white 20%)",
+          }}
+          minH={{ base: "120vh", md: "100vh" }}
           pt="6rem"
+          position="relative"
         >
           <Container maxW="90rem">
             {/* Hero Text Section */}
@@ -70,14 +76,20 @@ export default function Loans() {
             {/* Loan Calculator Container */}
             <AnimatedElement animation="slideUp" delay={0.4}>
               <Box
+                position="absolute"
+                left="50%"
+                top={{ base: "75%", md: "60%", lg: "100%" }}
+                transform="translate(-50%, -50%)"
                 bg="white"
                 borderRadius="lg"
-                boxShadow="0 4px 6px rgba(0, 0, 0, 0.1)"
-                p={8}
-                maxW="600px"
-                minH="500px"
+                boxShadow="0 8px 20px rgba(0, 0, 0, 0.15)"
+                p={{ base: 4, md: 8 }}
+                maxW={{ base: "90%", sm: "80%", md: "600px" }}
+                width={{ base: "90%", sm: "80%", md: "600px" }}
+                minH={{ base: "auto", md: "500px" }}
                 mx="auto"
                 border="1px solid #B6B6B6"
+                zIndex="1"
               >
                 <Heading
                   fontSize="1.5rem"
@@ -88,7 +100,13 @@ export default function Loans() {
                 >
                   Loan Calculator
                 </Heading>
-                {/* Loan Calculator component will be rendered here */}
+                <Calculator
+                  border="none"
+                  p="0"
+                  minH="unset"
+                  mt="0"
+                  boxShadow="none"
+                />
               </Box>
             </AnimatedElement>
           </Container>
@@ -96,7 +114,7 @@ export default function Loans() {
 
         {/* Section Heading */}
         <AnimatedElement animation="fadeIn" delay={0.2}>
-          <Box bg="white" mt="8rem">
+          <Box bg="white" mt={{ base: "2rem", md: "2rem", lg: "26rem" }}>
             <Container maxW="60rem">
               <Heading
                 textAlign="center"

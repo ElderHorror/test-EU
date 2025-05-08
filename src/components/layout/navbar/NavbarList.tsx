@@ -18,7 +18,7 @@ type NavbarListProps = {
  */
 export default function NavbarList(props: NavbarListProps) {
   return (
-    <Flex flexDir={"row"} justifyContent={"space-between"} gap="2.5rem">
+    <Flex flexDir={"row"} justifyContent={"space-between"} gap="3.5rem">
       {props.list.map((listLink) => {
         return (
           <Box
