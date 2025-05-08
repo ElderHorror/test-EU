@@ -31,7 +31,7 @@ export default function OnlineCoursesPage() {
       {/* Why Study Section */}
       <Box py="6rem" bg="white">
         <Container maxW="60rem">
-          <Box py={{ lg: "10rem", base: "0rem" }}>
+          <Box py={{ lg: "1rem", base: "0rem" }}>
             <LoanFeature
               imageSrc="/loan-features04.png"
               heading="Why Choose EU StudyAssist Loans?"
@@ -49,7 +49,7 @@ Competitive Interest Rates: Our loan options come with highly competitive rates,
       </Box>
 
       {/* Call to Action Section */}
-      <Box bg="#F4F4F4" py="6rem" pb="6rem">
+      <Box bg="#F4F4F4" py="4rem" pb="6rem">
         <Container maxW="60rem">
           <VStack spacing="2rem" align="center">
             <Text

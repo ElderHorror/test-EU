@@ -3,7 +3,7 @@ import { Box } from "@chakra-ui/react";
 import PageLayout from "@/components/layout/PageLayout";
 import CoursesHero from "@/components/sections/courses/CoursesHero";
 import CoursesSection from "@/components/sections/courses/CoursesSection";
-import Testimonials from "@/components/sections/testimonials/Testimonials";
+import { TestimonialCompact } from "./TestimonialCompact";
 import LoanFeature from "@/components/sections/loans/LoanFeature";
 
 /**
@@ -32,7 +32,7 @@ Competitive Interest Rates: Our loan options come with highly competitive rates,
       </Box>
 
       {/* Testimonials Section */}
-      <Testimonials />
+      <TestimonialCompact />
     </PageLayout>
   );
 }

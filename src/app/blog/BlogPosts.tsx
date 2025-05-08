@@ -17,7 +17,7 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import { ChevronRightIcon, ChevronLeftIcon } from "@chakra-ui/icons";
-import LoanFeature from "../loans/LoanFeature";
+import LoanFeature from "@/components/sections/loans/LoanFeature";
 
 // Blog post data
 const blogData = [
@@ -209,7 +209,7 @@ export default function BlogPosts() {
 
   return (
     <Box py={{ base: 10, md: 16 }} bg="white">
-      <Container maxW="container.xl">
+      <Container maxW="100%" px="0">
         {/* Section Heading */}
         <Heading
           as="h2"
@@ -532,7 +532,7 @@ export default function BlogPosts() {
         {/* Why Study Section */}
         <Box py="6rem" bg="white">
           <Container maxW="60rem">
-            <Box py={{ lg: "10rem", base: "0rem" }}>
+            <Box pt={{lg:"8rem"}} pb={{lg:"2rem"}} py={{ base: "0rem" }}>
               <LoanFeature
                 imageSrc="/loan-features04.png"
                 heading="Why Choose EU StudyAssist Loans?"
@@ -544,6 +544,7 @@ Competitive Interest Rates: Our loan options come with highly competitive rates,
                 imagePosition="left"
                 tallImage={true}
                 smallText={true}
+                showButton={false}
               />
             </Box>
           </Container>

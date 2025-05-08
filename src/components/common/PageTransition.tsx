@@ -13,7 +13,7 @@ interface PageTransitionProps {
 
 /**
  * Page transition component for smooth transitions between pages
- * 
+ *
  * @param children - Page content
  * @param duration - Animation duration in seconds
  */

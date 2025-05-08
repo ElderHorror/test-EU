@@ -32,22 +32,25 @@ export default function Footer() {
                   Address:
                 </Text>
                 <Text fontSize="sm">
-                  Level 1, 12 Sample St, Sydney NSW 2000
+                  Olof Palmes Alle 31B, 3.1, 820, Aarhus N (Denmark)
                 </Text>
 
                 <Text fontWeight="bold" fontSize="sm" mt={2}>
                   Contact:
                 </Text>
-                <Text fontSize="sm">1800 123 4567</Text>
-                <Text fontSize="sm">info@eustudy.com</Text>
+                <Text fontSize="sm">+4591619583, +2348149211558</Text>
+                <Text fontSize="sm">contact@eustudyassist.com</Text>
               </VStack>
 
               {/* Social Media Icons */}
               <HStack spacing={4} mt={2}>
-                <Link href="https://facebook.com" isExternal>
+                <Link href="https://www.facebook.com/eustudyassist" isExternal>
                   <Image src="/FB.svg" alt="Facebook" w="24px" h="24px" />
                 </Link>
-                <Link href="https://instagram.com" isExternal>
+                <Link
+                  href="https://www.instagram.com/eu.studyassist/"
+                  isExternal
+                >
                   <Image
                     src="/Instagram.svg"
                     alt="Instagram"
@@ -55,13 +58,16 @@ export default function Footer() {
                     h="24px"
                   />
                 </Link>
-                <Link href="https://twitter.com" isExternal>
-                  <Image src="/Twitter.svg" alt="Twitter" w="24px" h="24px" />
+                <Link href="https://www.threads.com/@eu.studyassist" isExternal>
+                  <Image src="/Threads.svg" alt="Twitter" w="24px" h="24px" />
                 </Link>
-                <Link href="https://linkedin.com" isExternal>
+                <Link
+                  href="https://www.linkedin.com/company/eu-studyassist/"
+                  isExternal
+                >
                   <Image src="/Linkedin.svg" alt="LinkedIn" w="24px" h="24px" />
                 </Link>
-                <Link href="https://youtube.com" isExternal>
+                <Link href="https://www.youtube.com/@eustudyassist" isExternal>
                   <Image src="/YouTube.svg" alt="YouTube" w="24px" h="24px" />
                 </Link>
               </HStack>
@@ -89,7 +95,7 @@ export default function Footer() {
                   Careers
                 </Link>
                 <Link
-                  href="/#"
+                  href="mailto:contact@eustudyassist.com"
                   fontSize="sm"
                   _hover={{ textDecoration: "underline" }}
                 >
@@ -102,13 +108,7 @@ export default function Footer() {
                 >
                   Blog
                 </Link>
-                <Link
-                  href="/#"
-                  fontSize="sm"
-                  _hover={{ textDecoration: "underline" }}
-                >
-                  Customer Care
-                </Link>
+
                 <Link
                   href="/#"
                   fontSize="sm"
@@ -124,7 +124,7 @@ export default function Footer() {
                   Loan Plans
                 </Text>
                 <Link
-                  href="/overview"
+                  href="/loans"
                   fontSize="sm"
                   _hover={{ textDecoration: "underline" }}
                 >
@@ -136,13 +136,6 @@ export default function Footer() {
                   _hover={{ textDecoration: "underline" }}
                 >
                   Terms
-                </Link>
-                <Link
-                  href="/faq"
-                  fontSize="sm"
-                  _hover={{ textDecoration: "underline" }}
-                >
-                  FAQ
                 </Link>
               </VStack>
             </Flex>
@@ -173,13 +166,7 @@ export default function Footer() {
               >
                 Terms of Service
               </Link>
-              <Link
-                href="/cookie-policy"
-                fontSize="sm"
-                _hover={{ textDecoration: "underline" }}
-              >
-                Cookies Settings
-              </Link>
+            
             </HStack>
           </Flex>
         </Container>
@@ -252,7 +239,7 @@ export default function Footer() {
                 Careers
               </Link>
               <Link
-                href="/#"
+                href="mailto:contact@eustudyassist.com"
                 fontSize="sm"
                 _hover={{ textDecoration: "underline" }}
               >
@@ -265,13 +252,7 @@ export default function Footer() {
               >
                 Blog
               </Link>
-              <Link
-                href="/#"
-                fontSize="sm"
-                _hover={{ textDecoration: "underline" }}
-              >
-                Customer Care
-              </Link>
+
               <Link
                 href="/#"
                 fontSize="sm"
@@ -285,14 +266,11 @@ export default function Footer() {
               <Text fontWeight="bold" fontSize="md">
                 Loan Plans
               </Text>
-              <Link href="/overview" fontSize="sm">
+              <Link href="/loans" fontSize="sm">
                 Overview
               </Link>
               <Link href="/terms" fontSize="sm">
                 Terms
-              </Link>
-              <Link href="/faq" fontSize="sm">
-                FAQ
               </Link>
             </VStack>
           </Grid>
@@ -307,9 +285,7 @@ export default function Footer() {
             <Link href="/terms-of-service" fontSize="sm">
               Terms of Service
             </Link>
-            <Link href="/cookie-policy" fontSize="sm">
-              Cookies Settings
-            </Link>
+            
           </HStack>
 
           {/* Copyright */}

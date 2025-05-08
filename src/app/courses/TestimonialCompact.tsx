@@ -32,7 +32,7 @@ const TestimonialCard = ({ quote, name, image }: TestimonialCardProps) => {
         p="1.25rem"
         zIndex={1}
       >
-        <Text fontSize="16px" fontWeight="500" mb="1rem">
+        <Text fontSize="1.1rem" fontWeight="500" mb="1rem">
           {quote}
         </Text>
         <Flex alignItems="center">
@@ -101,6 +101,7 @@ export const TestimonialCompact = () => {
     <Box py="1rem" bg="#F4F4F4" pt="5rem" pb="5rem">
       <Box>
         <Text
+          fontFamily="ClashDisplay"
           color="black"
           fontWeight={600}
           fontSize={{ lg: "2.5rem", base: "32px" }}
@@ -122,16 +123,16 @@ export const TestimonialCompact = () => {
           us. Some of them are shown below.
         </Text>
       </Box>
-      <Container maxW="860px" px={{ base: "1rem", md: "2rem" }}>
+      <Container maxW="900px" px={{ base: "1rem", md: "2rem" }}>
         <Flex
           flexWrap="wrap"
           justifyContent="space-between"
-          gap={{ base: "1.5rem", md: "1.5rem" }}
+          gap={{ base: "1.5rem", md: "3rem" }}
         >
           {/* Left Column */}
           <Flex
             direction="column"
-            gap="1.5rem"
+            gap="2rem"
             maxW={{ base: "100%", md: "45%" }}
           >
             {testimonials.slice(0, 4).map((testimonial, index) => (

@@ -1,7 +1,7 @@
 "use client";
 import { Box, Flex, Text, Link as ChakraLink } from "@chakra-ui/react";
 import Link from "next/link";
-import Calculator from "../../../../Components/calculator/calculator";
+import NewCalculator from "../calculator/NewCalculator";
 
 /**
  * Loan service data
@@ -79,7 +79,7 @@ export default function LoansSection() {
               future. You can use our loan service to meet various educational
               needs so you can focus on studying happily.
             </Text>
-            <Calculator
+            <NewCalculator
               minH="unset"
               mt="2rem"
               pr={{ base: "0rem", md: "2rem" }}
@@ -166,7 +166,7 @@ export default function LoansSection() {
                     fontSize={{ base: "0.9rem", md: "1rem" }}
                     whiteSpace="nowrap"
                   >
-                    Learn More
+                    Apply now
                   </Text>
                   <Box
                     as="span"

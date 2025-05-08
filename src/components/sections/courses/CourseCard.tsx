@@ -111,7 +111,7 @@ export default function CourseCard({
             {/* Using CSS background image for better mobile compatibility */}
             <Box
               width="100%"
-              height={{ base: "250px", md: "300px" }}
+              height={{ base: "250px", md: "350px" }}
               borderRadius="8px"
               overflow="hidden"
               backgroundImage={`url(${imageSrc})`}

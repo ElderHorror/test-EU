@@ -80,7 +80,7 @@ const courses = [
 
 export default function CoursesGrid() {
   return (
-    <Box bg="white" py={{ base: "3rem", md: "5rem" }}>
+    <Box bg="white" py={{ base: "3rem", md: "2rem" }}>
       <Container maxW="70rem">
         <VStack mb="3rem">
           <Heading
@@ -102,21 +102,28 @@ export default function CoursesGrid() {
           </Text>
         </VStack>
 
-        <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} spacing="2rem">
+        <SimpleGrid
+          columns={{ base: 1, md: 2, lg: 3 }}
+          spacing="2rem"
+          spacingY="3rem"
+        >
           {courses.map((course) => (
             <Box
               key={course.id}
               borderRadius="lg"
-              overflow="hidden"
+              overflow="visible"
               boxShadow="md"
-              
+              p="1rem"
+              pb="0"
               borderColor="gray.200"
+              borderWidth="1px"
               bg="white"
               transition="transform 0.3s, box-shadow 0.3s"
               _hover={{
                 transform: "translateY(-5px)",
                 boxShadow: "lg",
               }}
+              position="relative"
             >
               {/* Image */}
               <Image
@@ -154,7 +161,7 @@ export default function CoursesGrid() {
                 <Box h="1px" bg="gray.400" w="100%" my="0.5rem" />
 
                 {/* Duration and Level */}
-                <Box >
+                <Box>
                   <Flex justify="space-between" mb="0.75rem">
                     <Text fontSize="xs" fontWeight={600} color="gray.500">
                       {course.duration}
@@ -175,13 +182,19 @@ export default function CoursesGrid() {
 
                 {/* Description */}
                 <Box pr="1.5rem">
-                  <Text fontSize="sm" color="gray.600" mb="1.5rem" minH="60px">
+                  <Text
+                    fontSize="sm"
+                    color="gray.600"
+                    mb="1.5rem"
+                    h="6rem"
+                    maxH="8rem"
+                  >
                     {course.description}
                   </Text>
                 </Box>
 
                 {/* Button */}
-                <Box pr="1.5rem" pb="1.5rem">
+                <Box position="relative" zIndex="2" mt="3rem" mb="1.5rem">
                   <Button
                     w="50%"
                     bg="#0E5FDC"
@@ -190,6 +203,11 @@ export default function CoursesGrid() {
                     fontWeight={600}
                     borderRadius="md"
                     py="1.5rem"
+                    position="absolute"
+                    bottom="0rem"
+                    // left="1rem"
+                    transform="translateY(50%)"
+                    boxShadow="0 4px 8px rgba(0,0,0,0.1)"
                   >
                     Access Course
                   </Button>

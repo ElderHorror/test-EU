@@ -7,6 +7,7 @@ import {
   Heading,
   Text,
   VStack,
+  Link,
 } from "@chakra-ui/react";
 import Image from "next/image";
 
@@ -22,6 +23,7 @@ interface LoanFeatureProps {
   smallText?: boolean;
   buttonText?: string;
   useBulletPoints?: boolean;
+  showButton?: boolean;
 }
 
 /**
@@ -35,6 +37,7 @@ interface LoanFeatureProps {
  * @param smallText - Whether to use smaller text
  * @param buttonText - Text for the CTA button
  * @param useBulletPoints - Whether to display the description with bullet points (default: true)
+ * @param showButton - Whether to display the button (default: true)
  */
 export default function LoanFeature({
   imageSrc,
@@ -45,6 +48,7 @@ export default function LoanFeature({
   smallText = false,
   buttonText = "Apply Now",
   useBulletPoints = true,
+  showButton = true,
 }: LoanFeatureProps) {
   // Function to render text with proper formatting
   const renderDescription = (text: string) => {
@@ -195,6 +199,7 @@ export default function LoanFeature({
 
         {/* Text Content Section */}
         <VStack
+          fontFamily="ClashDisplay"
           align={{ base: "flex-start", lg: "flex-start" }}
           spacing="0.5rem"
           w={{ base: "100%", lg: "80%" }}
@@ -219,23 +224,32 @@ export default function LoanFeature({
             color="#2F3540"
             textAlign={{ base: "left", lg: "left" }}
             w="100%"
+            fontFamily="ClashDisplay"
           >
             {renderDescription(description)}
           </Box>
 
-          <Button
-            bg="#0E5FDC"
-            color="white"
-            size="md"
-            _hover={{ bg: "#0B4DB0" }}
-            px="1.1rem"
-            py="1.5rem"
-            fontSize={smallText ? "1rem" : "1rem"}
-            mt="0.25rem"
-            alignSelf={{ base: "flex-start", lg: "flex-start" }}
-          >
-            {buttonText}
-          </Button>
+          {showButton && (
+            <Link
+              href={`mailto:contact@eustudyassist.com?subject=Consultation Service Inquiry for ${heading}`}
+              _hover={{ textDecoration: "none" }}
+              alignSelf={{ base: "flex-start", lg: "flex-start" }}
+            >
+              <Button
+                bg="#0E5FDC"
+                color="white"
+                size="md"
+                _hover={{ bg: "#0B4DB0" }}
+                px="1.1rem"
+                py="1.5rem"
+                fontSize={smallText ? "1rem" : "1rem"}
+                mt="0.25rem"
+                fontFamily="ClashDisplay"
+              >
+                {buttonText}
+              </Button>
+            </Link>
+          )}
         </VStack>
       </Flex>
     </Container>

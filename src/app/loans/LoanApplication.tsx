@@ -15,7 +15,7 @@ import {
 
 export default function LoanApplication() {
   return (
-    <Box bg="white" py="6rem">
+    <Box bg="#F4F4F4" py="6rem">
       <Container maxW="40rem">
         {/* Main Content Container */}
         <VStack spacing="3rem" align="stretch">
