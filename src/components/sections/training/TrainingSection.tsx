@@ -49,8 +49,9 @@ export default function TrainingSection() {
       <Box>
         <Text
           color="black"
+          fontFamily="ClashDisplay"
           fontWeight={{ lg: 600, base: 700 }}
-          fontSize={{ lg: "2.5rem", base: "32px" }}
+          fontSize={{ lg: "2.5rem", base: "1.8rem" }}
           textAlign="center"
           marginY="0.5rem"
           whiteSpace="nowrap"
@@ -59,6 +60,7 @@ export default function TrainingSection() {
         </Text>
         <Text
           color="#2F3540"
+          fontFamily="Inter"
           textAlign={{ base: "justify", md: "center" }}
           fontSize={{ lg: "18px", base: "14.8px" }}
           lineHeight={{ lg: 1.75, base: 1.3 }}

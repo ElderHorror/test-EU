@@ -42,7 +42,7 @@ export default function Navbar({ setPageMode }: NavbarProps) {
     {
       id: "3",
       navLink: "Training",
-      href: "/online-courses",
+      href: "/training",
     },
     {
       id: "4",
@@ -66,10 +66,10 @@ export default function Navbar({ setPageMode }: NavbarProps) {
       bgColor={"#0E5FDC"}
       color={"white"}
       zIndex={999}
-      w={"100vw"}
+      w="100vw"
       position={"fixed"}
     >
-      <Container maxW={"90rem"}>
+      <Container maxW={"90rem"} px={0}>
         <Flex
           justifyContent={"space-between"}
           alignItems={"center"}
@@ -147,15 +147,22 @@ export default function Navbar({ setPageMode }: NavbarProps) {
           />
         </Flex>
       </Container>
-      {isOpen ? (
-        <Box pb={4} display={{ lg: "none" }}>
-          <VStack>
+      {isOpen && (
+        <Box
+          pb={4}
+          display={{ lg: "none" }}
+          w="100%"
+          maxW="100vw"
+          px={0}
+          mx={0}
+          bgColor={"#0E5FDC"}
+        >
+          <VStack w="100%" spacing={4} align="stretch" px={4}>
             {navLinks.map((link) => (
               <Text
                 as="a"
-                px={2}
                 key={link.id}
-                py={1}
+                py={2}
                 onClick={() => {
                   if (
                     link.navLink.startsWith("/#") ||
@@ -176,16 +183,21 @@ export default function Navbar({ setPageMode }: NavbarProps) {
                   textDecoration: "none",
                 }}
                 href={link.href}
+                w="100%"
+                textAlign="center"
+                fontSize="1rem"
               >
                 {link.navLink}
               </Text>
             ))}
-            <Link href={"/courses"}>
-              <SecondaryButton>Join BootCamp</SecondaryButton>
-            </Link>
+            <Box textAlign="center" py={2}>
+              <Link href={"/courses"}>
+                <SecondaryButton>Join BootCamp</SecondaryButton>
+              </Link>
+            </Box>
           </VStack>
         </Box>
-      ) : null}
+      )}
     </Box>
   );
 }

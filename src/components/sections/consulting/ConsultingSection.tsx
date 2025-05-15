@@ -49,6 +49,7 @@ export default function ConsultingSection() {
       <Box>
         <Text
           color="black"
+          fontFamily="ClashDisplay"
           fontWeight={700}
           fontSize={{ lg: "2.5rem", base: "28px" }}
           textAlign="center"

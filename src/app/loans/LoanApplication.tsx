@@ -24,6 +24,7 @@ export default function LoanApplication() {
             fontSize={{ base: "2rem", md: "2.5rem", lg: "3rem" }}
             fontWeight={600}
             color="black"
+            fontFamily="ClashDisplay"
             textAlign="center"
           >
             Loan Application

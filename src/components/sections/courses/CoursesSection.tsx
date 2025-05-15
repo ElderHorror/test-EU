@@ -146,13 +146,13 @@ export default function CoursesSection() {
       titleFontSize={{ base: "4xl", md: "4xl", lg: "5xl" }}
     >
       {/* Location-based pricing notice */}
-      {isClient && !isLoading && countryCode !== "US" && (
+      {/* {isClient && !isLoading && countryCode !== "US" && (
         <Box textAlign="center" mb="1rem">
           <Text color="#0E5FDC" fontSize="14px" fontStyle="italic">
             Prices shown in {currency} ({currencySymbol}) based on your location
           </Text>
         </Box>
-      )}
+      )} */}
 
       {/* Course Listings */}
       <Box maxW="72rem" margin="auto" px={{ base: "0.5rem", md: "1.5rem" }}>

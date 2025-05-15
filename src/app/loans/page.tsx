@@ -134,6 +134,7 @@ export default function Loans() {
             <Container maxW="60rem">
               <Heading
                 textAlign="center"
+                fontFamily="ClashDisplay"
                 fontSize={{ base: "2rem", md: "2.5rem", lg: "3rem" }}
                 fontWeight={600}
                 color="#130F26"

@@ -204,7 +204,7 @@ export default function LoanFeature({
           </Heading>
 
           <Box
-            fontFamily="ClashDisplay"
+            fontFamily="Inter"
             color="#2F3540"
             textAlign={{ base: "left", lg: "left" }}
             w="100%"
