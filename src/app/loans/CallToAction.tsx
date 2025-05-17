@@ -35,10 +35,12 @@ export default function CallToAction() {
             color="white"
             size="md"
             _hover={{ bg: "#0B4DB0" }}
-            px="1.5rem"
-            py="1.5rem"
+            px="1.1rem"
+            py="1.8rem"
             fontSize="1rem"
-            mt={{lg: "1rem", base:"0"}}
+            
+            mt="0.35rem"
+            fontFamily="ClashDisplay"
           >
             Apply Now
           </Button>

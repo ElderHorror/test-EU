@@ -46,6 +46,7 @@ export default function CoursesContent() {
           <Box w="100%" textAlign="center">
             <Heading
               as="h2"
+              fontFamily="ClashDisplay"
               fontSize={{ base: "1.75rem", md: "3rem" }}
               fontWeight={700}
               pb="1rem"

@@ -154,13 +154,12 @@ export default function HomeHero() {
 
           {/* CTA Button */}
           <Link href="/loans">
-          
           <SecondaryButton
             boxShadow="0px 4px 4px #00000040"
             py="1.45rem"
             px="2rem"
             my="1.5rem"
-            href="#contact_us"
+            href="/loans"
           >
             Learn More
           </SecondaryButton>

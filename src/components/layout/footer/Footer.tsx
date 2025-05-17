@@ -190,30 +190,30 @@ export default function Footer() {
             <Text fontWeight="bold" fontSize="sm">
               Address:
             </Text>
-            <Text fontSize="sm">Level 1, 12 Sample St, Sydney NSW 2000</Text>
+            <Text fontSize="sm">Olof Palmes Alle 31B, 3.1, 820, Aarhus N (Denmark)</Text>
 
             <Text fontWeight="bold" fontSize="sm" mt={2}>
               Contact:
             </Text>
-            <Text fontSize="sm">1800 123 4567</Text>
-            <Text fontSize="sm">info@eustudy.com</Text>
+            <Text fontSize="sm">+4591619583, +2348149211558</Text>
+            <Text fontSize="sm">contact@eustudyassist.com</Text>
           </VStack>
 
           {/* Social Media Icons */}
           <HStack spacing={4} justify="center" mt={2}>
-            <Link href="https://facebook.com" isExternal>
+            <Link href="https://www.facebook.com/eustudyassist" isExternal>
               <Image src="/FB.svg" alt="Facebook" w="24px" h="24px" />
             </Link>
-            <Link href="https://instagram.com" isExternal>
+            <Link href="https://www.instagram.com/eu.studyassist/" isExternal>
               <Image src="/Instagram.svg" alt="Instagram" w="24px" h="24px" />
             </Link>
-            <Link href="https://twitter.com" isExternal>
-              <Image src="/Twitter.svg" alt="Twitter" w="24px" h="24px" />
+            <Link href="https://www.threads.com/@eu.studyassist" isExternal>
+              <Image src="/Threads.svg" alt="Twitter" w="24px" h="24px" />
             </Link>
-            <Link href="https://linkedin.com" isExternal>
+            <Link href="https://www.linkedin.com/company/eu-studyassist/" isExternal>
               <Image src="/Linkedin.svg" alt="LinkedIn" w="24px" h="24px" />
             </Link>
-            <Link href="https://youtube.com" isExternal>
+            <Link href="https://www.youtube.com/@eustudyassist" isExternal>
               <Image src="/YouTube.svg" alt="YouTube" w="24px" h="24px" />
             </Link>
           </HStack>

@@ -66,6 +66,8 @@ export default function TrainingCard({
       maxW={{ base: "100%", sm: "90%", md: "80%", lg: "30rem" }}
       width={{ base: "100%", md: "auto" }}
       cursor={data.isDisabled ? "not-allowed" : "pointer"}
+      height={{ base: "auto", md: "32rem" }} /* Fixed height for all cards */
+      display="flex" /* Use flex to help with internal layout */
       _hover={{
         background: data.isDisabled ? "#FeFeFe" : "white",
         boxShadow: data.isDisabled ? "none" : "lg",
@@ -73,13 +75,22 @@ export default function TrainingCard({
         transition: "all 0.3s ease",
       }}
     >
-      <Link href={data.link}>
+      <Link
+        href={data.link}
+        style={{
+          display: "flex",
+          flexDirection: "column",
+          height: "100%",
+          width: "100%",
+        }}
+      >
         <AspectRatio
           ratio={{ base: 1.1, sm: 1.2, md: 1.6296 }}
           maxW={{ base: "100%", md: "35rem" }}
           width="100%"
           height={{ base: "280px", sm: "300px", md: "200px" }}
           marginBottom={{ base: "0.5rem", md: "0" }}
+          flexShrink={0} /* Prevent image from shrinking */
         >
           <Image
             borderRadius="8px"
@@ -91,9 +102,10 @@ export default function TrainingCard({
             height="100%"
           />
         </AspectRatio>
-        <Flex width="100%" justifyContent="center">
+        <Flex width="100%" justifyContent="center" flexShrink={0}>
           <Text
             ref={titleRef}
+            fontFamily="ClashDisplay"
             fontWeight={700}
             mt="1rem"
             mb="0.5rem"
@@ -101,36 +113,43 @@ export default function TrainingCard({
             letterSpacing="-0.5px"
             lineHeight="1.2"
             minH={isTraining ? "unset" : "2rem"}
-            textAlign={{ base: "left", md: "center", lg:"left" }}
+            textAlign={{ base: "left", md: "center", lg: "left" }}
             width="100%"
             id={`title-${uniqueId}`}
           >
             {data.title}
           </Text>
         </Flex>
-        <Text
-          color="#2F3540"
-          fontSize={{ base: "1.05rem", md: "1.05rem" }}
-          lineHeight="1.6rem"
-          minH={{ base: "auto", md: "8rem" }}
-          textAlign={{ base: "justify", md: "left" }}
-          mb={{ base: "1rem", md: "0" }}
-          mt={spacing}
-        >
-          {data.subTitle}
-        </Text>
+        <Box flex="1" position="relative" overflow="hidden">
+          <Text
+            color="#2F3540"
+            fontSize={{ base: "1.05rem", md: "1.05rem" }}
+            lineHeight="1.6rem"
+            textAlign={{ base: "justify", md: "left" }}
+            mt={spacing}
+            maxH={{
+              base: "auto",
+              md: "180px",
+            }} /* Control max height of description */
+            overflow="hidden"
+          >
+            {data.subTitle}
+          </Text>
+        </Box>
         <Flex
           cursor={data.isDisabled ? "not-allowed" : "pointer"}
           alignItems="center"
           width={{ base: "100%", md: "15rem" }}
           alignSelf={{ base: "left", md: "flex-start" }}
           justifyContent={{ base: "left", md: "flex-start" }}
+          mt="auto" /* Push to bottom of container */
+          pt="1rem" /* Add some padding at the top */
+          flexShrink={0} /* Prevent button from shrinking */
         >
           <Text
             color="#0E5FDC"
             marginRight={{ base: "0.3rem", md: "0.75rem" }}
             fontWeight={600}
-            my={{ base: "0.5rem", md: "0.75rem" }}
             fontSize={{ base: "0.9rem", md: "1rem" }}
           >
             Learn More

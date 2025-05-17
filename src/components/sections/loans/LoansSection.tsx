@@ -8,11 +8,6 @@ import NewCalculator from "../calculator/NewCalculator";
  */
 const loanServices = [
   {
-    title: "Visa Processing Fee Loan",
-    subtitle:
-      "This product is designed to help students cover the expenses related to visa processing, making it hassle-free and worry-free.",
-  },
-  {
     title: "Accomodation Payment Loan",
     subtitle:
       "This loan is dedicated to assisting students in securing comfortable living arrangements",
@@ -56,6 +51,7 @@ export default function LoansSection() {
           width="100%"
         >
           <Text
+            fontFamily="ClashDisplay"
             fontSize={{ lg: "2rem", base: "30px" }}
             fontWeight={700}
             textAlign={{ base: "center", lg: "left" }}
@@ -120,6 +116,7 @@ export default function LoansSection() {
                     color="white"
                     ml="1.5rem"
                     mb="0.75rem"
+                    fontFamily="ClashDisplay"
                     fontWeight={600}
                     fontSize={{ base: "20px", lg: "1.5rem" }}
                     textShadow="0px 4px 4px #00000040"

@@ -208,6 +208,7 @@ export default function LoanFeature({
         >
           <Heading
             color="black"
+            fontFamily="ClashDisplay"
             fontSize={
               smallText
                 ? { base: "1.5rem", md: "1.75rem", lg: "2rem" }
@@ -224,7 +225,7 @@ export default function LoanFeature({
             color="#2F3540"
             textAlign={{ base: "left", lg: "left" }}
             w="100%"
-            fontFamily="ClashDisplay"
+            fontFamily="Inter"
           >
             {renderDescription(description)}
           </Box>
@@ -241,9 +242,10 @@ export default function LoanFeature({
                 size="md"
                 _hover={{ bg: "#0B4DB0" }}
                 px="1.1rem"
-                py="1.5rem"
-                fontSize={smallText ? "1rem" : "1rem"}
-                mt="0.25rem"
+                py="1.8rem"
+                fontSize="1rem"
+                w={{ lg: "100%", base: "100%" }}
+                mt="0.35rem"
                 fontFamily="ClashDisplay"
               >
                 {buttonText}

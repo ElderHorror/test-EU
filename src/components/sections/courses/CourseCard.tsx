@@ -70,7 +70,7 @@ export default function CourseCard({
       <Box
         bg="white"
         borderRadius="8px"
-        p={{ base: "0rem", md: "2rem" }}
+        p={{ base: "1rem", md: "2rem" }}
         mb="2rem"
         // boxShadow="0px 4px 12px rgba(0, 0, 0, 0.1)"
         transition="all 0.3s ease"
@@ -85,10 +85,10 @@ export default function CourseCard({
         >
           {/* Left Column - Course Info */}
           <Box flex="1" width="100%">
-            <Text fontSize="24px" fontWeight={500} color="black" mb="1rem">
+            <Text fontFamily="ClashDisplay" fontSize="24px" fontWeight={600} color="black" mb="1rem">
               {title}
             </Text>
-            <Text color="#2F3540" fontSize="15px" lineHeight="1.6" mb="1.5rem">
+            <Text fontFamily="Inter" color="#2F3540" fontSize="15px" lineHeight="1.6" mb="1.5rem">
               {description}
             </Text>
             <PrimaryButton
@@ -151,7 +151,7 @@ export default function CourseCard({
           >
             {/* What You Will Learn */}
             <Box flex="1" width="100%">
-              <Text fontSize="18px" fontWeight={500} color="black" mb="1rem">
+              <Text fontFamily="ClashDisplay" fontSize="18px" fontWeight={500} color="black" mb="1rem">
                 What You Will Learn
               </Text>
               <Box
@@ -187,34 +187,34 @@ export default function CourseCard({
               width="100%"
             >
               <Box>
-                <Text color="#2F3540" fontSize="15px" mb="0.5rem">
+                <Text fontFamily="ClashDisplay" color="#2F3540" fontSize="15px" mb="0.5rem">
                   Duration:
                 </Text>
-                <Text color="black" fontSize="18px" fontWeight={600}>
+                <Text fontFamily="Inter" color="black" fontSize="18px" fontWeight={600}>
                   {duration}
                 </Text>
               </Box>
 
               <Box>
-                <Text color="#2F3540" fontSize="15px" mb="0.5rem">
+                <Text fontFamily="ClashDisplay" color="#2F3540" fontSize="15px" mb="0.5rem">
                   Class Type:
                 </Text>
-                <Text color="black" fontSize="18px" fontWeight={600}>
+                <Text fontFamily="Inter" color="black" fontSize="18px" fontWeight={600}>
                   {classType}
                 </Text>
               </Box>
 
               <Box>
-                <Text color="#2F3540" fontSize="15px" mb="0.5rem">
+                <Text fontFamily="ClashDisplay" color="#2F3540" fontSize="15px" mb="0.5rem">
                   Next Cohort:
                 </Text>
-                <Text color="black" fontSize="18px" fontWeight={600}>
+                <Text fontFamily="Inter" color="black" fontSize="18px" fontWeight={600}>
                   {nextCohort}
                 </Text>
               </Box>
 
               <Box mt="auto">
-                <Text color="#2F3540" fontSize="15px" mb="0.5rem">
+                <Text fontFamily="ClashDisplay" color="#2F3540" fontSize="15px" mb="0.5rem">
                   Cost:
                 </Text>
                 <Text

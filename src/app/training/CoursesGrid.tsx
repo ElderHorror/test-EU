@@ -196,7 +196,7 @@ export default function CoursesGrid() {
                 {/* Button */}
                 <Box position="relative" zIndex="2" mt="3rem" mb="1.5rem">
                   <Button
-                    w="50%"
+                    w="45%"
                     bg="#0E5FDC"
                     color="white"
                     _hover={{ bg: "#0B4DB0" }}

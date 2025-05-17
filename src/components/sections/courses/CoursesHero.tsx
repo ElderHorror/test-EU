@@ -64,6 +64,7 @@ export default function CoursesHero() {
               fontSize={{ lg: "20px", base: "16px", md: "18px" }}
               textShadow="0px 4px 4px #00000040"
               textAlign="justify"
+              mt={{base: "1rem"}}
             >
               Our training and bootcamp programs are designed to equip students,
               researchers, and professionals with critical technical skills to
@@ -86,7 +87,7 @@ export default function CoursesHero() {
         position="relative"
       >
         <Image
-          src="/training-mobile.png"
+          src="/training.jpg"
           alt="Training"
           fill={true}
           style={{
