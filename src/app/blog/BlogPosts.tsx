@@ -17,7 +17,7 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import { ChevronRightIcon, ChevronLeftIcon } from "@chakra-ui/icons";
-import LoanFeature from "@/components/sections/loans/LoanFeature";
+import LoanFeature from "@/components/common/sections/loans/LoanFeature";
 import AnimatedElement from "@/components/common/AnimatedElement";
 
 // Blog post data
@@ -227,7 +227,7 @@ export default function BlogPosts() {
         <Box
           position="relative"
           mb={{ base: 10, md: 14 }}
-          maxW={{base:"80%", md: "90%" }}
+          maxW={{ base: "80%", md: "90%" }}
           mx="auto"
           // ml={{base: "1rem"}}
         >

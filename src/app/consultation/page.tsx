@@ -12,7 +12,7 @@ import {
 } from "@chakra-ui/react";
 import PageLayout from "@/components/layout/PageLayout";
 
-import LoanFeature from "@/components/sections/loans/LoanFeature";
+import LoanFeature from "@/components/common/sections/loans/LoanFeature";
 
 const ConsultationPage = () => {
   return (
@@ -190,7 +190,7 @@ const ConsultationPage = () => {
       </Box>
 
       {/* Why Choose EU StudyAssist Section */}
-      <Box bg="#F4F4F4" py={{lg:"6rem", base:0}}>
+      <Box bg="#F4F4F4" py={{ lg: "6rem", base: 0 }}>
         <LoanFeature
           imageSrc="/loan-features04.png"
           heading="Why Choose EU StudyAssist Consulting?"
@@ -203,7 +203,6 @@ Customized Solutions: We recognize that every client is unique, which is why we 
           tallImage={true}
           smallText={true}
           useBulletPoints={true}
-          
         />
       </Box>
 
