@@ -2,13 +2,13 @@
 
 import { Box, Container, Flex, Heading, Text, VStack } from "@chakra-ui/react";
 import PageLayout from "@/components/layout/PageLayout";
-import LoanFeature from "@/components/common/sections/loans/LoanFeature";
+import LoanFeature from "@/components/sections/loans/LoanFeature";
 import LoanApplication from "./LoanApplication";
 import CallToAction from "./CallToAction";
 import AnimatedElement from "@/components/common/AnimatedElement";
 import StaggeredContainer from "@/components/common/StaggeredContainer";
 import PageTransition from "@/components/common/PageTransition";
-import NewCalculator from "@/components/common/sections/calculator/NewCalculator";
+import NewCalculator from "@/components/sections/calculator/NewCalculator";
 
 export default function Loans() {
   return (

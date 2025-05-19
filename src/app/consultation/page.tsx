@@ -12,7 +12,7 @@ import {
 } from "@chakra-ui/react";
 import PageLayout from "@/components/layout/PageLayout";
 
-import LoanFeature from "@/components/common/sections/loans/LoanFeature";
+import LoanFeature from "@/components/sections/loans/LoanFeature";
 
 const ConsultationPage = () => {
   return (

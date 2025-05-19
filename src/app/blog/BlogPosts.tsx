@@ -17,7 +17,7 @@ import {
   useBreakpointValue,
 } from "@chakra-ui/react";
 import { ChevronRightIcon, ChevronLeftIcon } from "@chakra-ui/icons";
-import LoanFeature from "@/components/common/sections/loans/LoanFeature";
+import LoanFeature from "@/components/sections/loans/LoanFeature";
 import AnimatedElement from "@/components/common/AnimatedElement";
 
 // Blog post data

@@ -5,13 +5,13 @@ import { useHashFragment } from "@/hooks";
 import PageLayout from "@/components/layout/PageLayout";
 
 // Section components
-import HomeHero from "@/components/common/sections/hero/HomeHero";
-import TrainingSection from "@/components/common/sections/training/TrainingSection";
-import ConsultingSection from "@/components/common/sections/consulting/ConsultingSection";
-import LoansSection from "@/components/common/sections/loans/LoansSection";
-import Faq, { defaultFaqItems } from "@/components/common/sections/faq/FAQNew";
-import Testimonials from "@/components/common/sections/testimonials/Testimonials";
-import Calculator from "@/components/common/sections/calculator/Calculator";
+import HomeHero from "@/components/sections/hero/HomeHero";
+import TrainingSection from "@/components/sections/training/TrainingSection";
+import ConsultingSection from "@/components/sections/consulting/ConsultingSection";
+import LoansSection from "@/components/sections/loans/LoansSection";
+import Faq, { defaultFaqItems } from "@/components/sections/faq/FAQNew";
+import Testimonials from "@/components/sections/testimonials/Testimonials";
+import Calculator from "@/components/sections/calculator/Calculator";
 
 /**
  * Home page component

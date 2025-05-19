@@ -14,7 +14,7 @@ import PageLayout from "@/components/layout/PageLayout";
 import CoursesHero from "./CoursesHero";
 import CoursesContent from "./CoursesContent";
 import CoursesGrid from "./CoursesGrid";
-import LoanFeature from "@/components/common/sections/loans/LoanFeature";
+import LoanFeature from "@/components/sections/loans/LoanFeature";
 import AnimatedElement from "@/components/common/AnimatedElement";
 
 export default function OnlineCoursesPage() {

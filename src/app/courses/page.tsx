@@ -1,10 +1,10 @@
 "use client";
 import { Box } from "@chakra-ui/react";
 import PageLayout from "@/components/layout/PageLayout";
-import CoursesHero from "@/components/common/sections/courses/CoursesHero";
-import CoursesSection from "@/components/common/sections/courses/CoursesSection";
+import CoursesHero from "@/components/sections/courses/CoursesHero";
+import CoursesSection from "@/components/sections/courses/CoursesSection";
 import { TestimonialCompact } from "./TestimonialCompact";
-import LoanFeature from "@/components/common/sections/loans/LoanFeature";
+import LoanFeature from "@/components/sections/loans/LoanFeature";
 import AnimatedElement from "@/components/common/AnimatedElement";
 
 /**

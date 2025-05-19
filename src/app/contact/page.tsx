@@ -1,6 +1,6 @@
 "use client";
 import PageLayout from "@/components/layout/PageLayout";
-import ContactSection from "@/components/common/sections/contact/ContactSection";
+import ContactSection from "@/components/sections/contact/ContactSection";
 
 /**
  * Contact page component
