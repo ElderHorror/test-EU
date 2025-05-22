@@ -227,7 +227,7 @@ export default function BlogPosts() {
         <Box
           position="relative"
           mb={{ base: 10, md: 14 }}
-          maxW={{base:"80%", md: "90%" }}
+          maxW={{ base: "80%", md: "90%" }}
           mx="auto"
           // ml={{base: "1rem"}}
         >

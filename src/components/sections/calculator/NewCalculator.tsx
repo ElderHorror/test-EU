@@ -304,27 +304,53 @@ export default function NewCalculator(props: any) {
       repaymentPlan: formData.repaymentPlan,
       paymentStructure: paymentStructureDisplay,
       serviceCharges: 10,
-      repayments: [] as { month: number; amount: number }[],
+      repayments: [] as {
+        month: number;
+        installment: number;
+        interest: number;
+        serviceCharge: number;
+        remainingPrincipal: number;
+        amount: number;
+      }[],
       total: 0,
     };
 
     // Calculate repayments based on plan
     let total = 0;
+    let remainingPrincipal = amount;
 
     for (let i = 0; i < repaymentMonths; i++) {
-      let monthlyAmount = 0;
       const interestRate = i === 0 ? 0.1 : 0.05; // 10% for first month, 5% for others
 
-      monthlyAmount = amount * installments[i] * (1 + interestRate);
+      // Calculate installment amount for this month
+      const installmentAmount = amount * installments[i];
+
+      // Calculate interest based on remaining principal
+      const interestAmount = remainingPrincipal * interestRate;
+
+      // Add service charge only to the first month
+      const serviceCharge = i === 0 ? results.serviceCharges : 0;
+
+      // Calculate total monthly payment
+      const monthlyAmount = installmentAmount + interestAmount + serviceCharge;
+
+      // Update remaining principal
+      remainingPrincipal -= installmentAmount;
+
+      // Add to total
       total += monthlyAmount;
 
       results.repayments.push({
         month: i + 1,
+        installment: parseFloat(installmentAmount.toFixed(2)),
+        interest: parseFloat(interestAmount.toFixed(2)),
+        serviceCharge: serviceCharge,
+        remainingPrincipal: parseFloat(remainingPrincipal.toFixed(2)),
         amount: parseFloat(monthlyAmount.toFixed(2)),
       });
     }
 
-    results.total = parseFloat((total + results.serviceCharges).toFixed(2));
+    results.total = parseFloat(total.toFixed(2));
 
     setCalculationResults(results);
     setIsSubmitted(true);

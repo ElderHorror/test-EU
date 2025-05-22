@@ -194,7 +194,7 @@ export default function CoursesGrid() {
                 </Box>
 
                 {/* Button */}
-                <Box position="relative" zIndex="2" mt="3rem" mb="1.5rem">
+                <Box position="relative" zIndex="2" my="1rem">
                   <Button
                     w="45%"
                     bg="#0E5FDC"
@@ -203,10 +203,6 @@ export default function CoursesGrid() {
                     fontWeight={600}
                     borderRadius="md"
                     py="1.5rem"
-                    position="absolute"
-                    bottom="0rem"
-                    // left="1rem"
-                    transform="translateY(50%)"
                     boxShadow="0 4px 8px rgba(0,0,0,0.1)"
                   >
                     Access Course
