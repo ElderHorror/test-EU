@@ -12,7 +12,7 @@ interface AnimatedElementProps {
   duration?: number;
   threshold?: number;
   rootMargin?: string;
-  once?: boolean;
+
   className?: string;
 }
 
@@ -34,13 +34,24 @@ export default function AnimatedElement({
   animation = "fadeIn",
   delay = 0,
   duration = 0.5,
-  threshold = 0.1,
-  rootMargin = "0px",
-  once = true,
+  threshold = 0.15,
+  rootMargin = "-50px",
+
   className = "",
 }: AnimatedElementProps) {
   const elementRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
+  const [hasAnimated, setHasAnimated] = useState(false);
+
+  // Check sessionStorage on mount
+  useEffect(() => {
+    const key = `animated-${elementRef.current?.offsetTop}-${animation}`;
+    const hasBeenAnimated = sessionStorage.getItem(key);
+    if (hasBeenAnimated) {
+      setIsVisible(true);
+      setHasAnimated(true);
+    }
+  }, [animation]);
 
   // Animation variants
   const variants = {
@@ -71,13 +82,11 @@ export default function AnimatedElement({
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
+        if (!hasAnimated && entry.isIntersecting) {
           setIsVisible(true);
-          if (once) {
-            observer.disconnect();
-          }
-        } else if (!once) {
-          setIsVisible(false);
+          setHasAnimated(true);
+          const key = `animated-${elementRef.current?.offsetTop}-${animation}`;
+          sessionStorage.setItem(key, "true");
         }
       },
       {
@@ -96,7 +105,7 @@ export default function AnimatedElement({
         observer.unobserve(currentElement);
       }
     };
-  }, [once, rootMargin, threshold]);
+  }, [rootMargin, threshold]);
 
   return (
     <motion.div

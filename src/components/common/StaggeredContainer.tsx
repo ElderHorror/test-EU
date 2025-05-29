@@ -53,10 +53,7 @@ export default function StaggeredContainer({
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          setIsVisible(true);
-          observer.disconnect();
-        }
+        setIsVisible(entry.isIntersecting);
       },
       {
         threshold,
@@ -75,6 +72,7 @@ export default function StaggeredContainer({
       }
     };
   }, [rootMargin, threshold]);
+
 
   return (
     <motion.div
