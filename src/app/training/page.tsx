@@ -16,18 +16,27 @@ import CoursesContent from "./CoursesContent";
 import CoursesGrid from "./CoursesGrid";
 import LoanFeature from "@/components/sections/loans/LoanFeature";
 import AnimatedElement from "@/components/common/AnimatedElement";
+import PageTransition from "@/components/common/PageTransition";
 
 export default function OnlineCoursesPage() {
   return (
     <PageLayout>
-      {/* Hero Section */}
-      <CoursesHero />
+      <PageTransition>
+        {/* Hero Section */}
+        <AnimatedElement animation="fadeIn" delay={0.2}>
+          <CoursesHero />
 
-      {/* How We Teach Section */}
-      <CoursesContent />
+        </AnimatedElement>
 
-      {/* Courses Grid */}
-      <CoursesGrid />
+        {/* How We Teach Section */}
+        <AnimatedElement animation="slideUp" delay={0.3}>
+          <CoursesContent />
+
+        </AnimatedElement>
+
+        {/* Courses Grid */}
+        <AnimatedElement animation="slideUp" delay={0.4}>
+          <CoursesGrid />
 
       {/* Why Study Section */}
       <Box position="relative" zIndex="1">
@@ -49,8 +58,11 @@ export default function OnlineCoursesPage() {
         </AnimatedElement>
       </Box>
 
-      {/* Call to Action Section */}
-      <Box bg="#F4F4F4" py="4rem" pb="6rem">
+        </AnimatedElement>
+
+        {/* Call to Action Section */}
+        <AnimatedElement animation="slideUp" delay={0.5}>
+          <Box bg="#F4F4F4" py="4rem" pb="6rem">
         <Container maxW="60rem">
           <VStack spacing="2rem" align="center">
             <Text
@@ -79,7 +91,9 @@ export default function OnlineCoursesPage() {
             </Button>
           </VStack>
         </Container>
-      </Box>
+          </Box>
+        </AnimatedElement>
+      </PageTransition>
     </PageLayout>
   );
 }
