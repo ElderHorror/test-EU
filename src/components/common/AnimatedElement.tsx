@@ -1,5 +1,12 @@
 "use client";
-import { ReactNode, useRef, useState, useEffect } from "react";
+import {
+  ReactNode,
+  useRef,
+  useState,
+  useEffect,
+  useMemo,
+  useCallback,
+} from "react";
 import { motion } from "framer-motion";
 
 /**
@@ -43,57 +50,51 @@ export default function AnimatedElement({
   const [isVisible, setIsVisible] = useState(false);
   const [hasAnimated, setHasAnimated] = useState(false);
 
-  // Check sessionStorage on mount
-  useEffect(() => {
-    const key = `animated-${elementRef.current?.offsetTop}-${animation}`;
-    const hasBeenAnimated = sessionStorage.getItem(key);
-    if (hasBeenAnimated) {
-      setIsVisible(true);
-      setHasAnimated(true);
-    }
-  }, [animation]);
+  // Memoize animation variants to prevent recreation on every render
+  const variants = useMemo(
+    () => ({
+      fadeIn: {
+        hidden: { opacity: 0 },
+        visible: { opacity: 1 },
+      },
+      slideUp: {
+        hidden: { opacity: 0, y: 30 },
+        visible: { opacity: 1, y: 0 },
+      },
+      slideLeft: {
+        hidden: { opacity: 0, x: -50 },
+        visible: { opacity: 1, x: 0 },
+      },
+      slideRight: {
+        hidden: { opacity: 0, x: 50 },
+        visible: { opacity: 1, x: 0 },
+      },
+      scale: {
+        hidden: { opacity: 0, scale: 0.8 },
+        visible: { opacity: 1, scale: 1 },
+      },
+    }),
+    []
+  );
 
-  // Animation variants
-  const variants = {
-    fadeIn: {
-      hidden: { opacity: 0 },
-      visible: { opacity: 1 },
+  // Optimize intersection observer with useCallback
+  const handleIntersection = useCallback(
+    ([entry]: IntersectionObserverEntry[]) => {
+      if (!hasAnimated && entry.isIntersecting) {
+        setIsVisible(true);
+        setHasAnimated(true);
+      }
     },
-    slideUp: {
-      hidden: { opacity: 0, y: 30 },
-      visible: { opacity: 1, y: 0 },
-    },
-    slideLeft: {
-      hidden: { opacity: 0, x: -50 },
-      visible: { opacity: 1, x: 0 },
-    },
-    slideRight: {
-      hidden: { opacity: 0, x: 50 },
-      visible: { opacity: 1, x: 0 },
-    },
-    scale: {
-      hidden: { opacity: 0, scale: 0.8 },
-      visible: { opacity: 1, scale: 1 },
-    },
-  };
+    [hasAnimated]
+  );
 
   useEffect(() => {
     if (!elementRef.current) return;
 
-    const observer = new IntersectionObserver(
-      ([entry]) => {
-        if (!hasAnimated && entry.isIntersecting) {
-          setIsVisible(true);
-          setHasAnimated(true);
-          const key = `animated-${elementRef.current?.offsetTop}-${animation}`;
-          sessionStorage.setItem(key, "true");
-        }
-      },
-      {
-        threshold,
-        rootMargin,
-      }
-    );
+    const observer = new IntersectionObserver(handleIntersection, {
+      threshold,
+      rootMargin,
+    });
 
     observer.observe(elementRef.current);
 
@@ -105,7 +106,7 @@ export default function AnimatedElement({
         observer.unobserve(currentElement);
       }
     };
-  }, [rootMargin, threshold]);
+  }, [handleIntersection, threshold, rootMargin]);
 
   return (
     <motion.div

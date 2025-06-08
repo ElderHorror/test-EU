@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Container, Flex, Heading, Text, VStack } from "@chakra-ui/react";
+import { Box, Container, Heading, Text, VStack } from "@chakra-ui/react";
 import PageLayout from "@/components/layout/PageLayout";
 import LoanFeature from "@/components/sections/loans/LoanFeature";
 import LoanApplication from "./LoanApplication";

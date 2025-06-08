@@ -232,7 +232,8 @@ export default function LoanFeature({
 
           {showButton && (
             <Link
-              href={`mailto:contact@eustudyassist.com?subject=Consultation Service Inquiry for ${heading}`}
+              href="https://forms.gle/JmEMziR6a5j4Mew48"
+              isExternal
               _hover={{ textDecoration: "none" }}
               alignSelf={{ base: "flex-start", lg: "flex-start" }}
             >

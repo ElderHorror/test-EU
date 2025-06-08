@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useMemo, useCallback } from "react";
 import { getUserCountry } from "@/utils/geolocation";
 import { convertPrice, parsePriceString, PriceInfo } from "@/utils/pricing";
 
@@ -14,6 +14,10 @@ interface UseDynamicPricingReturn {
   currency: string;
   currencySymbol: string;
 }
+
+// Global cache to prevent multiple API calls across components
+let globalCountryCache: any = null;
+let globalPriceCache: Record<string, Record<string, PriceInfo>> = {};
 
 /**
  * Custom hook for dynamic pricing based on user's location
@@ -31,9 +35,60 @@ export function useDynamicPricing(
   const [currency, setCurrency] = useState("USD");
   const [currencySymbol, setCurrencySymbol] = useState("$");
 
+  // Memoize the prices object to prevent unnecessary re-renders
+  const memoizedPrices = useMemo(() => prices, [JSON.stringify(prices)]);
+
+  // Create a cache key for the current prices
+  const pricesCacheKey = useMemo(() => {
+    return JSON.stringify(memoizedPrices);
+  }, [memoizedPrices]);
+
+  const convertPricesForCountry = useCallback(
+    (countryInfo: any, pricesObj: Record<string, string>) => {
+      const convertedPrices: Record<string, PriceInfo> = {};
+
+      for (const [courseId, priceString] of Object.entries(pricesObj)) {
+        const usdPrice = parsePriceString(priceString);
+        convertedPrices[courseId] = convertPrice(
+          usdPrice,
+          countryInfo.currency,
+          countryInfo.currencySymbol
+        );
+      }
+
+      return convertedPrices;
+    },
+    []
+  );
+
+  const createFallbackPrices = useCallback(
+    (pricesObj: Record<string, string>) => {
+      const fallbackPrices: Record<string, PriceInfo> = {};
+      for (const [courseId, priceString] of Object.entries(pricesObj)) {
+        const usdPrice = parsePriceString(priceString);
+        fallbackPrices[courseId] = {
+          amount: usdPrice,
+          formattedPrice: priceString,
+          currency: "USD",
+          currencySymbol: "$",
+        };
+      }
+      return fallbackPrices;
+    },
+    []
+  );
+
   useEffect(() => {
     // Skip if prices object is empty
-    if (Object.keys(prices).length === 0) {
+    if (Object.keys(memoizedPrices).length === 0) {
+      setIsLoading(false);
+      return;
+    }
+
+    // Check if we have cached prices for this exact price set
+    if (globalPriceCache[pricesCacheKey]) {
+      setLocalizedPrices(globalPriceCache[pricesCacheKey]);
+      setIsLoading(false);
       return;
     }
 
@@ -44,9 +99,16 @@ export function useDynamicPricing(
       try {
         setIsLoading(true);
 
-        // Get user's country information
-        const countryInfo = await getUserCountry();
-        console.log("Country info detected:", countryInfo);
+        let countryInfo;
+
+        // Use cached country info if available
+        if (globalCountryCache) {
+          countryInfo = globalCountryCache;
+        } else {
+          // Get user's country information
+          countryInfo = await getUserCountry();
+          globalCountryCache = countryInfo;
+        }
 
         // Only update state if component is still mounted
         if (!isMounted) return;
@@ -56,52 +118,23 @@ export function useDynamicPricing(
         setCurrencySymbol(countryInfo.currencySymbol);
 
         // Convert all prices to the local currency
-        const convertedPrices: Record<string, PriceInfo> = {};
+        const convertedPrices = convertPricesForCountry(
+          countryInfo,
+          memoizedPrices
+        );
 
-        console.log("Converting prices:", prices);
-
-        for (const [courseId, priceString] of Object.entries(prices)) {
-          console.log(
-            `Processing course ${courseId} with price ${priceString}`
-          );
-          const usdPrice = parsePriceString(priceString);
-          console.log(`Parsed USD price: ${usdPrice}`);
-
-          convertedPrices[courseId] = convertPrice(
-            usdPrice,
-            countryInfo.currency,
-            countryInfo.currencySymbol
-          );
-
-          console.log(
-            `Converted price for ${courseId}:`,
-            convertedPrices[courseId]
-          );
-        }
-
-        console.log("All converted prices:", convertedPrices);
+        // Cache the converted prices
+        globalPriceCache[pricesCacheKey] = convertedPrices;
 
         // Only update state if component is still mounted
         if (!isMounted) return;
         setLocalizedPrices(convertedPrices);
       } catch (error) {
-        console.error("Error in dynamic pricing:", error);
-
         // Only update state if component is still mounted
         if (!isMounted) return;
 
         // Fallback to USD prices
-        const fallbackPrices: Record<string, PriceInfo> = {};
-        for (const [courseId, priceString] of Object.entries(prices)) {
-          const usdPrice = parsePriceString(priceString);
-          fallbackPrices[courseId] = {
-            amount: usdPrice,
-            formattedPrice: priceString,
-            currency: "USD",
-            currencySymbol: "$",
-          };
-        }
-        console.log("Using fallback USD prices:", fallbackPrices);
+        const fallbackPrices = createFallbackPrices(memoizedPrices);
         setLocalizedPrices(fallbackPrices);
       } finally {
         // Only update state if component is still mounted
@@ -117,7 +150,12 @@ export function useDynamicPricing(
     return () => {
       isMounted = false;
     };
-  }, [prices]);
+  }, [
+    memoizedPrices,
+    pricesCacheKey,
+    convertPricesForCountry,
+    createFallbackPrices,
+  ]);
 
   return {
     localizedPrices,

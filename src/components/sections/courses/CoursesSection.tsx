@@ -11,6 +11,33 @@ import { useEffect, useState, useMemo } from "react";
 interface CourseData extends Omit<CourseCardProps, "learningOutcomes"> {
   id: string;
   basePrice: string;
+  isAvailable: boolean;
+}
+
+// Function to generate dynamic bootcamp date (July 15 of current or next year)
+function getNextCohortDate(): string {
+  const currentYear = new Date().getFullYear();
+  const cohortDate = new Date(currentYear, 6, 15); // July is month 6 (0-indexed)
+
+  // If July 15 has already passed this year, use next year
+  const today = new Date();
+  if (cohortDate < today) {
+    cohortDate.setFullYear(currentYear + 1);
+  }
+
+  // Format as "15th of July YYYY"
+  const day = cohortDate.getDate();
+  const year = cohortDate.getFullYear();
+  const suffix =
+    day === 1 || day === 21 || day === 31
+      ? "st"
+      : day === 2 || day === 22
+      ? "nd"
+      : day === 3 || day === 23
+      ? "rd"
+      : "th";
+
+  return `${day}${suffix} of July ${year}`;
 }
 
 const coursesData: CourseData[] = [
@@ -22,10 +49,11 @@ const coursesData: CourseData[] = [
     imageSrc: "/pythonR.jpg",
     duration: "6 weekends",
     classType: "Virtual Live Classes",
-    nextCohort: "27th of September 2024",
+    nextCohort: getNextCohortDate(),
     cost: "$74.99", // Will be replaced with dynamic pricing
     basePrice: "$74.99",
     enrollLink: "/courses/checkout?course=python",
+    isAvailable: true, // Only Python is available
   },
   {
     id: "r",
@@ -35,10 +63,11 @@ const coursesData: CourseData[] = [
     imageSrc: "/r.jpg",
     duration: "6 weekends",
     classType: "Virtual Live Classes",
-    nextCohort: "27th of September 2024",
+    nextCohort: getNextCohortDate(),
     cost: "$74.99", // Will be replaced with dynamic pricing
     basePrice: "$74.99",
     enrollLink: "/courses/checkout?course=r",
+    isAvailable: false, // Coming soon
   },
   {
     id: "dataviz",
@@ -48,10 +77,11 @@ const coursesData: CourseData[] = [
     imageSrc: "/data_vs.jpg",
     duration: "6 weekends",
     classType: "Virtual Live Classes",
-    nextCohort: "27th of September 2024",
+    nextCohort: getNextCohortDate(),
     cost: "$74.99", // Will be replaced with dynamic pricing
     basePrice: "$74.99",
     enrollLink: "/courses/checkout?course=dataviz",
+    isAvailable: false, // Coming soon
   },
   {
     id: "gis",
@@ -61,10 +91,11 @@ const coursesData: CourseData[] = [
     imageSrc: "/gis_research.png",
     duration: "6 weekends",
     classType: "Virtual Live Classes",
-    nextCohort: "27th of September 2024",
+    nextCohort: getNextCohortDate(),
     cost: "$74.99", // Will be replaced with dynamic pricing
     basePrice: "$74.99",
     enrollLink: "/courses/checkout?course=gis",
+    isAvailable: false, // Coming soon
   },
   {
     id: "experimental",
@@ -74,10 +105,11 @@ const coursesData: CourseData[] = [
     imageSrc: "/experimental.jpg",
     duration: "6 weekends",
     classType: "Virtual Live Classes",
-    nextCohort: "27th of September 2024",
+    nextCohort: getNextCohortDate(),
     cost: "$74.99", // Will be replaced with dynamic pricing
     basePrice: "$74.99",
     enrollLink: "/courses/checkout?course=experimental",
+    isAvailable: false, // Coming soon
   },
 ];
 
@@ -178,6 +210,7 @@ export default function CoursesSection() {
                   ? rLearningOutcomes
                   : undefined
               }
+              isAvailable={course.isAvailable}
             />
           ))
         )}

@@ -1,5 +1,5 @@
 "use client";
-import { ReactNode } from "react";
+import { ReactNode, useMemo } from "react";
 import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 
@@ -19,16 +19,29 @@ interface PageTransitionProps {
  */
 export default function PageTransition({
   children,
-  duration = 0.5,
+  duration = 0.3, // Reduced duration for better performance
 }: PageTransitionProps) {
   const pathname = usePathname();
 
-  // Simple fade transition
-  const variants = {
-    hidden: { opacity: 0 },
-    enter: { opacity: 1 },
-    exit: { opacity: 0 },
-  };
+  // Memoize variants to prevent recreation
+  const variants = useMemo(
+    () => ({
+      hidden: { opacity: 0 },
+      enter: { opacity: 1 },
+      exit: { opacity: 0 },
+    }),
+    []
+  );
+
+  // Memoize transition config
+  const transition = useMemo(
+    () => ({
+      duration,
+      type: "tween" as const,
+      ease: "easeInOut",
+    }),
+    [duration]
+  );
 
   return (
     <motion.div
@@ -37,7 +50,7 @@ export default function PageTransition({
       animate="enter"
       exit="exit"
       variants={variants}
-      transition={{ duration, type: "tween" }}
+      transition={transition}
     >
       {children}
     </motion.div>
