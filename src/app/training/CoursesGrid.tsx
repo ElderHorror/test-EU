@@ -27,7 +27,7 @@ const courses = [
     level: "BEGINNER",
     description:
       "Learn the foundations of R programming, including variables, data types, operators, and basic functions—ideal for students and researchers new to R.",
-    image: "/00.png",
+    image: "./r_programming-01.png",
     category: "R Programming",
     link: "https://yourstudyassist.selar.com/5t85t3",
   },
@@ -39,7 +39,7 @@ const courses = [
     level: "BEGINNER TO INTERMEDIATE",
     description:
       "Master how to load, clean, and manage data from spreadsheets, databases, and web sources to streamline your research workflows in R.",
-    image: "/00.png",
+    image: "./r_programming-02.png",
     category: "R Programming",
   },
   {
@@ -50,7 +50,7 @@ const courses = [
     level: "INTERMEDIATE",
     description:
       "Learn how to clean, reshape, and organize research data using R. This course covers essential data wrangling techniques with tools like dplyr and tidyr to prepare your data for analysis.",
-    image: "/00.png",
+    image: "./r_programming-03.png",
     category: "R Programming",
   },
   {
@@ -61,7 +61,7 @@ const courses = [
     level: "INTERMEDIATE",
     description:
       "Explore data confidently using R. Learn summary statistics, data visualization, and pattern detection techniques to uncover insights in your research data.",
-    image: "/00.png",
+    image: "./r_programming-04.png",
     category: "R Programming",
   },
   {
@@ -72,7 +72,7 @@ const courses = [
     level: "INTERMEDIATE",
     description:
       "Turn your analysis into professional reports. This course teaches how to create dynamic documents with Quarto for sharing your findings effectively.",
-    image: "/00.png",
+    image: "./r_programming-05.png",
     category: "R Programming",
   },
   {
@@ -83,7 +83,7 @@ const courses = [
     level: "INTERMEDIATE",
     description:
       "Learn how to track changes, collaborate, and share your research projects using Git and GitHub. This course introduces version control and teaches practical workflows for managing R projects in a research setting.",
-    image: "/00.png",
+    image: "./r_programming-06.png",
     category: "R Programming",
   },
   {
@@ -94,7 +94,7 @@ const courses = [
     level: "BEGINNER TO INTERMEDIATE",
     description:
       "Turn your research insights into engaging blog posts. This course teaches you how to use Quarto to create, style, and publish blogs that combine text, code, and visualizations—all in a professional, shareable format.",
-    image: "/00.png",
+    image: "./blog_creation.png",
     category: "Communication",
   },
   {
@@ -105,7 +105,7 @@ const courses = [
     level: "INTERMEDIATE TO ADVANCED",
     description:
       "Build a strong foundation in hypothesis testing using R. Learn t-tests, ANOVA, chi-square, and non-parametric tests with real research examples.",
-    image: "/00.png",
+    image: "./statistics_r.png",
     category: "R Programming",
   },
   {
@@ -116,7 +116,7 @@ const courses = [
     level: "INTERMEDIATE",
     description:
       "Design compelling and informative visuals using R's powerful ggplot2 library and its extensions. Learn best practices for storytelling with data in a research context.",
-    image: "/00.png",
+    image: "./visualization_r.png",
     category: "R Programming",
   },
   {
@@ -127,7 +127,7 @@ const courses = [
     level: "ADVANCED",
     description:
       "An introduction to supervised and unsupervised machine learning using R. Learn to build, evaluate, and interpret models for research applications.",
-    image: "/00.png",
+    image: "./machine_r.png",
     category: "R Programming",
   },
   {
@@ -138,7 +138,7 @@ const courses = [
     level: "INTERMEDIATE TO ADVANCED",
     description:
       "Explore spatial data analysis with R. Learn how to import, visualize, and analyze geospatial data relevant to agriculture, environment, and public health research.",
-    image: "/00.png",
+    image: "./gis_r.png",
     category: "R Programming",
   },
   {
@@ -149,7 +149,7 @@ const courses = [
     level: "ADVANCED",
     description:
       "Create interactive research dashboards with Shiny. Learn how to visualize data dynamically and build web applications that share helps your organization get valuable insight.",
-    image: "/00.png",
+    image: "./dashboard_shiny.png",
     category: "R Programming",
   },
   {
@@ -160,7 +160,7 @@ const courses = [
     level: "BEGINNER",
     description:
       "Get started with Python by learning syntax, data structures, and basic functions tailored for research tasks.",
-    image: "/00.png",
+    image: "./python_research1.png",
     category: "Python Programming",
   },
   {
@@ -171,7 +171,7 @@ const courses = [
     level: "BEGINNER TO INTERMEDIATE",
     description:
       "Dive into data manipulation with Python's core libraries. Learn to clean, transform, and explore datasets efficiently using NumPy and Pandas.",
-    image: "/00.png",
+    image: "./python_research2.png",
     category: "Python Programming",
   },
   {
@@ -183,7 +183,7 @@ const courses = [
     level: "INTERMEDIATE",
     description:
       "Create stunning visualizations using Python. Learn to communicate research data through line plots, histograms, heatmaps, and more.",
-    image: "/00.png",
+    image: "./python_research3.png",
     category: "Python Programming",
   },
   {
@@ -194,7 +194,7 @@ const courses = [
     level: "ALL LEVELS",
     description:
       "Develop skills to craft persuasive grant proposals. This course covers structure, budgeting, and storytelling techniques to increase funding success.",
-    image: "/00.png",
+    image: "./grant_writing.png",
     category: "Academic Writing",
   },
   {
@@ -205,7 +205,7 @@ const courses = [
     level: "ALL LEVELS",
     description:
       "Enhance your academic writing skills. Learn how to structure research papers, present arguments clearly, and follow citation standards.",
-    image: "/00.png",
+    image: "./research_writing.png",
     category: "Academic Writing",
   },
 ];
