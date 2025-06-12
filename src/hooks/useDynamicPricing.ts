@@ -36,7 +36,7 @@ export function useDynamicPricing(
   const [currencySymbol, setCurrencySymbol] = useState("$");
 
   // Memoize the prices object to prevent unnecessary re-renders
-  const memoizedPrices = useMemo(() => prices, [JSON.stringify(prices)]);
+  const memoizedPrices = useMemo(() => prices, [prices]);
 
   // Create a cache key for the current prices
   const pricesCacheKey = useMemo(() => {
