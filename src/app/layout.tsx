@@ -12,15 +12,78 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   metadataBase: new URL("https://eustudyassist.com/"),
   title: {
-    default: "EU Study assist",
-    template: "%s | EU Study assist ",
+    default: "EU StudyAssist - Study Abroad Made Easy",
+    template: "%s | EU StudyAssist",
   },
   manifest: "https://eustudyassist.com/site.webmanifest",
-  icons: "https://eustudyassist.com/image.png",
+  icons: {
+    icon: "/favicon2.ico",
+    apple: "/apple-touch-icon.png",
+  },
   description:
-    "EUStudyAssist exists to empower scholarship recipients during the pre-study period when stipends have yet to materialize. Our commitment is to eliminate financial barriers that hinder academic progress. We believe in equal educational opportunities for all and provide not just financial support, but also pathways to realizing educational dreams, making the journey to Europe stress-free. ",
+    "EU StudyAssist empowers scholarship recipients with financial support during pre-study periods. We eliminate financial barriers, provide student loans, and make studying in Europe stress-free for international students.",
+  keywords: [
+    "EU StudyAssist",
+    "study abroad",
+    "student loans",
+    "education financing",
+    "European education",
+    "scholarship support",
+    "international students",
+    "study in Europe",
+    "financial assistance",
+    "education funding",
+  ],
+  authors: [{ name: "EU StudyAssist" }],
+  creator: "EU StudyAssist",
+  publisher: "EU StudyAssist",
+
+  openGraph: {
+    type: "website",
+    locale: "en_US",
+    url: "https://eustudyassist.com/",
+    siteName: "EU StudyAssist",
+    title: "EU StudyAssist - Study Abroad Made Easy",
+    description:
+      "Empowering students with financial support and guidance for studying in Europe. Get student loans, scholarships, and expert advice.",
+    images: [
+      {
+        url: "/og-default.png",
+        width: 1200,
+        height: 630,
+        alt: "EU StudyAssist - Study Abroad Made Easy",
+      },
+    ],
+  },
+
+  twitter: {
+    card: "summary_large_image",
+    title: "EU StudyAssist - Study Abroad Made Easy",
+    description:
+      "Empowering students with financial support and guidance for studying in Europe.",
+    creator: "@eustudyassist",
+    site: "@eustudyassist",
+    images: ["/og-default.png"],
+  },
+
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
+    },
+  },
+
   verification: {
     google: "google-site-verification=123123123123",
+  },
+
+  alternates: {
+    canonical: "https://eustudyassist.com/",
   },
 };
 

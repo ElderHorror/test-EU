@@ -23,6 +23,10 @@ export interface ProcessedBlogPost {
   content?: any;
   createdAt: string;
   updatedAt: string;
+  // SEO fields
+  metaTitle?: string;
+  metaDescription?: string;
+  keywords?: string[];
 }
 
 // Helper function to extract image URL from Contentful asset
@@ -41,6 +45,23 @@ export function getImageUrl(asset?: any): string {
 export function processBlogPost(entry: any): ProcessedBlogPost {
   const { fields, sys } = entry;
 
+  // Process keywords - handle both string and array formats
+  let processedKeywords: string[] = [];
+  if (fields.keywords) {
+    if (typeof fields.keywords === "string") {
+      // If keywords is a string, split by comma and clean up
+      processedKeywords = fields.keywords
+        .split(",")
+        .map((keyword: string) => keyword.trim())
+        .filter((keyword: string) => keyword.length > 0);
+    } else if (Array.isArray(fields.keywords)) {
+      // If keywords is already an array
+      processedKeywords = fields.keywords.filter(
+        (keyword: string) => keyword && keyword.trim().length > 0
+      );
+    }
+  }
+
   return {
     id: sys.id,
     title: fields.title || "Untitled",
@@ -54,6 +75,10 @@ export function processBlogPost(entry: any): ProcessedBlogPost {
     content: fields.content,
     createdAt: sys.createdAt,
     updatedAt: sys.updatedAt,
+    // SEO fields
+    metaTitle: fields.metaTitle || fields.title,
+    metaDescription: fields.metaDescription || fields.description,
+    keywords: processedKeywords.length > 0 ? processedKeywords : undefined,
   };
 }
 

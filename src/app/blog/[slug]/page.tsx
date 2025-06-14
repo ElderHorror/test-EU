@@ -115,8 +115,74 @@ export default function BlogPostPage() {
     });
   };
 
+  // Generate structured data for SEO
+  const generateStructuredData = (post: ProcessedBlogPost) => {
+    const baseUrl =
+      process.env.NEXT_PUBLIC_BASE_URL || "https://eustudyassist.com";
+
+    return {
+      "@context": "https://schema.org",
+      "@type": "BlogPosting",
+      headline: post.metaTitle || post.title,
+      description: post.metaDescription || post.description,
+      image: post.bannerImage || `${baseUrl}/og-default.png`,
+      author: {
+        "@type": "Person",
+        name: post.author || "EU StudyAssist",
+        url: `${baseUrl}/about`,
+      },
+      publisher: {
+        "@type": "Organization",
+        name: "EU StudyAssist",
+        logo: {
+          "@type": "ImageObject",
+          url: `${baseUrl}/logo.png`,
+        },
+      },
+      datePublished: post.createdAt,
+      dateModified: post.updatedAt,
+      mainEntityOfPage: {
+        "@type": "WebPage",
+        "@id": `${baseUrl}/blog/${post.slug}`,
+      },
+      articleSection: post.category,
+      keywords:
+        post.keywords && post.keywords.length > 0
+          ? [
+              ...post.keywords,
+              post.category,
+              "study abroad",
+              "student loans",
+              "education financing",
+            ]
+          : [
+              post.category,
+              "study abroad",
+              "student loans",
+              "education financing",
+            ],
+      wordCount: post.content
+        ? renderRichTextAsPlainText(post.content).split(" ").length
+        : post.description.split(" ").length,
+      timeRequired: post.minuteRead ? `PT${post.minuteRead}M` : "PT5M",
+      inLanguage: "en-US",
+      isAccessibleForFree: true,
+      copyrightHolder: {
+        "@type": "Organization",
+        name: "EU StudyAssist",
+      },
+    };
+  };
+
   return (
     <PageLayout>
+      {/* Structured Data for SEO */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(generateStructuredData(post)),
+        }}
+      />
       <PageTransition>
         {/* Hero Section */}
         <Box bg="white" pt="6rem" pb="4rem">
