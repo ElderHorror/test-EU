@@ -46,12 +46,8 @@ export function convertPrice(
   // Default to USD if the target currency is not supported
   const exchangeRate = exchangeRates[targetCurrency] || 1.0;
 
-  console.log(`Converting price: $${usdPrice} to ${targetCurrency}`);
-  console.log(`Exchange rate for ${targetCurrency}: ${exchangeRate}`);
-
   // Convert the price
   const convertedAmount = usdPrice * exchangeRate;
-  console.log(`Converted amount: ${convertedAmount} ${targetCurrency}`);
 
   // Format the price based on the currency
   let formattedAmount: string;
@@ -79,7 +75,6 @@ export function convertPrice(
     currencySymbol,
   };
 
-  console.log(`Final formatted price: ${result.formattedPrice}`);
   return result;
 }
 

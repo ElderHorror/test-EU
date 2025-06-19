@@ -23,6 +23,7 @@ export interface CourseCardProps {
   cost: string;
   enrollLink?: string;
   learningOutcomes?: string[];
+  isAvailable?: boolean;
 }
 
 /**
@@ -58,6 +59,7 @@ export default function CourseCard({
     "Problem-solving techniques",
     "Real-world applications",
   ],
+  isAvailable = true,
 }: CourseCardProps) {
   const { isOpen, onToggle } = useDisclosure();
 
@@ -85,10 +87,22 @@ export default function CourseCard({
         >
           {/* Left Column - Course Info */}
           <Box flex="1" width="100%">
-            <Text fontFamily="ClashDisplay" fontSize="24px" fontWeight={600} color="black" mb="1rem">
+            <Text
+              fontFamily="ClashDisplay"
+              fontSize="24px"
+              fontWeight={600}
+              color="black"
+              mb="1rem"
+            >
               {title}
             </Text>
-            <Text fontFamily="Inter" color="#2F3540" fontSize="15px" lineHeight="1.6" mb="1.5rem">
+            <Text
+              fontFamily="Inter"
+              color="#2F3540"
+              fontSize="15px"
+              lineHeight="1.6"
+              mb="1.5rem"
+            >
               {description}
             </Text>
             <PrimaryButton
@@ -151,7 +165,13 @@ export default function CourseCard({
           >
             {/* What You Will Learn */}
             <Box flex="1" width="100%">
-              <Text fontFamily="ClashDisplay" fontSize="18px" fontWeight={500} color="black" mb="1rem">
+              <Text
+                fontFamily="ClashDisplay"
+                fontSize="18px"
+                fontWeight={500}
+                color="black"
+                mb="1rem"
+              >
                 What You Will Learn
               </Text>
               <Box
@@ -187,34 +207,69 @@ export default function CourseCard({
               width="100%"
             >
               <Box>
-                <Text fontFamily="ClashDisplay" color="#2F3540" fontSize="15px" mb="0.5rem">
+                <Text
+                  fontFamily="ClashDisplay"
+                  color="#2F3540"
+                  fontSize="15px"
+                  mb="0.5rem"
+                >
                   Duration:
                 </Text>
-                <Text fontFamily="Inter" color="black" fontSize="18px" fontWeight={600}>
+                <Text
+                  fontFamily="Inter"
+                  color="black"
+                  fontSize="18px"
+                  fontWeight={600}
+                >
                   {duration}
                 </Text>
               </Box>
 
               <Box>
-                <Text fontFamily="ClashDisplay" color="#2F3540" fontSize="15px" mb="0.5rem">
+                <Text
+                  fontFamily="ClashDisplay"
+                  color="#2F3540"
+                  fontSize="15px"
+                  mb="0.5rem"
+                >
                   Class Type:
                 </Text>
-                <Text fontFamily="Inter" color="black" fontSize="18px" fontWeight={600}>
+                <Text
+                  fontFamily="Inter"
+                  color="black"
+                  fontSize="18px"
+                  fontWeight={600}
+                >
                   {classType}
                 </Text>
               </Box>
 
               <Box>
-                <Text fontFamily="ClashDisplay" color="#2F3540" fontSize="15px" mb="0.5rem">
+                <Text
+                  fontFamily="ClashDisplay"
+                  color="#2F3540"
+                  fontSize="15px"
+                  mb="0.5rem"
+                >
                   Next Cohort:
                 </Text>
-                <Text fontFamily="Inter" color="black" fontSize="18px" fontWeight={600}>
+                <Text
+                  fontFamily="Inter"
+                  color="black"
+                  fontSize="18px"
+                  fontWeight={600}
+                >
                   {nextCohort}
                 </Text>
               </Box>
 
               <Box mt="auto">
-                <Text fontFamily="ClashDisplay" color="#2F3540" fontSize="15px" mb="0.5rem">
+                <Text
+                  fontFamily="ClashDisplay"
+                  color="#2F3540"
+                  fontSize="15px"
+                  mb="0.5rem"
+                >
                   Cost:
                 </Text>
                 <Text
@@ -226,17 +281,35 @@ export default function CourseCard({
                   {cost}
                 </Text>
 
-                <Link href={enrollLink} passHref>
-                  <PrimaryButton
+                {isAvailable ? (
+                  <Link href={enrollLink} passHref>
+                    <PrimaryButton
+                      px="1.5rem"
+                      py="0.75rem"
+                      borderRadius="4px"
+                      w="auto"
+                      minW="120px"
+                    >
+                      Enroll Now
+                    </PrimaryButton>
+                  </Link>
+                ) : (
+                  <Button
                     px="1.5rem"
                     py="0.75rem"
                     borderRadius="4px"
                     w="auto"
                     minW="120px"
+                    bg="gray.400"
+                    color="white"
+                    cursor="not-allowed"
+                    _hover={{ bg: "gray.400" }}
+                    _active={{ bg: "gray.400" }}
+                    _focus={{ bg: "gray.400" }}
                   >
-                    Enroll Now
-                  </PrimaryButton>
-                </Link>
+                    Coming Soon
+                  </Button>
+                )}
               </Box>
             </Box>
           </Flex>

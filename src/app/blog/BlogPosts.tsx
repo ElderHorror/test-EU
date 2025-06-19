@@ -15,156 +15,27 @@ import {
   HStack,
   VStack,
   useBreakpointValue,
+  Spinner,
+  Alert,
+  AlertIcon,
 } from "@chakra-ui/react";
 import { ChevronRightIcon, ChevronLeftIcon } from "@chakra-ui/icons";
 import LoanFeature from "@/components/sections/loans/LoanFeature";
 import AnimatedElement from "@/components/common/AnimatedElement";
-
-// Blog post data
-const blogData = [
-  {
-    title: "R For Research",
-    description:
-      "This course covers essential concepts in data science, focusing on R programming, Git version control, and GitHub collaboration. Participants will learn data manipulation, statistical analysis, and data visualization in R alongside mastering Git for version control.",
-    category: "Programming",
-    image: "/00.png",
-  },
-  {
-    title: "R For Research",
-    description:
-      "This course covers essential concepts in data science, focusing on R programming, Git version control, and GitHub collaboration. Participants will learn data manipulation, statistical analysis, and data visualization in R alongside mastering Git for version control.",
-    category: "Programming",
-    image: "/00.png",
-  },
-  {
-    title: "Data Visualization",
-    description:
-      "Focused on principles of visual storytelling, this course covers the tools and techniques for creating impactful data visualizations. Participants will learn to design clear, effective visuals using R, enhancing their ability to communicate complex data insights effectively.",
-    category: "Programming",
-    image: "/00.png",
-  },
-  {
-    title: "GIS for Research",
-    description:
-      "In this course, participants gain skills in geographic information systems (GIS) for spatial data analysis. Using R, they'll learn to manage, analyze, and visualize geospatial data, making it ideal for those interested in environmental and spatial research.",
-    category: "Programming",
-    image: "/00.png",
-  },
-  {
-    title: "Python for Research",
-    description:
-      "This course introduces core data science concepts using Python. Participants will learn data manipulation, statistical analysis, and visualization in Python, as well as project management essentials. By the end, they'll be equipped to efficiently analyze and interpret data for research applications.",
-    category: "Programming",
-    image: "/00.png",
-  },
-  {
-    title: "R for Research",
-    description:
-      "This course covers essential concepts in data science, focusing on R programming, Git version control, and GitHub collaboration. Participants will learn data manipulation, statistical analysis, and data visualization in R, alongside mastering Git for version control. By the end, they'll efficiently track changes, collaborate, and manage projects on GitHub.",
-    category: "Programming",
-    image: "/00.png",
-  },
-  {
-    title: "Test Blog 7",
-    description: "Description for test blog 7",
-    category: "Self Development",
-    image: "/00.png",
-  },
-  {
-    title: "Test Blog 8",
-    description: "Description for test blog 8",
-    category: "Travels",
-    image: "/00.png",
-  },
-  {
-    title: "Test Blog 9",
-    description: "Description for test blog 9",
-    category: "Career",
-    image: "/00.png",
-  },
-  {
-    title: "Test Blog 10",
-    description: "Description for test blog 10",
-    category: "Finance",
-    image: "/00.png",
-  },
-  {
-    title: "Test Blog 11",
-    description: "Description for test blog 11",
-    category: "View All",
-    image: "/00.png",
-  },
-  {
-    title: "Test Blog 12",
-    description: "Description for test blog 12",
-    category: "Programming",
-    image: "/00.png",
-  },
-  {
-    title: "Test Blog 13",
-    description: "Description for test blog 13",
-    category: "Self Development",
-    image: "/00.png",
-  },
-  {
-    title: "Test Blog 14",
-    description: "Description for test blog 14",
-    category: "Travels",
-    image: "/00.png",
-  },
-  {
-    title: "Test Blog 15",
-    description: "Description for test blog 15",
-    category: "Career",
-    image: "/00.png",
-  },
-  {
-    title: "Test Blog 16",
-    description: "Description for test blog 16",
-    category: "Finance",
-    image: "/00.png",
-  },
-  {
-    title: "Test Blog 17",
-    description: "Description for test blog 17",
-    category: "View All",
-    image: "/00.png",
-  },
-  {
-    title: "Test Blog 18",
-    description: "Description for test blog 18",
-    category: "Programming",
-    image: "/00.png",
-  },
-  {
-    title: "Test Blog 19",
-    description: "Description for test blog 19",
-    category: "Self Development",
-    image: "/00.png",
-  },
-  {
-    title: "Test Blog 20",
-    description: "Description for test blog 20",
-    category: "Travels",
-    image: "/00.png",
-  },
-];
-
-// Available filter categories
-const filterCategories = [
-  "View All",
-  "Programming",
-  "Self Development",
-  "Travels",
-  "Career",
-  "Finance",
-];
+import { useBlogPosts } from "@/hooks/useBlogPosts";
 
 export default function BlogPosts() {
-  // State for the active filter
-  const [activeFilter, setActiveFilter] = useState("View All");
-  // State for filtered blog posts
-  const [filteredPosts, setFilteredPosts] = useState(blogData);
+  // Use the custom hook for blog data
+  const {
+    posts,
+    categories,
+    isLoading,
+    error,
+    filteredPosts,
+    activeFilter,
+    setActiveFilter,
+  } = useBlogPosts();
+
   // State for pagination
   const [currentPage, setCurrentPage] = useState(1);
 
@@ -183,17 +54,8 @@ export default function BlogPosts() {
   const indexOfFirstPost = indexOfLastPost - (postsPerPage || 6);
   const currentPosts = filteredPosts.slice(indexOfFirstPost, indexOfLastPost);
 
-  // Filter posts when activeFilter changes
+  // Reset to first page when filter changes
   useEffect(() => {
-    if (activeFilter === "View All") {
-      setFilteredPosts(blogData);
-    } else {
-      const filtered = blogData.filter(
-        (post) => post.category === activeFilter
-      );
-      setFilteredPosts(filtered);
-    }
-    // Reset to first page when filter changes
     setCurrentPage(1);
   }, [activeFilter]);
 
@@ -248,7 +110,7 @@ export default function BlogPosts() {
             className="filter-tabs"
             position="relative"
           >
-            {filterCategories.map((category) => (
+            {categories.map((category) => (
               <Box
                 key={category}
                 as="button"
@@ -287,102 +149,136 @@ export default function BlogPosts() {
           </Flex>
         </Box>
 
+        {/* Loading State */}
+        {isLoading && (
+          <Flex justify="center" align="center" py={20}>
+            <VStack spacing={4}>
+              <Spinner size="xl" color="#0E5FDC" thickness="4px" />
+              <Text color="gray.600" fontSize="lg">
+                Loading blog posts...
+              </Text>
+            </VStack>
+          </Flex>
+        )}
+
+        {/* Error State */}
+        {error && !isLoading && (
+          <Alert status="error" borderRadius="md" maxW="600px" mx="auto" mb={8}>
+            <AlertIcon />
+            {error}
+          </Alert>
+        )}
+
+        {/* No Posts State */}
+        {!isLoading && !error && filteredPosts.length === 0 && (
+          <Box textAlign="center" py={20}>
+            <Text fontSize="xl" color="gray.600" mb={4}>
+              No blog posts found for &ldquo;{activeFilter}&rdquo;
+            </Text>
+            <Text color="gray.500">
+              Try selecting a different category or check back later.
+            </Text>
+          </Box>
+        )}
+
         {/* Blog Posts Grid */}
-        <Grid
-          templateColumns={{
-            base: "1fr",
-            md: "repeat(2, 1fr)",
-          }}
-          gap={{ base: 6, md: 6 }}
-          px={{ base: 4, md: 0 }}
-          maxW={{ md: "90%" }}
-          mx="auto"
-        >
-          {currentPosts.map((post, index) => (
-            <GridItem key={index}>
-              <Box
-                borderRadius="xl"
-                overflow="hidden"
-                bg="white"
-                boxShadow="0px 4px 10px rgba(0, 0, 0, 0.05)"
-                transition="transform 0.2s, box-shadow 0.2s"
-                maxW="95%"
-                mx="auto"
-                _hover={{
-                  boxShadow: "0px 6px 15px rgba(0, 0, 0, 0.1)",
-                }}
-              >
-                {/* Blog Post Image */}
-                <Box position="relative">
-                  <Image
-                    src={post.image}
-                    alt={post.title}
-                    w="100%"
-                    h="280px"
-                    objectFit="cover"
-                    objectPosition="center top"
-                    borderRadius="xl"
-                  />
-                  {post.category === "Programming" && index === 0 && (
-                    <Box
-                      position="absolute"
-                      top="16px"
-                      left="16px"
-                      bg="#0E5FDC"
-                      color="white"
-                      fontSize="xs"
-                      fontWeight="600"
-                      px="3"
-                      py="1"
-                      borderRadius="md"
+        {!isLoading && !error && filteredPosts.length > 0 && (
+          <Grid
+            templateColumns={{
+              base: "1fr",
+              md: "repeat(2, 1fr)",
+            }}
+            gap={{ base: 6, md: 6 }}
+            px={{ base: 4, md: 0 }}
+            maxW={{ md: "90%" }}
+            mx="auto"
+          >
+            {currentPosts.map((post, index) => (
+              <GridItem key={index}>
+                <Box
+                  borderRadius="xl"
+                  overflow="hidden"
+                  bg="white"
+                  boxShadow="0px 4px 10px rgba(0, 0, 0, 0.05)"
+                  transition="transform 0.2s, box-shadow 0.2s"
+                  maxW="95%"
+                  mx="auto"
+                  _hover={{
+                    boxShadow: "0px 6px 15px rgba(0, 0, 0, 0.1)",
+                  }}
+                >
+                  {/* Blog Post Image */}
+                  <Box position="relative">
+                    <Image
+                      src={post.image}
+                      alt={post.title}
+                      w="100%"
+                      h="280px"
+                      objectFit="cover"
+                      objectPosition="center top"
+                      borderRadius="xl"
+                    />
+                    {post.category === "Programming" && index === 0 && (
+                      <Box
+                        position="absolute"
+                        top="16px"
+                        left="16px"
+                        bg="#0E5FDC"
+                        color="white"
+                        fontSize="xs"
+                        fontWeight="600"
+                        px="3"
+                        py="1"
+                        borderRadius="md"
+                      >
+                        Featured
+                      </Box>
+                    )}
+                  </Box>
+
+                  {/* Blog Post Content */}
+                  <Box pt={6} pb={4} px={4}>
+                    <Heading
+                      as="h3"
+                      fontSize={{ base: "xl", md: "2xl" }}
+                      fontWeight={700}
+                      color="#000"
+                      mb={3}
+                      noOfLines={1}
                     >
-                      Featured
-                    </Box>
-                  )}
+                      {post.title}
+                    </Heading>
+
+                    <Text
+                      color="gray.700"
+                      fontSize={{ base: "sm", md: "md" }}
+                      mb={5}
+                      noOfLines={3}
+                      lineHeight="1.6"
+                    >
+                      {post.description}
+                    </Text>
+
+                    <Link
+                      href={`/blog/${post.slug}`}
+                      display="inline-flex"
+                      alignItems="center"
+                      color="#0E5FDC"
+                      fontWeight={600}
+                      fontSize={{ base: "sm", md: "md" }}
+                      _hover={{ textDecoration: "none", color: "#0B4DB0" }}
+                    >
+                      Read Post <ChevronRightIcon boxSize={5} ml={1} />
+                    </Link>
+                  </Box>
                 </Box>
-
-                {/* Blog Post Content */}
-                <Box pt={6} pb={4} px={4}>
-                  <Heading
-                    as="h3"
-                    fontSize={{ base: "xl", md: "2xl" }}
-                    fontWeight={700}
-                    color="#000"
-                    mb={3}
-                    noOfLines={1}
-                  >
-                    {post.title}
-                  </Heading>
-
-                  <Text
-                    color="gray.700"
-                    fontSize={{ base: "sm", md: "md" }}
-                    mb={5}
-                    noOfLines={3}
-                    lineHeight="1.6"
-                  >
-                    {post.description}
-                  </Text>
-
-                  <Link
-                    href="#"
-                    display="inline-flex"
-                    alignItems="center"
-                    color="#0E5FDC"
-                    fontWeight={600}
-                    fontSize={{ base: "sm", md: "md" }}
-                    _hover={{ textDecoration: "none", color: "#0B4DB0" }}
-                  >
-                    Read Post <ChevronRightIcon boxSize={5} ml={1} />
-                  </Link>
-                </Box>
-              </Box>
-            </GridItem>
-          ))}
-        </Grid>
+              </GridItem>
+            ))}
+          </Grid>
+        )}
 
         {/* Pagination Controls */}
-        {filteredPosts.length > (postsPerPage || 6) && (
+        {!isLoading && !error && filteredPosts.length > (postsPerPage || 6) && (
           <Flex
             justify="center"
             mt={14}

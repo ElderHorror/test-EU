@@ -7,6 +7,7 @@ import {
   Text,
   VStack,
   useBreakpointValue,
+  Link,
 } from "@chakra-ui/react";
 
 export default function CallToAction() {
@@ -30,20 +31,25 @@ export default function CallToAction() {
             {textContent}
           </Text>
 
-          <Button
-            bg="#0E5FDC"
-            color="white"
-            size="md"
-            _hover={{ bg: "#0B4DB0" }}
-            px="1.1rem"
-            py="1.8rem"
-            fontSize="1rem"
-            
-            mt="0.35rem"
-            fontFamily="ClashDisplay"
+          <Link
+            href="https://forms.gle/JmEMziR6a5j4Mew48"
+            isExternal
+            _hover={{ textDecoration: "none" }}
           >
-            Apply Now
-          </Button>
+            <Button
+              bg="#0E5FDC"
+              color="white"
+              size="md"
+              _hover={{ bg: "#0B4DB0" }}
+              px="1.1rem"
+              py="1.8rem"
+              fontSize="1rem"
+              mt="0.35rem"
+              fontFamily="ClashDisplay"
+            >
+              Apply Now
+            </Button>
+          </Link>
         </VStack>
       </Container>
     </Box>

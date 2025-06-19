@@ -1,6 +1,6 @@
 "use client";
 
-import { Box, Container, Flex, Heading, Text, VStack } from "@chakra-ui/react";
+import { Box, Container, Heading, Text, VStack } from "@chakra-ui/react";
 import PageLayout from "@/components/layout/PageLayout";
 import LoanFeature from "@/components/sections/loans/LoanFeature";
 import LoanApplication from "./LoanApplication";
@@ -9,6 +9,7 @@ import AnimatedElement from "@/components/common/AnimatedElement";
 import StaggeredContainer from "@/components/common/StaggeredContainer";
 import PageTransition from "@/components/common/PageTransition";
 import NewCalculator from "@/components/sections/calculator/NewCalculator";
+import LoanTestimonials from "./LoanTestimonials";
 
 export default function Loans() {
   return (
@@ -208,6 +209,13 @@ Competitive Interest Rates: Our loan options come with highly competitive rates,
                 smallText={true}
               />
             </Box>
+          </AnimatedElement>
+        </Box>
+
+        {/* Testimonials Section */}
+        <Box position="relative" zIndex="1">
+          <AnimatedElement animation="fadeIn" delay={0.2}>
+            <LoanTestimonials />
           </AnimatedElement>
         </Box>
 

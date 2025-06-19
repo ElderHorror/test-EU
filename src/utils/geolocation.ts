@@ -50,15 +50,20 @@ const countryCurrencyMap: Record<string, { currency: string; symbol: string }> =
 export async function getUserCountry(): Promise<CountryInfo> {
   // Return cached result if available to prevent multiple API calls
   if (countryInfoCache) {
-    console.log("Using cached country info:", countryInfoCache);
     return countryInfoCache;
   }
 
   try {
-    console.log("Fetching country info from API...");
-    const response = await fetch("https://ipapi.co/json/");
+    const response = await fetch("https://ipapi.co/json/", {
+      // Add timeout and signal for better performance
+      signal: AbortSignal.timeout(5000), // 5 second timeout
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+
     const data = await response.json();
-    console.log("Geolocation API response:", data);
 
     if (data.country_code && countryCurrencyMap[data.country_code]) {
       const currencyInfo = countryCurrencyMap[data.country_code];
@@ -78,7 +83,8 @@ export async function getUserCountry(): Promise<CountryInfo> {
     countryInfoCache = defaultCountry;
     return defaultCountry;
   } catch (error) {
-    console.error("Error detecting country:", error);
+    // Silently fall back to default country to prevent console spam
+    countryInfoCache = defaultCountry;
     return defaultCountry;
   }
 }

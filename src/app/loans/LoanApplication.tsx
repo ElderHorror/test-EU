@@ -77,13 +77,17 @@ export default function LoanApplication() {
               color="#2F3540"
               fontSize={{ base: "1rem", md: "1rem" }}
               lineHeight="1.8"
-              mb={{lg: "1rem"}}
+              mb={{ lg: "1rem" }}
             >
               Applying for our loan service is simple and quick:
             </Text>
 
             {/* Numbered List */}
-            <List spacing={{lg: "1.5rem", base:"1rem"}} styleType="decimal" pl="1rem">
+            <List
+              spacing={{ lg: "1.5rem", base: "1rem" }}
+              styleType="decimal"
+              pl="1rem"
+            >
               {/* Step 1 */}
               <ListItem>
                 <Text
@@ -102,7 +106,11 @@ export default function LoanApplication() {
                   </Text>{" "}
                   Provide basic details about your study program and financial
                   needs.{" "}
-                  <Link color="#0E5FDC" href="#">
+                  <Link
+                    color="#0E5FDC"
+                    href="https://forms.gle/JmEMziR6a5j4Mew48"
+                    isExternal
+                  >
                     Click here to fill to get started with filling the form
                   </Link>
                 </Text>
@@ -126,7 +134,12 @@ export default function LoanApplication() {
                   </Text>{" "}
                   You will be asked to upload the following document:
                 </Text>
-                <UnorderedList color="#2F3540" pl="2rem" mt="0.5rem" spacing="0.5rem">
+                <UnorderedList
+                  color="#2F3540"
+                  pl="2rem"
+                  mt="0.5rem"
+                  spacing="0.5rem"
+                >
                   <ListItem>A PDF of your passport data page</ListItem>
                   <ListItem>A PDF of the visa page of your passport</ListItem>
                   <ListItem>Your admission letter</ListItem>
@@ -151,7 +164,6 @@ export default function LoanApplication() {
                     color="#2F3540"
                     fontWeight={600}
                     display="inline"
-
                   >
                     Provide Guarantor Details:
                   </Text>{" "}
@@ -194,18 +206,24 @@ export default function LoanApplication() {
           </VStack>
 
           {/* Apply Button */}
-          <Button
-            bg="#0E5FDC"
-            color="white"
-            size="md"
-            _hover={{ bg: "#0B4DB0" }}
-            px="1.1rem"
-            py="1.8rem"
-            fontSize="1rem"
-            w={{lg:"20%", base:"50%"}}
+          <Link
+            href="https://forms.gle/JmEMziR6a5j4Mew48"
+            isExternal
+            _hover={{ textDecoration: "none" }}
           >
-            Apply Now
-          </Button>
+            <Button
+              bg="#0E5FDC"
+              color="white"
+              size="md"
+              _hover={{ bg: "#0B4DB0" }}
+              px="1.1rem"
+              py="1.8rem"
+              fontSize="1rem"
+              w={{ lg: "20%", base: "50%" }}
+            >
+              Apply Now
+            </Button>
+          </Link>
         </VStack>
       </Container>
     </Box>
