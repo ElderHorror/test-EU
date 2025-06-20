@@ -84,6 +84,9 @@ export default function PerformanceProvider({
           const domains = [
             "https://fonts.googleapis.com",
             "https://fonts.gstatic.com",
+            "https://eustudyassist.com",
+            "https://vercel-scripts.com",
+            "https://va.vercel-scripts.com"
           ];
 
           domains.forEach((domain) => {
@@ -106,6 +109,47 @@ export default function PerformanceProvider({
                 `Error adding preconnect for ${domain}:`,
                 domainError
               );
+            }
+          });
+
+          // Prefetch critical pages for faster navigation
+          const criticalPages = [
+            "/",
+            "/about",
+            "/training",
+            "/loans",
+            "/consultation",
+            "/blog",
+            "/courses"
+          ];
+
+          criticalPages.forEach((page) => {
+            try {
+              // Check if prefetch already exists
+              const existingPrefetch = document.querySelector(
+                `link[rel="prefetch"][href="${page}"]`
+              );
+
+              if (!existingPrefetch) {
+                const link = document.createElement("link");
+                link.rel = "prefetch";
+                link.href = page;
+                document.head.appendChild(link);
+              }
+            } catch (prefetchError) {
+              console.error(`Error prefetching page ${page}:`, prefetchError);
+            }
+          });
+
+          // Defer non-critical scripts to improve initial load performance
+          const scripts = document.querySelectorAll('script[src]');
+          scripts.forEach((script) => {
+            try {
+              if (!script.hasAttribute('defer') && !script.hasAttribute('async')) {
+                script.setAttribute('defer', 'true');
+              }
+            } catch (scriptError) {
+              console.error('Error deferring script:', scriptError);
             }
           });
         }

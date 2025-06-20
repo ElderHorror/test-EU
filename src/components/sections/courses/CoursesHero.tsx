@@ -80,39 +80,23 @@ export default function CoursesHero() {
       </Box>
 
       {/* Training Image */}
-      <Box
-        w="100%"
-        display={{ base: "block", md: "none" }}
-        h="100vh"
-        position="relative"
-      >
-        <Image
-          src="/training.jpg"
-          alt="Training"
-          fill={true}
-          style={{
-            objectFit: "cover",
-            objectPosition: "center",
-          }}
-          priority={true}
-        />
-      </Box>
-      <Box
-        w="100%"
-        display={{ base: "none", md: "block" }}
-        h="100vh"
-        position="relative"
-      >
-        <Image
-          src="/training.jpg"
-          alt="Training"
-          fill={true}
-          style={{
-            objectFit: "cover",
-          }}
-          priority={true}
-        />
-      </Box>
+        <Box
+          w="100%"
+          h="100vh"
+          position="relative"
+          display="block"
+        >
+          <Image
+            src="/training.jpg"
+            alt="Training"
+            width={1200}
+            height={800}
+            layout="responsive"
+            objectFit="cover"
+            quality={80}
+            priority
+          />
+        </Box>
     </>
   );
 }

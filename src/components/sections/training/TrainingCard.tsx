@@ -1,5 +1,6 @@
 "use client";
-import { Box, Flex, Text, Image, AspectRatio } from "@chakra-ui/react";
+import { Box, Flex, Text, AspectRatio } from "@chakra-ui/react";
+import Image from "next/image";
 import Link from "next/link";
 import { useRef, useEffect, useState, useId } from "react";
 
@@ -84,24 +85,31 @@ export default function TrainingCard({
           width: "100%",
         }}
       >
-        <AspectRatio
-          ratio={{ base: 1.1, sm: 1.2, md: 1.6296 }}
-          maxW={{ base: "100%", md: "35rem" }}
-          width="100%"
-          height={{ base: "280px", sm: "300px", md: "200px" }}
-          marginBottom={{ base: "0.5rem", md: "0" }}
-          flexShrink={0} /* Prevent image from shrinking */
-        >
-          <Image
-            borderRadius="8px"
-            alt={data.title}
-            src={data.image}
-            objectPosition={{ base: "center 0%", md: "0px 0px" }}
-            objectFit="cover"
+          <AspectRatio
+            ratio={{ base: 1.1, sm: 1.2, md: 1.6296 }}
+            maxW={{ base: "100%", md: "35rem" }}
             width="100%"
-            height="100%"
-          />
-        </AspectRatio>
+            height={{ base: "280px", sm: "300px", md: "200px" }}
+            marginBottom={{ base: "0.5rem", md: "0" }}
+            flexShrink={0} /* Prevent image from shrinking */
+          >
+            <Box
+              position="relative"
+              width="100%"
+              height="100%"
+              borderRadius="8px"
+              overflow="hidden"
+            >
+              <Image
+                src={data.image}
+                alt={data.title}
+                layout="fill"
+                objectFit="cover"
+                objectPosition="center 0%"
+                quality={75}
+              />
+            </Box>
+          </AspectRatio>
         <Flex width="100%" justifyContent="center" flexShrink={0}>
           <Text
             ref={titleRef}

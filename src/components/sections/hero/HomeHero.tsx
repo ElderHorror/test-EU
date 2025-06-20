@@ -1,5 +1,6 @@
 "use client";
-import { Box, Flex, Text, Image, Link } from "@chakra-ui/react";
+import { Box, Flex, Text, Link } from "@chakra-ui/react";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import { useInView } from "react-intersection-observer";
 import { SecondaryButton } from "@/components/common/buttons/Button";
@@ -186,14 +187,22 @@ export default function HomeHero() {
             justifySelf: "center",
           }}
         >
-          <Image
+          <Box
             marginLeft="auto"
             borderRadius="8px"
             border="none"
-            src="/Image.jpg"
-            alt="Students studying together"
-            objectFit="contain"
-          />
+            overflow="hidden"
+          >
+            <Image
+              src="/Image.jpg"
+              alt="Students studying together"
+              objectFit="contain"
+              width={800}
+              height={600}
+              quality={80}
+              priority
+            />
+          </Box>
         </motion.div>
       </Flex>
     </Box>

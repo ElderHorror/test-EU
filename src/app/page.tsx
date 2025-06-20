@@ -4,14 +4,20 @@ import { useState, useEffect } from "react";
 import { useHashFragment } from "@/hooks";
 import PageLayout from "@/components/layout/PageLayout";
 
-// Section components
+import { lazy, Suspense } from "react";
+
+// Section components with lazy loading for non-critical sections
 import HomeHero from "@/components/sections/hero/HomeHero";
-import TrainingSection from "@/components/sections/training/TrainingSection";
-import ConsultingSection from "@/components/sections/consulting/ConsultingSection";
-import LoansSection from "@/components/sections/loans/LoansSection";
-import Faq, { defaultFaqItems } from "@/components/sections/faq/FAQNew";
-import Testimonials from "@/components/sections/testimonials/Testimonials";
-import Calculator from "@/components/sections/calculator/Calculator";
+const TrainingSection = lazy(() => import("@/components/sections/training/TrainingSection"));
+const ConsultingSection = lazy(() => import("@/components/sections/consulting/ConsultingSection"));
+const LoansSection = lazy(() => import("@/components/sections/loans/LoansSection"));
+const Faq = lazy(() => import("@/components/sections/faq/FAQNew"));
+const Testimonials = lazy(() => import("@/components/sections/testimonials/Testimonials"));
+const Calculator = lazy(() => import("@/components/sections/calculator/Calculator"));
+import { defaultFaqItems } from "@/components/sections/faq/FAQNew";
+
+// Simple fallback component for lazy-loaded sections
+const LoadingFallback = () => <div>Loading section...</div>;
 
 /**
  * Home page component
@@ -97,14 +103,26 @@ export default function Home() {
         {pageMode === 0 ? (
           <>
             <HomeHero />
-            <TrainingSection />
-            <LoansSection />
-            <ConsultingSection />
-            <Faq faqItems={defaultFaqItems} />
-            <Testimonials />
+            <Suspense fallback={<LoadingFallback />}>
+              <TrainingSection />
+            </Suspense>
+            <Suspense fallback={<LoadingFallback />}>
+              <LoansSection />
+            </Suspense>
+            <Suspense fallback={<LoadingFallback />}>
+              <ConsultingSection />
+            </Suspense>
+            <Suspense fallback={<LoadingFallback />}>
+              <Faq faqItems={defaultFaqItems} />
+            </Suspense>
+            <Suspense fallback={<LoadingFallback />}>
+              <Testimonials />
+            </Suspense>
           </>
         ) : (
-          <Calculator />
+          <Suspense fallback={<LoadingFallback />}>
+            <Calculator />
+          </Suspense>
         )}
       </Box>
     </PageLayout>

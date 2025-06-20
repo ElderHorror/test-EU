@@ -258,7 +258,7 @@ const CourseCard = memo(
       <Flex direction="column" flex="1" p="0">
         {/* Title and Price */}
         <Box pt="0.8rem" flexShrink={0}>
-          <Flex justify="space-between" align="flex-start" mb="0.75rem">
+          <Flex justify="space-between" align="flex-start" mb="0.75rem" h="3.5rem">
             <Heading
               as="h3"
               fontSize="2xl"
@@ -267,6 +267,7 @@ const CourseCard = memo(
               lineHeight="1.2"
               flex="1"
               mr="0.5rem"
+              noOfLines={2}
             >
               {course.title}
             </Heading>
