@@ -8,9 +8,7 @@ import {
   Text,
   Button,
   Flex,
-  Grid,
-  GridItem,
-  Image,
+  SimpleGrid,
   Link,
   HStack,
   VStack,
@@ -19,6 +17,7 @@ import {
   Alert,
   AlertIcon,
 } from "@chakra-ui/react";
+import BlogPostCard from "./BlogPostCard";
 import { ChevronRightIcon, ChevronLeftIcon } from "@chakra-ui/icons";
 import LoanFeature from "@/components/sections/loans/LoanFeature";
 import AnimatedElement from "@/components/common/AnimatedElement";
@@ -72,7 +71,7 @@ export default function BlogPosts() {
 
   return (
     <Box py={{ base: 10, md: 16 }} bg="white">
-      <Container maxW="100%" px="0">
+      <Container maxW="100%" px={{lg: "14rem", base:"1rem", md:"1rem"}}>
         {/* Section Heading */}
         <Heading
           as="h2"
@@ -183,98 +182,19 @@ export default function BlogPosts() {
 
         {/* Blog Posts Grid */}
         {!isLoading && !error && filteredPosts.length > 0 && (
-          <Grid
-            templateColumns={{
-              base: "1fr",
-              md: "repeat(2, 1fr)",
-            }}
-            gap={{ base: 6, md: 6 }}
+          <SimpleGrid
+            columns={{ base: 1, md: 2, lg: 3 }}
+            spacing="2rem"
+            spacingY="3rem"
+            alignItems="stretch"
             px={{ base: 4, md: 0 }}
             maxW={{ md: "90%" }}
             mx="auto"
           >
-            {currentPosts.map((post, index) => (
-              <GridItem key={index}>
-                <Box
-                  borderRadius="xl"
-                  overflow="hidden"
-                  bg="white"
-                  boxShadow="0px 4px 10px rgba(0, 0, 0, 0.05)"
-                  transition="transform 0.2s, box-shadow 0.2s"
-                  maxW="95%"
-                  mx="auto"
-                  _hover={{
-                    boxShadow: "0px 6px 15px rgba(0, 0, 0, 0.1)",
-                  }}
-                >
-                  {/* Blog Post Image */}
-                  <Box position="relative">
-                    <Image
-                      src={post.image}
-                      alt={post.title}
-                      w="100%"
-                      h="280px"
-                      objectFit="cover"
-                      objectPosition="center top"
-                      borderRadius="xl"
-                    />
-                    {post.category === "Programming" && index === 0 && (
-                      <Box
-                        position="absolute"
-                        top="16px"
-                        left="16px"
-                        bg="#0E5FDC"
-                        color="white"
-                        fontSize="xs"
-                        fontWeight="600"
-                        px="3"
-                        py="1"
-                        borderRadius="md"
-                      >
-                        Featured
-                      </Box>
-                    )}
-                  </Box>
-
-                  {/* Blog Post Content */}
-                  <Box pt={6} pb={4} px={4}>
-                    <Heading
-                      as="h3"
-                      fontSize={{ base: "xl", md: "2xl" }}
-                      fontWeight={700}
-                      color="#000"
-                      mb={3}
-                      noOfLines={1}
-                    >
-                      {post.title}
-                    </Heading>
-
-                    <Text
-                      color="gray.700"
-                      fontSize={{ base: "sm", md: "md" }}
-                      mb={5}
-                      noOfLines={3}
-                      lineHeight="1.6"
-                    >
-                      {post.description}
-                    </Text>
-
-                    <Link
-                      href={`/blog/${post.slug}`}
-                      display="inline-flex"
-                      alignItems="center"
-                      color="#0E5FDC"
-                      fontWeight={600}
-                      fontSize={{ base: "sm", md: "md" }}
-                      _hover={{ textDecoration: "none", color: "#0B4DB0" }}
-                    >
-                      Read Post <ChevronRightIcon boxSize={5} ml={1} />
-                    </Link>
-                  </Box>
-                </Box>
-              </GridItem>
+            {currentPosts.map((post) => (
+              <BlogPostCard key={post.id} post={post} />
             ))}
-          </Grid>
+          </SimpleGrid>
         )}
 
         {/* Pagination Controls */}

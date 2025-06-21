@@ -4,11 +4,11 @@ import {
   Container,
   Flex,
   IconButton,
-  Link,
   Text,
   VStack,
   useDisclosure,
 } from "@chakra-ui/react";
+import Link from "next/link";
 import NavbarLogo from "./NavbarLogo";
 import NavbarList from "./NavbarList";
 import { HamburgerIcon, CloseIcon } from "@chakra-ui/icons";
@@ -78,7 +78,7 @@ export default function Navbar({ setPageMode }: NavbarProps) {
           pr={{ lg: "2rem", base: "1.5rem" }}
           as={"nav"}
         >
-          <Link href="../#Heropage">
+          <Link href="../#Heropage" prefetch>
             <NavbarLogo />
           </Link>
           <Flex
@@ -114,7 +114,7 @@ export default function Navbar({ setPageMode }: NavbarProps) {
                 }
               }}
             >
-              <Link href={"/courses"}>
+              <Link href={"/courses"} prefetch>
                 <SecondaryButton>Join BootCamp</SecondaryButton>
               </Link>
             </Box>
@@ -159,10 +159,10 @@ export default function Navbar({ setPageMode }: NavbarProps) {
         >
           <VStack w="100%" spacing={4} align="stretch" px={4}>
             {navLinks.map((link) => (
-              <Text
-                as="a"
+              <Link
                 key={link.id}
-                py={2}
+                href={link.href}
+                prefetch
                 onClick={() => {
                   if (
                     link.navLink.startsWith("/#") ||
@@ -178,20 +178,26 @@ export default function Navbar({ setPageMode }: NavbarProps) {
                   }
                   onClose();
                 }}
-                rounded={"md"}
-                _hover={{
-                  textDecoration: "none",
-                }}
-                href={link.href}
-                w="100%"
-                textAlign="center"
-                fontSize="1rem"
+                passHref
+                style={{ textDecoration: "none" }}
               >
-                {link.navLink}
-              </Text>
+                <Box
+                  rounded={"md"}
+                  _hover={{
+                    textDecoration: "none",
+                  }}
+                  w="100%"
+                  textAlign="center"
+                  fontSize="1rem"
+                  py={2}
+                  display="block"
+                >
+                  <Text>{link.navLink}</Text>
+                </Box>
+              </Link>
             ))}
             <Box textAlign="center" py={2}>
-              <Link href={"/courses"}>
+              <Link href={"/courses"} prefetch>
                 <SecondaryButton>Join BootCamp</SecondaryButton>
               </Link>
             </Box>
