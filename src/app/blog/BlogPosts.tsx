@@ -21,22 +21,20 @@ import BlogPostCard from "./BlogPostCard";
 import { ChevronRightIcon, ChevronLeftIcon } from "@chakra-ui/icons";
 import LoanFeature from "@/components/sections/loans/LoanFeature";
 import AnimatedElement from "@/components/common/AnimatedElement";
-import { useBlogPosts } from "@/hooks/useBlogPosts";
+import { ProcessedBlogPost } from "@/lib/contentful";
 
-export default function BlogPosts() {
-  // Use the custom hook for blog data
-  const {
-    posts,
-    categories,
-    isLoading,
-    error,
-    filteredPosts,
-    activeFilter,
-    setActiveFilter,
-  } = useBlogPosts();
+interface BlogPostsProps {
+  initialPosts: ProcessedBlogPost[];
+  initialCategories: string[];
+}
 
-  // State for pagination
+export default function BlogPosts({ initialPosts, initialCategories }: BlogPostsProps) {
+  const [posts] = useState<ProcessedBlogPost[]>(initialPosts);
+  const [categories] = useState<string[]>(initialCategories);
+  const [activeFilter, setActiveFilter] = useState("View All");
   const [currentPage, setCurrentPage] = useState(1);
+  const [isLoading] = useState(false);
+  const [error] = useState<string | null>(null);
 
   // Number of columns based on screen size
   const columns = useBreakpointValue({ base: 1, md: 2 });
@@ -47,6 +45,11 @@ export default function BlogPosts() {
   // Responsive text for pagination buttons
   const prevButtonText = useBreakpointValue({ base: "", md: "Previous" });
   const nextButtonText = useBreakpointValue({ base: "", md: "Next" });
+
+  // Filter posts based on active filter
+  const filteredPosts = activeFilter === "View All" 
+    ? posts 
+    : posts.filter(post => post.category === activeFilter);
 
   // Get current posts
   const indexOfLastPost = currentPage * (postsPerPage || 6); // Fallback to 6 if undefined during initial render
@@ -70,8 +73,8 @@ export default function BlogPosts() {
   }, [postsPerPage, filteredPosts.length, currentPage]);
 
   return (
-    <Box py={{ base: 10, md: 16 }} bg="white">
-      <Container maxW="100%" px={{lg: "14rem", base:"1rem", md:"1rem"}}>
+    <Box py={{ base: 10, md: 20 }} bg="white">
+        <Container maxW="70rem">
         {/* Section Heading */}
         <Heading
           as="h2"
@@ -88,7 +91,7 @@ export default function BlogPosts() {
         <Box
           position="relative"
           mb={{ base: 10, md: 14 }}
-          maxW={{ base: "80%", md: "90%" }}
+          maxW={{ base: "80%", md: "100%" }}
           mx="auto"
           // ml={{base: "1rem"}}
         >
@@ -188,7 +191,7 @@ export default function BlogPosts() {
             spacingY="3rem"
             alignItems="stretch"
             px={{ base: 4, md: 0 }}
-            maxW={{ md: "90%" }}
+            maxW={{ md: "100%" }}
             mx="auto"
           >
             {currentPosts.map((post) => (

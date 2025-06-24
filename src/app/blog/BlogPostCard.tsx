@@ -46,7 +46,7 @@ export default function BlogPostCard({ post }: BlogPostCardProps) {
       <Box
         position="relative"
         width="100%"
-        height="200px"
+        height="220px"
         borderTopLeftRadius="lg"
         borderTopRightRadius="lg"
         borderBottomRightRadius="lg"
@@ -59,6 +59,7 @@ export default function BlogPostCard({ post }: BlogPostCardProps) {
           alt={post.title}
           layout="fill"
           objectFit="cover"
+          objectPosition="top"
           quality={75}
         />
       </Box>

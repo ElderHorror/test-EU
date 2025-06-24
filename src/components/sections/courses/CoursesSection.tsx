@@ -174,6 +174,7 @@ export default function CoursesSection() {
       subtitle="Discover our range of specialized training programs designed to equip you with the technical skills and knowledge needed to excel in research and professional settings. Each course offers hands-on learning, real-world projects, and mentorship from industry experts to ensure you're ready for global opportunities."
       bg="#F4F4F4"
       py="6rem"
+      mt="14rem"
       spacing={4}
       titleFontSize={{ base: "4xl", md: "4xl", lg: "5xl" }}
     >
