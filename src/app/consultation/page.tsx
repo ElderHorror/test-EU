@@ -136,6 +136,7 @@ const ConsultationPage = () => {
                     alt="Consultation Services"
                     objectFit="cover"
                     objectPosition="center"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                   />
                 </Box>
               </AnimatedElement>

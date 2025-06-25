@@ -22,7 +22,7 @@ const courses = [
   {
     id: 1,
     title: "R for Research I (Basics of R Programming)",
-    price: "$25",
+    price: "$9.999",
     duration: "6 HOURS",
     level: "BEGINNER",
     description:
