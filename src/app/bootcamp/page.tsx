@@ -16,11 +16,13 @@ import {
   useDisclosure,
   useToast,
 } from "@chakra-ui/react";
-import Navbar from "../../../Components/Navbar/Navbar";
-import Footer from "@/Sections/Footer/Footer";
+import PageLayout from "@/components/layout/PageLayout";
+
 import { useRouter } from "next/navigation";
 import { Field, Formik } from "formik";
 import * as Yup from "yup";
+import Navbar from "@/components/layout/navbar/Navbar";
+import Footer from "@/components/layout/footer/Footer";
 
 export default function Bootcamp() {
   const router = useRouter();
@@ -30,9 +32,13 @@ export default function Bootcamp() {
   return (
     <Box bgColor={" rgba(255, 255, 255, 1)"} overflow={"hidden"}>
       <Navbar
-        setPageMode={(mode: string) => {
-          localStorage.setItem("pageMode", mode);
-          // router.push("/");
+        setPageMode={(mode: number) => {
+          try {
+            localStorage.setItem("pageMode", mode.toString());
+            // router.push("/");
+          } catch (error) {
+            console.error("Error saving to localStorage:", error);
+          }
         }}
       />
       <Box minH="calc(100vh - 30rem)" mt="10rem" p="1rem">
@@ -187,7 +193,11 @@ export default function Bootcamp() {
       </Modal>
       <Box
         onClick={() => {
-          localStorage.setItem("pageMode", "0");
+          try {
+            localStorage.setItem("pageMode", "0");
+          } catch (error) {
+            console.error("Error saving to localStorage:", error);
+          }
           router.push("/");
         }}
       >

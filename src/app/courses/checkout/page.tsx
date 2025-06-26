@@ -1,59 +1,25 @@
 "use client";
-import {
-  AspectRatio,
-  Box,
-  Button,
-  Container,
-  Flex,
-  FormControl,
-  FormErrorMessage,
-  FormLabel,
-  Image,
-  Input,
-  Modal,
-  ModalBody,
-  ModalCloseButton,
-  ModalContent,
-  ModalHeader,
-  ModalOverlay,
-  SimpleGrid,
-  Text,
-  useDisclosure,
-  useToast,
-} from "@chakra-ui/react";
-import Navbar from "../../../../Components/Navbar/Navbar";
-import Footer from "@/Sections/Footer/Footer";
-import { useRouter } from "next/navigation";
-import { Field, Formik } from "formik";
-import * as Yup from "yup";
-import { useLocation } from "../../../../Components/hooks";
-import dynamic from "next/dynamic";
-const CheckOut = dynamic(() => import("./checkout"), {
-  ssr: false,
-});
 
-export default function Bootcamp() {
-  const router = useRouter();
-  const { data, isLoading } = useLocation();
-  const toast = useToast();
+import { Box, Text } from "@chakra-ui/react";
+import PageLayout from "@/components/layout/PageLayout";
 
+/**
+ * Course checkout page component
+ */
+export default function CheckoutPage() {
   return (
-    <Box bgColor={" rgba(255, 255, 255, 1)"} overflow={"hidden"}>
-      <Navbar
-        setPageMode={(mode: string) => {
-          localStorage.setItem("pageMode", mode);
-          // router.push("/");
-        }}
-      />
-      <CheckOut />
+    <PageLayout>
       <Box
-        onClick={() => {
-          localStorage.setItem("pageMode", "0");
-          router.push("/");
-        }}
+        minH="calc(100vh - 30rem)"
+        mt="6rem"
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
       >
-        <Footer />
+        <Text fontSize="xl" fontWeight="bold">
+          Checkout - Coming Soon
+        </Text>
       </Box>
-    </Box>
+    </PageLayout>
   );
 }

@@ -1,9 +1,7 @@
 import { NextResponse } from "next/server";
 import { SendMailOptions } from "nodemailer";
-import { buildMail, emailTransporter } from "../../../../Components/email";
+import { buildMail, emailTransporter } from "@/lib/email";
 import { createHmac } from "crypto";
-
-
 
 interface PaystackData {
   id: number;
@@ -31,7 +29,7 @@ export interface PaystackChargeSuccessEvent {
   data: PaystackData;
 }
 
-export async function GET(req: Request) { 
+export async function GET(req: Request) {
   return NextResponse.json({ message: "welcome" });
 }
 

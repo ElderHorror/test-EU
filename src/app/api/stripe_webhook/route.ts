@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import { SendMailOptions } from "nodemailer";
 import Stripe from "stripe";
-import { buildMail, emailTransporter } from "../../../../Components/email";
+import { buildMail, emailTransporter } from "@/lib/email";
 
 const stripe = new Stripe(process.env.STRIPE_KEY ?? "");
 
