@@ -84,7 +84,6 @@ export default function PerformanceProvider({
           const domains = [
             "https://fonts.googleapis.com",
             "https://fonts.gstatic.com",
-            "https://test.eustudyassist.com",
             "https://eustudyassist.com",
             "https://vercel-scripts.com",
             "https://va.vercel-scripts.com"

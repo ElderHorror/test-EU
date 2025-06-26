@@ -85,9 +85,10 @@ export function processBlogPost(entry: any): ProcessedBlogPost {
 
 // Fetch all blog posts from Contentful
 export async function fetchBlogPosts(): Promise<ProcessedBlogPost[]> {
+  const contentType = "euStudyBlogProduciton"; // Hardcoded to ensure correct content type
   try {
     const response = await contentfulClient.getEntries({
-      content_type: "euStudyBlog",
+      content_type: contentType,
       order: ["-sys.createdAt"], // Order by creation date, newest first
       include: 2, // Include linked assets
     });
@@ -103,9 +104,10 @@ export async function fetchBlogPosts(): Promise<ProcessedBlogPost[]> {
 export async function fetchBlogPostBySlug(
   slug: string
 ): Promise<ProcessedBlogPost | null> {
+  const contentType = "euStudyBlogProduciton"; // Hardcoded to ensure correct content type
   try {
     const response = await contentfulClient.getEntries({
-      content_type: "euStudyBlog",
+      content_type: contentType,
       "fields.slug": slug,
       include: 2,
       limit: 1,
@@ -121,7 +123,8 @@ export async function fetchBlogPostBySlug(
       message: error.message,
       name: error.name,
       stack: error.stack,
-      slug: slug
+      slug: slug,
+      contentType: contentType
     });
     return null;
   }
@@ -129,9 +132,10 @@ export async function fetchBlogPostBySlug(
 
 // Get unique categories from blog posts
 export async function fetchBlogCategories(): Promise<string[]> {
+  const contentType = "euStudyBlogProduciton"; // Hardcoded to ensure correct content type
   try {
     const response = await contentfulClient.getEntries({
-      content_type: "euStudyBlog",
+      content_type: contentType,
       select: ["fields.category"],
     });
 
