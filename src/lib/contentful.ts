@@ -1,13 +1,14 @@
 import { createClient } from "contentful";
 
 // Contentful configuration
-const SPACE_ID = "qpmxuq9j1cps";
-const ACCESS_TOKEN = "36ZZPrdvrKICiFOp-6VDCAGIApiuh3XJVj_eeMjoJFI";
+const SPACE_ID = process.env.CONTENTFUL_SPACE_ID || "qpmxuq9j1cps";
+const ACCESS_TOKEN = process.env.CONTENTFUL_ACCESS_TOKEN || "36ZZPrdvrKICiFOp-6VDCAGIApiuh3XJVj_eeMjoJFI";
 
 // Create Contentful client
 export const contentfulClient = createClient({
   space: SPACE_ID,
   accessToken: ACCESS_TOKEN,
+  environment: process.env.CONTENTFUL_ENVIRONMENT || "master",
 });
 
 export interface ProcessedBlogPost {
@@ -115,8 +116,13 @@ export async function fetchBlogPostBySlug(
     }
 
     return processBlogPost(response.items[0]);
-  } catch (error) {
-    console.error("Error fetching blog post by slug:", error);
+  } catch (error: any) {
+    console.error("Error fetching blog post by slug:", {
+      message: error.message,
+      name: error.name,
+      stack: error.stack,
+      slug: slug
+    });
     return null;
   }
 }
