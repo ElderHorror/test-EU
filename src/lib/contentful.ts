@@ -1,13 +1,14 @@
 import { createClient } from "contentful";
 
 // Contentful configuration
-const SPACE_ID = "qpmxuq9j1cps";
-const ACCESS_TOKEN = "36ZZPrdvrKICiFOp-6VDCAGIApiuh3XJVj_eeMjoJFI";
+const SPACE_ID = process.env.CONTENTFUL_SPACE_ID || "qpmxuq9j1cps";
+const ACCESS_TOKEN = process.env.CONTENTFUL_ACCESS_TOKEN || "36ZZPrdvrKICiFOp-6VDCAGIApiuh3XJVj_eeMjoJFI";
 
 // Create Contentful client
 export const contentfulClient = createClient({
   space: SPACE_ID,
   accessToken: ACCESS_TOKEN,
+  environment: process.env.CONTENTFUL_ENVIRONMENT || "master",
 });
 
 export interface ProcessedBlogPost {
@@ -84,9 +85,10 @@ export function processBlogPost(entry: any): ProcessedBlogPost {
 
 // Fetch all blog posts from Contentful
 export async function fetchBlogPosts(): Promise<ProcessedBlogPost[]> {
+  const contentType = "euStudyBlogProduciton"; // Hardcoded to ensure correct content type
   try {
     const response = await contentfulClient.getEntries({
-      content_type: "euStudyBlog",
+      content_type: contentType,
       order: ["-sys.createdAt"], // Order by creation date, newest first
       include: 2, // Include linked assets
     });
@@ -102,9 +104,10 @@ export async function fetchBlogPosts(): Promise<ProcessedBlogPost[]> {
 export async function fetchBlogPostBySlug(
   slug: string
 ): Promise<ProcessedBlogPost | null> {
+  const contentType = "euStudyBlogProduciton"; // Hardcoded to ensure correct content type
   try {
     const response = await contentfulClient.getEntries({
-      content_type: "euStudyBlog",
+      content_type: contentType,
       "fields.slug": slug,
       include: 2,
       limit: 1,
@@ -115,17 +118,24 @@ export async function fetchBlogPostBySlug(
     }
 
     return processBlogPost(response.items[0]);
-  } catch (error) {
-    console.error("Error fetching blog post by slug:", error);
+  } catch (error: any) {
+    console.error("Error fetching blog post by slug:", {
+      message: error.message,
+      name: error.name,
+      stack: error.stack,
+      slug: slug,
+      contentType: contentType
+    });
     return null;
   }
 }
 
 // Get unique categories from blog posts
 export async function fetchBlogCategories(): Promise<string[]> {
+  const contentType = "euStudyBlogProduciton"; // Hardcoded to ensure correct content type
   try {
     const response = await contentfulClient.getEntries({
-      content_type: "euStudyBlog",
+      content_type: contentType,
       select: ["fields.category"],
     });
 
