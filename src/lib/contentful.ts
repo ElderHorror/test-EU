@@ -1,14 +1,25 @@
 import { createClient } from "contentful";
 
 // Contentful configuration
-const SPACE_ID = process.env.CONTENTFUL_SPACE_ID || "qpmxuq9j1cps";
-const ACCESS_TOKEN = process.env.CONTENTFUL_ACCESS_TOKEN || "36ZZPrdvrKICiFOp-6VDCAGIApiuh3XJVj_eeMjoJFI";
+const SPACE_ID = process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID || "qpmxuq9j1cps";
+const ACCESS_TOKEN = process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN;
+const ENVIRONMENT = process.env.NEXT_PUBLIC_CONTENTFUL_ENVIRONMENT || "master";
+
+// Validate required environment variables at runtime
+if (!ACCESS_TOKEN) {
+  console.error("Error: NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN is not set. Contentful client initialization failed. Please set this environment variable.");
+  throw new Error("Missing NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN. Contentful client cannot be initialized.");
+}
+
+if (!SPACE_ID) {
+  console.error("Error: NEXT_PUBLIC_CONTENTFUL_SPACE_ID is not set. Using fallback value, but this should be set in production. Contentful client initialization may fail with incorrect credentials.");
+}
 
 // Create Contentful client
 export const contentfulClient = createClient({
   space: SPACE_ID,
   accessToken: ACCESS_TOKEN,
-  environment: process.env.CONTENTFUL_ENVIRONMENT || "master",
+  environment: ENVIRONMENT,
 });
 
 export interface ProcessedBlogPost {
@@ -124,7 +135,10 @@ export async function fetchBlogPostBySlug(
       name: error.name,
       stack: error.stack,
       slug: slug,
-      contentType: contentType
+      contentType: contentType,
+      status: error.response?.status || 'N/A',
+      statusText: error.response?.statusText || 'N/A',
+      data: error.response?.data || 'N/A'
     });
     return null;
   }
