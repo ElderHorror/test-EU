@@ -5,12 +5,17 @@ const { createHash } = require('crypto');
 const fs = require('fs');
 const path = require('path');
 
-// Cache directory
-const CACHE_DIR = path.join(process.cwd(), '.next', 'cache', 'custom');
+// Cache directory - Use environment variable or fallback to a temporary directory for serverless environments
+const CACHE_DIR = process.env.NEXT_CACHE_DIR || (process.env.LAMBDA_TASK_ROOT ? path.join('/tmp', 'next-custom-cache') : path.join(process.cwd(), '.next', 'cache', 'custom'));
 
 // Ensure cache directory exists
 if (!fs.existsSync(CACHE_DIR)) {
-  fs.mkdirSync(CACHE_DIR, { recursive: true });
+  try {
+    fs.mkdirSync(CACHE_DIR, { recursive: true });
+    console.log(`Created cache directory at ${CACHE_DIR}`);
+  } catch (error) {
+    console.error(`Failed to create cache directory at ${CACHE_DIR}:`, error);
+  }
 }
 
 /**
