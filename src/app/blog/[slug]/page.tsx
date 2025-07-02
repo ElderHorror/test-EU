@@ -22,11 +22,7 @@ import Link from "next/link";
 import PageLayout from "@/components/layout/PageLayout";
 import PageTransition from "@/components/common/PageTransition";
 import AnimatedElement from "@/components/common/AnimatedElement";
-import {
-  fetchBlogPostBySlug,
-  ProcessedBlogPost,
-  renderRichTextAsPlainText,
-} from "@/lib/contentful";
+import { ProcessedBlogPost, renderRichTextAsPlainText } from "@/lib/contentful";
 
 export default function BlogPostPage() {
   const params = useParams();
@@ -44,12 +40,13 @@ export default function BlogPostPage() {
         setIsLoading(true);
         setError(null);
 
-        const blogPost = await fetchBlogPostBySlug(slug);
+        const response = await fetch(`/api/blog-post/${slug}`);
+        const data = await response.json();
 
-        if (!blogPost) {
-          setError("Blog post not found");
+        if (!response.ok) {
+          setError(data.error || "Blog post not found");
         } else {
-          setPost(blogPost);
+          setPost(data.post);
         }
       } catch (err) {
         console.error("Error loading blog post:", err);
