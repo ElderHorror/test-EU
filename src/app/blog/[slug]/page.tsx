@@ -44,7 +44,9 @@ export default function BlogPostPage() {
         setIsLoading(true);
         setError(null);
 
-        const response = await fetch(`/api/blog-post/${slug}?cache=${Date.now()}`);
+        const response = await fetch(`/api/blog-post/${slug}?t=${Date.now()}`, {
+          cache: 'no-store'
+        });
         const data = await response.json();
 
         if (!response.ok) {

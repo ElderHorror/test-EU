@@ -10,7 +10,14 @@ export async function GET(request: Request, { params }: { params: { slug: string
       return NextResponse.json({ error: "Blog post not found" }, { status: 404 });
     }
 
-    return NextResponse.json({ post }, { status: 200 });
+    return NextResponse.json({ post }, {
+      status: 200,
+      headers: {
+        'Cache-Control': 'no-store, max-age=0',
+        'CDN-Cache-Control': 'no-store',
+        'Vercel-CDN-Cache-Control': 'no-store'
+      }
+    });
   } catch (error: any) {
     console.error("API error fetching blog post:", {
       message: error.message,
