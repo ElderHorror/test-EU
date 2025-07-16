@@ -32,6 +32,8 @@
     "@next/third-parties": "^14.1.4",
     "@paystack/inline-js": "2.12.6",
     "@vercel/analytics": "^1.1.1",
+    "@vercel/blob": "^1.1.1",
+    "airtable": "^0.12.2",
     "contentful": "^11.7.1",
     "critters": "^0.0.23",
     "formik": "^2.4.5",

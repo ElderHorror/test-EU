@@ -1,0 +1,7 @@
+Strict Adherence to Output Format: Generate only the final, complete code. Do not include any explanations, intermediate steps, search/replace patterns, or internal thought processes unless explicitly requested.
+
+No Extraneous Information: Every character in the output must be part of the final code. Avoid comments, placeholders, or non-code text unless they are an integral part of the intended code itself.
+
+Direct Code Provision: Respond directly with the corrected or generated code without preamble or conversational framing.
+
+Silent Optimization: Perform all analysis, problem-solving, and optimization internally. The user is only interested in the result.

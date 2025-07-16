@@ -7,10 +7,21 @@ import {
   Text,
   VStack,
   useBreakpointValue,
-  Link,
 } from "@chakra-ui/react";
+import { useState } from "react";
+import ApplyModal from "@/components/ApplyModal";
 
 export default function CallToAction() {
+  const [isApplyOpen, setIsApplyOpen] = useState(false);
+
+  const handleApplyClick = () => {
+    setIsApplyOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsApplyOpen(false);
+  };
+
   const textContent = useBreakpointValue({
     base: `At EU StudyAssist, our mission is to provide peace of mind, helping you focus on your academic goals while we take care of the financial logistics. Apply today to make your study abroad dreams a reality!`,
     md: `At EU StudyAssist, our mission is to provide peace of${"\n"}mind, helping you focus on your academic goals${"\n"}while we take care of the financial logistics. Apply${"\n"}today to make your study abroad dreams a reality!`,
@@ -31,27 +42,23 @@ export default function CallToAction() {
             {textContent}
           </Text>
 
-          <Link
-            href="https://forms.gle/JmEMziR6a5j4Mew48"
-            isExternal
-            _hover={{ textDecoration: "none" }}
+          <Button
+            bg="#0E5FDC"
+            color="white"
+            size="md"
+            _hover={{ bg: "#0B4DB0" }}
+            px="1.1rem"
+            py="1.8rem"
+            fontSize="1rem"
+            mt="0.35rem"
+            fontFamily="ClashDisplay"
+            onClick={handleApplyClick}
           >
-            <Button
-              bg="#0E5FDC"
-              color="white"
-              size="md"
-              _hover={{ bg: "#0B4DB0" }}
-              px="1.1rem"
-              py="1.8rem"
-              fontSize="1rem"
-              mt="0.35rem"
-              fontFamily="ClashDisplay"
-            >
-              Apply Now
-            </Button>
-          </Link>
+            Apply Now
+          </Button>
         </VStack>
       </Container>
+      <ApplyModal isOpen={isApplyOpen} onClose={handleCloseModal} />
     </Box>
   );
 }

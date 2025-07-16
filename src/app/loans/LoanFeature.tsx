@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+import ApplyModal from "@/components/ApplyModal";
 import {
   Box,
   Button,
@@ -35,6 +37,7 @@ export default function LoanFeature({
   useBulletPoints = true,
   showButton = true,
 }: LoanFeatureProps) {
+  const [isApplyOpen, setIsApplyOpen] = useState(false);
   // Function to render text with proper formatting
   const renderDescription = (text: string) => {
     // Check if this is the "Why Choose" section by looking for specific titles
@@ -213,26 +216,23 @@ export default function LoanFeature({
           </Box>
 
           {showButton && (
-            <Link
-              href="https://forms.gle/JmEMziR6a5j4Mew48"
-              isExternal
-              _hover={{ textDecoration: "none" }}
-              alignSelf={{ base: "flex-start", lg: "flex-start" }}
-            >
+            <>
               <Button
                 bg="#0E5FDC"
-                fontFamily="ClashDisplay"
                 color="white"
-                size="md"
+                size="lg"
                 _hover={{ bg: "#0B4DB0" }}
-                px="1.1rem"
-                py="1.5rem"
-                fontSize={smallText ? "1rem" : "1rem"}
-                mt="0.25rem"
+                px="2rem"
+                py="1.8rem"
+                fontSize="1.1rem"
+                mt="1rem"
+                fontWeight={600}
+                onClick={() => setIsApplyOpen(true)}
               >
                 {buttonText}
               </Button>
-            </Link>
+              <ApplyModal isOpen={isApplyOpen} onClose={() => setIsApplyOpen(false)} />
+            </>
           )}
         </VStack>
       </Flex>

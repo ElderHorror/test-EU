@@ -1,7 +1,15 @@
 "use client";
-import { Box, Flex, Text, Link as ChakraLink } from "@chakra-ui/react";
+import {
+  Box,
+  Flex,
+  Text,
+  Link as ChakraLink,
+  useDisclosure,
+} from "@chakra-ui/react";
 import Link from "next/link";
 import NewCalculator from "../calculator/NewCalculator";
+import ApplyModal from "../../ApplyModal";
+import { useState } from "react";
 
 /**
  * Loan service data
@@ -35,6 +43,11 @@ const loanServices = [
  * Displays loan services and calculator
  */
 export default function LoansSection() {
+  const {
+    isOpen: isApplyOpen,
+    onOpen: onApplyOpen,
+    onClose: onApplyClose,
+  } = useDisclosure();
   return (
     <Flex id="Loans" flexFlow="row wrap">
       {/* Left side - Loan description and calculator */}
@@ -136,58 +149,57 @@ export default function LoansSection() {
               </Box>
             ))}
 
-            <Link href="https://forms.gle/d2T6Fh2rrFJK1JVZA" passHref>
-              <ChakraLink _hover={{ textDecoration: "none" }}>
-                <Flex
-                  bg="white"
-                  alignItems="center"
-                  width="10%"
-                  minWidth={{lg: "12rem", base:"9rem"}}
-                  my="1rem"
-                  mt="4rem"
-                  borderRadius="8px"
-                  padding={{ base: "0.3rem 1rem", md: "0.5rem 2rem" }}
-                  alignSelf="flex-start"
-                  justifySelf="flex-start"
-                  transition="all 0.3s ease"
-                  _hover={{
-                    transform: "translateY(-2px)",
-                    boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
-                  }}
+            <Flex
+              bg="white"
+              alignItems="center"
+              width="10%"
+              minWidth={{ lg: "12rem", base: "9rem" }}
+              my="1rem"
+              mt="4rem"
+              borderRadius="8px"
+              padding={{ base: "0.3rem 1rem", md: "0.5rem 2rem" }}
+              alignSelf="flex-start"
+              justifySelf="flex-start"
+              transition="all 0.3s ease"
+              _hover={{
+                transform: "translateY(-2px)",
+                boxShadow: "0 4px 8px rgba(0,0,0,0.2)",
+              }}
+              onClick={onApplyOpen}
+              cursor="pointer"
+            >
+              <Text
+                color="#0E5FDC"
+                fontWeight={600}
+                my={{ base: "0.8rem", md: "0.75rem" }}
+                mr={{ base: "0.3rem", md: "0.5rem" }}
+                fontSize={{ base: "0.9rem", md: "1rem" }}
+                whiteSpace="nowrap"
+              >
+                Apply now
+              </Text>
+              <Box
+                as="span"
+                display="inline-block"
+                width={{ base: "20px", md: "24px" }}
+              >
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  width="100%"
+                  aria-hidden="true"
                 >
-                  <Text
-                    color="#0E5FDC"
-                    fontWeight={600}
-                    my={{ base: "0.8rem", md: "0.75rem" }}
-                    mr={{ base: "0.3rem", md: "0.5rem" }}
-                    fontSize={{ base: "0.9rem", md: "1rem" }}
-                    whiteSpace="nowrap"
-                  >
-                    Apply now
-                  </Text>
-                  <Box
-                    as="span"
-                    display="inline-block"
-                    width={{ base: "20px", md: "24px" }}
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      width="100%"
-                      aria-hidden="true"
-                    >
-                      <path
-                        fill="#0E5FDC"
-                        fillRule="evenodd"
-                        d="M11 12a22 22 0 0 0 0 5l1 1h2l6-4 1-1a2 2 0 0 0 0-2h-1v-1l-6-4h-1l-2 1v5Zm-6-2-2 2 2 2 3-1 1-1-1-1-3-1Z"
-                        clipRule="evenodd"
-                      />
-                    </svg>
-                  </Box>
-                </Flex>
-              </ChakraLink>
-            </Link>
+                  <path
+                    fill="#0E5FDC"
+                    fillRule="evenodd"
+                    d="M11 12a22 22 0 0 0 0 5l1 1h2l6-4 1-1a2 2 0 0 0 0-2h-1v-1l-6-4h-1l-2 1v5Zm-6-2-2 2 2 2 3-1 1-1-1-1-3-1Z"
+                    clipRule="evenodd"
+                  />
+                </svg>
+              </Box>
+            </Flex>
+            <ApplyModal isOpen={isApplyOpen} onClose={onApplyClose} />
           </Box>
         </Box>
       </Box>

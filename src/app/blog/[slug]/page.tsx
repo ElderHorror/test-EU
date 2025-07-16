@@ -20,11 +20,13 @@ import {
 import { ArrowBackIcon, CalendarIcon, TimeIcon } from "@chakra-ui/icons";
 import Link from "next/link";
 import PageLayout from "@/components/layout/PageLayout";
+import ApplyModal from "@/components/ApplyModal";
 import PageTransition from "@/components/common/PageTransition";
 import AnimatedElement from "@/components/common/AnimatedElement";
 import { ProcessedBlogPost, renderRichTextAsPlainText } from "@/lib/contentful";
 
 export default function BlogPostPage() {
+  const [isApplyOpen, setIsApplyOpen] = useState(false);
   const params = useParams();
   const slug = params?.slug as string;
 
@@ -361,18 +363,16 @@ export default function BlogPostPage() {
                 </Text>
                 <Flex gap={4} flexWrap="wrap" justify="center">
                   <Button
-                    as="a"
-                    href="https://forms.gle/JmEMziR6a5j4Mew48"
-                    target="_blank"
-                    rel="noopener noreferrer"
                     bg="#0E5FDC"
                     color="white"
                     size="lg"
                     _hover={{ bg: "#0B4DB0" }}
                     px={8}
+                    onClick={() => setIsApplyOpen(true)}
                   >
                     Apply for Loan
                   </Button>
+                  <ApplyModal isOpen={isApplyOpen} onClose={() => setIsApplyOpen(false)} />
                   <Link href="/blog">
                     <Button
                       variant="outline"
