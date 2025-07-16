@@ -18,11 +18,13 @@ src/
 ├── lib/                    # Utility functions and libraries
 ├── styles/                 # Global styles and theme
 └── types/                  # TypeScript type definitions
+
 ```
 
 ## Getting Started
 
 First, install the dependencies:
+
 
 ```bash
 npm install
