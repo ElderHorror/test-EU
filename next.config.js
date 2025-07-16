@@ -32,6 +32,24 @@ const nextConfig = {
   productionBrowserSourceMaps: false,
   optimizeFonts: true,
   poweredByHeader: false,
+
+   // Disable caching for blog pages and API routes
+  async headers() {
+    return [
+      {
+        source: "/api/blog-post/:path*",
+        headers: [
+          { key: "Cache-Control", value: "no-store, max-age=0" },
+        ],
+      },
+      {
+        source: "/blog/:path*",
+        headers: [
+          { key: "Cache-Control", value: "no-store, max-age=0" },
+        ],
+      },
+    ];
+  },
 };
 
 module.exports = nextConfig;

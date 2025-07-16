@@ -106,11 +106,8 @@ export async function fetchBlogPosts(): Promise<ProcessedBlogPost[]> {
   try {
     const response = await contentfulClient.getEntries({
       content_type: contentType,
-      order: ["-sys.createdAt"],
-      include: 2,
-      // Cache busting
-      "sys.updatedAt[gte]": "1970-01-01",
-      "ts": Date.now()
+      order: ["-sys.createdAt"], // Order by creation date, newest first
+      include: 2, // Include linked assets
     });
 
     return response.items.map(processBlogPost);
@@ -131,9 +128,6 @@ export async function fetchBlogPostBySlug(
       "fields.slug": slug,
       include: 2,
       limit: 1,
-      // Cache busting
-      "sys.updatedAt[gte]": "1970-01-01",
-      "ts": Date.now()
     });
 
     if (response.items.length === 0) {
