@@ -34,6 +34,8 @@ export default function BlogPostPage() {
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
 
+  // Removed cache handler dependency
+  // Using standard ISR instead of custom cache handling
   useEffect(() => {
     async function loadBlogPost() {
       if (!slug) return;
@@ -42,7 +44,7 @@ export default function BlogPostPage() {
         setIsLoading(true);
         setError(null);
 
-        const response = await fetch(`/api/blog-post/${slug}`);
+        const response = await fetch(`/api/blog-post/${slug}?cache=${Date.now()}`);
         const data = await response.json();
 
         if (!response.ok) {

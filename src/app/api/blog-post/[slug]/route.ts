@@ -10,18 +10,7 @@ export async function GET(request: Request, { params }: { params: { slug: string
       return NextResponse.json({ error: "Blog post not found" }, { status: 404 });
     }
 
-    // Add cache headers and revalidation tags
-    const headers = new Headers({
-      'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=300',
-      'CDN-Cache-Control': 'public, s-maxage=7200',
-      'Vercel-CDN-Cache-Control': 'public, s-maxage=14400',
-      'x-next-cache-tags': `blog-${slug}, blog-list`
-    });
-
-    return new NextResponse(JSON.stringify({ post }), {
-      headers,
-      status: 200
-    });
+    return NextResponse.json({ post }, { status: 200 });
   } catch (error: any) {
     console.error("API error fetching blog post:", {
       message: error.message,
