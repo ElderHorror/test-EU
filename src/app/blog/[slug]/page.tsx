@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+
 import {
   Box,
   Container,
@@ -13,7 +14,6 @@ import {
   Button,
   Flex,
 } from "@chakra-ui/react";
-import { useState } from "react";
 import { ArrowBackIcon, CalendarIcon, TimeIcon } from "@chakra-ui/icons";
 import Link from "next/link";
 import PageLayout from "@/components/layout/PageLayout";
@@ -21,71 +21,8 @@ import ApplyModal from "@/components/ApplyModal";
 import PageTransition from "@/components/common/PageTransition";
 import AnimatedElement from "@/components/common/AnimatedElement";
 import { ProcessedBlogPost, fetchBlogPostBySlug, renderRichTextAsPlainText } from "@/lib/contentful";
-
-// Client component for Apply Button
-function ApplyButton() {
-  const [isApplyOpen, setIsApplyOpen] = useState(false);
-  
-  return (
-    <>
-      <Button
-        bg="#0E5FDC"
-        color="white"
-        size="lg"
-        _hover={{ bg: "#0B4DB0" }}
-        px={8}
-        onClick={() => setIsApplyOpen(true)}
-      >
-        Apply for Loan
-      </Button>
-      <ApplyModal isOpen={isApplyOpen} onClose={() => setIsApplyOpen(false)} />
-    </>
-  );
-}
-
-// Client component for CTA section
-function BlogCTA() {
-  return (
-    <Box bg="#F4F4F4" py={16}>
-      <Container maxW="60rem">
-        <AnimatedElement animation="slideUp" delay={0.8}>
-          <VStack spacing={6} textAlign="center">
-            <Heading
-              fontFamily="ClashDisplay"
-              fontSize={{ base: "2xl", md: "3xl" }}
-              color="#130F26"
-            >
-              Ready to Start Your Journey?
-            </Heading>
-            <Text
-              fontSize={{ base: "lg", md: "xl" }}
-              color="#2F3540"
-              maxW="600px"
-            >
-              Join thousands of students who have successfully pursued their
-              dreams with EU StudyAssist&amp;apos;s support.
-            </Text>
-            <Flex gap={4} flexWrap="wrap" justify="center">
-              <ApplyButton />
-              <Link href="/blog">
-                <Button
-                  variant="outline"
-                  borderColor="#0E5FDC"
-                  color="#0E5FDC"
-                  size="lg"
-                  _hover={{ bg: "blue.50" }}
-                  px={8}
-                >
-                  Read More Posts
-                </Button>
-              </Link>
-            </Flex>
-          </VStack>
-        </AnimatedElement>
-      </Container>
-    </Box>
-  );
-}
+import ApplyButton from "@/components/blog/ApplyButton";
+import BlogCTA from "@/components/blog/BlogCTA";
 
 export default async function BlogPostPage({ params }: { params: { slug: string } }) {
   const slug = params.slug;

@@ -484,31 +484,31 @@ export default function ApplyModal({ isOpen, onClose }: ApplyModalProps) {
     return isValid;
   };
 
-const handleNextPage = (page: number) => {
-  if (validatePage(page)) {
-    setFormPage(page + 1);
-  }
-};
-
-// New state to track mobile view
-const [isMobile, setIsMobile] = useState(false);
-
-useEffect(() => {
-  const checkMobile = () => {
-    setIsMobile(window.innerWidth < 768);
+  const handleNextPage = (page: number) => {
+    if (validatePage(page)) {
+      setFormPage(page + 1);
+    }
   };
-  
-  checkMobile();
-  window.addEventListener('resize', checkMobile);
-  return () => window.removeEventListener('resize', checkMobile);
-}, []);
 
-// Re-validate page when form data or files change
-useEffect(() => {
-  if (formPage > 0 && formPage < 6) {
-    validatePage(formPage);
-  }
-}, [formData, fileUploads, formPage]);
+  // New state to track mobile view
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  // Re-validate page when form data or files change
+  useEffect(() => {
+    if (formPage > 0 && formPage < 6) {
+      validatePage(formPage);
+    }
+  }, [formData, fileUploads, formPage]);
 
   const handleAccept = () => {
     setFormPage(1);
@@ -1556,24 +1556,24 @@ useEffect(() => {
                     py={4}
                     flexDirection={{ base: "column", md: "row" }}
                   >
-<Button
-  variant="outline"
-  px={4}
-  height="3.5rem"
-  width={{ base: "100%", md: "60%" }}
-  onClick={() => setFormPage(0)}
->
-  Back
-</Button>
-<Button
-  colorScheme="blue"
-  px={4}
-  height="3.5rem"
-  width={{ base: "100%", md: "60%" }}
-  onClick={() => handleNextPage(1)}
->
-  Continue
-</Button>
+                    <Button
+                      variant="outline"
+                      px={4}
+                      height="3.5rem"
+                      width={{ base: "100%", md: "60%" }}
+                      onClick={() => setFormPage(0)}
+                    >
+                      Back
+                    </Button>
+                    <Button
+                      colorScheme="blue"
+                      px={4}
+                      height="3.5rem"
+                      width={{ base: "100%", md: "60%" }}
+                      onClick={() => handleNextPage(1)}
+                    >
+                      Continue
+                    </Button>
                   </Flex>
                 </VStack>
               )}
@@ -1981,24 +1981,24 @@ useEffect(() => {
                     p={4}
                     flexDirection={{ base: "column", md: "row" }}
                   >
-<Button
-  variant="outline"
-  px={2}
-  height="3.5rem"
-  width={{ base: "100%", md: "50%" }}
-  onClick={() => setFormPage(1)}
->
-  Back
-</Button>
-<Button
-  colorScheme="blue"
-  px={2}
-  height="3.5rem"
-  width={{ base: "100%", md: "50%" }}
-  onClick={() => handleNextPage(2)}
->
-  Continue
-</Button>
+                    <Button
+                      variant="outline"
+                      px={2}
+                      height="3.5rem"
+                      width={{ base: "100%", md: "50%" }}
+                      onClick={() => setFormPage(1)}
+                    >
+                      Back
+                    </Button>
+                    <Button
+                      colorScheme="blue"
+                      px={2}
+                      height="3.5rem"
+                      width={{ base: "100%", md: "50%" }}
+                      onClick={() => handleNextPage(2)}
+                    >
+                      Continue
+                    </Button>
                   </Flex>
                 </VStack>
               )}
@@ -2917,25 +2917,25 @@ useEffect(() => {
                     py={4}
                     flexDirection={{ base: "column", md: "row" }}
                   >
-<Button
-  variant="outline"
-  px={4}
-  height="3.5rem"
-  width={{ base: "100%", md: "60%" }}
-  onClick={() => setFormPage(2)}
->
-  Back
-</Button>
-<Button
-  colorScheme="blue"
-  px={4}
-  height="3.5rem"
-  width={{ base: "100%", md: "60%" }}
-  onClick={() => handleNextPage(3)}
-  isDisabled={!!installmentError}
->
-  Continue
-</Button>
+                    <Button
+                      variant="outline"
+                      px={4}
+                      height="3.5rem"
+                      width={{ base: "100%", md: "60%" }}
+                      onClick={() => setFormPage(2)}
+                    >
+                      Back
+                    </Button>
+                    <Button
+                      colorScheme="blue"
+                      px={4}
+                      height="3.5rem"
+                      width={{ base: "100%", md: "60%" }}
+                      onClick={() => handleNextPage(3)}
+                      isDisabled={!!installmentError}
+                    >
+                      Continue
+                    </Button>
                   </Flex>
                 </VStack>
               )}
@@ -3068,25 +3068,25 @@ useEffect(() => {
                     bg="white"
                     flexDirection={{ base: "column", md: "row" }}
                   >
-<Button
-  variant="outline"
-  px={4}
-  height="3.5rem"
-  width={{ base: "100%", md: "60%" }}
-  onClick={() => setFormPage(4)}
->
-  Back
-</Button>
-<Button
-  colorScheme="blue"
-  px={4}
-  height="3.5rem"
-  width={{ base: "100%", md: "60%" }}
-  onClick={() => setFormPage(6)}
-  isDisabled={!iAgree}
->
-  Finish
-</Button>
+                    <Button
+                      variant="outline"
+                      px={4}
+                      height="3.5rem"
+                      width={{ base: "100%", md: "60%" }}
+                      onClick={() => setFormPage(4)}
+                    >
+                      Back
+                    </Button>
+                    <Button
+                      colorScheme="blue"
+                      px={4}
+                      height="3.5rem"
+                      width={{ base: "100%", md: "60%" }}
+                      onClick={() => setFormPage(6)}
+                      isDisabled={!iAgree}
+                    >
+                      Finish
+                    </Button>
                   </Flex>
                 </VStack>
               )}
