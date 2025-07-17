@@ -102,12 +102,17 @@ export function processBlogPost(entry: any): ProcessedBlogPost {
 
 // Fetch all blog posts from Contentful
 export async function fetchBlogPosts(): Promise<ProcessedBlogPost[]> {
-  const contentType = "euStudyBlogProduciton"; // Hardcoded to ensure correct content type
+  const contentType = "euStudyBlogProduciton";
   try {
     const response = await contentfulClient.getEntries({
       content_type: contentType,
-      order: ["-sys.createdAt"], // Order by creation date, newest first
-      include: 2, // Include linked assets
+      order: ["-sys.createdAt"],
+      include: 2,
+      // Cache busting
+      "sys.updatedAt[gte]": "1970-01-01",
+      "ts": Date.now(),
+      // Add cache tag
+      next: { tags: ['blog-posts'] }
     });
 
     return response.items.map(processBlogPost);
@@ -121,13 +126,18 @@ export async function fetchBlogPosts(): Promise<ProcessedBlogPost[]> {
 export async function fetchBlogPostBySlug(
   slug: string
 ): Promise<ProcessedBlogPost | null> {
-  const contentType = "euStudyBlogProduciton"; // Hardcoded to ensure correct content type
+  const contentType = "euStudyBlogProduciton";
   try {
     const response = await contentfulClient.getEntries({
       content_type: contentType,
       "fields.slug": slug,
       include: 2,
       limit: 1,
+      // Cache busting
+      "sys.updatedAt[gte]": "1970-01-01",
+      "ts": Date.now(),
+      // Add cache tag
+      next: { tags: ['blog-posts'] }
     });
 
     if (response.items.length === 0) {

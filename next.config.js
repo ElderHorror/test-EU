@@ -32,8 +32,7 @@ const nextConfig = {
   productionBrowserSourceMaps: false,
   optimizeFonts: true,
   poweredByHeader: false,
-
-   // Disable caching for blog pages and API routes
+  // Disable caching for blog pages and API routes
   async headers() {
     return [
       {
