@@ -108,7 +108,6 @@ export async function fetchBlogPosts(): Promise<ProcessedBlogPost[]> {
       content_type: contentType,
       order: ["-sys.createdAt"], // Order by creation date, newest first
       include: 2, // Include linked assets
-      next: { tags: ['blogPosts'] },
     });
 
     return response.items.map(processBlogPost);
@@ -129,7 +128,6 @@ export async function fetchBlogPostBySlug(
       "fields.slug": slug,
       include: 2,
       limit: 1,
-      next: { tags: ['blogPosts'] },
     });
 
     if (response.items.length === 0) {
@@ -159,7 +157,6 @@ export async function fetchBlogCategories(): Promise<string[]> {
     const response = await contentfulClient.getEntries({
       content_type: contentType,
       select: ["fields.category"],
-      next: { tags: ['blogPosts'] },
     });
 
     const categories = response.items

@@ -12,7 +12,6 @@ function BlogCTA() {
           fontFamily="ClashDisplay"
           fontSize={{ base: "2xl", md: "3xl" }}
           color="#130F26"
-          textAlign="center"
         >
           Ready to Start Your Journey?
         </Heading>
@@ -20,9 +19,6 @@ function BlogCTA() {
           fontSize={{ base: "lg", md: "xl" }}
           color="#2F3540"
           maxW="600px"
-          textAlign="center"
-          mx="auto"
-          mb="2"
         >
           Join thousands of students who have successfully pursued their dreams with EU StudyAssist&apos;s support.
         </Text>
