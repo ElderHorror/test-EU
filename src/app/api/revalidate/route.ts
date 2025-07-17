@@ -22,6 +22,9 @@ export async function POST(request: NextRequest) {
           revalidated: true,
           now: Date.now(),
           tags: [`blog-list`, `blog-${entryId}`],
+          headers: {
+            'Cache-Control': 'public, max-age=3600, stale-while-revalidate=3600',
+          },
         });
       }
 
