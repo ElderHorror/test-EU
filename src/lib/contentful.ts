@@ -1,26 +1,32 @@
 import { createClient } from "contentful";
 
 // Contentful configuration
-const SPACE_ID = process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID || "qpmxuq9j1cps";
-const ACCESS_TOKEN = process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN;
-const ENVIRONMENT = process.env.NEXT_PUBLIC_CONTENTFUL_ENVIRONMENT || "master";
+const SPACE_ID = process.env.CONTENTFUL_SPACE_ID;
+const ACCESS_TOKEN = process.env.CONTENTFUL_ACCESS_TOKEN;
+const ENVIRONMENT = process.env.CONTENTFUL_ENVIRONMENT;
 
-// Validate required environment variables at runtime
-if (!ACCESS_TOKEN) {
-  console.error("Error: NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN is not set. Contentful client initialization failed. Please set this environment variable.");
-  throw new Error("Missing NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN. Contentful client cannot be initialized.");
+// Create Contentful client only on server-side
+let contentfulClient: any = null;
+if (typeof window === 'undefined') {
+  // Validate required environment variables at runtime only on server
+  if (!ACCESS_TOKEN) {
+    console.error("Error: CONTENTFUL_ACCESS_TOKEN is not set. Contentful client initialization failed. Please set this environment variable.");
+    throw new Error("Missing CONTENTFUL_ACCESS_TOKEN. Contentful client cannot be initialized.");
+  }
+
+  if (!SPACE_ID) {
+    console.error("Error: CONTENTFUL_SPACE_ID is not set. Using fallback value, but this should be set in production. Contentful client initialization may fail with incorrect credentials.");
+  }
+
+  const { createClient } = require('contentful');
+  contentfulClient = createClient({
+    space: SPACE_ID,
+    accessToken: ACCESS_TOKEN,
+    environment: ENVIRONMENT,
+  });
 }
 
-if (!SPACE_ID) {
-  console.error("Error: NEXT_PUBLIC_CONTENTFUL_SPACE_ID is not set. Using fallback value, but this should be set in production. Contentful client initialization may fail with incorrect credentials.");
-}
-
-// Create Contentful client
-export const contentfulClient = createClient({
-  space: SPACE_ID,
-  accessToken: ACCESS_TOKEN,
-  environment: ENVIRONMENT,
-});
+export { contentfulClient };
 
 export interface ProcessedBlogPost {
   id: string;

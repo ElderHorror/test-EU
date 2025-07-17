@@ -12,8 +12,20 @@ import {
   VStack,
   Link,
 } from "@chakra-ui/react";
+import { useState } from "react";
+import ApplyModal from "@/components/ApplyModal";
 
 export default function LoanApplication() {
+  const [isApplyOpen, setIsApplyOpen] = useState(false);
+
+  const handleApplyClick = () => {
+    setIsApplyOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsApplyOpen(false);
+  };
+
   return (
     <Box bg="#F4F4F4" py="6rem">
       <Container maxW="40rem">
@@ -108,7 +120,8 @@ export default function LoanApplication() {
                   needs.{" "}
                   <Link
                     color="#0E5FDC"
-                    href="https://forms.gle/JmEMziR6a5j4Mew48"
+                    href="#"
+                    onClick={handleApplyClick}
                     isExternal
                   >
                     Click here to fill to get started with filling the form
@@ -206,26 +219,22 @@ export default function LoanApplication() {
           </VStack>
 
           {/* Apply Button */}
-          <Link
-            href="https://forms.gle/JmEMziR6a5j4Mew48"
-            isExternal
-            _hover={{ textDecoration: "none" }}
+          <Button
+            bg="#0E5FDC"
+            color="white"
+            size="md"
+            _hover={{ bg: "#0B4DB0" }}
+            px="1.1rem"
+            py="1.8rem"
+            fontSize="1rem"
+            w={{ lg: "20%", base: "50%" }}
+            onClick={handleApplyClick}
           >
-            <Button
-              bg="#0E5FDC"
-              color="white"
-              size="md"
-              _hover={{ bg: "#0B4DB0" }}
-              px="1.1rem"
-              py="1.8rem"
-              fontSize="1rem"
-              w={{ lg: "20%", base: "50%" }}
-            >
-              Apply Now
-            </Button>
-          </Link>
+            Apply Now
+          </Button>
         </VStack>
       </Container>
+      <ApplyModal isOpen={isApplyOpen} onClose={handleCloseModal} />
     </Box>
   );
 }

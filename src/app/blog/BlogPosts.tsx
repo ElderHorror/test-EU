@@ -22,6 +22,7 @@ import { ChevronRightIcon, ChevronLeftIcon } from "@chakra-ui/icons";
 import LoanFeature from "@/components/sections/loans/LoanFeature";
 import AnimatedElement from "@/components/common/AnimatedElement";
 import { ProcessedBlogPost } from "@/lib/contentful";
+import ApplyModal from "@/components/ApplyModal";
 
 interface BlogPostsProps {
   initialPosts: ProcessedBlogPost[];
@@ -35,6 +36,9 @@ export default function BlogPosts({ initialPosts, initialCategories }: BlogPosts
   const [currentPage, setCurrentPage] = useState(1);
   const [isLoading] = useState(false);
   const [error] = useState<string | null>(null);
+
+  // Modal state
+  const [isApplyOpen, setIsApplyOpen] = useState(false);
 
   // Number of columns based on screen size
   const columns = useBreakpointValue({ base: 1, md: 2 });
@@ -397,9 +401,11 @@ Competitive Interest Rates: Our loan options come with highly competitive rates,
                 fontSize="1.1rem"
                 mt="1rem"
                 fontWeight={600}
+                onClick={() => setIsApplyOpen(true)}
               >
                 Apply Now
               </Button>
+              <ApplyModal isOpen={isApplyOpen} onClose={() => setIsApplyOpen(false)} />
             </VStack>
           </Container>
         </Box>
