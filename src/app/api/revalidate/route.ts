@@ -1,57 +1,19 @@
-import { NextRequest, NextResponse } from "next/server";
-import { revalidatePath, revalidateTag } from "next/cache";
-import crypto from "crypto";
+import { revalidateTag } from 'next/cache'
+import { type NextRequest, NextResponse } from 'next/server'
 
 export async function POST(request: NextRequest) {
-  try {
-    // Verify webhook signature
-    const body = await request.text();
-    const signature = request.headers.get("x-contentful-signature");
-    const secret = process.env.CONTENTFUL_WEBHOOK_SECRET;
-    
-    if (!secret) {
-      console.error("CONTENTFUL_WEBHOOK_SECRET is not set");
-      return NextResponse.json(
-        { error: "Server configuration error" },
-        { status: 500 }
-      );
-    }
+  // 1. Verify the secret token from the webhook header
+  const secret = process.env.CONTENTFUL_REVALIDATION_SECRET
+  const providedSecret = request.headers.get('x-revalidation-secret')
 
-    const hmac = crypto.createHmac("sha256", secret);
-    hmac.update(body, "utf8");
-    const computedSignature = hmac.digest("base64");
-    
-    if (signature !== computedSignature) {
-      console.error("Invalid webhook signature");
-      return new Response("Invalid signature", { status: 401 });
-    }
-
-    // Parse webhook payload
-    const payload = JSON.parse(body);
-    const entryId = payload.sys?.id;
-    
-    if (!entryId) {
-      console.error("Missing entry ID in payload");
-      return NextResponse.json(
-        { error: "Missing entry ID in payload" },
-        { status: 400 }
-      );
-    }
-
-    // Revalidate paths
-    revalidatePath("/blog");
-    revalidatePath(`/blog/*`);
-    revalidateTag(`blog-post-${entryId}`);
-
-    console.log(`Revalidated paths for entry ${entryId}`);
-    return NextResponse.json({
-      message: `Revalidation triggered for entry ${entryId}`,
-    });
-  } catch (error) {
-    console.error("Error processing webhook:", error);
-    return NextResponse.json(
-      { error: "Error processing webhook" },
-      { status: 500 }
-    );
+  if (providedSecret !== secret) {
+    return NextResponse.json({ message: 'Invalid token' }, { status: 401 })
   }
+
+  // 2. Invalidate the cache tag for blog posts.
+  // This tells Next.js to refetch any data that uses this tag.
+  revalidateTag('blogPosts')
+
+  // 3. Return a success response
+  return NextResponse.json({ revalidated: true, now: Date.now() })
 }
