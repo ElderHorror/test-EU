@@ -12,7 +12,7 @@ export async function GET(request: Request, { params }: { params: { slug: string
 
     // Add cache headers and revalidation tags
     const headers = new Headers({
-      'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=300',
+      'Cache-Control': 'public, s-maxage=3600, stale-while-revalidate=3600',
       'CDN-Cache-Control': 'public, s-maxage=7200',
       'Vercel-CDN-Cache-Control': 'public, s-maxage=14400',
       'x-next-cache-tags': `blog-${slug}, blog-list`
