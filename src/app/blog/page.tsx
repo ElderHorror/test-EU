@@ -5,7 +5,9 @@ import AnimatedElement from "@/components/common/AnimatedElement";
 import PageTransition from "@/components/common/PageTransition";
 import { fetchBlogPosts, fetchBlogCategories, ProcessedBlogPost } from "@/lib/contentful";
 
-export const revalidate = 30;
+
+export const revalidate = 14;
+
 
 export default async function BlogPage() {
   let posts: ProcessedBlogPost[] = [];
