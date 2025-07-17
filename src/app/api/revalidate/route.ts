@@ -13,7 +13,7 @@ export async function POST(request: NextRequest) {
       const contentType = payload?.sys?.contentType?.sys?.id;
       const entryId = payload?.sys?.id;
 
-      if (contentType === "blogPost") {
+      if (payload.sys.type === "Entry" && payload.sys.contentType.sys.id === "euStudyBlogProduciton" || payload.sys.type === "DeletedEntry" && payload.sys.contentType.sys.id === "euStudyBlogProduciton") {
         if (entryId) {
           revalidateTag(`blog-${entryId}`);
         }
