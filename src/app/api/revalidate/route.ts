@@ -59,8 +59,7 @@ export async function POST(request: NextRequest) {
 
     // Only handle blog post updates
     if (contentType === 'blogPost') {
-      // Revalidate blog listing page
-      revalidateTag('blog-list')
+      // Remove revalidation code
       
       // Revalidate specific blog post
       if (entryId) {

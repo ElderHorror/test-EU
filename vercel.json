@@ -18,5 +18,26 @@
         "pages/**/*": {
             "maxDuration": 300
         }
+    ,
+      "headers": [
+        {
+          "source": "/blog",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, max-age=0"
+            }
+          ]
+        },
+        {
+          "source": "/blog/:slug",
+          "headers": [
+            {
+              "key": "Cache-Control",
+              "value": "no-cache, max-age=0"
+            }
+          ]
+        }
+      ]
     }
 }
