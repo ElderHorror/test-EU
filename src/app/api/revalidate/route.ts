@@ -3,10 +3,13 @@ import { revalidateTag } from "next/cache";
 
 export async function POST(request: NextRequest) {
   try {
-    const expectedWebhookName = 'Vercel - Deploy a sit';
-    if (request.headers.get('X-Contentful-Webhook-Name') === expectedWebhookName) {
+    const expectedWebhookName = "Vercel - Deploy a sit";
+    if (
+      request.headers.get("X-Contentful-Webhook-Name") === expectedWebhookName
+    ) {
       const body = await request.text();
       const payload = JSON.parse(body);
+      console.log("Payload object:", payload);
       const contentType = payload?.sys?.contentType?.sys?.id;
       const entryId = payload?.sys?.id;
 
@@ -27,7 +30,7 @@ export async function POST(request: NextRequest) {
       });
     } else {
       return NextResponse.json(
-        { error: 'Invalid webhook name' },
+        { error: "Invalid webhook name" },
         { status: 401 }
       );
     }
