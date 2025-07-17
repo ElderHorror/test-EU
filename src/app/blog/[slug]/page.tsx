@@ -1,7 +1,5 @@
-"use client";
+import { notFound } from "next/navigation";
 
-import { useEffect, useState } from "react";
-import { useParams } from "next/navigation";
 import {
   Box,
   Container,
@@ -11,7 +9,6 @@ import {
   VStack,
   HStack,
   Badge,
-  Spinner,
   Alert,
   AlertIcon,
   Button,
@@ -23,73 +20,24 @@ import PageLayout from "@/components/layout/PageLayout";
 import ApplyModal from "@/components/ApplyModal";
 import PageTransition from "@/components/common/PageTransition";
 import AnimatedElement from "@/components/common/AnimatedElement";
-import { ProcessedBlogPost, renderRichTextAsPlainText } from "@/lib/contentful";
+import { ProcessedBlogPost, fetchBlogPostBySlug, renderRichTextAsPlainText } from "@/lib/contentful";
+import ApplyButton from "@/components/blog/ApplyButton";
+import BlogCTA from "@/components/blog/BlogCTA";
 
-export default function BlogPostPage() {
-  const [isApplyOpen, setIsApplyOpen] = useState(false);
-  const params = useParams();
-  const slug = params?.slug as string;
+export default async function BlogPostPage({ params }: { params: { slug: string } }) {
+  const slug = params.slug;
+  let post: ProcessedBlogPost | null = null;
 
-  const [post, setPost] = useState<ProcessedBlogPost | null>(null);
-  const [isLoading, setIsLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    async function loadBlogPost() {
-      if (!slug) return;
-
-      try {
-        setIsLoading(true);
-        setError(null);
-
-        const response = await fetch(`/api/blog-post/${slug}`);
-        const data = await response.json();
-
-        if (!response.ok) {
-          setError(data.error || "Blog post not found");
-        } else {
-          setPost(data.post);
-        }
-      } catch (err) {
-        console.error("Error loading blog post:", err);
-        setError("Failed to load blog post. Please try again later.");
-      } finally {
-        setIsLoading(false);
-      }
-    }
-
-    loadBlogPost();
-  }, [slug]);
-
-  // Loading state
-  if (isLoading) {
-    return (
-      <PageLayout>
-        <Box
-          minH="50vh"
-          display="flex"
-          alignItems="center"
-          justifyContent="center"
-        >
-          <VStack spacing={4}>
-            <Spinner size="xl" color="#0E5FDC" thickness="4px" />
-            <Text color="gray.600" fontSize="lg">
-              Loading blog post...
-            </Text>
-          </VStack>
-        </Box>
-      </PageLayout>
-    );
-  }
-
-  // Error state
-  if (error || !post) {
+  try {
+    post = await fetchBlogPostBySlug(slug);
+  } catch (error) {
+    console.error("Error loading blog post:", error);
     return (
       <PageLayout>
         <Container maxW="60rem" py={20}>
           <Alert status="error" borderRadius="md" mb={8}>
             <AlertIcon />
-            {error || "Blog post not found"}
+            Failed to load blog post. Please try again later.
           </Alert>
           <Link href="/blog">
             <Button
@@ -103,6 +51,10 @@ export default function BlogPostPage() {
         </Container>
       </PageLayout>
     );
+  }
+
+  if (!post) {
+    notFound();
   }
 
   // Format date
@@ -342,54 +294,7 @@ export default function BlogPostPage() {
         </Box>
 
         {/* Call to Action */}
-        <Box bg="#F4F4F4" py={16}>
-          <Container maxW="60rem">
-            <AnimatedElement animation="slideUp" delay={0.8}>
-              <VStack spacing={6} textAlign="center">
-                <Heading
-                  fontFamily="ClashDisplay"
-                  fontSize={{ base: "2xl", md: "3xl" }}
-                  color="#130F26"
-                >
-                  Ready to Start Your Journey?
-                </Heading>
-                <Text
-                  fontSize={{ base: "lg", md: "xl" }}
-                  color="#2F3540"
-                  maxW="600px"
-                >
-                  Join thousands of students who have successfully pursued their
-                  dreams with EU StudyAssist&apos;s support.
-                </Text>
-                <Flex gap={4} flexWrap="wrap" justify="center">
-                  <Button
-                    bg="#0E5FDC"
-                    color="white"
-                    size="lg"
-                    _hover={{ bg: "#0B4DB0" }}
-                    px={8}
-                    onClick={() => setIsApplyOpen(true)}
-                  >
-                    Apply for Loan
-                  </Button>
-                  <ApplyModal isOpen={isApplyOpen} onClose={() => setIsApplyOpen(false)} />
-                  <Link href="/blog">
-                    <Button
-                      variant="outline"
-                      borderColor="#0E5FDC"
-                      color="#0E5FDC"
-                      size="lg"
-                      _hover={{ bg: "blue.50" }}
-                      px={8}
-                    >
-                      Read More Posts
-                    </Button>
-                  </Link>
-                </Flex>
-              </VStack>
-            </AnimatedElement>
-          </Container>
-        </Box>
+        <BlogCTA />
       </PageTransition>
     </PageLayout>
   );
