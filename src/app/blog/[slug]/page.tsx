@@ -44,8 +44,8 @@ export default function BlogPostPage() {
         setError(null);
 
         const response = await fetch(`/api/blog-post/${slug}?t=${Date.now()}`, {
-          cache: 'no-store',
-          next: { tags: ['blog-posts'] }
+          cache: "no-store",
+          next: { tags: ["blog-posts"] },
         });
         const data = await response.json();
 
@@ -94,95 +94,6 @@ export default function BlogPostPage() {
           <Alert status="error" borderRadius="md" mb={8}>
             <AlertIcon />
             {error || "Blog post not found"}
-          </Alert>
-          <Link href="/blog">
-            <Button
-              leftIcon={<ArrowBackIcon />}
-              colorScheme="blue"
-              variant="outline"
-            >
-              Back to Blog
-            </Button>
-          </Link>
-        </Container>
-      </PageLayout>
-    );
-  }
-
-  // Format date
-  const formatDate = (dateString: string) => {
-    return new Date(dateString).toLocaleDateString("en-US", {
-      year: "numeric",
-      month: "long",
-      day: "numeric",
-    });
-  };
-
-  // Generate structured data for SEO
-  const generateStructuredData = (post: ProcessedBlogPost) => {
-    const baseUrl =
-      process.env.NEXT_PUBLIC_BASE_URL || "https://eustudyassist.com";
-
-    return {
-      "@context": "https://schema.org",
-      "@type": "BlogPosting",
-      headline: post.metaTitle || post.title,
-      description: post.metaDescription || post.description,
-      image: post.bannerImage || `${baseUrl}/og-default.png`,
-      author: {
-        "@type": "Person",
-        name: post.author || "EU StudyAssist",
-        url: `${baseUrl}/about`,
-      },
-      publisher: {
-        "@type": "Organization",
-        name: "EU StudyAssist",
-        logo: {
-          "@type": "ImageObject",
-          url: `${baseUrl}/logo.png`,
-        },
-      },
-      datePublished: post.createdAt,
-      dateModified: post.updatedAt,
-      mainEntityOfPage: {
-        "@type": "WebPage",
-        "@id": `${baseUrl}/blog/${post.slug}`,
-      },
-      articleSection: post.category,
-      keywords:
-        post.keywords && post.keywords.length > 0
-          ? [
-              ...post.keywords,
-              post.category,
-              "study abroad",
-              "student loans",
-              "education financing",
-            ]
-          : [
-              post.category,
-              "study abroad",
-              "student loans",
-              "education financing",
-            ],
-      wordCount: post.content
-        ? renderRichTextAsPlainText(post.content).split(" ").length
-        : post.description.split(" ").length,
-      timeRequired: post.minuteRead ? `PT${post.minuteRead}M` : "PT5M",
-      inLanguage: "en-US",
-      isAccessibleForFree: true,
-      copyrightHolder: {
-        "@type": "Organization",
-        name: "EU StudyAssist",
-      },
-    };
-  };
-
-    return (
-      <PageLayout>
-        <Container maxW="60rem" py={20}>
-          <Alert status="error" borderRadius="md" mb={8}>
-            <AlertIcon />
-            Blog post not found
           </Alert>
           <Link href="/blog">
             <Button
@@ -465,7 +376,10 @@ export default function BlogPostPage() {
                   >
                     Apply for Loan
                   </Button>
-                  <ApplyModal isOpen={isApplyOpen} onClose={() => setIsApplyOpen(false)} />
+                  <ApplyModal
+                    isOpen={isApplyOpen}
+                    onClose={() => setIsApplyOpen(false)}
+                  />
                   <Link href="/blog">
                     <Button
                       variant="outline"
