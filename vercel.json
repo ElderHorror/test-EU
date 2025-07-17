@@ -1,43 +1,42 @@
 {
-    "functions": {
-        "src/app/api/**/*": {
-            "maxDuration": 300
-        },
-        "src/app/api/**/**/*": {
-            "maxDuration": 300
-        },
-        "pages/**/**/*": {
-            "maxDuration": 300
-        },
-        "pages/*": {
-            "maxDuration": 300
-        },
-        "pages/api/*": {
-            "maxDuration": 300
-        },
-        "pages/**/*": {
-            "maxDuration": 300
-        }
-    ,
+  "functions": {
+    "src/app/api/**/*": {
+      "maxDuration": 300
+    },
+    "src/app/api/**/**/*": {
+      "maxDuration": 300
+    },
+    "pages/**/**/*": {
+      "maxDuration": 300
+    },
+    "pages/*": {
+      "maxDuration": 300
+    },
+    "pages/api/*": {
+      "maxDuration": 300
+    },
+    "pages/**/*": {
+      "maxDuration": 300
+    }
+  },
+  "headers": [
+    {
+      "source": "/blog",
       "headers": [
         {
-          "source": "/blog",
-          "headers": [
-            {
-              "key": "Cache-Control",
-              "value": "no-cache, max-age=0"
-            }
-          ]
-        },
+          "key": "Cache-Control",
+          "value": "no-cache, max-age=0"
+        }
+      ]
+    },
+    {
+      "source": "/blog/:slug",
+      "headers": [
         {
-          "source": "/blog/:slug",
-          "headers": [
-            {
-              "key": "Cache-Control",
-              "value": "no-cache, max-age=0"
-            }
-          ]
+          "key": "Cache-Control",
+          "value": "no-cache, max-age=0"
         }
       ]
     }
+  ]
 }
